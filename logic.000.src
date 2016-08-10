@@ -1,0 +1,1709 @@
+if (v17 > 0) {
+  call(54);
+}
+if (isset(f12)) {
+  set(f14);
+  disable.item(c24);
+}
+if (v0 <= 0) {
+  if (!isset(f6)) {
+    script.size(144);
+    set.menu("Sierra ");
+    set.menu.item("A propos de Larry",c25);
+    set.menu.item("Aide    <F1>",c1);
+    set.menu.item("------------",c24);
+    set.menu.item("Calculatrice",c26);
+    set.menu.item("Puzzle      ",c27);
+    set.menu("Fichier ");
+    set.menu.item("Sauvegarde  <F5>",c5);
+    set.menu.item("Chargement  <F7>",c7);
+    set.menu.item("----------------",c24);
+    set.menu.item("Recommencer <F9>",c9);
+    set.menu.item("----------------",c24);
+    set.menu.item("Quitter  <Alt-Z>",c22);
+    set.menu("Action ");
+    set.menu.item("Inventaire  <Tab>",c11);
+    set.menu.item("Voir Objet       ",c17);
+    set.menu.item("Fonction du corps",c28);
+    set.menu("Special ");
+    set.menu.item("Sound On/Off      <F2>",c2);
+    if (v20 == 0 &&
+        v26 != 2 &&
+        v26 != 3) {
+      set.menu.item("Graphics Mode <Ctrl-R>",c13);
+    }
+    set.menu.item("Joystick      <Ctrl-J>",c12);
+    set.menu.item("Clock On/Off          ",c29);
+    set.menu.item("Boss Key      <Ctrl-B>",c41);
+    set.menu.item("Pause Game            ",c30);
+    if (v20 != 5) {
+      set.menu("Speed ");
+      set.menu.item("Normal       ",c32);
+      set.menu.item("Lent         ",c31);
+      set.menu.item("Rapide       ",c33);
+      set.menu.item("Tres rapide  ",c34);
+      set.menu.item("-------------",c24);
+      set.menu.item("Change  <F10>",c10);
+    }
+    submit.menu();
+  }
+  call(51);
+  if (v51 > 0) {
+    new.room.v(v51);
+  }
+  if (isset(f6)) {
+    new.room(11);
+  }
+  new.room(1);
+}
+if (isset(f42) &&
+    (isset(f43) ||
+    isset(f5))) {
+  reset(f43);
+  set.text.attribute(0,15);
+  display(0,20,"%v119:%v116|2:%v115|2 ");
+  set.text.attribute(15,0);
+}
+if (isset(f5)) {
+  call(50);
+  if (isset(f32)) {
+    load.logics(52);
+    load.logics(53);
+    set(f10);
+  }
+  load.view.v(v77);
+  set.view.v(o0,v77);
+  call.v(v0);
+}
+get.posn(o0,v38,v39);
+current.view(o0,v77);
+reset(f69);
+if (isset(f36)) {
+  reset(f3);
+}
+if (isset(f37)) {
+  reset(f0);
+}
+if (isset(f49)) {
+  v2 = 0;
+}
+if (controller(c23)) {
+  menu.input();
+}
+if (controller(c21)) {
+  set(f109);
+}
+if (controller(c2)) {
+  toggle(f9);
+  set(f43);
+}
+if (isset(f109)) {
+  if (controller(c13)) {
+    toggle.monitor();
+  }
+  if (controller(c12)) {
+    init.joy();
+  }
+  if (controller(c3)) {
+    echo.line();
+  }
+  if (controller(c14)) {
+    cancel.line();
+  }
+  if (controller(c41)) {
+    new.room(20);
+  }
+  if ((said("pause") ||
+      controller(c30))) {
+    pause();
+  }
+  if (v20 == 2) {
+    if (v23 < 15 &&
+        controller(c39)) {
+      v23++;
+    }
+    if (controller(c38)) {
+      v23--;
+    }
+  }
+  if (isset(f109) &&
+      (said("restart") ||
+      said("restart","game") ||
+      said("begin","above") ||
+      controller(c9))) {
+    restart.game();
+  }
+  if (isset(f109) &&
+      (said("restore","game") ||
+      said("restore") ||
+      controller(c7))) {
+    restore.game();
+  }
+  if (controller(c40)) {
+    print("\n    Leisure Suit Larry\n          in the\nLand of the Lounge"
+          "Lizards\n\n        by Al Lowe\n\n   Ver 1.00    6/1/87\nTraduction"
+          "Frater aout 2016");
+    version();
+  }
+  if ((said("done") ||
+      controller(c22))) {
+    stop.sound();
+    if (isset(f32)) {
+      quit(1);
+    }
+    else {
+      quit(0);
+    }
+  }
+  if ((said("status") ||
+      said("all") ||
+      controller(c11))) {
+    status();
+  }
+  if (controller(c29)) {
+    toggle(f42);
+    if (isset(f42)) {
+      set(f43);
+    }
+    else {
+      status.line.off();
+      status.line.on();
+    }
+  }
+  if (controller(c15)) {
+    toggle(f32);
+    if (!isset(f32)) {
+      reset(f10);
+    }
+    else {
+      load.logics(52);
+      load.logics(53);
+      set(f10);
+      print("\n    Leisure Suit Larry\n          in the\nLand of the Lounge"
+            "Lizards\n\n        by Al Lowe\n\n   Ver 1.00    6/1/87\nTraduction"
+            "Frater aout 2016");
+      version();
+      accept.input();
+      normal.motion(o0);
+      reset(f85);
+    }
+  }
+  if (controller(c1)) {
+    call(55);
+  }
+}
+if (v30 != 1 &&
+    v30 != 27 &&
+    controller(c28)) {
+  cancel.line();
+  prevent.input();
+  set.string(s11,"");
+  set.string(s12,"");
+  get.string(s11,"Enter function: ",23,0,23);
+  if (compare.strings(s11,s12)) {
+    set.string(s11,"do nothing");
+  }
+  print("tu te tournes rapidement, %s11, et tu te sentes beaucoup mieux. Un"
+        "leger sourire traverse ton visage");
+  set.string(s11,"");
+  set.string(s12,"");
+  accept.input();
+}
+if (v30 != 1 &&
+    (said("save") ||
+    said("save","game") ||
+    isset(f106) ||
+    controller(c5))) {
+  if (isset(f87)) {
+    if (!isset(f106)) {
+      set(f106);
+      print("Just a moment, please...");
+    }
+  }
+  else {
+    reset(f106);
+    save.game();
+  }
+}
+if ((controller(c27) ||
+    controller(c26))) {
+  prevent.input();
+  status.line.off();
+  set.text.attribute(0,7);
+  text.screen();
+  v19 = 0;
+  if (controller(c27)) {
+    display(6,9,"---------------------");
+    display(7,9,"|  1 |  2 |  3 |  4 |");
+    display(8,9,"|----|----|----|----|");
+    display(9,9,"|  5 |  6 |  7 |  8 |");
+    display(10,9,"|----|----|----|----|");
+    display(11,9,"|  9 | 10 | 11 | 12 |");
+    display(12,9,"|----|----|----|----|");
+    display(13,9,"| 13 | 14 | 15 | 16 |");
+    display(14,9,"---------------------");
+    display(21,1,"How's this thing work, anyway?");
+  }
+  else {
+    display(8,19,"2");
+    display(9,17,"+ 2");
+    display(10,17,"---");
+    display(11,17,"  4");
+    display(21,6,"   This is about the extent of\n    your mathematical"
+            "abilities.");
+  }
+Label1:
+  if (!have.key()) {
+    goto(Label1);
+  }
+  accept.input();
+  status.line.on();
+  set.text.attribute(15,0);
+  graphics();
+  set(f4);
+}
+if (controller(c17)) {
+  set(f13);
+  status();
+  if (v25 != 255) {
+    v52 = v25;
+    v52 += 100;
+    show.obj.v(v52);
+  }
+  reset(f13);
+}
+if (controller(c25)) {
+  if (v117 > 0) {
+    print("%m11%m100%v117 heures, %v116 minutes et %v115 secondes.\n");
+  }
+  else {
+    print("%m11%m100%v116 minutes et %v115 secondes.\n");
+  }
+}
+reset(f45);
+if (controller(c10)) {
+  set(f45);
+  v10++;
+  if (v10 > 3) {
+    v10 = 0;
+  }
+}
+if ((controller(c31) ||
+    said("slow"))) {
+  set(f45);
+  v10 = 3;
+}
+if ((controller(c32) ||
+    said("normal"))) {
+  set(f45);
+  v10 = 2;
+}
+if ((controller(c33) ||
+    said("fast"))) {
+  set(f45);
+  v10 = 1;
+}
+if ((controller(c34) ||
+    said("fastest"))) {
+  set(f45);
+  v10 = 0;
+}
+if (isset(f45)) {
+  reset(f45);
+  if (v26 != 2) {
+    v58 = 32;
+    v58 += v10;
+    clear.text.rect(24,0,24,15,0);
+    v33 = 24;
+    v32 = 0;
+    display.v(v33,v32,v58);
+    v68 = 6;
+  }
+}
+if (isset(f50)) {
+  reset(f50);
+  v30 = 1;
+  load.sound(25);
+  stop.motion(o0);
+  stop.cycling(o0);
+  program.control();
+  accept.input();
+  v75 = 44;
+  disable.item(c5);
+}
+if (v30 == 1) {
+  v75--;
+  if (v75 == 1) {
+    stop.sound();
+    sound(25,f40);
+    print("Merci d'avoir jouer à \"Leisure Suit Larry in the Land of the Lounge"
+          "Lizards.\"\n\nTu as foire ce jeu, mais tu peux sans doute faire"
+          "mieux.\n\nAllez, essayes encore une foi!");
+  }
+  if (isset(f2) &&
+      !isset(f4)) {
+    print("Comme tu es mort...\n\nTu ne peut que relancer une sauvegarde ou"
+          "redemarrer depuis le debut.");
+  }
+  if (isset(f32)) {
+    call(52);
+  }
+  return();
+}
+if (v6 == v42 &&
+    v38 == v40 &&
+    v39 == v41) {
+  stop.cycling(o0);
+}
+else {
+  start.cycling(o0);
+}
+if ((v6 <= 0 ||
+    isset(f35))) {
+  stop.cycling(o0);
+}
+if (isset(f34)) {
+  start.cycling(o0);
+}
+if (v19 != v89) {
+  set(f108);
+  v91 = 0;
+  v89 = v19;
+}
+if (v19 == 13) {
+  reset(f108);
+}
+v66--;
+if (v66 == 1) {
+  set(f75);
+}
+if (v11 != v43) {
+  v43 = v11;
+  set(f44);
+  set(f43);
+  v68--;
+  v71--;
+  v80--;
+  v67--;
+  v63++;
+  v115++;
+  if (v67 == 1) {
+    set(f75);
+  }
+  if (v68 == 1) {
+    clear.text.rect(24,0,24,15,0);
+  }
+  if (v0 != 1 &&
+      v0 != 19 &&
+      v0 != 6) {
+    if (v115 == 60) {
+      v115 = 0;
+      v116++;
+      if (v116 == 60) {
+        v116 = 0;
+        v117++;
+        v119++;
+        if (v119 == 13) {
+          v119 = 1;
+        }
+      }
+    }
+    if (v80 == 1) {
+      reset(f48);
+      reset(f34);
+      set.view(o0,0);
+      start.motion(o0);
+      reset(f85);
+      accept.input();
+      print("Ahhh.");
+    }
+    if (v72 > 0 &&
+        v71 <= 0) {
+      v72--;
+      v71 = 60;
+    }
+    if (v71 == 1 &&
+        v72 <= 0) {
+      reset(f66);
+      set(f107);
+      print.v(v69);
+      v69++;
+      if (v69 > 160) {
+        v69 = 157;
+      }
+    }
+  }
+  if (isset(f108)) {
+    v91++;
+    if (v91 > 1) {
+      reset(f108);
+    }
+  }
+}
+if (!isset(f5)) {
+  call.v(v0);
+}
+if (isset(f32)) {
+  call(52);
+}
+if (isset(f67)) {
+  reset(f67);
+  print("Ok.");
+}
+if (isset(f54)) {
+  reset(f54);
+  print("tu es trop loin.");
+}
+if (isset(f55)) {
+  reset(f55);
+  print("tu en as deja.");
+}
+if (isset(f68)) {
+  reset(f68);
+  print("tu n'en as pas.");
+}
+if (isset(f69) &&
+    !isset(f66) &&
+    isset(f107)) {
+  reset(f107);
+  print("\"Eeeyow! Fais quelque chose a propos de ton haleine!\"");
+}
+if (isset(f69) &&
+    isset(f58)) {
+  reset(f58);
+  print("\"Phew! tu pue comme un egout!\"");
+}
+if (isset(f69) &&
+    isset(f59)) {
+  reset(f59);
+  print("\"Hey, idiot! tu as du papier toillette sur ta chaussure!\"");
+  print("tu l'enleves nonchalement.");
+}
+if (v90 <= 0 &&
+    !isset(f87) &&
+    !isset(f93)) {
+  print("Oh non, tu es maintenant sans argent. tu racroche ton costume de"
+        "loisirs et passe le reste de ta vie dans les bas-fonds a manger les"
+        "poubelles des fast food.");
+  print("Le reste de cette sombre histoire est trop triste pour etre racontee."
+        "Il est temps pour un petit \"R & R,\" Larry -- Redemarrer ou Recharger!");
+  erase(o0);
+  set(f50);
+}
+if (isset(f38) &&
+    have.key()) {
+  reset(f38);
+  new.room(6);
+}
+if ((isset(f4) ||
+    !isset(f2) ||
+    v30 == 2 ||
+    v30 == 1)) {
+  goto(Label2);
+}
+if (said("thank you","rol")) {
+  print("\"De rien.\"");
+}
+if ((said("bye","rol") ||
+    said("anyword","bye","rol"))) {
+  print("\"'Bye.\"");
+}
+if (said("hello","rol")) {
+  print("\"Hi.\"");
+}
+if (said("laugh")) {
+  print("\"Ha, ha!\"");
+}
+if ((said("lie","rol") ||
+    said("rest","rol"))) {
+  print("Ce n'est pas le moment!");
+}
+if ((said("examine","bucks") ||
+    said("count","bucks"))) {
+  print("tu as $%v90.00.");
+}
+if ((said("add","billfold","rol") ||
+    said("add","about","billfold","rol"))) {
+  print("Tu pourrais en avoir besoin.");
+}
+if (said("use","billfold","rol")) {
+  print("%m53?");
+}
+if ((said("increase","billfold") ||
+    said("look in","billfold") ||
+    said("examine","billfold"))) {
+  show.obj(101);
+}
+if ((said("add","billfold","anyword") ||
+    said("add","billfold") ||
+    said("add","anyword","billfold"))) {
+  if (!isset(f69)) {
+    print("Comment peux-tu faire cela?");
+  }
+  else {
+    print("\"Hey, Merci beaucoup!\"");
+    print("Mais, maintenant tu ne le recupereras JAMAIS!");
+    drop("wallet");
+    v90 = 0;
+  }
+}
+if (said("add","breath spray","rol")) {
+  print("Tu pourrais en avoir besoin.");
+}
+if (said("examine","breath spray","rol")) {
+  show.obj(102);
+}
+if ((said("add","breath spray","anyword") ||
+    said("add","breath spray") ||
+    said("add","anyword","breath spray"))) {
+  if ((!isset(f69) ||
+      !has("breath spray"))) {
+    print("Comment peux-tu faire cela?");
+  }
+  else {
+    print("\"Yuck!\"");
+    print("Personne ne desire cela!");
+  }
+}
+if ((said("breath spray","breath spray") ||
+    said("breath spray","breath spray","lips") ||
+    said("breath spray","lips") ||
+    said("breath spray","breath") ||
+    said("use","breath spray"))) {
+  if (!has("breath spray")) {
+    print("tu as tout utilise, rappeles toi.");
+  }
+  else {
+    v72 = 10;
+    set(f66);
+    print("Psssft. Psssft.");
+    if ((isset(f48) ||
+        v77 != 0)) {
+      print("Ahhh.");
+    }
+    else {
+      load.view(5);
+      set.view(o0,5);
+      force.update(o0);
+      v80 = 5;
+      set(f48);
+      set(f34);
+      stop.motion(o0);
+      set(f85);
+      prevent.input();
+    }
+    v70++;
+    if (v70 > 9) {
+      print("Puisce que ton pulverisateur est vide, tu le jettes.");
+      drop("breath spray");
+    }
+    if (isset(f69)) {
+      print("\"Il etait temps!!\"");
+    }
+  }
+}
+if (said("add","fuzz","rol")) {
+  print("Tu pourrais en avoir besoin.");
+}
+if (said("use","fuzz","rol")) {
+  print("Ce n'est pas a utiliser, C'EST UNE BLAGUE!!");
+}
+if (said("examine","fuzz")) {
+  show.obj(103);
+}
+if ((said("add","fuzz","anyword") ||
+    said("add","fuzz") ||
+    said("add","anyword","fuzz"))) {
+  if (!isset(f69)) {
+    print("Comment peux-tu faire cela?");
+  }
+  else {
+    print("\"Yuck!\"");
+    print("Personne ne desire cela!");
+  }
+}
+if (said("add","bracelet","rol")) {
+  print("Tu pourrais en avoir besoin.");
+}
+if (said("use","bracelet","rol")) {
+  print("%m53?");
+}
+if (said("examine","bracelet")) {
+  show.obj(104);
+}
+if (said("add","bracelet")) {
+  print("Desole, c'est un jeu en temps reel!");
+}
+if ((said("add","bracelet","anyword") ||
+    said("add","bracelet") ||
+    said("add","anyword","bracelet"))) {
+  if (!isset(f69)) {
+    print("Comment peux-tu faire cela?");
+  }
+  else {
+    print("\"Yuck!\"");
+    print("Personne ne desire cela!");
+  }
+}
+if (said("add","apple","rol")) {
+  if (has("apple")) {
+    print("Tu pourrais en avoir besoin.");
+  }
+  else {
+    set(f68);
+  }
+}
+if (said("use","apple","rol")) {
+  if (has("apple")) {
+    print("%m53?");
+  }
+  else {
+    set(f68);
+  }
+}
+if ((said("catch","bite","apple","rol") ||
+    said("bite","apple","rol"))) {
+  if (has("apple")) {
+    print("Elle est delicieuse, mais rien ne se passe.");
+    drop("apple");
+  }
+  else {
+    set(f68);
+  }
+}
+if (said("examine","apple")) {
+  if (has("apple")) {
+    show.obj(105);
+  }
+  else {
+    set(f68);
+  }
+}
+if ((said("add","apple","anyword") ||
+    said("add","apple") ||
+    said("add","anyword","apple"))) {
+  if ((!isset(f69) ||
+      !has("apple"))) {
+    print("Comment peux-tu faire cela?");
+  }
+  else {
+    print("\"Hey, Merci beaucoup!\"");
+    print("Mais, maintenant tu ne le recupereras JAMAIS!");
+    drop("apple");
+  }
+}
+if (said("add","diamond ring","rol")) {
+  if (has("diamond ring")) {
+    print("Tu pourrais en avoir besoin.");
+  }
+  else {
+    set(f68);
+  }
+}
+if (said("use","diamond ring","rol")) {
+  if (has("diamond ring")) {
+    print("%m53?");
+  }
+  else {
+    set(f68);
+  }
+}
+if ((said("add","diamond ring","i'm") ||
+    said("add","diamond ring","on","i'm") ||
+    said("add","diamond ring","finger") ||
+    said("add","diamond ring","on","finger") ||
+    said("put on","diamond ring","rol"))) {
+  if (has("diamond ring")) {
+    print("Ok.");
+    print("Porter l'anneau magique te conferes des pouvoir bien au dela ceux"
+          "de...");
+    print("...Oops. Mauvais jeu.");
+  }
+  else {
+    set(f68);
+  }
+}
+if (said("examine","diamond ring")) {
+  if (has("diamond ring")) {
+    show.obj(106);
+  }
+  else {
+    set(f68);
+  }
+}
+if ((said("add","diamond ring","anyword") ||
+    said("add","diamond ring") ||
+    said("add","anyword","diamond ring"))) {
+  if ((!isset(f69) ||
+      !has("diamond ring"))) {
+    print("Comment peux-tu faire cela?");
+  }
+  else {
+    print("\"Hey, Merci beaucoup!\"");
+    print("Mais, maintenant tu ne le recupereras JAMAIS!");
+    drop("diamond ring");
+  }
+}
+if (said("add","shot","rol")) {
+  if (has("glass of whiskey")) {
+    print("Tu pourrais en avoir besoin.");
+  }
+  else {
+    set(f68);
+  }
+}
+if (said("use","shot","rol")) {
+  if (has("glass of whiskey")) {
+    print("%m53?");
+  }
+  else {
+    set(f68);
+  }
+}
+if (said("bite","shot")) {
+  if (has("glass of whiskey")) {
+    drop("glass of whiskey");
+    v72 = 0;
+    v71 = 4;
+    print("Ok.\n\ntu avales d'un coup le shot d'alcool bon marche... Ensuite,"
+          "dans un mouvement epique, tu brises le verre au sol!");
+    print("Impressionnant non?");
+  }
+  else {
+    set(f68);
+  }
+}
+if (said("examine","shot")) {
+  if (has("glass of whiskey")) {
+    show.obj(107);
+  }
+  else {
+    set(f68);
+  }
+}
+if ((said("add","shot","anyword") ||
+    said("add","shot") ||
+    said("add","anyword","shot"))) {
+  if ((!isset(f69) ||
+      !has("glass of whiskey"))) {
+    print("Comment peux-tu faire cela?");
+  }
+  else {
+    print("\"Hey, Merci beaucoup!\"");
+    print("Mais, maintenant tu ne le recupereras JAMAIS!");
+    drop("glass of whiskey");
+  }
+}
+if (said("add","control","rol")) {
+  if (has("remote control")) {
+    print("Tu pourrais en avoir besoin.");
+  }
+  else {
+    set(f68);
+  }
+}
+if ((said("use","control","rol") ||
+    said("move","button","control","rol") ||
+    said("move","button","on","control","rol") ||
+    said("move","control","rol"))) {
+  if (has("remote control")) {
+    print("Tu appuyes sur les boutons de la telecommande et ...");
+    print("...rien ne se passe.");
+  }
+  else {
+    set(f68);
+  }
+}
+if (said("examine","control")) {
+  if (has("remote control")) {
+    show.obj(108);
+  }
+  else {
+    set(f68);
+  }
+}
+if ((said("add","control","anyword") ||
+    said("add","control") ||
+    said("add","anyword","control"))) {
+  if ((!isset(f69) ||
+      !has("remote control"))) {
+    print("Comment peux-tu faire cela?");
+  }
+  else {
+    print("\"Hey, Merci beaucoup!\"");
+    print("Mais, maintenant tu ne le recupereras JAMAIS!");
+    drop("remote control");
+  }
+}
+if (said("add","flower","rol")) {
+  if (has("rose")) {
+    print("Tu pourrais en avoir besoin.");
+  }
+  else {
+    set(f68);
+  }
+}
+if (said("use","flower","rol")) {
+  if (has("rose")) {
+    print("%m53?");
+  }
+  else {
+    set(f68);
+  }
+}
+if (said("smell","flower","rol")) {
+  if (has("rose")) {
+    print("Elle sent tres bon.");
+  }
+  else {
+    set(f68);
+  }
+}
+if (said("examine","flower")) {
+  if (has("rose")) {
+    show.obj(109);
+  }
+  else {
+    set(f68);
+  }
+}
+if ((said("add","flower","anyword") ||
+    said("add","flower") ||
+    said("add","anyword","flower"))) {
+  if ((!isset(f69) ||
+      !has("rose"))) {
+    print("Comment peux-tu faire cela?");
+  }
+  else {
+    print("\"Hey, Merci beaucoup!\"");
+    print("Mais, maintenant tu ne le recupereras JAMAIS!");
+    drop("rose");
+  }
+}
+if (said("add","condom","rol")) {
+  if ((has("used prophylactic") ||
+      has("prophylactic"))) {
+    print("Tu pourrais en avoir besoin.");
+  }
+  else {
+    set(f68);
+  }
+}
+if ((said("use","condom","rol") ||
+    said("use","old","condom","rol") ||
+    said("put on","old","condom","rol") ||
+    said("put on","condom","rol"))) {
+  if ((has("used prophylactic") ||
+      has("prophylactic"))) {
+    print("Maintenant ?!");
+  }
+  else {
+    set(f68);
+  }
+}
+if (isset(f62) &&
+    (said("drain","condom","rol") ||
+    said("drain","old","condom","rol") ||
+    said("catch","old","condom","off","rol") ||
+    said("catch","condom","off","rol"))) {
+  reset(f62);
+  drop("used prophylactic");
+  v3 += 1;
+  print("Bonne idee. tu le retire avec precaution et t'en debarasse proprement.");
+}
+if ((said("examine","old","condom") ||
+    said("examine","condom"))) {
+  if (has("prophylactic")) {
+    show.obj(110);
+  }
+  else {
+    if (has("used prophylactic")) {
+      show.obj(111);
+    }
+    else {
+      set(f68);
+    }
+  }
+}
+if ((said("add","old","condom","anyword") ||
+    said("add","old","condom") ||
+    said("add","anyword","old","condom"))) {
+  if ((!isset(f69) ||
+      !has("used prophylactic"))) {
+    print("Comment peux-tu faire cela?");
+  }
+  else {
+    print("\"Yuck!\"");
+    print("Personne ne desire cela!");
+  }
+}
+if ((said("add","condom","anyword") ||
+    said("add","condom") ||
+    said("add","anyword","condom"))) {
+  if ((!isset(f69) ||
+      !has("prophylactic"))) {
+    print("Comment peux-tu faire cela?");
+  }
+  else {
+    print("\"Yuck!\"");
+    print("Personne ne desire cela!");
+  }
+}
+if (said("add","box of candy","rol")) {
+  if (has("box of candy")) {
+    print("Tu pourrais en avoir besoin.");
+  }
+  else {
+    set(f68);
+  }
+}
+if ((said("use","box of candy","rol") ||
+    said("use","anyword","box of candy","rol") ||
+    said("bite","anyword","box of candy","rol") ||
+    said("bite","box of candy","rol"))) {
+  if (has("box of candy")) {
+    print("Les bonbons sont delicieux, mais est ce tres bon pour ton acnee?");
+    drop("box of candy");
+  }
+  else {
+    set(f68);
+  }
+}
+if (said("examine","box of candy")) {
+  if (has("box of candy")) {
+    show.obj(112);
+  }
+  else {
+    set(f68);
+  }
+}
+if ((said("add","box of candy","anyword") ||
+    said("add","box of candy") ||
+    said("add","anyword","box of candy"))) {
+  if ((!isset(f69) ||
+      !has("box of candy"))) {
+    print("Comment peux-tu faire cela?");
+  }
+  else {
+    print("\"Hey, Merci beaucoup!\"");
+    print("Mais, maintenant tu ne le recupereras JAMAIS!");
+    drop("box of candy");
+  }
+}
+if (said("add","card","rol")) {
+  if (has("disco pass")) {
+    print("Tu pourrais en avoir besoin.");
+  }
+  else {
+    set(f68);
+  }
+}
+if (said("use","card","rol")) {
+  if (has("disco pass")) {
+    print("%m53?");
+  }
+  else {
+    set(f68);
+  }
+}
+if ((said("examine","disco","card") ||
+    said("examine","card"))) {
+  if (has("disco pass")) {
+    show.obj(114);
+  }
+  else {
+    set(f68);
+  }
+}
+if ((said("add","card","anyword") ||
+    said("add","card") ||
+    said("add","anyword","card"))) {
+  if ((!isset(f69) ||
+      !has("disco pass"))) {
+    print("Comment peux-tu faire cela?");
+  }
+  else {
+    print("\"Hey, Merci beaucoup!\"");
+    print("Mais, maintenant tu ne le recupereras JAMAIS!");
+    drop("disco pass");
+  }
+}
+if (said("add","knife","rol")) {
+  if (has("pocket knife")) {
+    print("Tu pourrais en avoir besoin.");
+  }
+  else {
+    set(f68);
+  }
+}
+if (said("use","knife","rol")) {
+  if (has("pocket knife")) {
+    print("%m53?");
+  }
+  else {
+    set(f68);
+  }
+}
+if (said("examine","knife")) {
+  if (has("pocket knife")) {
+    show.obj(115);
+  }
+  else {
+    set(f68);
+  }
+}
+if ((said("add","knife","anyword") ||
+    said("add","knife") ||
+    said("add","anyword","knife"))) {
+  if ((!isset(f69) ||
+      !has("pocket knife"))) {
+    print("Comment peux-tu faire cela?");
+  }
+  else {
+    print("\"Hey, Merci beaucoup!\"");
+    print("Mais, maintenant tu ne le recupereras JAMAIS!");
+    drop("pocket knife");
+  }
+}
+if (said("add","champagne","rol")) {
+  if (has("bottle of wine")) {
+    print("Tu pourrais en avoir besoin.");
+  }
+  else {
+    set(f68);
+  }
+}
+if ((said("bite","champagne") ||
+    said("use","champagne"))) {
+  if (has("bottle of wine")) {
+    drop("bottle of wine");
+    v72 = 0;
+    v71 = 4;
+    print("Ok.\n\nTu n'as plus soif maintenant, la bouteille est vide, et ton"
+          "haleine est revoltante.");
+  }
+  else {
+    set(f68);
+  }
+}
+if (said("examine","champagne")) {
+  if (has("bottle of wine")) {
+    show.obj(116);
+  }
+  else {
+    set(f68);
+  }
+}
+if ((said("add","champagne","anyword") ||
+    said("add","champagne") ||
+    said("add","anyword","champagne"))) {
+  if ((!isset(f69) ||
+      !has("bottle of wine"))) {
+    print("Comment peux-tu faire cela?");
+  }
+  else {
+    print("\"Hey, Merci beaucoup!\"");
+    print("Mais, maintenant tu ne le recupereras JAMAIS!");
+    drop("bottle of wine");
+  }
+}
+if (said("add","centerfold","rol")) {
+  if (has("\"jugs\" magazine")) {
+    print("Tu pourrais en avoir besoin.");
+  }
+  else {
+    set(f68);
+  }
+}
+if (said("use","centerfold")) {
+  if (has("\"jugs\" magazine")) {
+    print("%m53?");
+  }
+  else {
+    set(f68);
+  }
+}
+if ((said("increase","centerfold") ||
+    said("examine","centerfold"))) {
+  if (has("\"jugs\" magazine")) {
+    print("Hummm, il semble que le numero de ce mois soit rempli d'articles"
+          "intelligents, littéraires avec des restes de valeur sociale");
+    show.obj(117);
+    if (!isset(f120)) {
+      set(f120);
+      v3 += 1;
+    }
+  }
+  else {
+    set(f68);
+  }
+}
+if ((said("add","centerfold","anyword") ||
+    said("add","centerfold") ||
+    said("add","anyword","centerfold"))) {
+  if ((!isset(f69) ||
+      !has("\"jugs\" magazine"))) {
+    print("Comment peux-tu faire cela?");
+  }
+  else {
+    print("\"Hey, Merci beaucoup!\"");
+    print("Mais, maintenant tu ne le recupereras JAMAIS!");
+    drop("\"jugs\" magazine");
+  }
+}
+if (said("add","hammer","rol")) {
+  if (has("hammer")) {
+    print("Tu pourrais en avoir besoin.");
+  }
+  else {
+    print("%m182marteau.");
+  }
+}
+if (said("use","hammer")) {
+  if (has("hammer")) {
+    print("%m53?");
+  }
+  else {
+    print("%m182marteau.");
+  }
+}
+if (said("throw","hammer","rol")) {
+  if (has("hammer")) {
+    print("Tres bien, il est parti pour toujours!");
+    drop("hammer");
+  }
+  else {
+    print("%m182marteau.");
+  }
+}
+if ((said("beat","anyword","use","hammer") ||
+    said("use","hammer","beat","anyword"))) {
+  if (has("hammer")) {
+    print("C'est une idee, c'est jusque que celle-la est mauvaise!");
+  }
+  else {
+    print("%m182hammer.");
+  }
+}
+if (said("examine","hammer")) {
+  if (has("hammer")) {
+    show.obj(118);
+  }
+  else {
+    print("%m182hammer.");
+  }
+}
+if ((said("add","hammer","anyword") ||
+    said("add","hammer") ||
+    said("add","anyword","hammer"))) {
+  if ((!isset(f69) ||
+      !has("hammer"))) {
+    print("Comment peux-tu faire cela?");
+  }
+  else {
+    print("\"Hey, Merci beaucoup!\"");
+    print("Mais, maintenant tu ne le recupereras JAMAIS!");
+    drop("hammer");
+  }
+}
+if ((said("attach","rope","hammer") ||
+    said("attach","hammer","rope"))) {
+  if (has("hammer") &&
+      has("rope")) {
+    print("C'est une idee, c'est jusque que celle-la est mauvaise!");
+  }
+  if (!has("rope")) {
+    print("%m182corde.");
+  }
+  if (!has("hammer")) {
+    print("%m182marteau.");
+  }
+}
+if (said("add","aphrodisiac","rol")) {
+  if (has("bottle of pills")) {
+    print("Tu pourrais en avoir besoin.");
+  }
+  else {
+    print("%m182marteau.");
+  }
+}
+if ((said("use","aphrodisiac") ||
+    said("catch","aphrodisiac") ||
+    said("increase","aphrodisiac") ||
+    said("bite","aphrodisiac"))) {
+  if (has("bottle of pills")) {
+    print("Sans y penser, tu vides toute la bouteille, hey, ce truc est cool!Ta"
+          "respiration devient lourde, et tu es tout d'un coup tres exite! Tu"
+          "dois faire quelque MAINTENANT!\n\nHey, n'est il pas mignon ce chien"
+          "noir?");
+    print("Suite a ta condamnation pour violence animale (et plus...) tu passes"
+          "le reste de ta vie en prison, a briser des cailloux en plus petits.");
+    erase(o0);
+    set(f50);
+  }
+  else {
+    set(f68);
+  }
+}
+if (said("examine","aphrodisiac")) {
+  if (has("bottle of pills")) {
+    show.obj(119);
+  }
+  else {
+    set(f68);
+  }
+}
+if ((said("add","aphrodisiac","anyword") ||
+    said("add","aphrodisiac") ||
+    said("add","anyword","aphrodisiac"))) {
+  if ((!isset(f69) ||
+      !has("bottle of pills"))) {
+    print("Comment peux-tu faire cela?");
+  }
+  else {
+    print("\"Hey, Merci beaucoup!\"");
+    print("Mais, maintenant tu ne le recupereras JAMAIS!");
+    drop("bottle of pills");
+  }
+}
+if (said("add","rope","rol")) {
+  if (has("rope")) {
+    print("Tu pourrais en avoir besoin.");
+  }
+  else {
+    print("%m182corde.");
+  }
+}
+if (said("throw","rope","rol")) {
+  if (has("rope")) {
+    print("OK, maintenant elle est tombee pour TOUJOURS!");
+    drop("rope");
+  }
+  else {
+    print("%m182corde.");
+  }
+}
+if (said("use","rope","rol")) {
+  if (has("rope")) {
+    print("%m53?");
+  }
+  else {
+    print("%m182corde.");
+  }
+}
+if ((said("attach","rope","rol") ||
+    said("attach","anyword","rope"))) {
+  if (has("rope")) {
+    print("C'est une idee; ce n'est juste pas une bonne idee!");
+  }
+  else {
+    print("%m182corde.");
+  }
+}
+if (said("examine","rope")) {
+  if (has("rope")) {
+    show.obj(120);
+  }
+  else {
+    print("%m182corde.");
+  }
+}
+if ((said("add","rope","anyword") ||
+    said("add","rope") ||
+    said("add","anyword","rope"))) {
+  if ((!isset(f69) ||
+      !has("rope"))) {
+    print("Comment peux-tu faire cela?");
+  }
+  else {
+    print("\"Hey, Merci beaucoup!\"");
+    print("Mais, maintenant tu ne le recupereras JAMAIS!");
+    drop("rope");
+  }
+}
+if (!isset(f4) &&
+    isset(f2) &&
+    v9 > 0) {
+  set(f4);
+  print.v(v9);
+}
+if ((said("anyword","credit card") ||
+    said("anyword","credit card","billfold") ||
+    said("anyword","credit card","from","billfold"))) {
+  print("Aucun endroit 'Lost Wages' n'accepte de carte de credit de la First"
+        "National Bank of Libya.");
+}
+if ((said("examine","note") ||
+    said("examine","note","billfold"))) {
+  print("\"Pensez a acheter plus de jeux d'aventures de Sierra!\"");
+}
+if ((said("anyword","business card") ||
+    said("anyword","business card","billfold") ||
+    said("anyword","business card","from","billfold"))) {
+  print("Sierra On-Line, Inc.  (209) 683-6858");
+}
+if ((said("anyword","note") ||
+    said("anyword","note","billfold") ||
+    said("anyword","note","from","billfold"))) {
+  print("Vous pourrez vouloir les lire.");
+}
+if ((said("bull shit","rol") ||
+    said("anyword","bull shit","rol"))) {
+  print("La meme chose pour toi, l'ami!");
+}
+if ((said("copulate","rol") ||
+    said("anyword","copulate","rol") ||
+    said("anyword","anyword","copulate","rol") ||
+    said("anyword","anyword","anyword","copulate","rol"))) {
+  print("Rhoo oui, tu veux surement faire cela aussi!");
+}
+if (said("jack off","rol")) {
+  print("Larry, l'idee est justement d'arreter ce genre de pratique!");
+}
+if ((said("aim","clit","rol") ||
+    said("caress","clit","rol") ||
+    said("embrace","clit","rol") ||
+    said("bite","clit","rol") ||
+    said("examine","clit","rol"))) {
+  print("De toute évidence, la retenue ne pose aucun problème pour toi, Larry.");
+}
+if ((said("examine","leisure suit") ||
+    said("look in","leisure suit") ||
+    said("find","leisure suit"))) {
+  print("Vous trouvez votre tenue de loisir tres stylee, mais vide.");
+}
+if ((said("examine","bouncer") ||
+    said("examine","blond"))) {
+  print("ou ca!?");
+}
+if ((said("examine","brick") ||
+    said("examine","building"))) {
+  print("Regarder fixement les murs?");
+}
+if ((said("examine","curb") ||
+    said("examine","down"))) {
+  print("Il se trouve juste la, sous tes pieds.");
+}
+if (said("examine","door")) {
+  print("Yep, c'est une belle porte!");
+}
+if ((said("examine","sky") ||
+    said("examine","ceiling"))) {
+  print("Il est toujours la, au-dessus de nos tetes!");
+}
+if (said("examine","rol")) {
+  random(42,44,v52);
+  print.v(v52);
+}
+if (said("jump")) {
+  print("Whee!");
+}
+if (said("ask")) {
+  print("tu te parles a toi meme un moment...\nEt tu decouvres soudainement que"
+        "tu sais toujours ce que tu vas dire.");
+}
+if (said("ask","rol")) {
+  print("Fun, pas de reponse.");
+}
+if (said("holler")) {
+  print("\"HELP!\"");
+}
+if ((said("climb","brick") ||
+    said("climb","building"))) {
+  print("Tu as deja essayer de grimper sur un mur?");
+}
+if (said("smell","anyword","rol")) {
+  print("Ca pue, comme tu peux t'en douter.");
+}
+if (said("catch","anyword","rol")) {
+  random(46,48,v52);
+  print.v(v52);
+}
+if (said("board","anyword","rol")) {
+  print("Marches jusque la.");
+}
+if (said("use","anyword","rol")) {
+  print("Comment utiliser quelques chose que tu ne possede pas?");
+}
+if (said("catch","anyword","rol")) {
+  print("Tu n'as pas besoin de prendre cela.");
+}
+if (said("bite","blond","rol")) {
+  print("Cela viendra plus tard.");
+}
+if (said("bite","anyword","rol")) {
+  print("Une fois qu'on y a goute, on n'en veut pas plus!");
+}
+if (said("embrace","anyword","rol")) {
+  print("tu ne preferes pas rester juste \"amis\"?");
+}
+if (said("laugh","anyword","rol")) {
+  print("Ha, ha.");
+}
+if ((said("fight","anyword","rol") ||
+    said("beat","anyword","rol"))) {
+  print("Oh, %w1, %w1, %w1! Il n'y a plus personne?");
+}
+if ((said("look in","bouncer","rol") ||
+    said("look in","person","rol") ||
+    said("look in","blond","rol") ||
+    said("look in","bra","rol") ||
+    said("find","bra","rol") ||
+    said("find","bouncer","rol") ||
+    said("find","person","rol") ||
+    said("find","blond","rol"))) {
+  if (!isset(f69)) {
+    set(f54);
+  }
+  else {
+    print("Il vaudrait mieux pas. tu te ferais frapper tres fort!");
+  }
+}
+if (said("find","rol")) {
+  print("tu ne trouves rien.");
+}
+if (said("add","anyword","rol")) {
+  print("Tu n'en as pas.");
+}
+if ((said("unbolt","door","rol") ||
+    said("use","key","rol"))) {
+  print("Tu ne peux pas faire cela; Il n'y a pas de cle dans ce jeu!");
+}
+if ((said("bang","door") ||
+    said("bang","on","door"))) {
+  print("Il n'y a pas de reponse. Essayes d'ouvrir.");
+}
+if ((said("help","bouncer","rol") ||
+    said("help","blond","rol") ||
+    said("help","person","rol"))) {
+  print("Comment veux-tu aider exactement?");
+}
+if (said("help","rol")) {
+  print("Ne pleurniches pas!");
+}
+if ((said("clit","rol") ||
+    said("crap","rol") ||
+    said("leak","rol") ||
+    said("copulate","rol") ||
+    said("cut one","rol") ||
+    said("asshole","rol") ||
+    said("boob","rol") ||
+    said("ass","rol") ||
+    said("cunnilingus","rol") ||
+    said("blow job","rol"))) {
+  print("Tsk, tsk.");
+}
+if ((said("anyword","clit","rol") ||
+    said("anyword","crap","rol") ||
+    said("anyword","leak","rol") ||
+    said("anyword","copulate","rol") ||
+    said("anyword","cut one","rol") ||
+    said("anyword","asshole","rol") ||
+    said("anyword","boob","rol") ||
+    said("anyword","ass","rol") ||
+    said("anyword","cunnilingus","rol") ||
+    said("anyword","blow job","rol"))) {
+  print("Ok, mais je ne fais pas ce genre de chose d'habitude!");
+}
+if ((said("anyword","blond") ||
+    said("anyword","anyword","blond") ||
+    said("anyword","blond","anyword"))) {
+  print("Regards bien, Larry. Tu vas prendre une giffle!");
+}
+if (said("sierra","rol")) {
+  print("Chouette compagnie, non?");
+}
+if (!isset(f4) &&
+    isset(f2)) {
+  print("Comment peux-tu faire cela?");
+}
+Label2:
+get.posn(o0,v40,v41);
+v42 = v6;
+reset(f44);
+v62++;
+if (v101 != v3) {
+  v101 = v3;
+  set(f43);
+}
+if (isset(f85)) {
+  program.control();
+}
+else {
+  player.control();
+}
+if (v76 > 0) {
+  if (isset(f48)) {
+    v76 = 0;
+  }
+  else {
+    v78 = v2;
+    new.room.v(v76);
+  }
+}
+return();
+
+// Messages
+#message 1 "%m10%w1?"
+#message 2 "%m10%w2?"
+#message 3 "%m10%w3?"
+#message 4 "%m10%w4?"
+#message 5 "%m10%w5?"
+#message 6 "%m10%w6?"
+#message 7 "%m10%w7?"
+#message 8 "%m10%w8?"
+#message 9 "Sierra "
+#message 10 "Qu'est ce qu'un"
+#message 11 "\n    Leisure Suit Larry\n          in the\nLand of the Lounge Lizards\n\n        by Al Lowe\n\n   Ver 1.00    6/1/87\nTraduction par Frater aout 2016"
+#message 12 "A propos de Larry"
+#message 13 "Aide    <F1>"
+#message 14 "------------"
+#message 15 "Calculatrice"
+#message 16 "Puzzle      "
+#message 17 "Fichier "
+#message 18 "Sauvegarde  <F5>"
+#message 19 "Chargement  <F7>"
+#message 20 "----------------"
+#message 21 "Recommencer <F9>"
+#message 22 "Quitter  <Alt-Z>"
+#message 23 "Action "
+#message 24 "Inventaire  <Tab>"
+#message 25 "Voir Objet       "
+#message 26 "Fonction du corps"
+#message 27 "Special "
+#message 28 "Sound On/Off      <F2>"
+#message 29 "Graphics Mode <Ctrl-R>"
+#message 30 "Joystick      <Ctrl-J>"
+#message 31 "Clock On/Off          "
+#message 32 "%m36 tres rapide"
+#message 33 "%m36 rapide     "
+#message 34 "%m36 normale    "
+#message 35 "%m36 lente      "
+#message 36 "Vitesse"
+#message 37 "Boss Key      <Ctrl-B>"
+#message 38 "Pause Game            "
+#message 39 "Speed "
+#message 40 "Normal       "
+#message 41 "Lent         "
+#message 42 "Rapide       "
+#message 43 "Tres rapide  "
+#message 44 "-------------"
+#message 45 "Change  <F10>"
+#message 46 "%v119:%v116|2:%v115|2 "
+#message 47 "\n    Leisure Suit Larry\n          in the\nLand of the Lounge Lizards\n\n        by Al Lowe\n\n   Ver 1.00    6/1/87\nTraduction Frater aout 2016"
+#message 48 ""
+#message 49 "Enter function: "
+#message 50 "do nothing"
+#message 51 "%m53?"
+#message 52 "%m53 %w3?"
+#message 53 "Que veux tu faire avec le %w2"
+#message 54 "tu te tournes rapidement, %s11, et tu te sentes beaucoup mieux. Un leger sourire traverse ton visage"
+#message 55 "Just a moment, please..."
+#message 56 "---------------------"
+#message 57 "|  1 |  2 |  3 |  4 |"
+#message 58 "|----|----|----|----|"
+#message 59 "|  5 |  6 |  7 |  8 |"
+#message 60 "|  9 | 10 | 11 | 12 |"
+#message 61 "| 13 | 14 | 15 | 16 |"
+#message 62 "How's this thing work, anyway?"
+#message 63 "2"
+#message 64 "+ 2"
+#message 65 "---"
+#message 66 "  4"
+#message 67 "   This is about the extent of\n    your mathematical abilities."
+#message 68 "%m11%m100%v117 heures, %v116 minutes et %v115 secondes.\n"
+#message 69 "%m11%m100%v116 minutes et %v115 secondes.\n"
+#message 70 "Merci d'avoir jouer à \"Leisure Suit Larry in the Land of the Lounge Lizards.\"\n\nTu as foire ce jeu, mais tu peux sans doute faire mieux.\n\nAllez, essayes encore une foi!"
+#message 71 "Comme tu es mort...\n\nTu ne peut que relancer une sauvegarde ou redemarrer depuis le debut."
+#message 72 "Ahhh."
+#message 73 "Ok."
+#message 74 "tu es trop loin."
+#message 75 "tu en as deja."
+#message 76 "tu n'en as pas."
+#message 77 "\"Eeeyow! Fais quelque chose a propos de ton haleine!\""
+#message 78 "\"Phew! tu pue comme un egout!\""
+#message 79 "\"Hey, idiot! tu as du papier toillette sur ta chaussure!\""
+#message 80 "tu l'enleves nonchalement."
+#message 81 "Oh non, tu es maintenant sans argent. tu racroche ton costume de loisirs et passe le reste de ta vie dans les bas-fonds a manger les poubelles des fast food."
+#message 82 "Le reste de cette sombre histoire est trop triste pour etre racontee. Il est temps pour un petit \"R & R,\" Larry -- Redemarrer ou Recharger!"
+#message 83 "\"De rien.\""
+#message 84 "\"'Bye.\""
+#message 85 "\"Hi.\""
+#message 86 "\"Ha, ha!\""
+#message 87 "Ce n'est pas le moment!"
+#message 88 "tu as $%v90.00."
+#message 89 "Tu pourrais en avoir besoin."
+#message 90 "Comment peux-tu faire cela?"
+#message 91 "\"Hey, Merci beaucoup!\""
+#message 92 "Mais, maintenant tu ne le recupereras JAMAIS!"
+#message 93 "\"Yuck!\""
+#message 94 "Personne ne desire cela!"
+#message 95 "tu as tout utilise, rappeles toi."
+#message 96 "Psssft. Psssft."
+#message 97 "Puisce que ton pulverisateur est vide, tu le jettes."
+#message 98 "\"Il etait temps!!\""
+#message 99 "Ce n'est pas a utiliser, C'EST UNE BLAGUE!!"
+#message 100 "\n\nTu as joue \n"
+#message 101 "Desole, c'est un jeu en temps reel!"
+#message 102 "Elle est delicieuse, mais rien ne se passe."
+#message 103 "Porter l'anneau magique te conferes des pouvoir bien au dela ceux de..."
+#message 104 "...Oops. Mauvais jeu."
+#message 105 "Ok.\n\ntu avales d'un coup le shot d'alcool bon marche... Ensuite, dans un mouvement epique, tu brises le verre au sol!"
+#message 106 "Impressionnant non?"
+#message 107 "Tu appuyes sur les boutons de la telecommande et ..."
+#message 108 "...rien ne se passe."
+#message 109 "Elle sent tres bon."
+#message 110 "Maintenant ?!"
+#message 111 "Bonne idee. tu le retire avec precaution et t'en debarasse proprement."
+#message 112 "Les bonbons sont delicieux, mais est ce tres bon pour ton acnee?"
+#message 113 "Ok.\n\nTu n'as plus soif maintenant, la bouteille est vide, et ton haleine est revoltante."
+#message 114 "Hummm, il semble que le numero de ce mois soit rempli d'articles intelligents, littéraires avec des restes de valeur sociale"
+#message 115 "%m182marteau."
+#message 116 "Tres bien, il est parti pour toujours!"
+#message 117 "C'est une idee, c'est jusque que celle-la est mauvaise!"
+#message 118 "%m182hammer."
+#message 119 "%m182corde."
+#message 120 "Sans y penser, tu vides toute la bouteille, hey, ce truc est cool!Ta respiration devient lourde, et tu es tout d'un coup tres exite! Tu dois faire quelque MAINTENANT!\n\nHey, n'est il pas mignon ce chien noir?"
+#message 121 "Suite a ta condamnation pour violence animale (et plus...) tu passes le reste de ta vie en prison, a briser des cailloux en plus petits."
+#message 122 "OK, maintenant elle est tombee pour TOUJOURS!"
+#message 123 "C'est une idee; ce n'est juste pas une bonne idee!"
+#message 124 "Aucun endroit 'Lost Wages' n'accepte de carte de credit de la First National Bank of Libya."
+#message 125 "\"Pensez a acheter plus de jeux d'aventures de Sierra!\""
+#message 126 "Sierra On-Line, Inc.  (209) 683-6858"
+#message 127 "Vous pourrez vouloir les lire."
+#message 128 "La meme chose pour toi, l'ami!"
+#message 129 "Rhoo oui, tu veux surement faire cela aussi!"
+#message 130 "Larry, l'idee est justement d'arreter ce genre de pratique!"
+#message 131 "De toute évidence, la retenue ne pose aucun problème pour toi, Larry."
+#message 132 "Vous trouvez votre tenue de loisir tres stylee, mais vide."
+#message 133 "ou ca!?"
+#message 134 "Regarder fixement les murs?"
+#message 135 "Il se trouve juste la, sous tes pieds."
+#message 136 "Yep, c'est une belle porte!"
+#message 137 "Il est toujours la, au-dessus de nos tetes!"
+#message 138 "Whee!"
+#message 139 "tu te parles a toi meme un moment...\nEt tu decouvres soudainement que tu sais toujours ce que tu vas dire."
+#message 140 "Fun, pas de reponse."
+#message 141 "\"HELP!\""
+#message 142 "Tu as deja essayer de grimper sur un mur?"
+#message 143 "Ca pue, comme tu peux t'en douter."
+#message 144 "Marches jusque la."
+#message 145 "Comment utiliser quelques chose que tu ne possede pas?"
+#message 146 "Tu n'as pas besoin de prendre cela."
+#message 147 "Cela viendra plus tard."
+#message 148 "Une fois qu'on y a goute, on n'en veut pas plus!"
+#message 149 "tu ne preferes pas rester juste \"amis\"?"
+#message 150 "Ha, ha."
+#message 151 "Oh, %w1, %w1, %w1! Il n'y a plus personne?"
+#message 152 "Il vaudrait mieux pas. tu te ferais frapper tres fort!"
+#message 153 "tu ne trouves rien."
+#message 154 "Tu n'en as pas."
+#message 155 "Tu ne peux pas faire cela; Il n'y a pas de cle dans ce jeu!"
+#message 156 "Il n'y a pas de reponse. Essayes d'ouvrir."
+#message 157 "Comment veux-tu aider exactement?"
+#message 158 "Ne pleurniches pas!"
+#message 159 "Tsk, tsk."
+#message 160 "Ok, mais je ne fais pas ce genre de chose d'habitude!"
+#message 161 "Regards bien, Larry. Tu vas prendre une giffle!"
+#message 162 "Chouette compagnie, non?"
+#message 182 "Tu ne possede pas de "

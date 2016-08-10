@@ -1,0 +1,468 @@
+if (isset(f5)) {
+  load.pic(v0);
+  draw.pic(v0);
+  discard.pic(v0);
+  load.view(83);
+  load.view(82);
+  load.view(81);
+  animate.obj(o1);
+  set.view(o1,83);
+  set.loop(o1,0);
+  set.priority(o1,4);
+  position(o1,57,77);
+  draw(o1);
+  v52 = 6;
+  cycle.time(o1,v52);
+  set(f203);
+  animate.obj(o2);
+  set.view(o2,82);
+  set.cel(o2,0);
+  set.priority(o2,14);
+  position(o2,75,82);
+  draw(o2);
+  cycle.time(o2,v86);
+  stop.cycling(o2);
+  animate.obj(o3);
+  ignore.objs(o3);
+  set.view(o3,81);
+  set.priority(o3,15);
+  position(o3,56,83);
+  if (!has("bottle of wine")) {
+    set.loop(o3,1);
+    set.cel(o3,0);
+    cycle.time(o3,v86);
+    stop.cycling(o3);
+  }
+  else {
+    set.loop(o3,0);
+  }
+  draw(o3);
+  show.pic();
+  if (!has("bottle of wine")) {
+    print("The cabbie snarls a \"Where to, buddy?\" as he swings the meter flag"
+          "down.");
+    accept.input();
+    v203 = 20;
+    random(0,10,v200);
+    v200 += v97;
+    if (v97 < 40) {
+      v97++;
+    }
+    if (v99 > 4) {
+      v99--;
+    }
+    v67 = 2;
+  }
+  else {
+    print("The driver looks at you and says, \"Hey! What's that you got? Wine?\""
+          "He grabs your bottle of wine, and guzzles it down!");
+    prevent.input();
+    set(f85);
+    set(f206);
+    v207 = 0;
+    v65 = 100;
+    v67 = 5;
+  }
+  set(f48);
+  set(f85);
+  reset(f70);
+  return();
+}
+if (isset(f44) &&
+    v63 > 5) {
+  set(f69);
+}
+if (!isset(f2)) {
+  goto(Label1);
+}
+if ((said("ask","rol") ||
+    said("catch","i'm","action") ||
+    said("catch","i'm","find","action") ||
+    said("find","action","city") ||
+    said("find","action"))) {
+  print("\"Lookin' for action, eh? Dis town is full of it. We gotta disco that's"
+        "usually full of foxes this time of night. Den dere's the casino, next"
+        "to the all-night weddin' chapel. And we gotta lovely bar, but you've"
+        "been dere. Me, I like da convenience store next to da disco, but of"
+        "course, that's just personal preference.\"");
+}
+if ((said("disco") ||
+    said("board","disco") ||
+    said("catch","i'm","disco"))) {
+  v202++;
+  if (v202 > 2) {
+    print("\"Nope. Next time, make up your mind before ya gets in da cab!\"");
+  }
+  else {
+    set(f75);
+    v206 = 23;
+    if (v65 > 2) {
+      v65 = 200;
+    }
+  }
+}
+if ((said("casino") ||
+    said("casino","casino") ||
+    said("board","casino") ||
+    said("board","casino","casino") ||
+    said("catch","i'm","casino") ||
+    said("catch","i'm","casino","casino"))) {
+  v202++;
+  if (v202 > 2) {
+    print("\"Nope. Next time, make up your mind before ya gets in da cab!\"");
+  }
+  else {
+    set(f75);
+    v206 = 32;
+    if (v65 > 2) {
+      v65 = 200;
+    }
+  }
+}
+if ((said("bar") ||
+    said("board","bar") ||
+    said("catch","i'm","bar"))) {
+  v202++;
+  if (v202 > 2) {
+    print("\"Nope. Next time, make up your mind before ya gets in da cab!\"");
+  }
+  else {
+    set(f75);
+    v206 = 11;
+    if (v65 > 2) {
+      v65 = 200;
+    }
+  }
+}
+if ((said("chapel") ||
+    said("board","chapel") ||
+    said("catch","i'm","chapel"))) {
+  v202++;
+  if (v202 > 2) {
+    print("\"Nope. Next time, make up your mind before ya gets in da cab!\"");
+  }
+  else {
+    set(f75);
+    v206 = 33;
+    if (v65 > 2) {
+      v65 = 200;
+    }
+  }
+}
+if ((said("building") ||
+    said("board","building") ||
+    said("catch","i'm","building"))) {
+  v202++;
+  if (v202 > 2) {
+    print("\"Nope. Next time, make up your mind before ya gets in da cab!\"");
+  }
+  else {
+    set(f75);
+    v206 = 22;
+    if (v65 > 2) {
+      v65 = 200;
+    }
+  }
+}
+if ((said("board","rol") ||
+    said("done","rol") ||
+    said("increase","door","rol") ||
+    said("board"))) {
+  if (v65 < 5) {
+    print("\"Sorry, but the meter's runnin'. Where ja wanna go?\"");
+  }
+  if (v65 == 5) {
+    print("\"Waddaya tryin' to do, peahead! You're not gonna stiff me, and get"
+          "away with it!\"");
+    set(f200);
+    v30 = 20;
+  }
+  if (v65 == 6) {
+    set(f67);
+    set(f200);
+  }
+}
+if ((said("catch","i'm","home") ||
+    said("board","home") ||
+    said("home"))) {
+  print("\"Ok, buddy,\" says the cabbie. \"But why would cha wanna go there?\"");
+  new.room(8);
+}
+if (said("examine","counter")) {
+  print("It seems to be running a little fast, but then, this is an expensive"
+        "town!");
+}
+if ((said("examine","cab") ||
+    said("look in","cab") ||
+    said("examine","area") ||
+    said("examine","bench") ||
+    said("examine","curb") ||
+    said("examine"))) {
+  print("You wonder if cab companies have full-time employees to make these"
+        "floors sticky.");
+}
+if (said("examine","ceiling")) {
+  print("Even the ceiling's grungy.");
+}
+if ((said("examine","out","glass") ||
+    said("examine","glass"))) {
+  print("He sure drives fast, doesn't he?");
+}
+if (said("examine","bouncer")) {
+  if (!isset(f60)) {
+    set(f60);
+    print("You wish you hadn't. Mr. America, he ain't. His strongest feature"
+          "seems to be his odor!");
+  }
+  else {
+    print("He wonders why you keep looking at him, and flashes a coy little"
+          "smile back at you in the mirror. Your stomach turns, and not from the"
+          "ride!");
+  }
+}
+if ((said("add","bucks","bouncer") ||
+    said("add","bouncer","bucks") ||
+    said("add","bucks") ||
+    said("buy","bouncer","bucks") ||
+    said("buy") ||
+    said("buy","bucks","bouncer") ||
+    said("buy","bucks") ||
+    said("buy","bouncer"))) {
+  if (v65 < 5) {
+    print("\"Why don'cha wait'll we git there, buddy?\"");
+  }
+  if (v65 == 5) {
+    if (v90 < v200) {
+      print("Sheepishly, you apologize to the cabbie for not carrying enough"
+            "money to pay for the ride.");
+      print("\"Waddaya mean, 'no money!!'\" snarls the driver. \"Step outside my"
+            "office, chump!\"");
+      set(f200);
+      v30 = 20;
+    }
+    else {
+      v90 -= v200;
+      set(f75);
+      v203 = 30;
+    }
+  }
+  if (v65 == 6) {
+    print("\"I'm sorry, but it's against my personal philosophy to accept a"
+          "gratuity!\"");
+  }
+}
+if ((said("add","tip","rol") ||
+    said("add","bouncer","tip","rol") ||
+    said("tip","rol"))) {
+  print("\"I'm sorry, but it's against my personal philosophy to accept a"
+        "gratuity!\"");
+}
+Label1:
+if (isset(f44)) {
+  v203--;
+  if (v203 == 1) {
+    v203 = 30;
+    if (v65 < 3) {
+      print("\"So, wadda we gonna do, buddy? Ya just gonna sit here all night? I"
+            "gotta earn a livin' too, ya know!\"");
+    }
+    if (v65 == 5) {
+      print("\"So? Are ya gonna pay up, or do I have ta get rough with cha??\"");
+    }
+    if (v65 == 6) {
+      print("\"So? Are ya gonna get outta my cab, or not?? Thanks for da"
+            "business, but I didn't want ta make no career outta this!\"");
+    }
+  }
+}
+if (isset(f75)) {
+  reset(f75);
+  v65++;
+  if (v65 == 1) {
+    end.of.loop(o2,f206);
+    end.of.loop(o3,f75);
+  }
+  if (v65 == 2) {
+    set.loop(o3,2);
+    v207 = 2;
+    reset(f207);
+    cycle.time(o3,v85);
+  }
+  if (v65 == 3) {
+    set(f205);
+    v203 = 0;
+    v204 = 11;
+    v205 = 4;
+    cycle.time(o1,v205);
+    if (v206 != v1) {
+      v67 = v99;
+      if (!isset(f204)) {
+        print("\"Ok. You got it, Mac!\"");
+      }
+    }
+    else {
+      v67 = 6;
+      if (v67 > v99) {
+        v67 = v99;
+      }
+      if (!isset(f204)) {
+        print("\"It won't take us long to get back dere, but I'll have to circle"
+              "'round da block.\"");
+      }
+    }
+    set(f204);
+  }
+  if (v65 == 4) {
+    reset(f205);
+  }
+  if (v65 == 5) {
+    reset(f203);
+    stop.update(o1);
+    start.update(o2);
+    reverse.loop(o2,f206);
+    v207 = 0;
+    start.cycling(o3);
+    set.loop(o3,1);
+    last.cel(o3,v52);
+    set.cel.v(o3,v52);
+    reverse.loop(o3,f201);
+    print("\"Well, here we are, buddy. That'll be $%v200.00.\"");
+    v203 = 30;
+  }
+  if (v65 == 6) {
+    print("\"Thanks, buddy. Maybe I'll see ya again sometime!\"");
+  }
+  if (v65 == 101) {
+    v203 = 0;
+    set.loop(o3,2);
+    v207 = 2;
+    reset(f207);
+    cycle.time(o3,v84);
+    v204 = 0;
+    v205 = 3;
+    cycle.time(o1,v205);
+    set.loop(o1,1);
+    start.cycling(o1);
+    print("Hang on, Larry. He's swerving all over the road!");
+    v67 = 9;
+  }
+  if (v65 == 102) {
+    erase(o3);
+    erase(o2);
+    set.loop(o1,2);
+    cycle.time(o1,v84);
+    v67 = 5;
+  }
+  if (v65 == 103) {
+    print("It seems a bridge abutment has brought your game to a sudden stop!"
+          "Remember, Larry: \"Friends don't let cabbies drive drunk!\"");
+    erase(o1);
+    set(f50);
+  }
+  if (v65 == 201) {
+    random(5,15,v52);
+    v200 += v52;
+    print("\"Ok, but it'll cost ja extra!\"");
+    last.cel(o2,v52);
+    set.cel.v(o2,v52);
+    force.update(o2);
+    start.update(o3);
+    start.cycling(o3);
+    set.loop(o3,2);
+    v207 = 2;
+    reset(f207);
+    cycle.time(o3,v85);
+    start.update(o1);
+    start.cycling(o1);
+    set(f203);
+    set(f75);
+    v65 = 2;
+  }
+}
+v204--;
+if (isset(f203) &&
+    v204 == 1) {
+  v204 = 11;
+  if (!isset(f205)) {
+    v205++;
+  }
+  else {
+    if (v205 > 1) {
+      v205--;
+    }
+  }
+  if (v205 == v99) {
+    set(f75);
+  }
+  else {
+    cycle.time(o1,v205);
+  }
+}
+if (isset(f206)) {
+  reset(f206);
+  stop.update(o2);
+}
+if (isset(f201)) {
+  reset(f201);
+  set.loop(o3,0);
+  start.cycling(o3);
+  v201 = 22;
+}
+v201--;
+if (v201 == 1) {
+  stop.cycling(o3);
+}
+v207--;
+if (v207 == 1) {
+  toggle(f207);
+  if (isset(f207)) {
+    start.cycling(o3);
+    random(5,22,v207);
+  }
+  else {
+    stop.cycling(o3);
+    random(22,44,v207);
+  }
+}
+if (isset(f200)) {
+  reset(f85);
+  reset(f48);
+  v76 = v206;
+  if (!isset(f100)) {
+    set(f100);
+    reset(f67);
+    v3 += 1;
+    print("Whew! You're glad to get out of here.");
+  }
+}
+return();
+
+// Messages
+#message 1 "The cabbie snarls a \"Where to, buddy?\" as he swings the meter flag down."
+#message 2 "\"Lookin' for action, eh? Dis town is full of it. We gotta disco that's usually full of foxes this time of night. Den dere's the casino, next to the all-night weddin' chapel. And we gotta lovely bar, but you've been dere. Me, I like da convenience store next to da disco, but of course, that's just personal preference.\""
+#message 3 "\"It won't take us long to get back dere, but I'll have to circle 'round da block.\""
+#message 4 "\"Well, here we are, buddy. That'll be $%v200.00.\""
+#message 5 "\"So, wadda we gonna do, buddy? Ya just gonna sit here all night? I gotta earn a livin' too, ya know!\""
+#message 6 "\"Why don'cha wait'll we git there, buddy?\""
+#message 7 "\"Sorry, but the meter's runnin'. Where ja wanna go?\""
+#message 8 "\"Thanks, buddy. Maybe I'll see ya again sometime!\""
+#message 9 "\"Waddaya tryin' to do, peahead! You're not gonna stiff me, and get away with it!\""
+#message 10 "You wish you hadn't. Mr. America, he ain't. His strongest feature seems to be his odor!"
+#message 11 "He wonders why you keep looking at him, and flashes a coy little smile back at you in the mirror. Your stomach turns, and not from the ride!"
+#message 12 "The driver looks at you and says, \"Hey! What's that you got? Wine?\" He grabs your bottle of wine, and guzzles it down!"
+#message 13 "\"Ok, but it'll cost ja extra!\""
+#message 14 "\"Waddaya mean, 'no money!!'\" snarls the driver. \"Step outside my office, chump!\""
+#message 15 "\"Ok. You got it, Mac!\""
+#message 16 "Hang on, Larry. He's swerving all over the road!"
+#message 17 "Whew! You're glad to get out of here."
+#message 18 "It seems a bridge abutment has brought your game to a sudden stop! Remember, Larry: \"Friends don't let cabbies drive drunk!\""
+#message 19 "\"I'm sorry, but it's against my personal philosophy to accept a gratuity!\""
+#message 20 "Sheepishly, you apologize to the cabbie for not carrying enough money to pay for the ride."
+#message 21 "\"So? Are ya gonna get outta my cab, or not?? Thanks for da business, but I didn't want ta make no career outta this!\""
+#message 22 "\"So? Are ya gonna pay up, or do I have ta get rough with cha??\""
+#message 23 "It seems to be running a little fast, but then, this is an expensive town!"
+#message 24 "You wonder if cab companies have full-time employees to make these floors sticky."
+#message 25 "Even the ceiling's grungy."
+#message 26 "\"Ok, buddy,\" says the cabbie. \"But why would cha wanna go there?\""
+#message 27 "He sure drives fast, doesn't he?"
+#message 28 "\"Nope. Next time, make up your mind before ya gets in da cab!\""

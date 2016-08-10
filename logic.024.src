@@ -1,0 +1,639 @@
+if (isset(f5)) {
+  set.horizon(1);
+  accept.input();
+  load.pic(v0);
+  draw.pic(v0);
+  discard.pic(v0);
+  load.view(0);
+  load.view(88);
+  load.view(94);
+  load.view(98);
+  add.to.pic(94,0,0,115,120,11,0);
+  add.to.pic(94,0,1,24,132,0,0);
+  add.to.pic(94,0,2,24,159,0,0);
+  add.to.pic(94,0,3,105,108,4,4);
+  add.to.pic(94,0,4,49,158,0,0);
+  add.to.pic(94,0,5,98,108,4,4);
+  add.to.pic(94,1,1,24,112,12,4);
+  add.to.pic(94,1,2,24,139,14,4);
+  add.to.pic(94,1,3,105,89,4,4);
+  add.to.pic(94,1,4,49,138,14,4);
+  add.to.pic(94,1,5,98,90,4,4);
+  if (isset(f122)) {
+    load.sound(30);
+    load.view(13);
+    load.view(29);
+    load.view(14);
+    load.view(99);
+    load.view(100);
+    animate.obj(o1);
+    ignore.blocks(o1);
+    ignore.objs(o1);
+    set.view(o1,100);
+    set.loop(o1,0);
+    set.cel(o1,0);
+    position(o1,34,123);
+    set.priority(o1,3);
+    animate.obj(o2);
+    set.view(o2,100);
+    set.loop(o2,1);
+    set.priority(o2,15);
+    position(o2,47,24);
+  }
+  animate.obj(o5);
+  set.view(o5,98);
+  release.priority(o5);
+  start.cycling(o5);
+  cycle.time(o5,v84);
+  position(o5,130,122);
+  if (!isset(f79) &&
+      !isset(f70) &&
+      !isset(f122) &&
+      !isset(f125)) {
+    set(f203);
+    set.view(o5,88);
+    set.loop(o5,0);
+    set.priority(o5,11);
+    position(o5,129,119);
+    draw(o5);
+    cycle.time(o5,v85);
+    stop.cycling(o5);
+    random(22,44,v200);
+  }
+  if (v1 == 25) {
+    set.view(o0,88);
+    set.loop(o0,1);
+    set.priority(o0,11);
+    stop.motion(o0);
+    set(f85);
+    v30 = 17;
+    v38 = 116;
+    v39 = 119;
+    if (isset(f125)) {
+      reset(f125);
+      draw(o5);
+      set(f212);
+      v208 = 100;
+      v200 = 0;
+    }
+    if (isset(f122)) {
+      reset(f122);
+      draw(o5);
+      set(f75);
+      v65 = 3;
+    }
+  }
+  else {
+    v83 = 0;
+    v38 = 76;
+    v39 = 167;
+  }
+  position.v(o0,v38,v39);
+  draw(o0);
+  show.pic();
+  return();
+}
+reset(f201);
+if (posn(o0,112,121,123,124)) {
+  set(f201);
+}
+reset(f210);
+if (posn(o0,124,121,141,124)) {
+  set(f210);
+}
+reset(f202);
+if (isset(f203)) {
+  if ((v30 == 17 ||
+      posn(o0,120,112,142,130))) {
+    set(f202);
+    set(f69);
+  }
+}
+if (!isset(f2)) {
+  goto(Label1);
+}
+if ((said("rest") ||
+    said("rest","use","blond","rol") ||
+    said("rest","down","rol") ||
+    said("rest","bench","rol") ||
+    said("rest","desk","rol"))) {
+  if (v30 == 17) {
+    print("You are sitting.");
+  }
+  else {
+    if (isset(f210)) {
+      if (!isset(f203)) {
+        print("You can't sit there; she would think you rude to take her chair.");
+      }
+      else {
+        print("You can't sit there; she would think you rude to sit on top of"
+              "her.");
+      }
+    }
+    else {
+      if (!isset(f201)) {
+        set(f54);
+      }
+      else {
+        if (!isset(f203)) {
+          print("Sitting here brings back fond memories of those minutes you"
+                "spent with Fawn.");
+        }
+        else {
+          if (isset(f92)) {
+            set(f67);
+          }
+          else {
+            set(f92);
+            v3 += 1;
+            print("You smile at the girl and say, \"May I join you?\"");
+            print("And, of course she replies, \"Why, am I coming apart?\"");
+            print("(Drum fill)");
+          }
+        }
+        set.view(o0,88);
+        set.loop(o0,1);
+        reposition.to(o0,116,119);
+        set.priority(o0,11);
+        force.update(o0);
+        stop.motion(o0);
+        set(f85);
+        v30 = 17;
+      }
+    }
+  }
+}
+if ((said("get up") ||
+    said("get up","rol") ||
+    said("catch","off","bench") ||
+    said("done","examine","blond") ||
+    said("examine","away") ||
+    said("examine","away","from","blond") ||
+    said("board","rol") ||
+    said("get up","up","rol"))) {
+  if (v30 != 17) {
+    print("You are standing.");
+  }
+  else {
+    set(f67);
+    set(f124);
+  }
+}
+if (!isset(f4) &&
+    isset(f206)) {
+  print("Don't mess around, Larry. Get out there and dance with her!");
+  set(f4);
+}
+if ((said("buy","bite") ||
+    said("buy","shot") ||
+    said("buy","champagne") ||
+    said("buy","booze") ||
+    said("buy","blond","bite"))) {
+  print("Funny, this is a dry club.");
+}
+if ((said("ask","bouncer") ||
+    said("ask","bouncer"))) {
+  print("They seem to be staring at something they all want.");
+}
+if (isset(f203) &&
+    (said("examine","blond","rol") ||
+    said("establish eye contact","rol"))) {
+  if (v65 > 0) {
+    print("Not now, you're busy.");
+  }
+  else {
+    if (v30 != 17) {
+      print("Perhaps you should sit with her first.");
+    }
+    else {
+      set(f208);
+    }
+  }
+}
+if (isset(f70)) {
+  if (said("dance","rol")) {
+    print("Your heart just isn't in it.");
+  }
+  if ((said("blond","rol") ||
+      said("anyword","blond","rol"))) {
+    print("You miss her, don't you?");
+  }
+}
+if ((said("examine") ||
+    said("examine","area") ||
+    said("examine","desk") ||
+    said("examine","desk") ||
+    said("examine","disco"))) {
+  if (isset(f202)) {
+    print("There's a gorgeous blond sitting at the table, and she's all alone!");
+  }
+  else {
+    print("The disco is filled with remarkably similar guys, all looking for"
+          "girls.");
+  }
+}
+if ((said("examine","dance","curb") ||
+    said("examine","curb"))) {
+  print("The dance floor is lit from below with brightly colored lights. It is"
+        "presently unused.");
+}
+if ((said("examine","bouncer") ||
+    said("examine","bouncer"))) {
+  if (isset(f70)) {
+    print("Perhaps they're waiting for Fawn to return.");
+  }
+  else {
+    print("Evidently every guy here has been turned down by the only girl in the"
+          "place. Her beauty has them frozen in their tracks.");
+  }
+}
+if (said("examine","disc jockey")) {
+  print("There isn't one. This place is run by computer. (Besides, at this time"
+        "of night DJ should be home with Chris.)");
+}
+if (isset(f203)) {
+  if ((said("ask","blond") ||
+      said("ask","anyword","blond"))) {
+    if (v30 != 17) {
+      print("Perhaps you should sit with her first.");
+    }
+    else {
+      print("She might listen to you, if you can establish eye contact.");
+    }
+  }
+  if (isset(f202) &&
+      (said("aim","blond","rol") ||
+      said("bite","blond","rol") ||
+      said("copulate","blond","rol") ||
+      said("embrace","blond","rol") ||
+      said("aim","boob","rol"))) {
+    print("You're being a little too direct again, Larry.");
+  }
+  if ((said("dance") ||
+      said("dance","blond") ||
+      said("dance","i'm") ||
+      said("dance","use","i'm") ||
+      said("dance","use","blond") ||
+      said("you","dance","blond") ||
+      said("you","dance","i'm") ||
+      said("you","dance","use","i'm") ||
+      said("you","dance","use","blond") ||
+      said("enjoy","dance") ||
+      said("enjoy","dance","use","i'm") ||
+      said("you","enjoy","dance","rol") ||
+      said("ask","dance","blond") ||
+      said("ask","blond","dance") ||
+      said("ask","blond","dance","rol") ||
+      said("begin","dance"))) {
+    if (isset(f74)) {
+      print("\"Not again. That trip through the ceiling gave me a headache!\"");
+    }
+    else {
+      if (v30 != 17) {
+        print("Perhaps you should sit with her first.");
+      }
+      else {
+        print("She might listen to you, if you can establish eye contact.");
+      }
+    }
+  }
+  if ((said("add","blond","flower") ||
+      said("add","flower","blond"))) {
+    if (!has("rose")) {
+      set(f68);
+    }
+    else {
+      if (v30 != 17) {
+        print("Perhaps you should sit with her first.");
+      }
+      else {
+        print("She might listen to you, if you can establish eye contact.");
+      }
+    }
+  }
+  if ((said("add","blond","box of candy") ||
+      said("add","box of candy","blond"))) {
+    if (!has("box of candy")) {
+      set(f68);
+    }
+    else {
+      if (v30 != 17) {
+        print("Perhaps you should sit with her first.");
+      }
+      else {
+        print("She might listen to you, if you can establish eye contact.");
+      }
+    }
+  }
+  if ((said("add","blond","diamond ring") ||
+      said("add","diamond ring","blond"))) {
+    if (!has("diamond ring")) {
+      set(f68);
+    }
+    else {
+      if (v30 != 17) {
+        print("Perhaps you should sit with her first.");
+      }
+      else {
+        print("She might listen to you, if you can establish eye contact.");
+      }
+    }
+  }
+  if ((said("add","blond","bucks") ||
+      said("add","one","bucks","blond") ||
+      said("add","blond","one","bucks") ||
+      said("add","bucks","blond"))) {
+    if (v30 != 17) {
+      print("Perhaps you should sit with her first.");
+    }
+    else {
+      print("She might listen to you, if you can establish eye contact.");
+    }
+  }
+}
+Label1:
+if (isset(f124)) {
+  reset(f124);
+  set.view(o0,0);
+  set.loop(o0,0);
+  reposition.to(o0,116,121);
+  release.priority(o0);
+  start.motion(o0);
+  reset(f85);
+  v30 = 0;
+}
+if (v65 == 6 &&
+    isset(f0)) {
+  set(f75);
+}
+if (isset(f44)) {
+  v83--;
+  if (v83 == 15) {
+    print("\"Either give me some money, or I'll leave without you.\"");
+  }
+  if (v83 == 1) {
+    print("\"That's it! See ya later, chump!\"");
+    set(f70);
+    set(f212);
+    v208 = 100;
+  }
+}
+if (isset(f75)) {
+  reset(f75);
+  v65++;
+  if (v65 == 4) {
+    move.obj(o5,97,143,1,f75);
+  }
+  if (v65 == 5) {
+    move.obj(o5,67,113,1,f75);
+  }
+  if (v65 == 6) {
+    set(f206);
+    set(f213);
+    object.on.water(o5);
+    set.view(o5,99);
+    wander(o5);
+    draw(o1);
+    draw(o2);
+    set(f52);
+    if (!isset(f0)) {
+      print("\"Come on, Larry. What are you waiting for? I'm hot to get it on"
+            "with you!\"");
+    }
+    else {
+      v65 = 7;
+    }
+  }
+  if (v65 == 7) {
+    observe.objs(o5);
+    set(f48);
+    set(f34);
+    set.view(o0,13);
+    set(f85);
+    prevent.input();
+    wander(o0);
+    v30 = 16;
+    v67 = 10;
+  }
+  if (v65 == 8) {
+    move.obj(o0,53,110,1,f75);
+  }
+  if (v65 == 9) {
+    ignore.objs(o5);
+    move.obj(o5,58,110,1,f75);
+  }
+  if (v65 == 10) {
+    set.view(o0,14);
+    set.loop(o0,0);
+    set.cel(o0,0);
+    reposition.to(o0,50,110);
+    cycle.time(o0,v86);
+    end.of.loop(o0,f75);
+    erase(o5);
+    object.on.anything(o5);
+    set.view(o5,14);
+    set.loop(o5,1);
+    fix.loop(o5);
+    set.cel(o5,0);
+    stop.cycling(o5);
+    position(o5,50,80);
+  }
+  if (v65 == 11) {
+    set.loop(o0,2);
+    cycle.time(o0,v84);
+    draw(o5);
+    move.obj(o5,50,16,6,f75);
+  }
+  if (v65 == 12) {
+    set.view(o0,29);
+    wander(o0);
+    erase(o5);
+    set.cel(o5,1);
+    v67 = 12;
+  }
+  if (v65 == 13) {
+    move.obj(o0,53,110,1,f75);
+  }
+  if (v65 == 14) {
+    set.view(o0,14);
+    set.loop(o0,2);
+    reposition.to(o0,50,110);
+    draw(o5);
+    move.obj(o5,50,80,6,f75);
+  }
+  if (v65 == 15) {
+    set.loop(o0,0);
+    last.cel(o0,v52);
+    set.cel.v(o0,v52);
+    reverse.loop(o0,f75);
+    erase(o5);
+    object.on.water(o5);
+    set.view(o5,99);
+    release.loop(o5);
+    start.cycling(o5);
+    position(o5,59,110);
+    observe.objs(o5);
+  }
+  if (v65 == 16) {
+    set.view(o0,13);
+    reposition.to(o0,51,110);
+    wander(o0);
+    draw(o5);
+    wander(o5);
+    v67 = 8;
+  }
+  if (v65 == 17) {
+    stop.update(o1);
+    erase(o2);
+    stop.sound();
+    reset(f52);
+    reset(f34);
+    set.view(o0,0);
+    normal.motion(o0);
+    start.motion(o0);
+    reset(f85);
+    v30 = 0;
+    object.on.anything(o5);
+    set.view(o5,98);
+    move.obj(o5,67,113,1,f75);
+    reset(f206);
+  }
+  if (v65 == 18) {
+    reset(f48);
+    move.obj(o5,97,143,1,f75);
+  }
+  if (v65 == 19) {
+    move.obj(o5,119,121,1,f75);
+  }
+  if (v65 == 20) {
+    move.obj(o5,130,121,1,f75);
+  }
+  if (v65 == 21) {
+    set(f214);
+    set.view(o5,88);
+    set.loop(o5,0);
+    reposition.to(o5,129,119);
+    set.priority(o5,11);
+    cycle.time(o5,v85);
+    random(22,44,v200);
+    v65 = 0;
+    accept.input();
+    set(f203);
+    if (!isset(f74)) {
+      set(f74);
+      v3 += 5;
+    }
+  }
+}
+if (isset(f212)) {
+  reset(f212);
+  v208++;
+  if (v208 == 101) {
+    set(f48);
+    reset(f203);
+    set.view(o5,98);
+    release.priority(o5);
+    start.cycling(o5);
+    start.motion(o5);
+    v200 = 0;
+    cycle.time(o5,v84);
+    ignore.objs(o5);
+    reposition.to(o5,130,123);
+    force.update(o5);
+    move.obj(o5,122,123,1,f212);
+  }
+  if (v208 == 102) {
+    move.obj(o5,77,167,1,f212);
+  }
+  if (v208 == 103) {
+    reset(f48);
+    v208 = 0;
+    erase(o5);
+    accept.input();
+    if (isset(f79)) {
+      print("(What are you into this time, Larry?)");
+    }
+    if (isset(f70)) {
+      print("Gosh, Larry. Maybe you should have loaned her some money!");
+    }
+  }
+}
+if (!isset(f211) &&
+    isset(f203)) {
+  v200--;
+  if (v200 == 1) {
+    toggle(f204);
+    if (isset(f204)) {
+      start.cycling(o5);
+      random(5,22,v200);
+    }
+    else {
+      stop.cycling(o5);
+      random(22,44,v200);
+    }
+  }
+}
+if (v30 == 16) {
+  object.on.water(o0);
+}
+else {
+  object.on.anything(o0);
+}
+if (isset(f52)) {
+  sound(30,f52);
+}
+if (isset(f214)) {
+  reset(f214);
+  add.to.pic(94,1,1,24,112,12,4);
+  add.to.pic(94,1,2,24,136,14,4);
+  add.to.pic(94,1,3,105,89,4,4);
+  add.to.pic(94,1,4,49,136,14,4);
+  add.to.pic(94,1,5,98,90,4,4);
+}
+if (isset(f213)) {
+  add.to.pic(94,2,1,24,112,12,4);
+  add.to.pic(94,2,2,24,136,14,4);
+  add.to.pic(94,2,3,105,89,4,4);
+  add.to.pic(94,2,4,49,136,14,4);
+  add.to.pic(94,2,5,98,90,4,4);
+  reset(f213);
+}
+if (v2 == 3) {
+  v76 = 23;
+}
+if (isset(f208)) {
+  v76 = 25;
+}
+return();
+
+// Messages
+#message 1 "The disco is filled with remarkably similar guys, all looking for girls."
+#message 2 "Don't mess around, Larry. Get out there and dance with her!"
+#message 5 "Perhaps they're waiting for Fawn to return."
+#message 6 "Not now, you're busy."
+#message 8 "\"Come on, Larry. What are you waiting for? I'm hot to get it on with you!\""
+#message 19 "(What are you into this time, Larry?)"
+#message 21 "\"Either give me some money, or I'll leave without you.\""
+#message 22 "\"That's it! See ya later, chump!\""
+#message 29 "You smile at the girl and say, \"May I join you?\""
+#message 30 "And, of course she replies, \"Why, am I coming apart?\""
+#message 31 "(Drum fill)"
+#message 38 "You are sitting."
+#message 39 "You are standing."
+#message 40 "The dance floor is lit from below with brightly colored lights. It is presently unused."
+#message 41 "Evidently every guy here has been turned down by the only girl in the place. Her beauty has them frozen in their tracks."
+#message 42 "There isn't one. This place is run by computer. (Besides, at this time of night DJ should be home with Chris.)"
+#message 44 "Perhaps you should sit with her first."
+#message 45 "She might listen to you, if you can establish eye contact."
+#message 52 "\"Oooh, you're so sweet. I just love "
+#message 53 "Sitting here brings back fond memories of those minutes you spent with Fawn."
+#message 54 "Your heart just isn't in it."
+#message 55 "You miss her, don't you?"
+#message 56 "Gosh, Larry. Maybe you should have loaned her some money!"
+#message 57 "Funny, this is a dry club."
+#message 59 "\"Not again. That trip through the ceiling gave me a headache!\""
+#message 60 "You're being a little too direct again, Larry."
+#message 61 "There's a gorgeous blond sitting at the table, and she's all alone!"
+#message 62 "You can't sit there; she would think you rude to take her chair."
+#message 63 "They seem to be staring at something they all want."
+#message 66 "You can't sit there; she would think you rude to sit on top of her."

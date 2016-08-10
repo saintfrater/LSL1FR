@@ -1,0 +1,360 @@
+if (isset(f5)) {
+  load.pic(v0);
+  draw.pic(v0);
+  discard.pic(v0);
+  load.view(171);
+  add.to.pic(171,0,0,62,120,0,0);
+  add.to.pic(171,0,0,93,120,0,0);
+  animate.obj(o1);
+  ignore.objs(o1);
+  set.view(o1,171);
+  set.loop(o1,1);
+  set.cel(o1,0);
+  set.priority(o1,11);
+  position(o1,62,93);
+  draw(o1);
+  animate.obj(o2);
+  ignore.objs(o2);
+  position(o2,93,93);
+  set.view(o2,171);
+  set.loop(o2,1);
+  set.cel(o2,1);
+  set.priority(o2,11);
+  draw(o2);
+  if (!isset(f82) &&
+      !isset(f110) &&
+      isset(f79)) {
+    set(f202);
+    set(f203);
+    set(f52);
+    load.view(98);
+    load.view(172);
+    load.sound(23);
+    animate.obj(o3);
+    set.view(o3,98);
+    position(o3,70,120);
+    set.loop(o3,2);
+    draw(o3);
+    stop.cycling(o3);
+    animate.obj(o4);
+    set.view(o4,172);
+    set.loop(o4,0);
+    position(o4,76,113);
+    draw(o4);
+    stop.cycling(o4);
+  }
+  position(o0,76,167);
+  draw(o0);
+  show.pic();
+  if (isset(f83)) {
+    reset(f83);
+    print("\"So... shall we try again?\"");
+  }
+  return();
+}
+reset(f200);
+if (isset(f202) &&
+    posn(o0,61,114,94,130)) {
+  set(f200);
+  set(f69);
+}
+if (!isset(f2)) {
+  goto(Label1);
+}
+if ((said("examine") ||
+    said("examine","area") ||
+    said("examine","chapel"))) {
+  if (!isset(f202)) {
+    print("You are in a quickie marriage parlor. A flashing neon sign on the"
+          "rear wall asks: \"Why wait? Marry the girl of your dreams, today! You"
+          "provide the girl, we'll do the rest for only $100!!\"");
+  }
+  else {
+    print("Fawn is waiting for you at the altar. Go for it, Larry!");
+  }
+}
+if ((said("examine","glass") ||
+    said("examine","heart") ||
+    said("examine","art") ||
+    said("examine","brick") ||
+    said("examine","out","glass"))) {
+  print("You can't see through the \"stained glass\" windows. They're fake, like"
+        "everything else about this place.");
+}
+if ((said("examine","altar") ||
+    said("examine","bench"))) {
+  print("Seems like everything here is covered in plastic.");
+}
+if (said("examine","ceiling")) {
+  print("You wonder why Michelangelo didn't use dropped fluorescents on his big"
+        "ceiling job.");
+}
+if ((said("rest","bench") ||
+    said("rest") ||
+    said("rest","down") ||
+    said("rest","about","bench") ||
+    said("rest","on","bench"))) {
+  print("The plastic covers are so slick, you'd probably slide right off.");
+}
+if (said("examine","burn")) {
+  print("You can barely tell they're made from pressed sawdust.");
+}
+if (said("catch","burn")) {
+  print("Who'd want them?");
+}
+if ((said("blow","out","burn") ||
+    said("blow","burn","out") ||
+    said("add","burn","out") ||
+    said("add","out","burn"))) {
+  print("It's not your birthday!");
+}
+if (isset(f203) &&
+    said("examine","bouncer")) {
+  print("He looks a lot like his brother, the bad comedian in the Lizard Lounge.");
+}
+if (isset(f203) &&
+    said("ask","bouncer")) {
+  print("\"Make up your mind, son. Time is money!\"");
+  print("What an old romantic!");
+}
+if (isset(f202) &&
+    said("ask","blond")) {
+  print("\"Don't stand around talking, Larry,\" says Fawn. \"Let's get"
+        "married!!\"");
+}
+if (isset(f202) &&
+    said("examine","blond")) {
+  print("Fawn is waiting for you at the altar. Go for it, Larry!");
+}
+if (v65 <= 0 &&
+    said("embrace","blond")) {
+  print("\"Not now; that can wait,\" Fawn says with a smile. \"I'll meet you at"
+        "the Casino Hotel's honeymoon suite, and give you a lot more than"
+        "kisses, my big, strong, handsome sweetheart!!\"");
+}
+if (v65 <= 0 &&
+    (said("married","blond") ||
+    said("married") ||
+    said("ask","vows") ||
+    said("add","bucks","bouncer") ||
+    said("ask","bouncer","married","about") ||
+    said("married","about") ||
+    said("add","bouncer") ||
+    said("buy","rol") ||
+    said("catch","married") ||
+    said("catch","married","blond") ||
+    said("ask","bouncer"))) {
+  if (!isset(f202)) {
+    print("Perhaps you should find a mate, mate!");
+  }
+  else {
+    if (!isset(f200)) {
+      print("It's customary to position yourself to the bride's right.");
+    }
+    else {
+      set(f75);
+    }
+  }
+}
+Label1:
+if (isset(f75)) {
+  reset(f75);
+  v65++;
+  v56 = 1;
+  if (v65 == 1) {
+    ignore.objs(o0);
+    set(f85);
+    prevent.input();
+    if (v38 == 80) {
+      v65 = 2;
+    }
+    else {
+      v32 = 80;
+      move.obj.v(o0,v32,v39,56,f75);
+    }
+  }
+  if (v65 == 2) {
+    prevent.input();
+    move.obj(o0,80,120,1,f75);
+  }
+  if (v65 == 3) {
+    prevent.input();
+    set.loop(o3,3);
+    stop.update(o0);
+    set.loop(o0,3);
+    force.update(o0);
+    print("The minister intones in his basso voice...");
+    print("\"Dearly beloved, we are gathered together today in the sight of, er,"
+          "ah, um... each other, to enter these two people into the eternal"
+          "bonds of marriage.\"");
+    start.cycling(o4);
+    v67 = 3;
+  }
+  if (v65 == 4) {
+    print("\"But before we really get rollin', I'd like to say a few"
+          "words.\n\nMany's the marriage that I've performed here, in this"
+          "little chapel, wearing this cheap suit, before those shiny"
+          "plastic-covered pews, with these electric candles, looking at those"
+          "genuine plexiglas stained-glass windows, for these measly few"
+          "bucks...\"");
+    v67 = 3;
+  }
+  if (v65 == 5) {
+    print("(He pauses for another nip from his pocket flask.)");
+    v67 = 3;
+  }
+  if (v65 == 6) {
+    print("\"Where was I?\" he hiccups.");
+    print("\"Digressing,\" you answer.");
+    v67 = 3;
+  }
+  if (v65 == 7) {
+    print("\"Oh, well, have you got a ring?\" he asks.");
+    v67 = 3;
+  }
+  if (v65 == 8) {
+    print("\"Yep,\" you reply. \"She's wearing it.\"");
+    print("\"Good enough for me! Have you got a hundred bucks?\"");
+    if (v90 < 100) {
+      v65 = 9;
+    }
+    else {
+      v65 = 101;
+    }
+  }
+  if (v65 == 9) {
+    print("\"Not me,\" you reply. \"I thought this was a temple of love!\"");
+    print("\"Sorry, buddy, you two are SOL until you can come back here with 100"
+          "cold, hard ones!\" he says indignantly, as he pushes between you and"
+          "heads for the door.");
+    ignore.objs(o4);
+    reposition.to(o4,76,121);
+    set.loop(o4,1);
+    move.obj(o4,76,167,2,f75);
+    v66 = 12;
+  }
+  if (v65 == 10) {
+    print("Well, Larry, it looks like you're going to have to leave your new"
+          "bride waiting at the altar, while you generate a little positive cash"
+          "flow!");
+    set.loop(o3,2);
+    start.update(o0);
+    move.obj(o0,76,167,1,f75);
+    v66 = 12;
+  }
+  if (v65 == 11) {
+    erase(o4);
+    reset(f203);
+    print("As you leave, she says, \"Hurry back, Larry, I don't know how long I"
+          "can wait before I have you!\"");
+    print("\"By the way, Larry,\" she asks. \"What does SOL stand for?\"");
+    print("\"Why, Sierra On-Line, I presume!\" you respond.");
+    print("(Drum fill)");
+  }
+  if (v65 == 12) {
+    print("\"Wait here, Fawn baby! I'll be back in a flash!!\"");
+    erase(o0);
+    set(f83);
+    reset(f85);
+    accept.input();
+    v76 = 33;
+  }
+  if (v65 == 101) {
+    print("\"Of course,\" you reply, forking over your dough.");
+    print("\"Ok, close enough. I now pronounce you man and wife, till death do"
+          "you part, or until you get tired of each other, per the currently"
+          "acceptable social standards!\"");
+    v90 -= 100;
+    set(f110);
+    ignore.objs(o4);
+    set.loop(o4,1);
+    reposition.to(o4,76,121);
+    start.cycling(o4);
+    move.obj(o4,76,167,2,f75);
+    v66 = 12;
+  }
+  if (v65 == 102) {
+    print("\"You may kiss the bride,\" he says, scurrying out the door to refill"
+          "his flask.");
+  }
+  if (v65 == 103) {
+    erase(o4);
+    print("\"Not now; that can wait,\" Fawn says with a smile. \"I'll meet you"
+          "at the Casino Hotel's honeymoon suite, and give you a lot more than"
+          "kisses, my big, strong, handsome sweetheart!!\"");
+    start.update(o3);
+    start.cycling(o3);
+    move.obj(o3,76,167,2,f75);
+    v66 = 12;
+  }
+  if (v65 == 104) {
+    print("\"Hey!\" you shout, \"Wait for me!!\"");
+    start.update(o0);
+    start.motion(o0);
+    reset(f85);
+    observe.objs(o0);
+  }
+  if (v65 == 105) {
+    erase(o3);
+    set(f201);
+    v3 += 12;
+    reset(f202);
+    stop.sound();
+    set(f82);
+    v65 = 0;
+    accept.input();
+  }
+}
+if (isset(f202) &&
+    isset(f52)) {
+  sound(23,f52);
+}
+if (v2 == 3) {
+  v76 = 33;
+  if (isset(f201)) {
+    print("Somehow this entire ceremony was less than you expected. The sacred"
+          "bonds of marriage certainly get tied loosely in this joint!");
+  }
+}
+return();
+
+// Messages
+#message 1 "You are in a quickie marriage parlor. A flashing neon sign on the rear wall asks: \"Why wait? Marry the girl of your dreams, today! You provide the girl, we'll do the rest for only $100!!\""
+#message 2 "Fawn is waiting for you at the altar. Go for it, Larry!"
+#message 3 "The minister intones in his basso voice..."
+#message 4 "\"Dearly beloved, we are gathered together today in the sight of, er, ah, um... each other, to enter these two people into the eternal bonds of marriage.\""
+#message 5 "\"But before we really get rollin', I'd like to say a few words.\n\nMany's the marriage that I've performed here, in this little chapel, wearing this cheap suit, before those shiny plastic-covered pews, with these electric candles, looking at those genuine plexiglas stained-glass windows, for these measly few bucks...\""
+#message 6 "(He pauses for another nip from his pocket flask.)"
+#message 7 "\"Where was I?\" he hiccups."
+#message 8 "\"Digressing,\" you answer."
+#message 9 "\"Oh, well, have you got a ring?\" he asks."
+#message 10 "\"Yep,\" you reply. \"She's wearing it.\""
+#message 11 "\"Good enough for me! Have you got a hundred bucks?\""
+#message 12 "\"Of course,\" you reply, forking over your dough."
+#message 13 "\"Not me,\" you reply. \"I thought this was a temple of love!\""
+#message 14 "\"Sorry, buddy, you two are SOL until you can come back here with 100 cold, hard ones!\" he says indignantly, as he pushes between you and heads for the door."
+#message 15 "Well, Larry, it looks like you're going to have to leave your new bride waiting at the altar, while you generate a little positive cash flow!"
+#message 16 "As you leave, she says, \"Hurry back, Larry, I don't know how long I can wait before I have you!\""
+#message 17 "\"By the way, Larry,\" she asks. \"What does SOL stand for?\""
+#message 18 "\"Why, Sierra On-Line, I presume!\" you respond."
+#message 19 "(Drum fill)"
+#message 20 "\"Wait here, Fawn baby! I'll be back in a flash!!\""
+#message 21 "\"Ok, close enough. I now pronounce you man and wife, till death do you part, or until you get tired of each other, per the currently acceptable social standards!\""
+#message 22 "\"You may kiss the bride,\" he says, scurrying out the door to refill his flask."
+#message 23 "\"Not now; that can wait,\" Fawn says with a smile. \"I'll meet you at the Casino Hotel's honeymoon suite, and give you a lot more than kisses, my big, strong, handsome sweetheart!!\""
+#message 24 "\"Hey!\" you shout, \"Wait for me!!\""
+#message 25 "Somehow this entire ceremony was less than you expected. The sacred bonds of marriage certainly get tied loosely in this joint!"
+#message 26 "It's customary to position yourself to the bride's right."
+#message 27 "\"So... shall we try again?\""
+#message 28 "You can't see through the \"stained glass\" windows. They're fake, like everything else about this place."
+#message 29 "Seems like everything here is covered in plastic."
+#message 30 "The plastic covers are so slick, you'd probably slide right off."
+#message 31 "Perhaps you should find a mate, mate!"
+#message 32 "You can barely tell they're made from pressed sawdust."
+#message 33 "Who'd want them?"
+#message 34 "He looks a lot like his brother, the bad comedian in the Lizard Lounge."
+#message 35 "\"Make up your mind, son. Time is money!\""
+#message 36 "\"Don't stand around talking, Larry,\" says Fawn. \"Let's get married!!\""
+#message 37 "What an old romantic!"
+#message 38 "You wonder why Michelangelo didn't use dropped fluorescents on his big ceiling job."
+#message 39 "It's not your birthday!"

@@ -1,0 +1,298 @@
+if (isset(f5)) {
+  reset(f33);
+  load.view(147);
+  load.view(150);
+  load.logics(58);
+  load.sound(3);
+  load.sound(4);
+  load.pic(v0);
+  draw.pic(v0);
+  discard.pic(v0);
+  animate.obj(o13);
+  set.priority(o13,15);
+  set.view(o13,147);
+  set.loop(o13,2);
+  position(o13,56,106);
+  animate.obj(o2);
+  set.view(o2,147);
+  set.loop(o2,0);
+  set.cel(o2,3);
+  position(o2,46,87);
+  draw(o2);
+  stop.cycling(o2);
+  animate.obj(o3);
+  set.view(o3,147);
+  set.loop(o3,0);
+  set.cel(o3,3);
+  position(o3,69,87);
+  draw(o3);
+  stop.cycling(o3);
+  animate.obj(o4);
+  set.view(o4,147);
+  set.loop(o4,0);
+  set.cel(o4,3);
+  position(o4,93,87);
+  draw(o4);
+  stop.cycling(o4);
+  animate.obj(o1);
+  ignore.horizon(o1);
+  set.view(o1,147);
+  set.loop(o1,1);
+  position(o1,50,10);
+  show.pic();
+  v200 = 1;
+  set(f201);
+  set(f48);
+  v207 = 2;
+  call(58);
+  print.at("\n           RESULTS          "
+           "PAYS\n|--------------------------------|\n| Cherry |        |       "
+           "|  1  |\n| Cherry | Cherry |        |  2  |\n| Cherry | Cherry |"
+           "Cherry |  4  |\n|--------|--------|--------|-----|\n| Orange |"
+           "Orange |        |  2  |\n| Orange | Orange | Orange |  4 "
+           "|\n|--------|--------|--------|-----|\n| Seven  | Seven  |        | "
+           "3  |\n| Seven  | Seven  | Seven  |  5 "
+           "|\n|--------|--------|--------|-----|\n| Bar    | Bar    | Bar    | "
+           "7  |\n|--------------------------------|\n",2,2,36);
+  print("\nPress F4 to decrease bet.\n\nPress F6 to increase bet.\n\nPress F8 to"
+        "pull handle.\n");
+  set(f7);
+  return();
+}
+set(f69);
+if (isset(f201) &&
+    controller(c4)) {
+  v200--;
+  v207 = 2;
+  call(58);
+}
+if (isset(f201) &&
+    controller(c6)) {
+  if (v200 < 20) {
+    v200++;
+  }
+  else {
+    print("This machine has a $20.00 limit.");
+  }
+  v207 = 2;
+  call(58);
+}
+if (isset(f201) &&
+    controller(c8)) {
+  set(f202);
+}
+if (!isset(f2)) {
+  goto(Label1);
+}
+if ((said("play") ||
+    said("move","handle") ||
+    said("play","slot"))) {
+  set(f202);
+}
+if (said("odds")) {
+  v207 = 2;
+  call(58);
+  print.at("\n           RESULTS          "
+           "PAYS\n|--------------------------------|\n| Cherry |        |       "
+           "|  1  |\n| Cherry | Cherry |        |  2  |\n| Cherry | Cherry |"
+           "Cherry |  4  |\n|--------|--------|--------|-----|\n| Orange |"
+           "Orange |        |  2  |\n| Orange | Orange | Orange |  4 "
+           "|\n|--------|--------|--------|-----|\n| Seven  | Seven  |        | "
+           "3  |\n| Seven  | Seven  | Seven  |  5 "
+           "|\n|--------|--------|--------|-----|\n| Bar    | Bar    | Bar    | "
+           "7  |\n|--------------------------------|\n",2,2,36);
+}
+if ((said("examine") ||
+    said("examine","slot"))) {
+  print("It's an electronic slot machine. When you tire of playing, just type"
+        "\"stop.\"");
+}
+if ((said("board") ||
+    said("examine","area") ||
+    said("board","slot") ||
+    said("get up") ||
+    said("board","away") ||
+    said("board") ||
+    said("done","play") ||
+    said("done","game") ||
+    said("done") ||
+    said("done","play","slot") ||
+    said("board","casino") ||
+    said("examine","casino"))) {
+  set(f67);
+  set(f200);
+}
+Label1:
+if (isset(f202)) {
+  reset(f202);
+  if (!isset(f201)) {
+    random(11,13,v52);
+    print.v(v52);
+  }
+  else {
+    if (v200 <= 0) {
+      print("You insert zero dollars, and pretend to pull the handle.");
+      print("You win zero dollars!");
+      print("Is this your idea of a good time?");
+    }
+    else {
+      if (v200 > v90) {
+        print("You can't bet more than you have.");
+      }
+      else {
+        v65 = 0;
+        set(f75);
+      }
+    }
+  }
+}
+if (isset(f75)) {
+  reset(f75);
+  v65++;
+  if (v65 == 1) {
+    reset(f201);
+    set(f87);
+    set(f93);
+    stop.sound();
+    reset(f53);
+    sound(3,f40);
+    v90 -= v200;
+    v207 = 2;
+    call(58);
+    start.cycling(o2);
+    start.cycling(o3);
+    start.cycling(o4);
+    random(8,11,v66);
+  }
+  if (v65 == 2) {
+    stop.cycling(o2);
+    current.cel(o2,v201);
+    random(8,11,v66);
+  }
+  if (v65 == 3) {
+    stop.cycling(o3);
+    current.cel(o3,v202);
+    random(8,11,v66);
+  }
+  if (v65 == 4) {
+    stop.cycling(o4);
+    current.cel(o4,v203);
+    v204 = 0;
+    if (v201 == 0) {
+      v204 = 1;
+      if (v202 == v201) {
+        v204 = 2;
+        if (v203 == v201) {
+          v204 = 4;
+        }
+      }
+    }
+    if (v201 == 1 &&
+        v202 == v201) {
+      v204 = 2;
+      if (v203 == v201) {
+        v204 = 4;
+      }
+    }
+    if (v201 == 2 &&
+        v202 == v201) {
+      v204 = 3;
+      if (v203 == v201) {
+        v204 = 5;
+      }
+    }
+    if (v201 == 3 &&
+        v202 == v201 &&
+        v203 == v201) {
+      v204 = 7;
+    }
+    if (v204 <= 0) {
+      set(f201);
+    }
+    else {
+      v207 = 1;
+      call(58);
+      if (v204 == 1) {
+        set(f201);
+      }
+      else {
+        draw(o13);
+        set(f53);
+        if (v204 > 1 &&
+            v204 < 4) {
+          v66 = 22;
+        }
+        else {
+          draw(o1);
+          if (v204 < 7) {
+            v66 = 22;
+          }
+          else {
+            v66 = 44;
+          }
+        }
+      }
+    }
+  }
+  if (v65 == 5) {
+    erase(o1);
+    erase(o13);
+    set(f201);
+  }
+  if (isset(f201)) {
+    v65 = 0;
+    reset(f87);
+    reset(f93);
+    if (v90 <= 0) {
+      reset(f201);
+    }
+  }
+}
+if (isset(f53) &&
+    !isset(f201)) {
+  sound(4,f53);
+}
+if ((controller(c1) ||
+    isset(f203))) {
+  reset(f203);
+  v207 = 2;
+  call(58);
+  print.at("\n           RESULTS          "
+           "PAYS\n|--------------------------------|\n| Cherry |        |       "
+           "|  1  |\n| Cherry | Cherry |        |  2  |\n| Cherry | Cherry |"
+           "Cherry |  4  |\n|--------|--------|--------|-----|\n| Orange |"
+           "Orange |        |  2  |\n| Orange | Orange | Orange |  4 "
+           "|\n|--------|--------|--------|-----|\n| Seven  | Seven  |        | "
+           "3  |\n| Seven  | Seven  | Seven  |  5 "
+           "|\n|--------|--------|--------|-----|\n| Bar    | Bar    | Bar    | "
+           "7  |\n|--------------------------------|\n",2,2,36);
+  print("\nPress F4 to decrease bet.\n\nPress F6 to increase bet.\n\nPress F8 to"
+        "pull handle.\n");
+}
+if (isset(f12)) {
+  v207 = 2;
+  call(58);
+}
+if (isset(f200)) {
+  reset(f48);
+  reset(f7);
+  reset(f87);
+  reset(f93);
+  v76 = 31;
+}
+return();
+
+// Messages
+#message 1 "\nPress F4 to decrease bet.\n\nPress F6 to increase bet.\n\nPress F8 to pull handle.\n"
+#message 2 "\n           RESULTS           PAYS\n|--------------------------------|\n| Cherry |        |        |  1  |\n| Cherry | Cherry |        |  2  |\n| Cherry | Cherry | Cherry |  4  |\n|--------|--------|--------|-----|\n| Orange | Orange |        |  2  |\n| Orange | Orange | Orange |  4  |\n|--------|--------|--------|-----|\n| Seven  | Seven  |        |  3  |\n| Seven  | Seven  | Seven  |  5  |\n|--------|--------|--------|-----|\n| Bar    | Bar    | Bar    |  7  |\n|--------------------------------|\n"
+#message 3 "You insert zero dollars, and pretend to pull the handle."
+#message 4 "You win zero dollars!"
+#message 5 "Is this your idea of a good time?"
+#message 6 "This machine has a $20.00 limit."
+#message 7 "You can't bet more than you have."
+#message 8 "It's an electronic slot machine. When you tire of playing, just type \"stop.\""
+#message 9 ""
+#message 10 ""
+#message 11 "Don't be in such a hurry!"
+#message 12 "Slow down!"
+#message 13 "What are you? A \"Type-A\" personality?"

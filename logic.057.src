@@ -1,0 +1,441 @@
+if (isset(f5)) {
+  load.view(85);
+  load.view(22);
+  load.view(75);
+  load.view(76);
+  load.view(79);
+  load.view(80);
+  load.sound(10);
+  load.sound(11);
+  load.sound(22);
+  animate.obj(o15);
+  ignore.objs(o15);
+  set.view(o15,85);
+  set.loop(o15,0);
+  fix.loop(o15);
+  set.priority(o15,15);
+  animate.obj(o14);
+  set.view(o14,75);
+  position(o14,0,166);
+  animate.obj(o13);
+  set.view(o13,80);
+  set.cel(o13,0);
+  stop.cycling(o13);
+  if (v0 == 11) {
+    v235 = 166;
+  }
+  else {
+    v235 = 160;
+  }
+  if (v1 != 10) {
+    v64 = 0;
+  }
+  else {
+    v234 = 60;
+    position.v(o13,v234,v235);
+    draw(o13);
+    v38 = v234;
+    v38 += 4;
+    v39 = v235;
+    v39 -= 4;
+    reposition.to.v(o0,v38,v39);
+    force.update(o0);
+    v233 = 2;
+    if (v30 == 20) {
+      load.view(12);
+      prevent.input();
+      stop.motion(o0);
+      set(f85);
+      v64 = 200;
+    }
+    else {
+      start.motion(o0);
+      v64 = 101;
+    }
+  }
+  return();
+}
+reset(f61);
+if (v64 == 4) {
+  if (v0 == 11) {
+    if (posn(o0,70,155,90,167)) {
+      set(f61);
+    }
+  }
+  else {
+    if (posn(o0,70,140,90,166)) {
+      set(f61);
+    }
+  }
+}
+if (!isset(f2)) {
+  goto(Label1);
+}
+if (said("examine","street")) {
+  print("Isn't it funny how there's so little traffic?");
+}
+if ((said("examine","sky") ||
+    said("examine","up"))) {
+  print("The glow of the city lights obliterate the stars.");
+}
+if (said("climb","anyword")) {
+  print("You shinny up the pole, read the sign, and come right back down.");
+}
+if (said("examine","dog")) {
+  if (!isset(f236)) {
+    print("Where?");
+  }
+  else {
+    if (v231 == 1) {
+      print("Look out! Here he comes again!");
+    }
+    if (v231 == 2) {
+      print("Obviously, he thinks you're a fire plug.");
+    }
+    if (v231 == 3) {
+      print("Dogs like that make you want to keep moving.");
+    }
+  }
+}
+if (isset(f236)) {
+  if ((said("copulate","dog","rol") ||
+      said("anyword","copulate","rol") ||
+      said("leak","on","dog","rol") ||
+      said("anyword","leak","on","dog","rol") ||
+      said("ass","copulate","dog","rol"))) {
+    print("Sick-o!");
+  }
+  if ((said("beat","dog","rol") ||
+      said("beat","dog","rol") ||
+      said("fight","dog","rol"))) {
+    print("After all he's done for you?");
+  }
+  if (said("smell","dog","rol")) {
+    print("He presently smells quite bad, although still better than you.");
+  }
+  if (said("caress","dog")) {
+    print("As you bend over to do so, his bare teeth convince you otherwise.");
+  }
+  if (said("catch","dog")) {
+    print("Who'd want him?");
+  }
+}
+if (said("examine","light pole")) {
+  print("There is a sign on the pole.");
+}
+if ((said("examine","brick","light pole") ||
+    said("examine","brick","on","light pole") ||
+    said("examine","brick"))) {
+  print("\"TAXI\nSTAND\"");
+}
+if (said("examine","street")) {
+  print("Thousands of cars stream past, just below the edge of your screen.");
+}
+if ((said("catch","cab") ||
+    said("cab") ||
+    said("ask","cab") ||
+    said("holler","cab"))) {
+  if (v39 >= v235) {
+    print("You'd better get out of the street first.");
+  }
+  else {
+    print("\"YO!!\n\nTAXI!!!\"");
+    if (v64 <= 0) {
+      stop.motion(o0);
+      set(f85);
+      random(3,7,v233);
+    }
+  }
+}
+if (v64 == 4) {
+  if ((said("examine","cab") ||
+      said("look in","cab"))) {
+    print("It's not very clean.");
+    print("It's not very new.");
+    print("(And those are its good points!)");
+  }
+  if (said("smell","cab")) {
+    print("It smells like an old cab.");
+  }
+  if ((said("board","cab") ||
+      said("board") ||
+      said("increase","door","rol") ||
+      said("increase","cab","door","rol") ||
+      said("increase","door"))) {
+    if (!isset(f61)) {
+      set(f54);
+    }
+    else {
+      if (!isset(f100)) {
+        print("Vowing to hold your breath forever, you enter this miserable"
+              "excuse for public transportation.");
+      }
+      else {
+        set(f67);
+      }
+      erase(o0);
+      set(f231);
+      set(f85);
+      prevent.input();
+      set(f232);
+      v64 = 101;
+      v233 = 0;
+    }
+  }
+}
+if (said("examine","alley")) {
+  print("It's dark. Real dark.");
+}
+if (said("examine","cab")) {
+  print("Trust me, they're there!");
+}
+Label1:
+if (v38 == v40 &&
+    v39 == v41 &&
+    v64 <= 0 &&
+    v65 <= 0 &&
+    v30 == 0) {
+  v230++;
+  if (v230 == 200) {
+    draw(o14);
+    sound(22,f40);
+    set(f236);
+    follow.ego(o14,5,f230);
+    v231 = 1;
+  }
+}
+else {
+  v230 = 0;
+  if (v231 == 1) {
+    reset(f230);
+    v232 = 2;
+  }
+}
+if (isset(f230) &&
+    v231 == 1) {
+  reset(f230);
+  set(f58);
+  v231 = 2;
+  v232 = 35;
+  stop.motion(o0);
+  set(f85);
+  stop.motion(o14);
+  get.posn(o14,v52,v33);
+  v32 = v38;
+  if (v38 > 3) {
+    v32 -= 4;
+  }
+  else {
+    v32 = 0;
+  }
+  reposition.to.v(o14,v32,v33);
+  if (v33 > v39) {
+    set.view(o14,76);
+  }
+  else {
+    set.view(o14,79);
+  }
+}
+v232--;
+if (v232 == 1) {
+  v231 = 3;
+  start.motion(o0);
+  reset(f85);
+  start.motion(o14);
+  set.view(o14,75);
+  wander(o14);
+}
+if (v5 > 0 &&
+    v4 == 14 &&
+    v231 == 3) {
+  erase(o14);
+  reset(f236);
+  v231 = 4;
+}
+distance(o0,o13,v52);
+if (v2 == 3 &&
+    v52 == 255 &&
+    v30 != 15) {
+  stop.motion(o0);
+  set(f85);
+  prevent.input();
+  v30 = 15;
+  position(o15,119,167);
+  draw(o15);
+  sound(11,f40);
+  v56 = 10;
+  if (v38 > 116) {
+    v38 = 116;
+  }
+  move.obj.v(o15,v38,v39,56,f234);
+}
+if (v30 == 15) {
+  if (v2 > 0) {
+    v2 = 0;
+  }
+  if (isset(f234)) {
+    reset(f234);
+    set(f231);
+    erase(o0);
+    set.view(o0,22);
+    if (v38 > 33) {
+      v38 -= 33;
+    }
+    else {
+      v38 = 0;
+    }
+    position.v(o0,v38,v39);
+    move.obj(o15,0,167,10,f233);
+  }
+  if (isset(f231)) {
+    get.posn(o15,v32,v33);
+    if ((v32 < v38 ||
+        v32 < 10)) {
+      reset(f231);
+      draw(o0);
+    }
+  }
+  if (isset(f233)) {
+    reset(f233);
+    erase(o15);
+    print("You know, the traffic here is really a killer! You should forget"
+          "about crossing these streets!");
+    set(f50);
+  }
+}
+if (isset(f44)) {
+  v233--;
+  if (v233 == 1) {
+    set(f232);
+  }
+}
+if (v64 > 0) {
+  get.posn(o13,v32,v33);
+  if ((v32 == 103 ||
+      v32 == 88 ||
+      v32 == 36)) {
+    set(f232);
+  }
+}
+if (isset(f232)) {
+  reset(f232);
+  v64++;
+  if (v64 == 1) {
+    v234 = 119;
+    position.v(o13,v234,v235);
+    draw(o13);
+    v234 = 60;
+    v56 = 0;
+    move.obj.v(o13,v234,v235,56,f232);
+    step.size(o13,v87);
+  }
+  if (v64 == 2) {
+    step.size(o13,v86);
+  }
+  if (v64 == 3) {
+    step.size(o13,v85);
+    set.cel(o13,1);
+    sound(10,f40);
+  }
+  if (v64 == 4) {
+    set.cel(o13,0);
+    start.motion(o0);
+    reset(f85);
+    v233 = 14;
+  }
+  if (v64 == 5) {
+    print("\"I can't wait all day, bub!\"");
+    v64 = 101;
+  }
+  if (v64 == 101) {
+    get.posn(o13,v234,v235);
+    if (v38 < v234 &&
+        v39 >= v235) {
+      print("\"BEEP\nBEEP!\"");
+      v233 = 5;
+      v64--;
+    }
+    else {
+      v64 = 102;
+    }
+  }
+  if (v64 == 102) {
+    step.size(o13,v85);
+    v234 = 0;
+    v56 = 0;
+    move.obj.v(o13,v234,v235,56,f232);
+  }
+  if (v64 == 103) {
+    step.size(o13,v87);
+    if (v30 == 20) {
+      ignore.objs(o0);
+      set.view(o0,22);
+      get.posn(o13,v38,v39);
+      v39--;
+      position.v(o0,v38,v39);
+      draw(o0);
+    }
+  }
+  if (v64 == 104) {
+    v64 = 0;
+    erase(o13);
+    if (v30 == 20) {
+      reset(f231);
+      set(f50);
+    }
+    if (isset(f231)) {
+      v76 = 10;
+    }
+  }
+  if (v64 == 201) {
+    set.view(o0,12);
+    set(f34);
+    v233 = 5;
+  }
+  if (v64 == 202) {
+    erase(o0);
+    print("\"You'll not ride with me again!\"");
+    v64 = 101;
+    v233 = 3;
+  }
+}
+if ((isset(f231) ||
+    v30 == 15)) {
+  stop.motion(o0);
+  set(f85);
+}
+return();
+
+// Messages
+#message 1 "You know, the traffic here is really a killer! You should forget about crossing these streets!"
+#message 2 "\"YO!!\n\nTAXI!!!\""
+#message 3 "Vowing to hold your breath forever, you enter this miserable excuse for public transportation."
+#message 4 "It's not very clean."
+#message 5 "It's not very new."
+#message 6 "(And those are its good points!)"
+#message 7 "Look out! Here he comes again!"
+#message 8 "Obviously, he thinks you're a fire plug."
+#message 9 "Dogs like that make you want to keep moving."
+#message 10 "\"I can't wait all day, bub!\""
+#message 11 "\"You'll not ride with me again!\""
+#message 12 ""
+#message 13 ""
+#message 14 "Sick-o!"
+#message 15 "After all he's done for you?"
+#message 16 "He presently smells quite bad, although still better than you."
+#message 17 "\"TAXI\nSTAND\""
+#message 18 "It's dark. Real dark."
+#message 19 "You'd better get out of the street first."
+#message 20 "\"BEEP\nBEEP!\""
+#message 21 "Thousands of cars stream past, just below the edge of your screen."
+#message 22 "Trust me, they're there!"
+#message 23 "It smells like an old cab."
+#message 24 "Isn't it funny how there's so little traffic?"
+#message 25 "The glow of the city lights obliterate the stars."
+#message 26 "As you bend over to do so, his bare teeth convince you otherwise."
+#message 27 "You shinny up the pole, read the sign, and come right back down."
+#message 28 "Who'd want him?"
+#message 29 ""
+#message 30 "Where?"
+#message 31 "There is a sign on the pole."
+#message 32 ""

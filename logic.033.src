@@ -1,0 +1,173 @@
+if (isset(f5)) {
+  if (v119 > 4 &&
+      v119 < 10) {
+    new.room(19);
+  }
+  load.pic(v0);
+  draw.pic(v0);
+  discard.pic(v0);
+  load.logics(57);
+  load.view(170);
+  load.view(78);
+  animate.obj(o3);
+  set.view(o3,78);
+  set.cel(o3,0);
+  position(o3,129,145);
+  draw(o3);
+  stop.cycling(o3);
+  animate.obj(o1);
+  ignore.horizon(o1);
+  ignore.blocks(o1);
+  ignore.objs(o1);
+  set.view(o1,170);
+  set.loop(o1,2);
+  set.cel(o1,0);
+  position(o1,83,114);
+  draw(o1);
+  v52 = 3;
+  cycle.time(o1,v52);
+  stop.update(o1);
+  add.to.pic(170,1,0,63,60,4,4);
+  animate.obj(o2);
+  ignore.horizon(o2);
+  ignore.blocks(o2);
+  ignore.objs(o2);
+  set.view(o2,170);
+  set.loop(o2,0);
+  position(o2,86,42);
+  cycle.time(o2,v85);
+  draw(o2);
+  if (v1 == 34) {
+    v38 = 93;
+    v39 = 116;
+    set.loop(o0,2);
+    reset(f85);
+  }
+  else {
+    if (v1 == 9) {
+      v38 = 153;
+      v39 = 138;
+    }
+  }
+  position.v(o0,v38,v39);
+  draw(o0);
+  call(57);
+  show.pic();
+  return();
+}
+reset(f200);
+if (posn(o0,80,115,105,120)) {
+  set(f200);
+}
+reset(f202);
+if (posn(o0,120,129,142,144)) {
+  set(f202);
+  set(f69);
+}
+if (!isset(f2)) {
+  goto(Label1);
+}
+if ((said("examine") ||
+    said("examine","area") ||
+    said("examine","building") ||
+    said("examine","chapel"))) {
+  print("You are outside a romantic, quickie marriage parlor.");
+}
+if (said("examine","bouncer")) {
+  if (!isset(f203)) {
+    print("It's a guy wearing a trench coat.");
+  }
+  else {
+    print("It's obvious he doesn't have much to hide!");
+  }
+}
+if (said("ask","bouncer","anyword","rol")) {
+  print("He doesn't reply.");
+}
+if (said("ask","bouncer")) {
+  if (!isset(f203)) {
+    print("You greet the stranger in the trench coat.");
+    print("\"Hey, sonny! Come over here!!\" he replies.");
+  }
+  else {
+    print("\"Say,\" you ask him. \"By any chance, is your name Shorty?\"");
+    if (!isset(f103)) {
+      set(f103);
+      v3 += 1;
+    }
+  }
+}
+if ((said("catch","bra","rol") ||
+    said("anyword","bouncer","rol"))) {
+  print("You have better things to do than mess around with this pervert.");
+}
+if (said("examine","door")) {
+  if (isset(f61)) {
+    reset(f4);
+  }
+  else {
+    print("It's a door. Try opening it.");
+  }
+}
+if (said("increase","door")) {
+  if (isset(f61)) {
+    reset(f4);
+  }
+  else {
+    if (!isset(f200)) {
+      set(f54);
+    }
+    else {
+      set(f67);
+      stop.motion(o0);
+      set(f85);
+      start.update(o1);
+      end.of.loop(o1,f201);
+    }
+  }
+}
+if ((said("examine","fence") ||
+    said("climb","fence") ||
+    said("climb","above","fence") ||
+    said("examine","above","fence"))) {
+  print("It's there to keep you from going that way!");
+}
+Label1:
+if (isset(f202)) {
+  if (!isset(f203)) {
+    set(f203);
+    end.of.loop(o3,f40);
+  }
+}
+else {
+  if (isset(f203)) {
+    reset(f203);
+    reverse.loop(o3,f40);
+  }
+}
+call(57);
+if (isset(f201)) {
+  reset(f85);
+  v76 = 34;
+}
+if (v2 == 4) {
+  v76 = 32;
+}
+if (v2 == 2) {
+  v76 = 9;
+}
+return();
+
+// Messages
+#message 1 "You are outside a romantic, quickie marriage parlor."
+#message 2 "It's a door. Try opening it."
+#message 3 "Funny. No one knocks back."
+#message 4 "It's a guy wearing a trench coat."
+#message 5 "It's obvious he doesn't have much to hide!"
+#message 6 "You greet the stranger in the trench coat."
+#message 7 "\"Hey, sonny! Come over here!!\" he replies."
+#message 8 "\"Say,\" you ask him. \"By any chance, is your name Shorty?\""
+#message 9 "You have better things to do than mess around with this pervert."
+#message 10 "It's there to keep you from going that way!"
+#message 11 "Strange, you think."
+#message 12 "He doesn't reply."
