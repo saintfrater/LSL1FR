@@ -26,16 +26,16 @@ if (v0 <= 0) {
     set.menu.item("Voir Objet       ",c17);
     set.menu.item("Fonction du corps",c28);
     set.menu("Special ");
-    set.menu.item("Sound On/Off      <F2>",c2);
+    set.menu.item("Son On/Off        <F2>",c2);
     if (v20 == 0 &&
         v26 != 2 &&
         v26 != 3) {
-      set.menu.item("Graphics Mode <Ctrl-R>",c13);
+      set.menu.item("Mode Graphique <Ctrl-R>",c13);
     }
     set.menu.item("Joystick      <Ctrl-J>",c12);
-    set.menu.item("Clock On/Off          ",c29);
+    set.menu.item("Horloge On/Off        ",c29);
     set.menu.item("Boss Key      <Ctrl-B>",c41);
-    set.menu.item("Pause Game            ",c30);
+    set.menu.item("Mettre en pause       ",c30);
     if (v20 != 5) {
       set.menu("Speed ");
       set.menu.item("Normal       ",c32);
@@ -199,9 +199,9 @@ if (v30 != 1 &&
   prevent.input();
   set.string(s11,"");
   set.string(s12,"");
-  get.string(s11,"Enter function: ",23,0,23);
+  get.string(s11,"Entre une fonction: ",23,0,23);
   if (compare.strings(s11,s12)) {
-    set.string(s11,"do nothing");
+    set.string(s11,"ne sert a rien");
   }
   print("tu te tournes rapidement, %s11, et tu te sentes beaucoup mieux. Un"
         "leger sourire traverse ton visage");
@@ -242,15 +242,14 @@ if ((controller(c27) ||
     display(12,9,"|----|----|----|----|");
     display(13,9,"| 13 | 14 | 15 | 16 |");
     display(14,9,"---------------------");
-    display(21,1,"How's this thing work, anyway?");
+    display(21,1,"Comment fonctionne cette chose?");
   }
   else {
     display(8,19,"2");
     display(9,17,"+ 2");
     display(10,17,"---");
     display(11,17,"  4");
-    display(21,6,"   This is about the extent of\n    your mathematical"
-            "abilities.");
+    display(21,6,"   Voici de quoi augmenter\n   tes connaissances en mathematique.");
   }
 Label1:
   if (!have.key()) {
@@ -765,8 +764,8 @@ if (said("bite","shot")) {
     drop("glass of whiskey");
     v72 = 0;
     v71 = 4;
-    print("Ok.\n\ntu avales d'un coup le shot d'alcool bon marche... Ensuite,"
-          "dans un mouvement epique, tu brises le verre au sol!");
+    print("Ok.\n\ntu avales d'une traite, le verre d'alcool pas cher..."
+    print"Ensuite, dans un mouvement epique, tu brises le verre au sol!");
     print("Impressionnant non?");
   }
   else {
@@ -962,7 +961,7 @@ if ((said("use","box of candy","rol") ||
     said("bite","anyword","box of candy","rol") ||
     said("bite","box of candy","rol"))) {
   if (has("box of candy")) {
-    print("Les bonbons sont delicieux, mais est ce tres bon pour ton acnee?");
+    print("Les bonbons sont delicieux, mais est-ce tres bon pour ton acnee?");
     drop("box of candy");
   }
   else {
@@ -1330,8 +1329,7 @@ if (!isset(f4) &&
 if ((said("anyword","credit card") ||
     said("anyword","credit card","billfold") ||
     said("anyword","credit card","from","billfold"))) {
-  print("Aucun endroit 'Lost Wages' n'accepte de carte de credit de la First"
-        "National Bank of Libya.");
+  print("Aucun endroit 'Lost Wages' n'accepte de carte de credit de la\n First National Bank of Libya.");
 }
 if ((said("examine","note") ||
     said("examine","note","billfold"))) {
@@ -1571,17 +1569,13 @@ return();
 #message 25 "Voir Objet       "
 #message 26 "Fonction du corps"
 #message 27 "Special "
-#message 28 "Sound On/Off      <F2>"
-#message 29 "Graphics Mode <Ctrl-R>"
 #message 30 "Joystick      <Ctrl-J>"
-#message 31 "Clock On/Off          "
 #message 32 "%m36 tres rapide"
 #message 33 "%m36 rapide     "
 #message 34 "%m36 normale    "
 #message 35 "%m36 lente      "
 #message 36 "Vitesse"
 #message 37 "Boss Key      <Ctrl-B>"
-#message 38 "Pause Game            "
 #message 39 "Speed "
 #message 40 "Normal       "
 #message 41 "Lent         "
@@ -1592,8 +1586,6 @@ return();
 #message 46 "%v119:%v116|2:%v115|2 "
 #message 47 "\n    Leisure Suit Larry\n          in the\nLand of the Lounge Lizards\n\n        by Al Lowe\n\n   Ver 1.00    6/1/87\nTraduction Frater aout 2016"
 #message 48 ""
-#message 49 "Enter function: "
-#message 50 "do nothing"
 #message 51 "%m53?"
 #message 52 "%m53 %w3?"
 #message 53 "Que veux tu faire avec le %w2"
@@ -1605,12 +1597,10 @@ return();
 #message 59 "|  5 |  6 |  7 |  8 |"
 #message 60 "|  9 | 10 | 11 | 12 |"
 #message 61 "| 13 | 14 | 15 | 16 |"
-#message 62 "How's this thing work, anyway?"
 #message 63 "2"
 #message 64 "+ 2"
 #message 65 "---"
 #message 66 "  4"
-#message 67 "   This is about the extent of\n    your mathematical abilities."
 #message 68 "%m11%m100%v117 heures, %v116 minutes et %v115 secondes.\n"
 #message 69 "%m11%m100%v116 minutes et %v115 secondes.\n"
 #message 70 "Merci d'avoir jouer à \"Leisure Suit Larry in the Land of the Lounge Lizards.\"\n\nTu as foire ce jeu, mais tu peux sans doute faire mieux.\n\nAllez, essayes encore une foi!"
@@ -1648,8 +1638,6 @@ return();
 #message 102 "Elle est delicieuse, mais rien ne se passe."
 #message 103 "Porter l'anneau magique te conferes des pouvoir bien au dela ceux de..."
 #message 104 "...Oops. Mauvais jeu."
-#message 105 "Ok.\n\ntu avales d'un coup le shot d'alcool bon marche... Ensuite, dans un mouvement epique, tu brises le verre au sol!"
-#message 106 "Impressionnant non?"
 #message 107 "Tu appuyes sur les boutons de la telecommande et ..."
 #message 108 "...rien ne se passe."
 #message 109 "Elle sent tres bon."
@@ -1667,7 +1655,7 @@ return();
 #message 121 "Suite a ta condamnation pour violence animale (et plus...) tu passes le reste de ta vie en prison, a briser des cailloux en plus petits."
 #message 122 "OK, maintenant elle est tombee pour TOUJOURS!"
 #message 123 "C'est une idee; ce n'est juste pas une bonne idee!"
-#message 124 "Aucun endroit 'Lost Wages' n'accepte de carte de credit de la First National Bank of Libya."
+#message 124 "Aucun endroit de 'Lost Wages' n'accepte de carte de credit de la\n First National Bank of Libya."
 #message 125 "\"Pensez a acheter plus de jeux d'aventures de Sierra!\""
 #message 126 "Sierra On-Line, Inc.  (209) 683-6858"
 #message 127 "Vous pourrez vouloir les lire."
