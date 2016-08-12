@@ -36,7 +36,7 @@ Label1:
     if (v94 == 5 &&
         !isset(f201)) {
       set(f201);
-      print("So far, so good.\n\nNow for the final question.");
+      print("Jusque la, tout va bien.\n\nMaintenant, la question 'FINALE.'");
     }
     v94++;
   }
@@ -203,7 +203,7 @@ if (v96 == 53) {
 if (v95 != 3) {
   if (isset(f30)) {
     clear.lines(23,23,0);
-    display(23,0,"Question #%v96. Correct answer is %v93.");
+    display(23,0,"Question #%v96. La bonne reponse est %v93.");
     print.v(v96);
     v96++;
     if (v96 <= 53) {
@@ -310,7 +310,5 @@ return();
 #message 62 "b"
 #message 63 "c"
 #message 64 "d"
-#message 65 "So far, so good.\n\nNow for the final question."
-#message 66 "Question #%v96. Correct answer is %v93."
-#message 67 "Please answer a, b, c, or d: "
-#message 69 "So far, so good.\n\nNow for the final question."
+#message 67 "Reponds SVP : a, b, c, or d: "
+
