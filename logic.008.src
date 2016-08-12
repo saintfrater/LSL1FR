@@ -167,10 +167,11 @@ if (isset(f75)) {
     end.of.loop(o1,f75);
   }
   if (v65 == 2) {
-    print("The Sierra adventure team races to your rescue, dumping your"
-          "worthless, leisure suit- clad hulk into their giant bit bucket, for"
-          "recycling into future games. Their underground workshop is humming"
-          "with activity. This is \"Where Adventurers Are Made, Not Born!\"");
+    print("L'equipe Sierra en charge des aventures vol a ton secours; "
+    	"jettant dans une grande machine ton \"Leisure suit\" sans valeur,"
+    	" afin de le recycler dans de nouveau jeux. Leur attelier souterrain bourdonne d'activite.\n"
+    	"Nos aventuriers ne sont pas \"ne\", ils sont \"fabriquer\"");    	
+
     stop.cycling(o1);
     move.obj(o1,56,80,1,f75);
     move.obj(o3,74,132,1,f40);
@@ -191,8 +192,9 @@ if (isset(f75)) {
     set.loop(o5,0);
     move.obj(o5,49,117,1,f75);
     reset(f203);
-    print("Commander Cavin quickly assembles a replacement Larry, while"
-          "subordinates repair players damaged in other Sierra adventure games.");
+    print("Le commandant Cavin, assemble rapidement un Larry de remplacement, pendant "
+          "que ses collaborateurs reparent des personnages d'autres jeux d'aventures Sierra.");
+          
   }
   if (v65 == 6) {
     set.cel(o7,1);
@@ -227,9 +229,9 @@ if (isset(f75)) {
     set.cel(o4,1);
     reposition.to(o4,84,147);
     move.obj(o4,84,116,1,f40);
-    print("With your new body and ego, you are returned to fight again the"
-          "battles of Lost Wages!\n\n(Now you know what we have to go through"
-          "every time you press that \"Restart\" key.)");
+    print("Avec un nouveau corps et un nouvel ego, tu retournes au combat "
+		  "dans les rues de \"Lost Wages\"!\n\n(Maintenant tu sais ce qu'il se passe "
+          "CHAQUE fois que tu relance le jeu.)");
   }
   if (v65 == 12) {
     restart.game();
@@ -238,8 +240,6 @@ if (isset(f75)) {
 return();
 
 // Messages
-#message 1 "Hey! You're not alive yet."
+#message 1 "Hey! Tu n'es pas encore vivant."
 #message 2 ""
-#message 3 "The Sierra adventure team races to your rescue, dumping your worthless, leisure suit- clad hulk into their giant bit bucket, for recycling into future games. Their underground workshop is humming with activity. This is \"Where Adventurers Are Made, Not Born!\""
-#message 4 "Commander Cavin quickly assembles a replacement Larry, while subordinates repair players damaged in other Sierra adventure games."
-#message 5 "With your new body and ego, you are returned to fight again the battles of Lost Wages!\n\n(Now you know what we have to go through every time you press that \"Restart\" key.)"
+

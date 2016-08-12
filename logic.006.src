@@ -78,14 +78,14 @@ if (v95 == 1) {
   else {
     if (!isset(f200)) {
       v95 = 2;
-      print("Oops. Tu as foiree celle-la!\n\nSi tu en rate encore une, ce n'est"
-            "pas possible que tu ai %v209.");
+      print("Oops. Tu as foire celle-la!\n\nSi tu en rate encore une, ce n'est"
+            "pas possible que ton age soit de %v209 ans.");
       set(f200);
       v94--;
     }
     else {
-      print("T'es qu'un gamin!!\n\nSoit honteux d'avoir tente de tromper un jeu"
-            "aussi gentil que celui-ci!\n\nTu pourras re-essayer quand tu seras"
+      print("T'es qu'un gamin!!\n\nSoit honteux d'avoir tente de tromper un jeu "
+            "aussi gentil que celui-ci!\n\nTu pourras re-essayer quand tu seras "
             "plus grand.");
       quit(1);
     }
@@ -115,12 +115,6 @@ if (isset(f44) &&
 return();
 
 // Messages
-#message 1 "Warning:\n\n\"Leisure Suit Larry in the Land of the Lounge Lizards\" contains some elements of plot which may not be  considered appropriate for some children."
-#message 2 "How old are you?  "
-#message 3 "To verify you are really %v209, please answer five simple questions."
-#message 4 "Sorry.\n\nThis game can only be played by adults, or with an adult.\n\nPlease find an adult, come back, and try again."
-#message 5 "Oops. You blew that one!\n\nIf you miss another, you can't possibly be %v209."
-#message 6 "You're a kid!!\n\nShame on you for trying to deceive a friendly game like this!\n\nPlease play again when you're older."
 #message 7 "Please answer a, b, c, or d: "
 #message 8 "Correct."
 #message 9 "So far, so good.\n\nNow for the final question."
@@ -133,12 +127,4 @@ return();
 #message 16 "c"
 #message 17 "d"
 #message 18 "%v62 cycles in %v63 seconds"
-#message 19 "         Merci.\n\nMaintenant, saute dans ton costume de loisir et prepare-toi a entrer dans \"Land of the Lounge Lizards\" avec \"Leisure Suit Larry!\""
-#message 20 "Attention:\n\n\"Leisure Suit Larry in the Land of the Lounge Lizards\" contient des elements d'histoire qui peuvent etre considerer comme inapproprie pour certains enfants."
-#message 21 "Quel age as-tu?  "
-#message 22 "Desole.\n\nCe jeu est prevu pour etre jouer par des adultes uniquement, ou sous la surveillance d'un adulte.\n\nTrouves-toi un adulte, reviens ensuite et essayes encore."
-#message 23 "Non, ce n'est pas possible!"
-#message 24 "         Attention!\n\nCe jeu peut etre dangereux pour les personnes ayant des problemes de coeur!"
-#message 25 "Pour verifier que tu as bien %v209 ans, reponds a ces 5 questions faciles."
-#message 26 "Oops. Tu as foiree celle-la!\n\nSi tu en rate encore une, ce n'est pas possible que tu ai %v209."
-#message 27 "T'es qu'un gamin!!\n\nSoit honteux d'avoir tente de tromper un jeu aussi gentil que celui-ci!\n\nTu pourras re-essayer quand tu seras plus grand."
+
