@@ -1,0 +1,150 @@
+if (isset(newRoom))
+  {  set.horizon(44);  v81 = 18;  load.pic(v81);  load.pic(currentRoom);  draw.pic(currentRoom);  load.view(View67);  load.view(View65);  load.view(View66);  load.view(View16);  load.view(View2);  load.view(View26);  load.view(View68);  if (obj.in.room("Box of Candy", currentRoom))
+    {    animate.obj(o5);    set.view(o5, View68);    position(o5, 135, 137);    draw(o5);    stop.update(o5);    }  animate.obj(o3);  set.view(o3, View65);  set.loop(o3, 0);  set.cel(o3, 0);  position(o3, 56, 86);  animate.obj(ObjTitleText);  ignore.horizon(ObjTitleText);  set.view(ObjTitleText, View65);  set.loop(ObjTitleText, 1);  set.cel(ObjTitleText, 0);  position(ObjTitleText, 50, 42);  cycle.time(ObjTitleText, varEgoSize);  stop.cycling(ObjTitleText);  animate.obj(ObjFlyingDoll);  ignore.horizon(ObjFlyingDoll);  ignore.blocks(ObjFlyingDoll);  ignore.objs(ObjFlyingDoll);  set.view(ObjFlyingDoll, View67);  if (!isset(f63))
+    {    position(ObjFlyingDoll, 23, 131);    set.loop(ObjFlyingDoll, 1);    }  else
+    {    position(ObjFlyingDoll, 14, 131);    set.loop(ObjFlyingDoll, 0);    }  set.cel(ObjFlyingDoll, 0);  draw(ObjFlyingDoll);  stop.cycling(ObjFlyingDoll);  animate.obj(o4);  ignore.blocks(o4);  ignore.objs(o4);  set.view(o4, View66);  set.priority(o4, 5);  if (isset(f64))
+    {    last.cel(o4, v52);    set.cel.v(o4, v52);    }  else
+    {    set.cel(o4, 0);    }  position(o4, 129, 100);  draw(o4);  cycle.time(o4, varEgoSize);  stop.update(o4);  if (previousRoom == 12)
+    {    v38 = 123;    v39 = 126;    }  else
+    {    set(f206);    set.priority(ego, 9);    set(f36);    observe.blocks(ego);    v38 = 54;    v39 = 116;    }  set.loop(ego, 1);  position.v(ego, v38, v39);  draw(ego);  show.pic();  random(44, 111, v202);  return();  }if (isset(onWater))
+  {  if ((egoDir == DOWN ||       egoDir == DOWN_LEFT ||       egoDir == DOWN_RIGHT))
+    {    reset(f206);    }  else
+    {    set(f206);    }  }if (isset(f206))
+  {  set.priority(ego, 9);  set(f36);  observe.blocks(ego);  }else
+  {  if (v30 == 0)
+    {    release.priority(ego);    ignore.blocks(ego);    reset(f36);    }  }if (isset(egoHitSpecial))
+  {  reset(egoHitSpecial);  reposition.to.v(ego, v40, v41);  start.motion(ego);  }reset(f215);if (posn(ego, 11, 144, 48, 151))
+  {  set(f215);  set(f69);  }reset(f202);if (posn(ego, 11, 127, 48, 151))
+  {  set(f202);  set(f69);  }reset(f203);if (posn(ego, 116, 118, 137, 139))
+  {  set(f203);  }reset(f205);if (posn(ego, 124, 138, 139, 155))
+  {  set(f205);  }if (!isset(haveInput))
+  {  goto(Label1);  }if ((said("examine") ||     said("examine", "brick") ||     said("examine", "area")))
+  {  print("This is the hooker's seedy bedroom. The bed's a mess, ditto the "        "hooker!");  print("A sign near the bed says: \"Substantial penalty for early "        "withdrawals.\"");  print("There is a table near the window.");  }if ((said("examine", "glass") ||     said("examine", "out", "glass")))
+  {  print("There is a fire escape outside the window.");  }if (said("examine", "radiator", "rol"))
+  {  print("It's getting old and rusty -- not unlike you, Larry.");  }if (said("move", "on", "radiator"))
+  {  print("It, too, is broken.");  }if ((said("use", "hammer", "on", "radiator") ||     said("beat", "radiator", "use", "hammer") ||     said("beat", "radiator", "hammer") ||     said("hammer", "radiator")))
+  {  if (!has("Hammer"))
+    {    set(f68);    }  else
+    {    print("You slyly tap out a message in Morse code; unfortunately, only some "          "rats hear it.");    }  }if ((said("ask", "blond") ||     said("ask", "clit")))
+  {  if (!isset(f63))
+    {    print("\"So,\" she snarls, \"you just gonna stand there, or what?\"");    }  else
+    {    print("\"Was it good for you, baby?\" you ask her.");    print("\"Was what good?\" she replies.");    }  }if ((said("embrace", "blond") ||     said("anyword", "boob") ||     said("anyword", "ass") ||     said("anyword", "asshole") ||     said("asshole", "anyword") ||     said("cunnilingus", "rol")))
+  {  if (!isset(f202))
+    {    set(f54);    }  else
+    {    print("\"Hey, what kind of girl do you think I am?\"");    }  }if (said("examine", "burn"))
+  {  print("It just hangs there.");  }if (said("examine", "below", "rol"))
+  {  print("There's nothing (and no one) there.");  }if (said("examine", "desk"))
+  {  if (obj.in.room("Box of Candy", currentRoom))
+    {    print("It looks like the hooker has a box of candy on her table.");    }  else
+    {    print("It's a really ugly table.");    }  }if (said("move", "desk"))
+  {  if (!isset(f205))
+    {    set(f54);    }  else
+    {    print("You can't. She's nailed it to the floor.");    }  }if ((said("examine", "box of candy") ||     said("examine", "box", "box of candy") ||     said("examine", "box")))
+  {  if (!obj.in.room("Box of Candy", currentRoom))
+    {    reset(haveMatch);    }  else
+    {    if (!isset(f205))
+      {      set(f54);      }    else
+      {      print("It looks like the hooker has a box of candy on her table.");      }    }  }if ((said("catch", "box of candy") ||     said("catch", "box", "box of candy") ||     said("catch", "box") ||     said("catch", "piece", "box of candy") ||     said("catch", "piece", "box of candy", "from", "box") ||     said("catch", "piece", "box of candy", "box") ||     said("catch", "box") ||     said("catch", "box of candy", "desk")))
+  {  if (!isset(f205))
+    {    set(f54);    }  else
+    {    if (!obj.in.room("Box of Candy", currentRoom))
+      {      set(f55);      }    else
+      {      v206 = 1;      }    }  }if (!has("Box of Candy") &&     (said("use", "box of candy", "rol") ||     said("increase", "box", "rol") ||     said("increase", "box of candy", "rol") ||     said("use", "anyword", "box of candy", "rol") ||     said("bite", "anyword", "box of candy", "rol") ||     said("bite", "box of candy", "rol")))
+  {  set(f68);  }if ((said("examine", "blond") ||     said("examine", "clit") ||     said("examine", "bed")))
+  {  if (isset(f63))
+    {    print("She seems more interested in that cigarette than she was in you.");    }  else
+    {    if (v30 == 26)
+      {      print("NOW!? You've come this far, Larry; now's the time to do more than "            "just look!");      }    else
+      {      set(f213);      }    }  }if ((said("examine", "below", "pillow") ||     said("increase", "pillow")))
+  {  print("There's nothing there.");  }if (said("catch", "pillow"))
+  {  print("You have no use for a stained pillow.");  }if (said("attach", "rope", "rol"))
+  {  if (!has("Rope"))
+    {    set(f68);    }  else
+    {    print("Your rope is not long enough to reach outside.");    }  }if (said("smell", "rol"))
+  {  print("Sniffing the air, you're suddenly hungry for tuna.");  }if ((said("bite", "clit") ||     said("bite", "blond")))
+  {  if (!isset(f202))
+    {    print("\"Come on over here, Larry!\"");    }  else
+    {    print("She says, \"Me first!\" as she%m25");    erase(ego);    set(f50);    }  }if ((said("blow", "i'm") ||     said("add", "head")))
+  {  if (!isset(f202))
+    {    print("\"Come on over here, Larry!\"");    }  else
+    {    print("She%m25");    set(f48);    erase(ego);    set(f50);    }  }if ((said("increase", "glass") ||     said("increase", "glass")))
+  {  if (!isset(f203))
+    {    set(f54);    }  else
+    {    if (isset(f64))
+      {      print("It's already open.");      }    else
+      {      v206 = 2;      }    }  }if ((said("close", "glass") ||     said("decrease", "glass")))
+  {  if (!isset(f203))
+    {    set(f54);    }  else
+    {    print("Nah. This room needs the fresh air!");    }  }if ((said("board", "glass") ||     said("board", "back") ||     said("jump", "out", "glass") ||     said("jump", "out") ||     said("climb", "out", "glass") ||     said("board", "area") ||     said("climb", "glass") ||     said("climb", "out") ||     said("climb", "out", "on", "balcony") ||     said("climb", "out", "balcony") ||     said("climb", "on", "balcony") ||     said("climb", "balcony") ||     said("board", "out", "on", "balcony") ||     said("board", "out", "balcony") ||     said("board", "on", "balcony") ||     said("board", "balcony") ||     said("board", "out", "glass") ||     said("board", "glass")))
+  {  if (!isset(f203))
+    {    set(f54);    }  else
+    {    if (!isset(f64))
+      {      print("You repeatedly bang your head against the closed glass.");      }    else
+      {      v206 = 3;      }    }  }if ((said("catch", "naked") ||     said("add", "bra") ||     said("catch", "bra", "off") ||     said("drain", "bra") ||     said("naked") ||     said("naked", "naked") ||     said("drain", "bra", "climb", "bed")))
+  {  if (!isset(f202))
+    {    set(f54);    }  else
+    {    if (!isset(f215))
+      {      print("You'd have a better view if you'd move to the front of the bed!");      }    else
+      {      if (isset(f63))
+        {        print("Not again! A guy can only take so much!!");        }      else
+        {        if (v30 == 26)
+          {          print("You are as naked as you're going to get!");          }        else
+          {          v206 = 4;          }        }      }    }  }if ((said("catch", "dress") ||     said("put on", "bra") ||     said("put on", "bra") ||     said("add", "bra", "on") ||     said("put on", "bra") ||     said("dress") ||     said("dress", "bra")))
+  {  if (v30 != 26)
+    {    reset(haveMatch);    }  else
+    {    v206 = 6;    }  }if ((said("catch", "bra") ||     said("put on", "bra") ||     said("put on", "bra", "from", "clothes line") ||     said("put on", "bra", "off", "clothes line") ||     said("catch", "bra", "from", "clothes line") ||     said("catch", "bra", "off", "clothes line")))
+  {  print("Although you might look precious in that little white lace number, "        "you're just not that kind of guy!");  }if ((said("examine", "clothes line") ||     said("examine", "rope") ||     said("examine", "bra", "rol")))
+  {  print("The clothesline is barely strong enough to hold its present load. Poor "        "girl, you'd think at these prices she could afford a laundromat.");  }if ((said("catch", "clothes line") ||     said("cut", "clothes line", "rol") ||     said("move", "rope") ||     said("let go", "rope") ||     said("move", "clothes line") ||     said("let go", "clothes line") ||     said("cut", "rope", "rol") ||     said("catch", "rope")))
+  {  print("It's barely strong enough to hold up its present load. Besides, if you "        "take it, her underwear would fall down.");  }if ((said("copulate", "blond") ||     said("copulate", "clit") ||     said("sleep", "blond") ||     said("copulate") ||     said("board", "bed") ||     said("catch", "on", "bed") ||     said("catch", "bed") ||     said("lie", "on", "bed") ||     said("lie", "bed") ||     said("climb", "on")))
+  {  if (v30 != 26)
+    {    print("With all your clothes on?");    }  else
+    {    v206 = 7;    }  }if ((said("use", "condom") ||     said("put on", "condom")))
+  {  if (!has("Prophylactic"))
+    {    set(f68);    }  else
+    {    if (isset(f62))
+      {      print("You already are wearing it.");      }    else
+      {      if (isset(f63))
+        {        print("Now's a great time to think of that!");        }      else
+        {        if (v30 != 26)
+          {          print("With all your clothes on?");          }        else
+          {          v206 = 5;          }        }      }    }  }Label1:if (isset(f213))
+  {  reset(f213);  prevent.input();  set(f207);  set(f48);  unanimate.all();  draw.pic(v81);  animate.obj(o3);  set.priority(o3, 4);  if (isset(f66))
+    {    set.cel(o3, 1);    v204 = 22;    v203 = 11;    }  else
+    {    set.cel(o3, 2);    }  draw(o3);  stop.cycling(o3);  animate.obj(ObjTitleText);  ignore.horizon(ObjTitleText);  set.cel(ObjTitleText, 0);  set.priority(ObjTitleText, 5);  draw(ObjTitleText);  cycle.time(ObjTitleText, v85);  stop.cycling(ObjTitleText);  show.pic();  v205 = 9;  }if (isset(f214))
+  {  reset(f214);  reset(f207);  reset(f48);  accept.input();  unanimate.all();  v204 = 0;  v203 = 0;  v205 = 0;  draw.pic(currentRoom);  animate.obj(ObjFlyingDoll);  ignore.horizon(ObjFlyingDoll);  ignore.blocks(ObjFlyingDoll);  ignore.objs(ObjFlyingDoll);  draw(ObjFlyingDoll);  stop.cycling(ObjFlyingDoll);  animate.obj(ego);  draw(ego);  if (obj.in.room("Box of Candy", currentRoom))
+    {    animate.obj(o5);    draw(o5);    stop.update(o5);    }  animate.obj(o4);  ignore.blocks(o4);  ignore.objs(o4);  set.priority(o4, 5);  draw(o4);  cycle.time(o4, varEgoSize);  stop.update(o4);  show.pic();  }if (isset(f211))
+  {  reset(f211);  v30 = 26;  stop.motion(ego);  reset(f34);  set(f85);  }if (isset(f216))
+  {  reset(f216);  v30 = 0;  start.motion(ego);  set.view(ego, Larry_StandAndWalk);  cycle.time(ego, v84);  reset(f34);  reset(f85);  }--v201;if (v201 == 1 &&     v30 == 11)
+  {  random(5, 15, v201);  random(0, 4, v52);  cycle.time(ego, v52);  }if (isset(f44))
+  {  --v205;  if (v205 == 1 &&       isset(f207))
+    {    set(f214);    if (isset(f66))
+      {      print("She certainly seems to enjoy that gum.");      }    else
+      {      print("\"Jeez, Mister! What've you been eating? Buffalo chips???\"");      }    }  --v200;  if (v200 == 1)
+    {    set.view(ego, View2);    last.cel(ego, v52);    set.cel.v(ego, v52);    reposition.to(ego, 31, 146);    release.priority(ego);    set(f34);    cycle.time(ego, varEgoSize);    reverse.loop(ego, f212);    position(ObjFlyingDoll, 14, 131);    set.loop(ObjFlyingDoll, 0);    draw(ObjFlyingDoll);    }  }if (isset(f212))
+  {  reset(f212);  set.view(ego, Larry_StandAndWalk);  reset(f34);  start.motion(ego);  reset(f85);  cycle.time(ego, v84);  set(f63);  currentScore  += 11;  v30 = 0;  animationInterval = v44;  random(11, 22, v202);  print("Although successful, you feel less than satisfied. Technically "        "speaking, you're no longer a virgin, but for some reason, the thrill "        "just wasn't there. You vow to continue your quest until you please "        "your heart, not just your other organs!");  accept.input();  if (isset(f62))
+    {    print("It's a good thing you were wearing that rubber!");    }  else
+    {    set(f89);    }  }--v204;if (v204 == 1)
+  {  toggle(f209);  if (isset(f209))
+    {    start.cycling(ObjTitleText);    random(6, 16, v204);    }  else
+    {    stop.cycling(ObjTitleText);    set.cel(ObjTitleText, 0);    force.update(ObjTitleText);    random(22, 33, v204);    }  }--v203;if (v203 == 1)
+  {  toggle(f210);  if (isset(f210))
+    {    start.cycling(o3);    random(26, 56, v203);    }  else
+    {    stop.cycling(o3);    set.cel(o3, 0);    random(7, 17, v203);    }  }--v202;if (v202 == 1)
+  {  toggle(f200);  if (isset(f200))
+    {    start.cycling(ObjFlyingDoll);    }  else
+    {    stop.cycling(ObjFlyingDoll);    }  if (isset(f63))
+    {    random(44, 66, v202);    end.of.loop(ObjFlyingDoll, f201);    }  else
+    {    random(11, 22, v202);    }  }if (isset(f201))
+  {  reset(f201);  reset(f200);  stop.cycling(ObjFlyingDoll);  set.cel(ObjFlyingDoll, 0);  }if (isset(f208))
+  {  reset(f208);  stop.cycling(o4);  stop.update(o4);  set(f64);  }if (v206 > 0)
+  {  if (v206 == 1)
+    {    set(f67);    get("Box of Candy");    currentScore  += 2;    start.update(o5);    erase(o5);    }  if (v206 == 2)
+    {    set(f67);    start.update(o4);    end.of.loop(o4, f208);    }  if (v206 == 3)
+    {    v30 = 12;    set.view(ego, View26);    set.cel(ego, 0);    set.priority(ego, 15);    reposition.to(ego, 125, 125);    cycle.time(ego, varEgoSize);    stop.motion(ego);    set(f85);    set(f34);    end.of.loop(ego, f204);    }  if (v206 == 4)
+    {    stop.motion(ego);    set.view(ego, View2);    set.cel(ego, 0);    cycle.time(ego, varEgoSize);    set(f34);    end.of.loop(ego, f211);    }  if (v206 == 5)
+    {    print("Yep! This would be a perfect time! The Surgeon General would be "          "proud.");    set(f62);    drop("Prophylactic");    get("Used Prophylactic");    if (!isset(f91))
+      {      set(f91);      currentScore  += 10;      }    }  if (v206 == 6)
+    {    set.view(ego, View2);    last.cel(ego, v52);    set.cel.v(ego, v52);    cycle.time(ego, varEgoSize);    set(f34);    reverse.loop(ego, f216);    }  if (v206 == 7)
+    {    v30 = 11;    v200 = 20;    random(25, 45, v201);    v44 = animationInterval;    animationInterval = 0;    set.view(ego, View16);    reposition.to(ego, 15, 130);    set.priority(ego, 15);    set(f34);    prevent.input();    stop.motion(ego);    set(f85);    erase(ObjFlyingDoll);    set(f201);    }  v206 = 0;  }if (isset(f206) &&     posn(ego, 66, 132, 70, 133))
+  {  v76 = 16;  }if (isset(f204))
+  {  v77 = 0;  v76 = 12;  }return();[ Messages#message 1 "This is the hooker's seedy bedroom. The bed's a mess, ditto the hooker!"#message 2 "Yep! This would be a perfect time! The Surgeon General would be proud."#message 3 "You already are wearing it."#message 4 "It looks like the hooker has a box of candy on her table."#message 5 "Although successful, you feel less than satisfied. Technically speaking, you're no longer a virgin, but for some reason, the thrill just wasn't there. You vow to continue your quest until you please your heart, not just your other organs!"#message 6 "Sniffing the air, you're suddenly hungry for tuna."#message 7 "\"Come on over here, Larry!\""#message 8 "She says, \"Me first!\" as she%m25"#message 9 "Not again! A guy can only take so much!!"#message 10 "She seems more interested in that cigarette than she was in you."#message 11 "It's a good thing you were wearing that rubber!"#message 12 "It's already open."#message 13 "Nah. This room needs the fresh air!"#message 14 "You repeatedly bang your head against the closed glass."#message 15 ""#message 16 "It's a really ugly table."#message 17 "\"Jeez, Mister! What've you been eating? Buffalo chips???\""#message 18 "She certainly seems to enjoy that gum."#message 19 "A sign near the bed says: \"Substantial penalty for early withdrawals.\""#message 20 "\"So,\" she snarls, \"you just gonna stand there, or what?\""#message 21 "\"Was it good for you, baby?\" you ask her."#message 22 "\"Was what good?\" she replies."#message 23 "Although you might look precious in that little white lace number, you're just not that kind of guy!"#message 24 "She%m25"#message 25 " goes to work on you. Then she smiles as she bites it off! \"Sorry, Larry. No oral sex in this game. Suffer!\""#message 26 "Now's a great time to think of that!"#message 27 "\"Is that a toothpick in your pocket, or are you just happy to get past my pimp?\""#message 28 "You'd have a better view if you'd move to the front of the bed!"#message 29 "There is a fire escape outside the window."#message 30 "The clothesline is barely strong enough to hold its present load. Poor girl, you'd think at these prices she could afford a laundromat."#message 31 "\"Hey, what kind of girl do you think I am?\""#message 32 "It's getting old and rusty -- not unlike you, Larry."#message 33 "It just hangs there."#message 34 "There's nothing (and no one) there."#message 35 "It, too, is broken."#message 36 ""#message 37 "It's barely strong enough to hold up its present load. Besides, if you take it, her underwear would fall down."#message 38 "There is a table near the window."#message 39 "There's nothing there."#message 40 "You have no use for a stained pillow."#message 41 "You are as naked as you're going to get!"#message 42 "With all your clothes on?"#message 43 "You slyly tap out a message in Morse code; unfortunately, only some rats hear it."#message 44 "You can't. She's nailed it to the floor."#message 45 "Your rope is not long enough to reach outside."#message 46 "NOW!? You've come this far, Larry; now's the time to do more than just look!"

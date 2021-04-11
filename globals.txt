@@ -1,0 +1,45 @@
+[
+[ global defines file for LSL1
+[
+#define varTimeLastElapsedSeconds   v43 
+#define varGameControlDebug         v51 [ This control if the game is in debugmode or not
+#define varTitlePageStep            v65 [ Memorize the Title "steps"
+#define varTimingDelay              v67
+#define varObjBreathSprayUsage      v70
+#define varEgoSize                  v86
+#define varInGameMoney              v90
+#define varPlayerAge               v209 [ Age donne par le joueur
+#define varGameTimeHour            v119 [ in Game Time (Hour)
+#define varGameTimeMinute          v116 [ in Game Time (Minute)
+#define varGameTimeSecond          v115 [ in Game Time (second)
+#define varQuestionnaireID         v220
+#define CtrlHelp                     c1
+#define CtrlSound                    c2 [ Turn Sound ON/OFF
+#define CtrlSave                     c5
+#define CtrlRestart                  c9
+#define CtrlLoad                     c7
+#define CtrlMenuSpeedChange         c10
+#define CtrlInventory               c11
+#define CtrlJoystick                c12
+#define CtrlMenuGraphicsMode        c13
+#define CtrlMenuViewObject          c17
+#define CtrlQuit                    c22
+#define CtrlMenuUnusedItem          c24
+#define CtrlMenuAbout               c25
+#define CtrlMenuCalc                c26
+#define CtrlMenuPuzzle              c27
+#define CtrlMenuBodyFunction        c28
+#define CtrlViewClock               c29
+#define CtrlPause                   c30
+#define CtrlMenuSpeedSlow           c31
+#define CtrlMenuSpeedNormal         c32
+#define CtrlMenuSpeedFast           c33
+#define CtrlMenuSpeedUltra          c34
+#define CtrlBossKey                 c41
+#define ObjFlyingDoll                o1
+#define ObjTitleText                 o2
+#define ObjPoliceMan                o12
+#define boolCallDebugger            f32
+#define boolMusicEnded              f52
+#define boolTimingDelayOut          f75
+
