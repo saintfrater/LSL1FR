@@ -1,6 +1,6 @@
 Quand j'étais plus jeune (comprennez enfant) mon cousin avait ramener mon PREMIER jeu sur PC vers 1988:
 
-Leisure Suit Larry in the land of the lLugne Lizzard... en anglais.
+Leisure Suit Larry in the land of the Lounge Lizzard... en anglais.
 j'ai fini le jeu avec l'aide d'un bon dictionnaire FR/EN... Ce qui m'a donné le gout de ce type de jeu.
 
 Il y a quelques temps, j'ai voulu le rejouer dans sa version d'origine de 1986.
