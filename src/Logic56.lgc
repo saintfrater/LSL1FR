@@ -24,7 +24,7 @@ if ((v229 == 1 ||     v229 == 3 ||     v229 == 2))
     {    v231 = 1;    set(f252);    }  if (v231 > 10)
     {    v231 = 10;    }  if (v229 != 4)
     {    goto(Label1);    }  }if (v229 == 5)
-  {  v52 = 250;  v52 -= v228;  if (v52 > varInGameMoney)
+  {  varRandomValue = 250;  varRandomValue -= v228;  if (varRandomValue > varInGameMoney)
     {    varInGameMoney  += v228;    }  else
     {    v228 = 250;    v228 -= varInGameMoney;    varInGameMoney = 250;    print("Congratulations, you've broken the bank. This casino has a limit of "          "$250.00 per person, and you've reached it. No more for you, Larry!");    set(f255);    }  v228 = 0;  v229 = 6;  }if (v229 == 6)
   {  if (monitorType == MONO)

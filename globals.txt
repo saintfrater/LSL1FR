@@ -1,7 +1,7 @@
 [
 [ global defines file for LSL1
 [
-#define varTimeLastElapsedSeconds   v43 
+#define varTimeLastElapsedSeconds   v43
 #define varGameControlDebug         v51 [ This control if the game is in debugmode or not
 #define varTitlePageStep            v65 [ Memorize the Title "steps"
 #define varTimingDelay              v67
@@ -36,10 +36,27 @@
 #define CtrlMenuSpeedFast           c33
 #define CtrlMenuSpeedUltra          c34
 #define CtrlBossKey                 c41
-#define ObjFlyingDoll                o1
-#define ObjTitleText                 o2
+#define Obj_animatedPNJ1             o1
+#define Obj_animatedPNJ2             o2
 #define ObjPoliceMan                o12
 #define boolCallDebugger            f32
 #define boolMusicEnded              f52
 #define boolTimingDelayOut          f75
-
+#define CtrlVolumeDown              c38 [ TANDY Volume Down Command
+#define CtrlVolumeUp                c39 [ TANDY Volume Up Command
+#define boolShowClock               f42 [ is Clock should be displayed
+#define varRandomValue              v52 [ random variable to handle/choose panic page
+#define varPanicPicture             v81 [ picture ID of the random panic page
+#define boolClockRedraw             f43 [ Clock title must be re-printed
+#define Obj_animatedPNJ3             o3
+#define Obj_animatedPNJ4             o4
+#define Obj_animatedPNJ5             o5
+#define Obj_animatedPNJ6             o6
+#define Obj_animatedPNJ7             o7
+#define Obj_animatedPNJ8             o8
+#define Obj_animatedPNJ9             o9
+#define Obj_animatedPNJ10           o10
+#define Obj_animatedPNJ11           o11
+#define boolSexWithHooker           f63
+#define boolLarryWearCondom         f62 [ Set when Larry has put (and wear) a Condom
+#define boolLarryDontHaveIt         f68 [ Set when Larry is trying to use item he didn't have (yet ?)

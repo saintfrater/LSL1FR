@@ -1,5 +1,5 @@
 if (v207 == 1)
-  {  v205 = v200;  v205 *= v204;  v52 = 250;  v52 -= v205;  if (v52 > varInGameMoney)
+  {  v205 = v200;  v205 *= v204;  varRandomValue = 250;  varRandomValue -= v205;  if (varRandomValue > varInGameMoney)
     {    varInGameMoney  += v205;    }  else
     {    v205 = 250;    v205 -= varInGameMoney;    varInGameMoney = 250;    print("Congratulations, you've broken the bank! This casino has a limit of "          "$250.00 per person, and you've reached it. No more for you, Larry!");    set(f200);    }  v207 = 2;  }if (v207 == 2)
   {  if (monitorType == MONO)

@@ -1,7 +1,7 @@
 if (isset(newRoom))
-  {  set.horizon(1);  load.pic(currentRoom);  draw.pic(currentRoom);  discard.pic(currentRoom);  load.view(View89);  set(f48);  animate.obj(o3);  set.view(o3, View89);  set.loop(o3, 0);  set.cel(o3, 0);  set.priority(o3, 4);  position(o3, 56, 93);  stop.cycling(o3);  animate.obj(o4);  set.view(o4, View89);  set.loop(o4, 1);  set.cel(o4, 0);  set.priority(o4, 5);  position(o4, 62, 49);  stop.cycling(o4);  cycle.time(o4, varEgoSize);  if (!isset(f66))
-    {    set.cel(o3, 2);    v203 = 4;    }  else
-    {    set.cel(o3, 0);    draw(o4);    random(6, 19, v202);    reset(f206);    }  draw(o3);  v207 = 255;  stop.update(o3);  show.pic();  return();  }set(f202);set(f69);if (!isset(haveInput))
+  {  set.horizon(1);  load.pic(currentRoom);  draw.pic(currentRoom);  discard.pic(currentRoom);  load.view(View89);  set(f48);  animate.obj(Obj_animatedPNJ3);  set.view(Obj_animatedPNJ3, View89);  set.loop(Obj_animatedPNJ3, 0);  set.cel(Obj_animatedPNJ3, 0);  set.priority(Obj_animatedPNJ3, 4);  position(Obj_animatedPNJ3, 56, 93);  stop.cycling(Obj_animatedPNJ3);  animate.obj(Obj_animatedPNJ4);  set.view(Obj_animatedPNJ4, View89);  set.loop(Obj_animatedPNJ4, 1);  set.cel(Obj_animatedPNJ4, 0);  set.priority(Obj_animatedPNJ4, 5);  position(Obj_animatedPNJ4, 62, 49);  stop.cycling(Obj_animatedPNJ4);  cycle.time(Obj_animatedPNJ4, varEgoSize);  if (!isset(f66))
+    {    set.cel(Obj_animatedPNJ3, 2);    v203 = 4;    }  else
+    {    set.cel(Obj_animatedPNJ3, 0);    draw(Obj_animatedPNJ4);    random(6, 19, v202);    reset(f206);    }  draw(Obj_animatedPNJ3);  v207 = 255;  stop.update(Obj_animatedPNJ3);  show.pic();  return();  }set(f202);set(f69);if (!isset(haveInput))
   {  goto(Label1);  }if ((said("buy", "bite") ||     said("buy", "shot") ||     said("buy", "champagne") ||     said("buy", "booze") ||     said("buy", "blond", "bite")))
   {  print("Funny, this is a dry club.");  }if ((said("ask", "bouncer") ||     said("ask", "bouncer")))
   {  print("They seem to be staring at something they all want.");  }if ((said("examine", "blond", "rol") ||     said("establish eye contact", "rol") ||     said("look in", "blond", "rol")))
@@ -41,13 +41,13 @@ if (isset(newRoom))
       {      print("\"What! At a time like this?!\"");      v83 = 17;      }    else
       {      set(f122);      set(boolTimingDelayOut);      varTitlePageStep = 0;      }    }  }if ((said("add", "blond", "flower") ||     said("add", "flower") ||     said("add", "flower", "blond")))
   {  if (!has("Rose"))
-    {    set(f68);    }  else
+    {    set(boolLarryDontHaveIt);    }  else
     {    currentScore  += 5;    print("%m52roses.\"");    set(f71);    drop("Rose");    v207 = 1;    }  }if ((said("add", "blond", "box of candy") ||     said("add", "box of candy") ||     said("add", "box of candy", "blond")))
   {  if (!has("Box of Candy"))
-    {    set(f68);    }  else
+    {    set(boolLarryDontHaveIt);    }  else
     {    currentScore  += 5;    print("%m52candy.\"");    set(f72);    drop("Box of Candy");    v207 = 1;    }  }if ((said("add", "blond", "diamond ring") ||     said("add", "diamond ring") ||     said("add", "diamond ring", "blond")))
   {  if (!has("Diamond Ring"))
-    {    set(f68);    }  else
+    {    set(boolLarryDontHaveIt);    }  else
     {    currentScore  += 5;    print("%m52diamonds.\"");    set(f73);    drop("Diamond Ring");    v207 = 1;    }  }if ((said("add", "blond", "bucks") ||     said("add", "bucks") ||     said("buy", "blond", "bucks") ||     said("buy", "bucks") ||     said("buy", "blond", "one", "bucks") ||     said("buy", "blond") ||     said("add", "one", "bucks", "blond") ||     said("add", "blond", "one", "bucks") ||     said("add", "bucks", "blond")))
   {  if (!isset(f97))
     {    print("\"Well, really. I'm not that kind of girl!!\"");    v207 = 2;    }  else
@@ -59,15 +59,15 @@ if (isset(newRoom))
   {  print("SLAP!");  print("SLAP!\n\nSLAP!!");  v207 = 2;  }if ((said("examine", "blond", "boob") ||     said("examine", "boob", "rol") ||     said("examine", "body") ||     said("examine") ||     said("examine", "boob")))
   {  print("\"Please,\" she says coyly, \"stop staring there.\"");  v207 = 1;  }Label1:--v202;if (v202 == 1)
   {  toggle(f206);  if (isset(f206))
-    {    start.cycling(o4);    random(6, 18, v202);    }  else
-    {    stop.cycling(o4);    set.cel(o4, 0);    random(11, 33, v202);    }  }if (isset(f44))
+    {    start.cycling(Obj_animatedPNJ4);    random(6, 18, v202);    }  else
+    {    stop.cycling(Obj_animatedPNJ4);    set.cel(Obj_animatedPNJ4, 0);    random(11, 33, v202);    }  }if (isset(f44))
   {  --v203;  if (v203 == 1)
     {    print("\"Bad breath's one thing, Larry, but you could knock a buzzard off a "          "manure truck!!\"");    }  --v206;  if (v206 == 1)
     {    v207 = 0;    }  if (v207 != 255)
     {    if (v207 == 0)
       {      v202 = 2;      }    if (v207 == 1)
-      {      v206 = 5;      set(f206);      v202 = 22;      start.cycling(o4);      }    if (v207 == 2)
-      {      v206 = 7;      reset(f206);      v202 = 0;      stop.cycling(o4);      set.cel(o4, 0);      }    set.cel.v(o3, v207);    force.update(o3);    v207 = 255;    }  }if (isset(f71) &&     isset(f72) &&     isset(f73) &&     isset(f74))
+      {      v206 = 5;      set(f206);      v202 = 22;      start.cycling(Obj_animatedPNJ4);      }    if (v207 == 2)
+      {      v206 = 7;      reset(f206);      v202 = 0;      stop.cycling(Obj_animatedPNJ4);      set.cel(Obj_animatedPNJ4, 0);      }    set.cel.v(Obj_animatedPNJ3, v207);    force.update(Obj_animatedPNJ3);    v207 = 255;    }  }if (isset(f71) &&     isset(f72) &&     isset(f73) &&     isset(f74))
   {  if (!isset(f97))
     {    set(f97);    print("\"Oooh, you're so sweet. I just LOVE you! Larry, I want you to make "          "wild, passionate love to me!\"");    print("(All right, Larry. At last, you're gonna get lucky!!)");    print("She continues, \"But first, we must get married. I could never make "          "love to a man not my husband. If you would loan me a hundred "          "dollars, I'd rent the Honeymoon Suite at the Casino Hotel for us. "          "Then, after we're married, we'll celebrate there.\"");    v83 = 30;    }  }if (isset(f44))
   {  --v83;  if (v83 == 15)

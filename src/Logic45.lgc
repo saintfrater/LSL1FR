@@ -1,8 +1,8 @@
 if (isset(newRoom))
   {  load.pic(currentRoom);  draw.pic(currentRoom);  if (v30 == 23)
-    {    set(f208);    v206 = 7;    load.pic(v206);    load.view(View182);    load.view(View8);    load.view(Larry_StandAndWalk);    load.view(View178);    load.view(View45);    load.sound(Sound24);    animate.obj(o6);    ignore.blocks(o6);    set.view(o6, View182);    set.loop(o6, 1);    position(o6, 55, 116);    draw(o6);    cycle.time(o6, varEgoSize);    set.view(ego, View8);    move.obj(ego, 48, 121, 1, boolTimingDelayOut);    }  else
+    {    set(f208);    v206 = 7;    load.pic(v206);    load.view(View182);    load.view(View8);    load.view(Larry_StandAndWalk);    load.view(View178);    load.view(View45);    load.sound(Sound24);    animate.obj(Obj_animatedPNJ6);    ignore.blocks(Obj_animatedPNJ6);    set.view(Obj_animatedPNJ6, View182);    set.loop(Obj_animatedPNJ6, 1);    position(Obj_animatedPNJ6, 55, 116);    draw(Obj_animatedPNJ6);    cycle.time(Obj_animatedPNJ6, varEgoSize);    set.view(ego, View8);    move.obj(ego, 48, 121, 1, boolTimingDelayOut);    }  else
     {    if (obj.in.room("Inflatable Doll", currentRoom))
-      {      v205 = 28;      load.pic(v205);      load.view(View184);      load.sound(Sound15);      }    }  load.view(View169);  load.view(View9);  animate.obj(o5);  ignore.blocks(o5);  ignore.objs(o5);  set.view(o5, View169);  set.cel(o5, 0);  set.priority(o5, 10);  position(o5, 117, 130);  draw(o5);  v52 = 3;  cycle.time(o5, v52);  stop.update(o5);  position(ego, 20, 135);  draw(ego);  show.pic();  return();  }reset(f201);if (posn(ego, 105, 121, 117, 136))
+      {      v205 = 28;      load.pic(v205);      load.view(View184);      load.sound(Sound15);      }    }  load.view(View169);  load.view(View9);  animate.obj(Obj_animatedPNJ5);  ignore.blocks(Obj_animatedPNJ5);  ignore.objs(Obj_animatedPNJ5);  set.view(Obj_animatedPNJ5, View169);  set.cel(Obj_animatedPNJ5, 0);  set.priority(Obj_animatedPNJ5, 10);  position(Obj_animatedPNJ5, 117, 130);  draw(Obj_animatedPNJ5);  varRandomValue = 3;  cycle.time(Obj_animatedPNJ5, varRandomValue);  stop.update(Obj_animatedPNJ5);  position(ego, 20, 135);  draw(ego);  show.pic();  return();  }reset(f201);if (posn(ego, 105, 121, 117, 136))
   {  set(f201);  }reset(f203);if (posn(ego, 117, 121, 129, 131))
   {  set(f203);  }reset(f216);if (posn(ego, 56, 123, 86, 138))
   {  set(f216);  }if (isset(f202) &&     isset(f201))
@@ -23,21 +23,21 @@ if (isset(newRoom))
       {      print("Le reste du placard est sans interet compare a la poupee gonflable");      }    }  }if (isset(f215) &&     said("ok"))
   {  goto(Label1);  }if ((said("use", "doll") ||     said("abuse", "doll") ||     said("add", "cock", "doll") ||     said("add", "cock", "doll", "lips") ||     said("add", "cock", "lips") ||     said("cunnilingus", "doll") ||     said("make", "doll", "blow job") ||     said("make", "doll", "add", "blow job") ||     said("ass", "copulate", "rol") ||     said("anyword", "ass", "copulate", "rol") ||     said("anyword", "ass", "rol") ||     said("ass", "rol") ||     said("anyword", "blow job", "rol") ||     said("anyword", "clit", "rol") ||     said("anyword", "anyword", "clit", "rol") ||     said("blow job", "rol") ||     said("anyword", "copulate", "rol") ||     said("copulate", "doll")))
   {  if (!has("Inflatable Doll"))
-    {    set(f68);    }  else
+    {    set(boolLarryDontHaveIt);    }  else
     {    if (!isset(f217))
       {      print("Quel est le plaisir d'avoir une poupee gonflable degonflee?");      }    else
       {      if (!isset(f215))
         {        print("Geez, Larry. est-ce une bonne idee?");        set(f215);        }      else
         {Label1:        print("Ok, tu l'as demande.\n\nEn realite, tu l'as demande deux fois! "              "Ony va...");        print("Choisisant ton ouverture preferee parmis les trois "              "disponibles,tu tentes, timidement, la poupee. C'est sans doute "              "le truc leplus tordu que tu ai fait depuis longtemps, Larry.\n\n "              "Lentementtu accelere le tempo, et abandonnes tes inhibitions "              "(sans parlerde ton amour-propre). De plus en plus vite...  "              "Jusqu'a ce que,soudainement, Il y a un fort bruit de "              "flatulances...");        v207 = 3;        currentScore  += 8;        set(f218);        }      }    }  }if (said("examine", "doll"))
   {  if (!has("Inflatable Doll"))
-    {    set(f68);    }  else
+    {    set(boolLarryDontHaveIt);    }  else
     {    if (!isset(f217))
       {      show.obj(View113);      }    else
       {      if (isset(f209))
         {        print("Que veux tu voir de plus?");        }      else
         {        v207 = 6;        }      }    }  }if (said("blow", "doll"))
   {  if (!has("Inflatable Doll"))
-    {    set(f68);    }  else
+    {    set(boolLarryDontHaveIt);    }  else
     {    v207 = 6;    }  }if ((said("increase", "door") ||     said("increase", "cabinet")))
   {  if (isset(f202))
     {    print("It is open.");    }  else
@@ -80,38 +80,38 @@ if (isset(newRoom))
     {    print("...Quelque part ce que tu attendais le plus.");    }  }if (isset(boolTimingDelayOut))
   {  reset(boolTimingDelayOut);  ++varTitlePageStep;  if (varTitlePageStep == 1)
     {    varTimingDelay = 3;    }  if (varTitlePageStep == 2)
-    {    unanimate.all();    draw.pic(v206);    show.pic();    set(boolMusicEnded);    animate.obj(ObjFlyingDoll);    ignore.objs(ObjFlyingDoll);    set.view(ObjFlyingDoll, View178);    fix.loop(ObjFlyingDoll);    animate.obj(ObjTitleText);    ignore.objs(ObjTitleText);    set.view(ObjTitleText, View178);    fix.loop(ObjTitleText);    animate.obj(o3);    ignore.objs(o3);    set.view(o3, View178);    fix.loop(o3);    animate.obj(o4);    ignore.objs(o4);    set.view(o4, View178);    fix.loop(o4);    v56 = 12;    random(5, 9, v201);    random(2, 5, v202);    random(3, 6, v203);    random(4, 11, v204);    varTimingDelay = 7;    currentScore  += 25;    }  if (varTitlePageStep == 3)
+    {    unanimate.all();    draw.pic(v206);    show.pic();    set(boolMusicEnded);    animate.obj(Obj_animatedPNJ1);    ignore.objs(Obj_animatedPNJ1);    set.view(Obj_animatedPNJ1, View178);    fix.loop(Obj_animatedPNJ1);    animate.obj(Obj_animatedPNJ2);    ignore.objs(Obj_animatedPNJ2);    set.view(Obj_animatedPNJ2, View178);    fix.loop(Obj_animatedPNJ2);    animate.obj(Obj_animatedPNJ3);    ignore.objs(Obj_animatedPNJ3);    set.view(Obj_animatedPNJ3, View178);    fix.loop(Obj_animatedPNJ3);    animate.obj(Obj_animatedPNJ4);    ignore.objs(Obj_animatedPNJ4);    set.view(Obj_animatedPNJ4, View178);    fix.loop(Obj_animatedPNJ4);    v56 = 12;    random(5, 9, v201);    random(2, 5, v202);    random(3, 6, v203);    random(4, 11, v204);    varTimingDelay = 7;    currentScore  += 25;    }  if (varTitlePageStep == 3)
     {    print("Bravo, Larry!!!\n\nTu l'as fait!!\n\nTu as remplis avec succes "          "tasoiree dans le monde de Sierra, perdu ta virginite, et tu t'en "          "essorti victorieux!");    varTimingDelay = 4;    }  if (varTitlePageStep == 4)
     {    print("Bien sur, cette impression de succes est de courte duree, c'est "          "icique Ken Williams vous annonce la suite "          "\"bientot-disponible\"\n\nHey,Ken! Viens ici, et donne leur le "          "resumer...");    v66 = 11;    }  if (varTitlePageStep == 5)
-    {    print("Mesdames et messieurs...\n\nMr. Ken Williams!");    animate.obj(o8);    ignore.objs(o8);    set.view(o8, View45);    set.loop(o8, 0);    position(o8, 0, 166);    draw(o8);    move.obj(o8, 66, 166, 1, boolTimingDelayOut);    }  if (varTitlePageStep == 6)
-    {    set.loop(o8, 2);    varTimingDelay = 4;    }  if (varTitlePageStep == 7)
-    {    print("\"Salut a tous! Tres bientot, sur cet ordinateur, le prochain "          "episodede la saga de Larry Laffer, Voyageur de commerce de logiciel, "          "je doisdejà donner le titre, mais nous ne l'avons pas "          "encoretrouve.\n\n(soyez certains de prendre quelques copies en plus "          "au casou notre copieur de disquette foire encore une fois!)\"");    move.obj(o8, 151, 166, 1, boolTimingDelayOut);    }  if (varTitlePageStep == 8)
-    {    erase(o8);    print("Oups, attends, on a presque oublier de te dire comment tu avais "          "jouerparfaitement.");    varTimingDelay = 4;    }  if (varTitlePageStep == 9)
+    {    print("Mesdames et messieurs...\n\nMr. Ken Williams!");    animate.obj(Obj_animatedPNJ8);    ignore.objs(Obj_animatedPNJ8);    set.view(Obj_animatedPNJ8, View45);    set.loop(Obj_animatedPNJ8, 0);    position(Obj_animatedPNJ8, 0, 166);    draw(Obj_animatedPNJ8);    move.obj(Obj_animatedPNJ8, 66, 166, 1, boolTimingDelayOut);    }  if (varTitlePageStep == 6)
+    {    set.loop(Obj_animatedPNJ8, 2);    varTimingDelay = 4;    }  if (varTitlePageStep == 7)
+    {    print("\"Salut a tous! Tres bientot, sur cet ordinateur, le prochain "          "episodede la saga de Larry Laffer, Voyageur de commerce de logiciel, "          "je doisdejà donner le titre, mais nous ne l'avons pas "          "encoretrouve.\n\n(soyez certains de prendre quelques copies en plus "          "au casou notre copieur de disquette foire encore une fois!)\"");    move.obj(Obj_animatedPNJ8, 151, 166, 1, boolTimingDelayOut);    }  if (varTitlePageStep == 8)
+    {    erase(Obj_animatedPNJ8);    print("Oups, attends, on a presque oublier de te dire comment tu avais "          "jouerparfaitement.");    varTimingDelay = 4;    }  if (varTitlePageStep == 9)
     {    print("tu as joue correctement, je suppose!");    varTimingDelay = 4;    }  if (varTitlePageStep == 10)
     {    print("Au nom de Mark et Sandy, Al et Marg, Jeff et Chris, Russ et "          "Kim,Larry et Bob, Ken et Roberta, Bob et Marilyn et/ou Bob et "          "Jeannine,John et Mary, Bob et Carol et Ted et Alice...");    print("...merci d'avoir joue, et pense a parler a tous tes amis "          "d'acheterleur propre copie de ce jeu.");    print("Love ya, baby!");    quit(1);    }  if (varTitlePageStep == 101)
     {    set.view(ego, Larry_StandAndWalk);    start.cycling(ego);    move.obj(ego, 110, 131, 1, boolTimingDelayOut);    }  if (varTitlePageStep == 102)
     {    move.obj(ego, 107, 134, 1, boolTimingDelayOut);    }  if (varTitlePageStep == 103)
     {    move.obj(ego, 17, 134, 1, boolTimingDelayOut);    }  if (varTitlePageStep == 104)
     {    reset(f48);    v76 = 44;    }  }if (isset(f200))
-  {  reset(f200);  stop.update(o5);  }--v201;if (v201 == 1)
-  {  random(0, 3, v54);  set.loop.v(ObjFlyingDoll, v54);  set.cel(ObjFlyingDoll, 0);  stop.cycling(ObjFlyingDoll);  random(0, 150, v32);  random(120, 167, v33);  position.v(ObjFlyingDoll, v32, v33);  draw(ObjFlyingDoll);  random(40, 110, v33);  move.obj.v(ObjFlyingDoll, v32, v33, v56, f211);  }if (isset(f211))
-  {  reset(f211);  end.of.loop(ObjFlyingDoll, f204);  }if (isset(f204))
-  {  reset(f204);  erase(ObjFlyingDoll);  random(2, 7, v201);  }--v202;if (v202 == 1)
-  {  random(0, 3, v54);  set.loop.v(ObjTitleText, v54);  set.cel(ObjTitleText, 0);  stop.cycling(ObjTitleText);  random(0, 150, v32);  random(120, 167, v33);  position.v(ObjTitleText, v32, v33);  draw(ObjTitleText);  random(40, 110, v33);  move.obj.v(ObjTitleText, v32, v33, v56, f212);  }if (isset(f212))
-  {  reset(f212);  end.of.loop(ObjTitleText, f205);  }if (isset(f205))
-  {  reset(f205);  erase(ObjTitleText);  random(2, 7, v202);  }--v203;if (v203 == 1)
-  {  random(0, 3, v54);  set.loop.v(o3, v54);  set.cel(o3, 0);  stop.cycling(o3);  random(0, 150, v32);  random(120, 167, v33);  position.v(o3, v32, v33);  draw(o3);  random(40, 110, v33);  move.obj.v(o3, v32, v33, v56, f213);  }if (isset(f213))
-  {  reset(f213);  end.of.loop(o3, f206);  }if (isset(f206))
-  {  reset(f206);  erase(o3);  random(2, 7, v203);  }--v204;if (v204 == 1)
-  {  random(0, 3, v54);  set.loop.v(o4, v54);  set.cel(o4, 0);  stop.cycling(o4);  random(0, 150, v32);  random(120, 167, v33);  position.v(o4, v32, v33);  draw(o4);  random(40, 110, v33);  move.obj.v(o4, v32, v33, v56, f214);  }if (isset(f214))
-  {  reset(f214);  end.of.loop(o4, f207);  }if (isset(f207))
-  {  reset(f207);  erase(o4);  random(2, 7, v204);  }if (isset(f210))
-  {  reset(f210);  erase(o7);  reset(f219);  print("Go get her, Larry.");  }if (isset(f218))
-  {  reset(f218);  reset(f209);  unanimate.all();  draw.pic(currentRoom);  animate.obj(ego);  draw(ego);  animate.obj(o5);  ignore.blocks(o5);  ignore.objs(o5);  set.priority(o5, 10);  v52 = 3;  cycle.time(o5, v52);  draw(o5);  stop.update(o5);  show.pic();  }if (v207 > 0)
+  {  reset(f200);  stop.update(Obj_animatedPNJ5);  }--v201;if (v201 == 1)
+  {  random(0, 3, v54);  set.loop.v(Obj_animatedPNJ1, v54);  set.cel(Obj_animatedPNJ1, 0);  stop.cycling(Obj_animatedPNJ1);  random(0, 150, v32);  random(120, 167, v33);  position.v(Obj_animatedPNJ1, v32, v33);  draw(Obj_animatedPNJ1);  random(40, 110, v33);  move.obj.v(Obj_animatedPNJ1, v32, v33, v56, f211);  }if (isset(f211))
+  {  reset(f211);  end.of.loop(Obj_animatedPNJ1, f204);  }if (isset(f204))
+  {  reset(f204);  erase(Obj_animatedPNJ1);  random(2, 7, v201);  }--v202;if (v202 == 1)
+  {  random(0, 3, v54);  set.loop.v(Obj_animatedPNJ2, v54);  set.cel(Obj_animatedPNJ2, 0);  stop.cycling(Obj_animatedPNJ2);  random(0, 150, v32);  random(120, 167, v33);  position.v(Obj_animatedPNJ2, v32, v33);  draw(Obj_animatedPNJ2);  random(40, 110, v33);  move.obj.v(Obj_animatedPNJ2, v32, v33, v56, f212);  }if (isset(f212))
+  {  reset(f212);  end.of.loop(Obj_animatedPNJ2, f205);  }if (isset(f205))
+  {  reset(f205);  erase(Obj_animatedPNJ2);  random(2, 7, v202);  }--v203;if (v203 == 1)
+  {  random(0, 3, v54);  set.loop.v(Obj_animatedPNJ3, v54);  set.cel(Obj_animatedPNJ3, 0);  stop.cycling(Obj_animatedPNJ3);  random(0, 150, v32);  random(120, 167, v33);  position.v(Obj_animatedPNJ3, v32, v33);  draw(Obj_animatedPNJ3);  random(40, 110, v33);  move.obj.v(Obj_animatedPNJ3, v32, v33, v56, f213);  }if (isset(f213))
+  {  reset(f213);  end.of.loop(Obj_animatedPNJ3, f206);  }if (isset(f206))
+  {  reset(f206);  erase(Obj_animatedPNJ3);  random(2, 7, v203);  }--v204;if (v204 == 1)
+  {  random(0, 3, v54);  set.loop.v(Obj_animatedPNJ4, v54);  set.cel(Obj_animatedPNJ4, 0);  stop.cycling(Obj_animatedPNJ4);  random(0, 150, v32);  random(120, 167, v33);  position.v(Obj_animatedPNJ4, v32, v33);  draw(Obj_animatedPNJ4);  random(40, 110, v33);  move.obj.v(Obj_animatedPNJ4, v32, v33, v56, f214);  }if (isset(f214))
+  {  reset(f214);  end.of.loop(Obj_animatedPNJ4, f207);  }if (isset(f207))
+  {  reset(f207);  erase(Obj_animatedPNJ4);  random(2, 7, v204);  }if (isset(f210))
+  {  reset(f210);  erase(Obj_animatedPNJ7);  reset(f219);  print("Go get her, Larry.");  }if (isset(f218))
+  {  reset(f218);  reset(f209);  unanimate.all();  draw.pic(currentRoom);  animate.obj(ego);  draw(ego);  animate.obj(Obj_animatedPNJ5);  ignore.blocks(Obj_animatedPNJ5);  ignore.objs(Obj_animatedPNJ5);  set.priority(Obj_animatedPNJ5, 10);  varRandomValue = 3;  cycle.time(Obj_animatedPNJ5, varRandomValue);  draw(Obj_animatedPNJ5);  stop.update(Obj_animatedPNJ5);  show.pic();  }if (v207 > 0)
   {  if (v207 == 3)
-    {    drop("Inflatable Doll");    set(f85);    prevent.input();    stop.motion(ego);    set(f48);    v30 = 22;    reset(f34);    reset(f35);    varTitlePageStep = 100;    v66 = 13;    animate.obj(o7);    ignore.horizon(o7);    ignore.blocks(o7);    ignore.objs(o7);    set.view(o7, View184);    set.priority(o7, 11);    position(o7, 116, 100);    draw(o7);    set(f219);    move.obj(o7, 0, 100, 2, f210);    set(f220);    }  if (v207 == 4)
-    {    set(f67);    set(f202);    start.update(o5);    end.of.loop(o5, f200);    }  if (v207 == 5)
-    {    set(f67);    reset(f202);    start.update(o5);    reverse.loop(o5, f200);    }  if (v207 == 6)
+    {    drop("Inflatable Doll");    set(f85);    prevent.input();    stop.motion(ego);    set(f48);    v30 = 22;    reset(f34);    reset(f35);    varTitlePageStep = 100;    v66 = 13;    animate.obj(Obj_animatedPNJ7);    ignore.horizon(Obj_animatedPNJ7);    ignore.blocks(Obj_animatedPNJ7);    ignore.objs(Obj_animatedPNJ7);    set.view(Obj_animatedPNJ7, View184);    set.priority(Obj_animatedPNJ7, 11);    position(Obj_animatedPNJ7, 116, 100);    draw(Obj_animatedPNJ7);    set(f219);    move.obj(Obj_animatedPNJ7, 0, 100, 2, f210);    set(f220);    }  if (v207 == 4)
+    {    set(f67);    set(f202);    start.update(Obj_animatedPNJ5);    end.of.loop(Obj_animatedPNJ5, f200);    }  if (v207 == 5)
+    {    set(f67);    reset(f202);    start.update(Obj_animatedPNJ5);    reverse.loop(Obj_animatedPNJ5, f200);    }  if (v207 == 6)
     {    if (!isset(f217))
       {      set(f217);      print("tu inspires, tu bloques et tu expires dans ta poupee, la "            "tenantfermement a bout de bras, tu fais une pause et admires "            "tontravail...");      v200 = 6;      if (!isset(f126))
         {        set(f126);        currentScore  += 5;        }      }    unanimate.all();    draw.pic(v205);    show.pic();    set(f209);    }  v207 = 0;  }if (isset(f220) &&     isset(f219))

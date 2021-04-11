@@ -49,7 +49,7 @@ if (isset(newRoom))
       {      print("Please wait until it's your turn.");      }    else
       {      if (v233 != 2)
         {        print("%m19split%m20");        }      else
-        {        v235 = 243;        v232 = *v235;        v229 = 4;        call(Logic56);        v52 = v55;        ++v235;        v232 = *v235;        v229 = 4;        call(Logic56);        if (v55 != v52)
+        {        v235 = 243;        v232 = *v235;        v229 = 4;        call(Logic56);        varRandomValue = v55;        ++v235;        v232 = *v235;        v229 = 4;        call(Logic56);        if (v55 != varRandomValue)
           {          print("That's not a pair.");          }        else
           {          if (v226 > varInGameMoney)
             {            print("You don't have enough money!");            }          else
@@ -63,9 +63,9 @@ if (isset(newRoom))
         {        print("Surrendering your cards, you are refunded half of your bet.");        v228 = v227;        v229 = 5;        call(Logic56);        v236 = 255;        }      }    }  }if ((said("alter", "bet", "rol") ||     said("new", "bet", "rol") ||     said("increase", "bet", "rol") ||     said("decrease", "bet", "rol") ||     said("bet", "rol")))
   {  v219 = 45;  if (v236 > 0)
     {    print("It's too late now. This hand is already being played.");    }  else
-    {Label1:    get.num("Amount in dollars: $", v255);    v52 = v255;    v227 = 0;    if (v52 > 20)
-      {      print("$20.00 is the maximum bet at this table.");      goto(Label1);      }Label2:    if (v52 > 1)
-      {      v52 -= 2;      ++v227;      goto(Label2);      }    if (v52 == 1)
+    {Label1:    get.num("Amount in dollars: $", v255);    varRandomValue = v255;    v227 = 0;    if (varRandomValue > 20)
+      {      print("$20.00 is the maximum bet at this table.");      goto(Label1);      }Label2:    if (varRandomValue > 1)
+      {      varRandomValue -= 2;      ++v227;      goto(Label2);      }    if (varRandomValue == 1)
       {      print("Please bet an even number of dollars (2, 4, 6, etc.). The house "            "does not keep half-dollars.");      goto(Label1);      }    if (v255 > varInGameMoney)
       {      print("You don't have enough money!");      goto(Label1);      }    v229 = 6;    call(Logic56);    }  }if (isset(boolCallDebugger) &&     said("examine", "all"))
   {  v235 = 237;Label3:  v229 = 1;  call(Logic56);  ++v235;  if (v235 <= 254)
@@ -79,20 +79,20 @@ if (isset(newRoom))
     {    set(f245);    }  }if (isset(f245))
   {  reset(f245);  print("\n        HOUSE RULES\n\nThis table has a $20.00 limit. Bets must be a "        "multiple of $2.00.\n\nDealer must hit 16, and must stand on "        "17.\n\nBlackjack pays 1-1/2 to 1 odds.\n\nAny six cards under 22 "        "wins.\n");  print("\nInsurance bets are offered whenever the dealer shows an ace. They "        "are half your bet, and pay 2 to 1 odds.\n\nYou may split a pair or "        "surrender whenever you have only two cards.\n\nYou may double down if "        "your cards total 10 or 11 points.\n");  print("\nPress F4 when ready to play.\n\nPress F6 for another card.\n\nPress "        "F8 to stand.\n\nTo change the amount of your bet, type \"change "        "bet.\"\n");  v219 = 45;  }if (isset(boolTimingDelayOut))
   {  reset(boolTimingDelayOut);  ++varTitlePageStep;  v219 = 45;  if (varTitlePageStep == 1)
-    {    reset(f246);    reset(f247);    reset(f248);    reset(f249);    reset(f250);    reset(f251);    reset(f252);    reset(f254);    v222 = 0;    v223 = 0;    v224 = 0;    v225 = 0;    v226 = 0;    v233 = 0;    v226 = v255;    varInGameMoney -= v226;    v236 = 1;    set(f87);    v235 = 237;Label5:    random(0, 51, v52);    if (v235 != 237)
-      {      v234 = 237;Label6:      v232 = *v234;      if (v232 == v52)
+    {    reset(f246);    reset(f247);    reset(f248);    reset(f249);    reset(f250);    reset(f251);    reset(f252);    reset(f254);    v222 = 0;    v223 = 0;    v224 = 0;    v225 = 0;    v226 = 0;    v233 = 0;    v226 = v255;    varInGameMoney -= v226;    v236 = 1;    set(f87);    v235 = 237;Label5:    random(0, 51, varRandomValue);    if (v235 != 237)
+      {      v234 = 237;Label6:      v232 = *v234;      if (v232 == varRandomValue)
         {        goto(Label5);        }      ++v234;      if (v234 < v235)
         {        goto(Label6);        }      }    if (v235 == 249)
-      {      v232 = v52;      v229 = 4;      call(Logic56);      varQuestionnaireID = v231;      v221 = 243;      v232 = *v221;      v229 = 4;      call(Logic56);      if (varQuestionnaireID == v231)
-        {        goto(Label5);        }      }    *v235 = v52;    ++v235;    if (v235 <= 254)
+      {      v232 = varRandomValue;      v229 = 4;      call(Logic56);      varQuestionnaireID = v231;      v221 = 243;      v232 = *v221;      v229 = 4;      call(Logic56);      if (varQuestionnaireID == v231)
+        {        goto(Label5);        }      }    *v235 = varRandomValue;    ++v235;    if (v235 <= 254)
       {      goto(Label5);      }    draw.pic(currentRoom);    show.pic();    v229 = 6;    call(Logic56);    set.cel(o15, 0);    draw(o15);    v66 = 28;    sound(Sound5, f53);    }  if (varTitlePageStep == 2)
     {    erase(o15);    v66 = 9;    }  if (varTitlePageStep == 3)
     {    v235 = 243;    v229 = 1;    call(Logic56);    v223 = v231;    v66 = 9;    }  if (varTitlePageStep == 4)
     {    v235 = 237;    v229 = 1;    call(Logic56);    v66 = 9;    v222 = v231;    }  if (varTitlePageStep == 5)
     {    v235 = 243;    ++v235;    v229 = 1;    call(Logic56);    v223  += v231;    v66 = 9;    }  if (varTitlePageStep == 6)
     {    v235 = 237;    ++v235;    v229 = 3;    call(Logic56);    v222  += v231;    v233 = 2;    v235 = 243;    v232 = *v235;    v229 = 4;    call(Logic56);    if ((v231 == 1 ||         v231 == 10))
-      {      v52 = v231;      ++v235;      v232 = *v235;      v229 = 4;      call(Logic56);      if (v52 == 1 &&           v231 == 10)
-        {        set(f246);        }      if (v52 == 10 &&           v231 == 1)
+      {      varRandomValue = v231;      ++v235;      v232 = *v235;      v229 = 4;      call(Logic56);      if (varRandomValue == 1 &&           v231 == 10)
+        {        set(f246);        }      if (varRandomValue == 10 &&           v231 == 1)
         {        set(f246);        }      }    v235 = 237;    v232 = *v235;    v229 = 4;    call(Logic56);    if (v231 == 1)
       {      cancel.line();      prevent.input();      if (monitorType == MONO)
         {        clear.lines(24, 24, BLACK);        display(24, 0, "Do you want insurance? ");        }      else
@@ -105,8 +105,8 @@ if (isset(newRoom))
           {          print("Please answer \"y\" or \"n\".");          lastChar = 0;          return();          }        }      reset.scan.start();      lastChar = 0;      if (monitorType == MONO)
         {        clear.lines(24, 24, BLACK);        }      else
         {        clear.lines(23, 23, BLACK);        }      accept.input();      }    v235 = 237;    v232 = *v235;    v229 = 4;    call(Logic56);    if ((v231 == 1 ||         v231 == 10))
-      {      v52 = v231;      ++v235;      v232 = *v235;      v229 = 4;      call(Logic56);      if (v52 == 1 &&           v231 == 10)
-        {        set(f247);        }      if (v52 == 10 &&           v231 == 1)
+      {      varRandomValue = v231;      ++v235;      v232 = *v235;      v229 = 4;      call(Logic56);      if (varRandomValue == 1 &&           v231 == 10)
+        {        set(f247);        }      if (varRandomValue == 10 &&           v231 == 1)
         {        set(f247);        }      }    if (isset(f246))
       {      print("You have blackjack.");      if (isset(f247))
         {        v236 = 255;        v235 = 237;        ++v235;        v229 = 1;        call(Logic56);        print("The dealer has blackjack!");        print("It's a push!");        v228 = v226;        v229 = 5;        call(Logic56);        if (isset(f254))
@@ -117,7 +117,7 @@ if (isset(newRoom))
         {        v236 = 255;        v235 = 237;        ++v235;        v229 = 1;        call(Logic56);        v229 = 6;        call(Logic56);        print("The dealer has blackjack!");        if (isset(f254))
           {          print("Your insurance bet pays 2 to 1.");          v228 = v227;          v228  += v227;          v229 = 5;          call(Logic56);          }        }      }    }  if (varTitlePageStep == 7)
     {    erase(o13);    v236 = 255;    }  if (varTitlePageStep == 11)
-    {    reset(f253);    v225 = v255;    varInGameMoney -= v225;    v229 = 6;    call(Logic56);    v235 = 249;    v52 = *v235;    varQuestionnaireID = 243;    ++varQuestionnaireID;    v221 = *varQuestionnaireID;    *v235 = v221;    *varQuestionnaireID = v52;    v235 = 243;    ++v235;    v229 = 2;    call(Logic56);    v66 = 9;    }  if (varTitlePageStep == 12)
+    {    reset(f253);    v225 = v255;    varInGameMoney -= v225;    v229 = 6;    call(Logic56);    v235 = 249;    varRandomValue = *v235;    varQuestionnaireID = 243;    ++varQuestionnaireID;    v221 = *varQuestionnaireID;    *v235 = v221;    *varQuestionnaireID = varRandomValue;    v235 = 243;    ++v235;    v229 = 2;    call(Logic56);    v66 = 9;    }  if (varTitlePageStep == 12)
     {    v235 = 249;    v229 = 1;    call(Logic56);    v223 -= v231;    v66 = 9;    }  if (varTitlePageStep == 13)
     {    set(f253);    v235 = 243;    ++v235;    v229 = 1;    call(Logic56);    v223  += v231;    }  if (varTitlePageStep == 21)
     {    reset(f253);    varInGameMoney -= v226;    v226  += v226;    v229 = 6;    call(Logic56);    v66 = 9;    }  if (varTitlePageStep == 22)

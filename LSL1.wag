@@ -11,7 +11,7 @@
    Author = Sierra
    About = ""
    GameVersion = ""
-   LastEdit = "11-04-21 16:53:33"
+   LastEdit = "11-04-21 20:59:10"
    PlatformType = 2
    Platform = "C:\Program Files (x86)\ScummVM\scummvm.exe"
    DOSExec = ""
@@ -24,16 +24,16 @@
 [Logic0]
    ID = Logic_Start
    Size = 13777
-   CRC32 = &HCCE64F61
-   CompCRC32 = &H3A8125B5
+   CRC32 = &H5B5D094F
+   CompCRC32 = &H5B5D094F
    Description = ""
    IsRoom = False
 
 [Logic1]
    ID = Logic_Title
    Size = 553
-   CRC32 = &HA629E95A
-   CompCRC32 = &HA629E95A
+   CRC32 = &HF5851A5D
+   CompCRC32 = &HF5851A5D
    Description = ""
    IsRoom = True
 
@@ -64,272 +64,272 @@
 [Logic6]
    ID = Logic_TitleExit
    Size = 3572
-   CRC32 = &H5E3D1C2D
-   CompCRC32 = &HFC7DCB3C
+   CRC32 = &H37488517
+   CompCRC32 = &H37488517
    Description = "This screen decide if the player can go to the game or should answer few questions..."
    IsRoom = True
 
 [Logic8]
-   ID = Logic8
+   ID = Logic_CorpsRecycling
    Size = 1272
-   CRC32 = &H62051F7A
-   CompCRC32 = &H62051F7A
-   Description = ""
+   CRC32 = &HE4082CE
+   CompCRC32 = &HE4082CE
+   Description = "This Logic is used when Larry's die and his corps must be "recycled" by Sierra's adventure team"
    IsRoom = False
 
 [Logic9]
-   ID = Logic9
+   ID = Logic_Halley_BadGuy
    Size = 794
-   CRC32 = &HE9D1823A
-   CompCRC32 = &HE9D1823A
+   CRC32 = &H73F3F755
+   CompCRC32 = &H73F3F755
    Description = ""
    IsRoom = False
 
 [Logic10]
-   ID = Logic10
+   ID = Logic_InTaxy
    Size = 3668
-   CRC32 = &HEFEAD0D3
-   CompCRC32 = &HEFEAD0D3
+   CRC32 = &HB14C3913
+   CompCRC32 = &HB14C3913
    Description = ""
    IsRoom = True
 
 [Logic11]
    ID = Logic_MainGame
    Size = 1958
-   CRC32 = &H4FA9EAD4
-   CompCRC32 = &H4FA9EAD4
+   CRC32 = &H1160DC13
+   CompCRC32 = &H1160DC13
    Description = ""
    IsRoom = True
 
 [Logic12]
-   ID = Logic12
+   ID = Logic_Halley_Leftys
    Size = 6273
-   CRC32 = &H8CF62969
-   CompCRC32 = &H8CF62969
+   CRC32 = &H942A4409
+   CompCRC32 = &H942A4409
    Description = ""
    IsRoom = False
 
 [Logic13]
-   ID = Logic13
+   ID = Logic_LeftysBathroom
    Size = 3685
-   CRC32 = &HCA7C55DF
-   CompCRC32 = &HCA7C55DF
+   CRC32 = &H3D07C63D
+   CompCRC32 = &H3D07C63D
    Description = ""
    IsRoom = False
 
 [Logic14]
    ID = Logic14
    Size = 2477
-   CRC32 = &HEBD9573B
-   CompCRC32 = &HEBD9573B
+   CRC32 = &H87F3FDA4
+   CompCRC32 = &H87F3FDA4
    Description = ""
    IsRoom = False
 
 [Logic15]
    ID = Logic15
    Size = 7606
-   CRC32 = &H8EF5B82F
-   CompCRC32 = &H8EF5B82F
+   CRC32 = &H4F3BA6D3
+   CompCRC32 = &H4F3BA6D3
    Description = ""
    IsRoom = False
 
 [Logic16]
    ID = Logic16
    Size = 5037
-   CRC32 = &H92AF2FF6
-   CompCRC32 = &H92AF2FF6
+   CRC32 = &HA10D038B
+   CompCRC32 = &HA10D038B
    Description = ""
    IsRoom = False
 
 [Logic17]
-   ID = Logic17
+   ID = Logic_Hookers_Room
    Size = 5001
-   CRC32 = &H359B3F12
-   CompCRC32 = &H359B3F12
+   CRC32 = &HE95369E4
+   CompCRC32 = &HE95369E4
    Description = ""
    IsRoom = False
 
 [Logic19]
    ID = Logic_BadEnding
    Size = 456
-   CRC32 = &HE273B2FA
-   CompCRC32 = &HE273B2FA
+   CRC32 = &H60B64B06
+   CompCRC32 = &H60B64B06
    Description = ""
    IsRoom = True
 
 [Logic20]
-   ID = Logic20
+   ID = Logic_BossKeyPanick
    Size = 168
-   CRC32 = &H328F684D
-   CompCRC32 = &H328F684D
+   CRC32 = &HBE29DDAD
+   CompCRC32 = &HBE29DDAD
    Description = ""
    IsRoom = False
 
 [Logic21]
    ID = Logic21
    Size = 5172
-   CRC32 = &H6D4758BF
-   CompCRC32 = &H6D4758BF
+   CRC32 = &HE5AB57ED
+   CompCRC32 = &HE5AB57ED
    Description = ""
    IsRoom = False
 
 [Logic22]
    ID = Logic22
    Size = 6059
-   CRC32 = &HA6F8AA4
-   CompCRC32 = &HA6F8AA4
+   CRC32 = &H443BA72A
+   CompCRC32 = &H443BA72A
    Description = ""
    IsRoom = True
 
 [Logic23]
    ID = Logic23
    Size = 2327
-   CRC32 = &HE69C628A
-   CompCRC32 = &HE69C628A
+   CRC32 = &H82B37679
+   CompCRC32 = &H82B37679
    Description = ""
    IsRoom = True
 
 [Logic24]
    ID = Logic24
    Size = 3836
-   CRC32 = &HB9B16D1D
-   CompCRC32 = &HB9B16D1D
+   CRC32 = &H3F49D3FF
+   CompCRC32 = &H3F49D3FF
    Description = ""
    IsRoom = False
 
 [Logic25]
    ID = Logic25
    Size = 5529
-   CRC32 = &H32DE4EF4
-   CompCRC32 = &H32DE4EF4
+   CRC32 = &H75AB722D
+   CompCRC32 = &H75AB722D
    Description = ""
    IsRoom = False
 
 [Logic31]
    ID = Logic31
    Size = 1405
-   CRC32 = &H35C76FE
-   CompCRC32 = &H35C76FE
+   CRC32 = &H64060FB3
+   CompCRC32 = &H64060FB3
    Description = ""
    IsRoom = False
 
 [Logic32]
    ID = Logic32
    Size = 2388
-   CRC32 = &H9BF51193
-   CompCRC32 = &H9BF51193
+   CRC32 = &H518AC51F
+   CompCRC32 = &H518AC51F
    Description = ""
    IsRoom = True
 
 [Logic33]
    ID = Logic33
    Size = 999
-   CRC32 = &HA80D9902
-   CompCRC32 = &HA80D9902
+   CRC32 = &HCA3D51ED
+   CompCRC32 = &HCA3D51ED
    Description = ""
    IsRoom = True
 
 [Logic34]
    ID = Logic34
    Size = 4026
-   CRC32 = &H5035F993
-   CompCRC32 = &H5035F993
+   CRC32 = &H19BA5B2A
+   CompCRC32 = &H19BA5B2A
    Description = ""
    IsRoom = False
 
 [Logic35]
    ID = Logic35
    Size = 2450
-   CRC32 = &HFF44CB20
-   CompCRC32 = &HFF44CB20
+   CRC32 = &HB9F05E26
+   CompCRC32 = &HB9F05E26
    Description = ""
    IsRoom = False
 
 [Logic36]
    ID = Logic36
    Size = 8789
-   CRC32 = &H463BF64E
-   CompCRC32 = &H463BF64E
+   CRC32 = &H2EEEBF0D
+   CompCRC32 = &H2EEEBF0D
    Description = ""
    IsRoom = False
 
 [Logic37]
    ID = Logic37
    Size = 1683
-   CRC32 = &H4116E6F5
-   CompCRC32 = &H4116E6F5
+   CRC32 = &H425E465D
+   CompCRC32 = &H425E465D
    Description = ""
    IsRoom = False
 
 [Logic38]
    ID = Logic38
    Size = 4942
-   CRC32 = &HE20FB036
-   CompCRC32 = &HE20FB036
+   CRC32 = &H1D74AD3E
+   CompCRC32 = &H1D74AD3E
    Description = ""
    IsRoom = False
 
 [Logic40]
    ID = Logic40
    Size = 3881
-   CRC32 = &HD518B1ED
-   CompCRC32 = &HD518B1ED
+   CRC32 = &HE8B6DCB7
+   CompCRC32 = &HE8B6DCB7
    Description = ""
    IsRoom = False
 
 [Logic41]
    ID = Logic41
    Size = 6021
-   CRC32 = &H799F526A
-   CompCRC32 = &H799F526A
+   CRC32 = &H9697658F
+   CompCRC32 = &H9697658F
    Description = ""
    IsRoom = False
 
 [Logic42]
    ID = Logic42
    Size = 7679
-   CRC32 = &H5D2D68F7
-   CompCRC32 = &H5D2D68F7
+   CRC32 = &H431A66E2
+   CompCRC32 = &H431A66E2
    Description = ""
    IsRoom = False
 
 [Logic43]
    ID = Logic43
    Size = 6767
-   CRC32 = &H18072FBC
-   CompCRC32 = &H18072FBC
+   CRC32 = &H48CAC7C5
+   CompCRC32 = &H48CAC7C5
    Description = ""
    IsRoom = False
 
 [Logic44]
    ID = Logic44
    Size = 3323
-   CRC32 = &HE28D29E3
-   CompCRC32 = &HE28D29E3
+   CRC32 = &H6EC6B546
+   CompCRC32 = &H6EC6B546
    Description = ""
    IsRoom = False
 
 [Logic45]
    ID = Logic45
    Size = 10727
-   CRC32 = &H39A1EBBF
-   CompCRC32 = &H39A1EBBF
+   CRC32 = &HB89B6F19
+   CompCRC32 = &HB89B6F19
    Description = ""
    IsRoom = False
 
 [Logic50]
    ID = Logic_SetValues
    Size = 105
-   CRC32 = &HD1FC92DD
-   CompCRC32 = &HD1FC92DD
+   CRC32 = &H35EF722A
+   CompCRC32 = &H35EF722A
    Description = ""
    IsRoom = False
 
 [Logic51]
    ID = Logic_Setup
    Size = 390
-   CRC32 = &H3A23A70
-   CompCRC32 = &H9E62CF6C
+   CRC32 = &H5DF3FA3F
+   CompCRC32 = &H5DF3FA3F
    Description = ""
    IsRoom = False
 
@@ -368,24 +368,24 @@
 [Logic56]
    ID = Logic56
    Size = 759
-   CRC32 = &HFF7FAE13
-   CompCRC32 = &HFF7FAE13
+   CRC32 = &H4A5057D9
+   CompCRC32 = &H4A5057D9
    Description = ""
    IsRoom = False
 
 [Logic57]
    ID = Logic57
    Size = 2441
-   CRC32 = &HD3E5C8E0
-   CompCRC32 = &HD3E5C8E0
+   CRC32 = &H2F3994E8
+   CompCRC32 = &H2F3994E8
    Description = ""
    IsRoom = False
 
 [Logic58]
    ID = Logic58
    Size = 276
-   CRC32 = &H250953AB
-   CompCRC32 = &H250953AB
+   CRC32 = &H22219BB6
+   CompCRC32 = &H22219BB6
    Description = ""
    IsRoom = False
 [::END Logics::]
@@ -501,7 +501,7 @@
    BkgdImg = ""
 
 [Picture20]
-   ID = Picture20
+   ID = Panic_ColorChart
    Size = 1179
    Description = ""
    BkgdImg = ""
@@ -555,13 +555,13 @@
    BkgdImg = ""
 
 [Picture29]
-   ID = Picture29
+   ID = Panic_GreenChart
    Size = 1170
    Description = ""
    BkgdImg = ""
 
 [Picture30]
-   ID = Picture30
+   ID = Panic_RandomChart
    Size = 661
    Description = ""
    BkgdImg = ""
@@ -1166,12 +1166,12 @@
    Description = ""
 
 [View1]
-   ID = View1
+   ID = Larry_Dying
    Size = 1249
    Description = ""
 
 [View2]
-   ID = View2
+   ID = Larry_Undressing
    Size = 2258
    Description = ""
 
@@ -1181,7 +1181,7 @@
    Description = ""
 
 [View4]
-   ID = View4
+   ID = Larry_Dead
    Size = 796
    Description = ""
 
@@ -1216,7 +1216,7 @@
    Description = ""
 
 [View12]
-   ID = View12
+   ID = Larry_Fight
    Size = 2003
    Description = ""
 
@@ -1236,7 +1236,7 @@
    Description = ""
 
 [View16]
-   ID = View16
+   ID = Larry_InAction_Censored1
    Size = 1253
    Description = ""
 
@@ -1246,17 +1246,17 @@
    Description = ""
 
 [View18]
-   ID = View18
+   ID = Larry_InAction_Censored2
    Size = 1440
    Description = ""
 
 [View20]
-   ID = View20
+   ID = Larry_Falling
    Size = 1051
    Description = ""
 
 [View21]
-   ID = View21
+   ID = Larry_MST
    Size = 2830
    Description = ""
 
@@ -1271,7 +1271,7 @@
    Description = ""
 
 [View26]
-   ID = View26
+   ID = Larry_GoingOver
    Size = 260
    Description = ""
 
@@ -1416,17 +1416,17 @@
    Description = ""
 
 [View61]
-   ID = View61
+   ID = Leftys_PimpDoor_Inside
    Size = 866
    Description = ""
 
 [View62]
-   ID = View62
+   ID = Pnj_Pimp_attitude
    Size = 705
    Description = ""
 
 [View63]
-   ID = View63
+   ID = Pnj_Pimp_Standing
    Size = 177
    Description = ""
 
@@ -1436,22 +1436,22 @@
    Description = ""
 
 [View65]
-   ID = View65
+   ID = Face_Prostitute_Details
    Size = 1864
    Description = ""
 
 [View66]
-   ID = View66
+   ID = Leftys_Hotel_Neon_Back
    Size = 203
    Description = ""
 
 [View67]
-   ID = View67
+   ID = Pnj_Prostitute
    Size = 2994
    Description = ""
 
 [View68]
-   ID = View68
+   ID = Item_BoxOfCandies
    Size = 37
    Description = ""
 
@@ -1466,12 +1466,12 @@
    Description = ""
 
 [View73]
-   ID = View73
+   ID = Pnj_BadBoy
    Size = 1328
    Description = ""
 
 [View74]
-   ID = View74
+   ID = Pnj_BadBoyStrike
    Size = 351
    Description = ""
 
@@ -1486,7 +1486,7 @@
    Description = ""
 
 [View77]
-   ID = PnjPoliceman
+   ID = Pnj_Policeman
    Size = 2727
    Description = ""
 
@@ -1886,32 +1886,32 @@
    Description = ""
 
 [View185]
-   ID = View185
+   ID = Larry_dumpRecycloMatic
    Size = 1102
    Description = ""
 
 [View186]
-   ID = View186
+   ID = Larry_NewLarryBodies
    Size = 2954
    Description = ""
 
 [View187]
-   ID = View187
+   ID = Sierra_Employe_Doctor
    Size = 2920
    Description = ""
 
 [View188]
-   ID = View188
+   ID = Sierra_Dragons
    Size = 3408
    Description = ""
 
 [View189]
-   ID = View189
+   ID = Sierra_Wall_Logo
    Size = 312
    Description = ""
 
 [View190]
-   ID = View190
+   ID = Sierra_Robot
    Size = 2340
    Description = ""
 [::END Views::]

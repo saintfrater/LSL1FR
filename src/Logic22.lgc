@@ -1,7 +1,7 @@
 if (isset(newRoom))
   {  if (varGameTimeHour > 4 &&       varGameTimeHour < 10)
     {    new.room(Logic_BadEnding); [ ##LE001##    }  set.horizon(112);  load.logics(Logic57);  load.sound(Sound28);  load.view(View130);  load.pic(currentRoom);  draw.pic(currentRoom);  discard.pic(currentRoom);  add.to.pic(View130, 0, 0, 44, 54, 12, 4);  discard.view(View130);  if (v30 != 20 &&       !has("Pocket Knife"))
-    {    load.view(View93);    animate.obj(ObjFlyingDoll);    set.view(ObjFlyingDoll, View93);    position(ObjFlyingDoll, 0, 135);    random(5, 15, v201);    cycle.time(ObjFlyingDoll, varEgoSize);    step.time(ObjFlyingDoll, varEgoSize);    }  if (isset(f78))
+    {    load.view(View93);    animate.obj(Obj_animatedPNJ1);    set.view(Obj_animatedPNJ1, View93);    position(Obj_animatedPNJ1, 0, 135);    random(5, 15, v201);    cycle.time(Obj_animatedPNJ1, varEgoSize);    step.time(Obj_animatedPNJ1, varEgoSize);    }  if (isset(f78))
     {    varTimingDelay = 5;    varTitlePageStep = 210;    }  if (previousRoom == 21)
     {    v38 = 36;    v39 = 115;    set.loop(ego, 2);    }  else
     {    if (previousRoom == 9)
@@ -11,7 +11,7 @@ if (isset(newRoom))
   {  set(f203);  }reset(f201);if (posn(ego, 50, 125, 77, 142))
   {  set(f201);  }reset(f200);if (posn(ego, 50, 143, 77, 167))
   {  set(f200);  }reset(f202);if (v203 > 0)
-  {  distance(ObjFlyingDoll, ego, v52);  if (v52 < 25)
+  {  distance(Obj_animatedPNJ1, ego, varRandomValue);  if (varRandomValue < 25)
     {    set(f202);    set(f69);    }  }if (!isset(haveInput))
   {  goto(Label1);  }if ((said("examine") ||     said("examine", "area")))
   {  print("You are outside an all-night convenience store. There is a telephone "        "on the pole. The portion of the telephone book that wasn't illegible "        "from being water-soaked has been torn out.");  }if (said("examine", "building"))
@@ -45,14 +45,14 @@ if (isset(newRoom))
       {      print("\"Howsha 'bout a drink, Shonney?\"");      }    }  if (said("n", "rol"))
     {    print("\"Al'right. Be that way!\"");    set(f204);    v203 = 4;    v201 = 0;    }  if ((said("add", "champagne", "bouncer") ||       said("add", "champagne") ||       said("add", "bouncer", "champagne")))
     {    if (!has("Bottle of Wine"))
-      {      set(f68);      }    else
+      {      set(boolLarryDontHaveIt);      }    else
       {      if (!isset(f202))
         {        set(f54);        }      else
         {        drop("Bottle of Wine");        if (!obj.in.room("Pocket Knife", currentRoom))
           {          print("\"Why, thanshk, Shonney! Glug, glug.\"");          }        else
           {          get("Pocket Knife");          currentScore  += 5;          print("\"Why, thanshk, Shonney!\" (Glug, glug.)");          print("\"I ain't got no remote control, but, sssshay, I'll tell ya "                "what: here'ssh my trussshty ol' pocket knife. Ya never know! "                "There are sssshome kinky girlssh in this town. Sssshexy "                "hunkssh like ussh might have to defend oursshelves sometime!\"");          print("With that, he \"sssshtumbles\" off into the darkness.");          set(f204);          v203 = 4;          v201 = 0;          }        }      }    }  if ((said("add", "shot", "bouncer") ||       said("add", "shot") ||       said("add", "bouncer", "shot")))
     {    if (!has("Glass of Whiskey"))
-      {      set(f68);      }    else
+      {      set(boolLarryDontHaveIt);      }    else
       {      if (!isset(f202))
         {        set(f54);        }      else
         {        print("\"Slurp. Thanks, I needed that! See ya 'round!!\"");        drop("Glass of Whiskey");        set(f204);        v203 = 4;        v201 = 0;        }      }    }  if ((said("add", "bucks", "bouncer") ||       said("add", "bucks") ||       said("buy", "bouncer") ||       said("buy", "bouncer", "bucks") ||       said("add", "bouncer", "bucks")))
@@ -72,12 +72,12 @@ if (isset(newRoom))
     {    set(f204);    }  }if (v203 > 4 &&     edgeObjHit > NOT_HIT &&     objHitEdge == 1)
   {  set(f204);  }if (isset(f204))
   {  reset(f204);  ++v203;  if (v203 == 1)
-    {    draw(ObjFlyingDoll);    sound(Sound28, f40);    follow.ego(ObjFlyingDoll, 8, f204);    }  if (v203 == 2)
-    {    stop.motion(ObjFlyingDoll);    stop.cycling(ObjFlyingDoll);    print("\"Got any sshhpare change, buddy?\"");    v201 = 9;    }  if (v203 == 3)
+    {    draw(Obj_animatedPNJ1);    sound(Sound28, f40);    follow.ego(Obj_animatedPNJ1, 8, f204);    }  if (v203 == 2)
+    {    stop.motion(Obj_animatedPNJ1);    stop.cycling(Obj_animatedPNJ1);    print("\"Got any sshhpare change, buddy?\"");    v201 = 9;    }  if (v203 == 3)
     {    print("\"Well, ok. Have ya got any spare wine, then?\"");    v201 = 9;    }  if (v203 == 4)
     {    print("\"Al'right. Be that way!\"");    v203 = 5;    }  if (v203 == 5)
-    {    start.cycling(ObjFlyingDoll);    wander(ObjFlyingDoll);    }  if (v203 == 6)
-    {    erase(ObjFlyingDoll);    v203 = 0;    }  }if (isset(boolTimingDelayOut))
+    {    start.cycling(Obj_animatedPNJ1);    wander(Obj_animatedPNJ1);    }  if (v203 == 6)
+    {    erase(Obj_animatedPNJ1);    v203 = 0;    }  }if (isset(boolTimingDelayOut))
   {  reset(boolTimingDelayOut);  ++varTitlePageStep;  if (varTitlePageStep == 1)
     {    set(f48);    prevent.input();    stop.motion(ego);    set(f85);    if (monitorType != MONO)
       {      clear.lines(23, 23, BLACK);      }    set.string(s1, " ");    get.string(s1, "Please enter number: ", 23, 0, 14);    varTimingDelay = 3;    }  if (varTitlePageStep == 2)

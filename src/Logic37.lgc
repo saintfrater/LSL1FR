@@ -1,5 +1,5 @@
 if (isset(newRoom))
-  {  reset(f33);  load.view(View147);  load.view(View150);  load.logics(Logic58);  load.sound(Sound3);  load.sound(Sound4);  load.pic(currentRoom);  draw.pic(currentRoom);  discard.pic(currentRoom);  animate.obj(o13);  set.priority(o13, 15);  set.view(o13, View147);  set.loop(o13, 2);  position(o13, 56, 106);  animate.obj(ObjTitleText);  set.view(ObjTitleText, View147);  set.loop(ObjTitleText, 0);  set.cel(ObjTitleText, 3);  position(ObjTitleText, 46, 87);  draw(ObjTitleText);  stop.cycling(ObjTitleText);  animate.obj(o3);  set.view(o3, View147);  set.loop(o3, 0);  set.cel(o3, 3);  position(o3, 69, 87);  draw(o3);  stop.cycling(o3);  animate.obj(o4);  set.view(o4, View147);  set.loop(o4, 0);  set.cel(o4, 3);  position(o4, 93, 87);  draw(o4);  stop.cycling(o4);  animate.obj(ObjFlyingDoll);  ignore.horizon(ObjFlyingDoll);  set.view(ObjFlyingDoll, View147);  set.loop(ObjFlyingDoll, 1);  position(ObjFlyingDoll, 50, 10);  show.pic();  v200 = 1;  set(f201);  set(f48);  v207 = 2;  call(Logic58);  print.at("\n           RESULTS           "           "PAYS\n|--------------------------------|\n| Cherry |        |       "           " |  1  |\n| Cherry | Cherry |        |  2  |\n| Cherry | Cherry | "           "Cherry |  4  |\n|--------|--------|--------|-----|\n| Orange | "           "Orange |        |  2  |\n| Orange | Orange | Orange |  4  "           "|\n|--------|--------|--------|-----|\n| Seven  | Seven  |        | "           " 3  |\n| Seven  | Seven  | Seven  |  5  "           "|\n|--------|--------|--------|-----|\n| Bar    | Bar    | Bar    | "           " 7  |\n|--------------------------------|\n", 2, 2, 36);  print("\nPress F4 to decrease bet.\n\nPress F6 to increase bet.\n\nPress F8 "        "to pull handle.\n");  set(noScript);  return();  }set(f69);if (isset(f201) &&     controller(c4))
+  {  reset(f33);  load.view(View147);  load.view(View150);  load.logics(Logic58);  load.sound(Sound3);  load.sound(Sound4);  load.pic(currentRoom);  draw.pic(currentRoom);  discard.pic(currentRoom);  animate.obj(o13);  set.priority(o13, 15);  set.view(o13, View147);  set.loop(o13, 2);  position(o13, 56, 106);  animate.obj(Obj_animatedPNJ2);  set.view(Obj_animatedPNJ2, View147);  set.loop(Obj_animatedPNJ2, 0);  set.cel(Obj_animatedPNJ2, 3);  position(Obj_animatedPNJ2, 46, 87);  draw(Obj_animatedPNJ2);  stop.cycling(Obj_animatedPNJ2);  animate.obj(Obj_animatedPNJ3);  set.view(Obj_animatedPNJ3, View147);  set.loop(Obj_animatedPNJ3, 0);  set.cel(Obj_animatedPNJ3, 3);  position(Obj_animatedPNJ3, 69, 87);  draw(Obj_animatedPNJ3);  stop.cycling(Obj_animatedPNJ3);  animate.obj(Obj_animatedPNJ4);  set.view(Obj_animatedPNJ4, View147);  set.loop(Obj_animatedPNJ4, 0);  set.cel(Obj_animatedPNJ4, 3);  position(Obj_animatedPNJ4, 93, 87);  draw(Obj_animatedPNJ4);  stop.cycling(Obj_animatedPNJ4);  animate.obj(Obj_animatedPNJ1);  ignore.horizon(Obj_animatedPNJ1);  set.view(Obj_animatedPNJ1, View147);  set.loop(Obj_animatedPNJ1, 1);  position(Obj_animatedPNJ1, 50, 10);  show.pic();  v200 = 1;  set(f201);  set(f48);  v207 = 2;  call(Logic58);  print.at("\n           RESULTS           "           "PAYS\n|--------------------------------|\n| Cherry |        |       "           " |  1  |\n| Cherry | Cherry |        |  2  |\n| Cherry | Cherry | "           "Cherry |  4  |\n|--------|--------|--------|-----|\n| Orange | "           "Orange |        |  2  |\n| Orange | Orange | Orange |  4  "           "|\n|--------|--------|--------|-----|\n| Seven  | Seven  |        | "           " 3  |\n| Seven  | Seven  | Seven  |  5  "           "|\n|--------|--------|--------|-----|\n| Bar    | Bar    | Bar    | "           " 7  |\n|--------------------------------|\n", 2, 2, 36);  print("\nPress F4 to decrease bet.\n\nPress F6 to increase bet.\n\nPress F8 "        "to pull handle.\n");  set(noScript);  return();  }set(f69);if (isset(f201) &&     controller(c4))
   {  --v200;  v207 = 2;  call(Logic58);  }if (isset(f201) &&     controller(c6))
   {  if (v200 < 20)
     {    ++v200;    }  else
@@ -11,17 +11,17 @@ if (isset(newRoom))
   {  print("It's an electronic slot machine. When you tire of playing, just type "        "\"stop.\"");  }if ((said("board") ||     said("examine", "area") ||     said("board", "slot") ||     said("get up") ||     said("board", "away") ||     said("board") ||     said("done", "play") ||     said("done", "game") ||     said("done") ||     said("done", "play", "slot") ||     said("board", "casino") ||     said("examine", "casino")))
   {  set(f67);  set(f200);  }Label1:if (isset(f202))
   {  reset(f202);  if (!isset(f201))
-    {    random(11, 13, v52);    print.v(v52);    }  else
+    {    random(11, 13, varRandomValue);    print.v(varRandomValue);    }  else
     {    if (v200 <= 0)
       {      print("You insert zero dollars, and pretend to pull the handle.");      print("You win zero dollars!");      print("Is this your idea of a good time?");      }    else
       {      if (v200 > varInGameMoney)
         {        print("You can't bet more than you have.");        }      else
         {        varTitlePageStep = 0;        set(boolTimingDelayOut);        }      }    }  }if (isset(boolTimingDelayOut))
   {  reset(boolTimingDelayOut);  ++varTitlePageStep;  if (varTitlePageStep == 1)
-    {    reset(f201);    set(f87);    set(f93);    stop.sound();    reset(f53);    sound(Sound3, f40);    varInGameMoney -= v200;    v207 = 2;    call(Logic58);    start.cycling(ObjTitleText);    start.cycling(o3);    start.cycling(o4);    random(8, 11, v66);    }  if (varTitlePageStep == 2)
-    {    stop.cycling(ObjTitleText);    current.cel(ObjTitleText, v201);    random(8, 11, v66);    }  if (varTitlePageStep == 3)
-    {    stop.cycling(o3);    current.cel(o3, v202);    random(8, 11, v66);    }  if (varTitlePageStep == 4)
-    {    stop.cycling(o4);    current.cel(o4, v203);    v204 = 0;    if (v201 == 0)
+    {    reset(f201);    set(f87);    set(f93);    stop.sound();    reset(f53);    sound(Sound3, f40);    varInGameMoney -= v200;    v207 = 2;    call(Logic58);    start.cycling(Obj_animatedPNJ2);    start.cycling(Obj_animatedPNJ3);    start.cycling(Obj_animatedPNJ4);    random(8, 11, v66);    }  if (varTitlePageStep == 2)
+    {    stop.cycling(Obj_animatedPNJ2);    current.cel(Obj_animatedPNJ2, v201);    random(8, 11, v66);    }  if (varTitlePageStep == 3)
+    {    stop.cycling(Obj_animatedPNJ3);    current.cel(Obj_animatedPNJ3, v202);    random(8, 11, v66);    }  if (varTitlePageStep == 4)
+    {    stop.cycling(Obj_animatedPNJ4);    current.cel(Obj_animatedPNJ4, v203);    v204 = 0;    if (v201 == 0)
       {      v204 = 1;      if (v202 == v201)
         {        v204 = 2;        if (v203 == v201)
           {          v204 = 4;          }        }      }    if (v201 == 1 &&         v202 == v201)
@@ -35,10 +35,10 @@ if (isset(newRoom))
         {        set(f201);        }      else
         {        draw(o13);        set(f53);        if (v204 > 1 &&             v204 < 4)
           {          v66 = 22;          }        else
-          {          draw(ObjFlyingDoll);          if (v204 < 7)
+          {          draw(Obj_animatedPNJ1);          if (v204 < 7)
             {            v66 = 22;            }          else
             {            v66 = 44;            }          }        }      }    }  if (varTitlePageStep == 5)
-    {    erase(ObjFlyingDoll);    erase(o13);    set(f201);    }  if (isset(f201))
+    {    erase(Obj_animatedPNJ1);    erase(o13);    set(f201);    }  if (isset(f201))
     {    varTitlePageStep = 0;    reset(f87);    reset(f93);    if (varInGameMoney <= 0)
       {      reset(f201);      }    }  }if (isset(f53) &&     !isset(f201))
   {  sound(Sound4, f53);  }if ((controller(CtrlHelp) ||     isset(f203)))
