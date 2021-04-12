@@ -1,0 +1,209 @@
+if (isset(newRoom))
+  {  set.horizon(1);  reset(f33);  load.logics(Logic_Casino_inGame);  load.view(View150);  load.view(View152);  load.view(View153);  load.view(View154);  load.view(View155);  load.view(View156);  load.view(View157);  load.sound(Sound6);  load.sound(Sound7);  load.sound(Sound5);  if (monitorType != MONO)
+    {    load.view(View151);    }  else
+    {    load.view(View146);    }  load.pic(currentRoom);  draw.pic(currentRoom);  animate.obj(o15);  ignore.objs(o15);  position(o15, 61, 55);  if (monitorType != MONO)
+    {    set.view(o15, View151);    }  else
+    {    set.view(o15, View146);    }  animate.obj(o13);  ignore.objs(o13);  set.view(o13, View150);  position(o13, 54, 82);  v255 = 2;  v227 = 1;  v219 = 45;  show.pic();  v229 = 6;  call(Logic_Casino_inGame);  print("\nPress F4 when ready to play.\n\nPress F6 for another card.\n\nPress "        "F8 to stand.\n\nTo change the amount of your bet, type \"change "        "bet.\"\n");  set(f48);  set(noScript);  return();  }set(f69);if ((controller(CtrlHelp) ||     said("help")))
+  {  set(f245);  }if ((said("tip", "blond") ||     said("add", "blond", "bucks") ||     said("add", "bucks", "blond")))
+  {  print("\"I'm sorry, Sir. We're not permitted to accept gratuities!\"");  }if ((controller(c4) ||     said("bargain", "fingers") ||     said("bargain", "card") ||     said("bargain")))
+  {  v219 = 45;  if (v236 > 0)
+    {    print("Don't be in such a hurry. Finish this hand first!");    }  else
+    {    if (v255 <= 0)
+      {      print("You bet zero dollars, receive zero cards, and win zero dollars and "            "zero cents.");      print("You can play all night like this!");      }    else
+      {      if (v255 > varInGameMoney)
+        {        varTitlePageStep = 0;        print("You can't bet more than you have.");        }      else
+        {        set(boolTimingDelayOut);        varTitlePageStep = 0;        }      }    }  }if ((controller(c8) ||     said("get up")))
+  {  v219 = 45;  if (!isset(f253))
+    {    print("Please wait until it's your turn.");    }  else
+    {    if (v236 == 1)
+      {      varTitlePageStep = 100;      set(boolTimingDelayOut);      }    else
+      {      if (v236 == 2)
+        {        varTitlePageStep = 200;        set(boolTimingDelayOut);        }      else
+        {        print("Please wait until it's your turn.");        }      }    }  }if ((controller(c6) ||     said("beat") ||     said("beat", "i'm") ||     said("card") ||     said("add", "i'm", "card")))
+  {  v219 = 45;  if (!isset(f253))
+    {    print("Please wait until it's your turn.");    }  else
+    {    if (v236 == 1)
+      {      ++v233;      v235 = 243;      v235  += v233;      --v235;      v229 = 1;      call(Logic_Casino_inGame);      v223  += v231;      }    else
+      {      if (v236 == 2)
+        {        ++v233;        v235 = 249;        v235  += v233;        --v235;        v229 = 1;        call(Logic_Casino_inGame);        v224  += v231;        }      else
+        {        print("Please wait until it's your turn.");        }      }    }  }if (!isset(haveInput))
+  {  goto(Label4);  }if ((said("double") ||     said("double", "up") ||     said("double", "down")))
+  {  v219 = 45;  if (!isset(f253))
+    {    print("Please wait until it's your turn.");    }  else
+    {    if (v236 == 1)
+      {      if ((v223 < 10 ||           v223 > 11))
+        {        print("%m19double when you have 10 or 11 points.");        }      else
+        {        if (varInGameMoney < v226)
+          {          print("You don't have enough money!");          }        else
+          {          set(boolTimingDelayOut);          varTitlePageStep = 20;          }        }      }    else
+      {      if (v236 != 2)
+        {        print("Please wait until it's your turn.");        }      else
+        {        if ((v224 < 10 ||             v224 > 11))
+          {          print("%m19double when you have 10 or 11 points.");          }        else
+          {          if (varInGameMoney < v225)
+            {            print("You don't have enough money!");            }          else
+            {            set(boolTimingDelayOut);            varTitlePageStep = 120;            }          }        }      }    }  }if ((said("split") ||     said("split", "card") ||     said("split", "fingers")))
+  {  v219 = 45;  if (!isset(f253))
+    {    print("Please wait until it's your turn.");    }  else
+    {    if (v236 != 1)
+      {      print("Please wait until it's your turn.");      }    else
+      {      if (v233 != 2)
+        {        print("%m19split%m20");        }      else
+        {        v235 = 243;        v232 = *v235;        v229 = 4;        call(Logic_Casino_inGame);        varRandomValue = v55;        ++v235;        v232 = *v235;        v229 = 4;        call(Logic_Casino_inGame);        if (v55 != varRandomValue)
+          {          print("That's not a pair.");          }        else
+          {          if (v226 > varInGameMoney)
+            {            print("You don't have enough money!");            }          else
+            {            set(boolTimingDelayOut);            varTitlePageStep = 10;            }          }        }      }    }  }if ((said("surrender") ||     said("surrender", "card") ||     said("surrender", "fingers")))
+  {  v219 = 45;  if (!isset(f253))
+    {    print("Please wait until it's your turn.");    }  else
+    {    if (v236 != 1)
+      {      print("Please wait until it's your turn.");      }    else
+      {      if (v233 != 2)
+        {        print("%m19surrender%m20");        }      else
+        {        print("Surrendering your cards, you are refunded half of your bet.");        v228 = v227;        v229 = 5;        call(Logic_Casino_inGame);        v236 = 255;        }      }    }  }if ((said("alter", "bet", "rol") ||     said("new", "bet", "rol") ||     said("increase", "bet", "rol") ||     said("decrease", "bet", "rol") ||     said("bet", "rol")))
+  {  v219 = 45;  if (v236 > 0)
+    {    print("It's too late now. This hand is already being played.");    }  else
+    {Label1:    get.num("Amount in dollars: $", v255);    varRandomValue = v255;    v227 = 0;    if (varRandomValue > 20)
+      {      print("$20.00 is the maximum bet at this table.");      goto(Label1);      }Label2:    if (varRandomValue > 1)
+      {      varRandomValue -= 2;      ++v227;      goto(Label2);      }    if (varRandomValue == 1)
+      {      print("Please bet an even number of dollars (2, 4, 6, etc.). The house "            "does not keep half-dollars.");      goto(Label1);      }    if (v255 > varInGameMoney)
+      {      print("You don't have enough money!");      goto(Label1);      }    v229 = 6;    call(Logic_Casino_inGame);    }  }if (isset(boolCallDebugger) &&     said("examine", "all"))
+  {  v235 = 237;Label3:  v229 = 1;  call(Logic_Casino_inGame);  ++v235;  if (v235 <= 254)
+    {    goto(Label3);    }  }if ((said("board", "rol") ||     said("done", "rol") ||     said("board", "casino") ||     said("examine", "area") ||     said("examine", "casino") ||     said("get up", "up")))
+  {  print("\"Thanks for playing,\" says the dealer, finally cracking a smile. "        "\"Come back anytime.\"");  set(f255);  }if ((said("house rules") ||     said("examine", "desk") ||     said("examine", "brick") ||     said("examine", "house rules")))
+  {  set(f245);  }if ((said("examine") ||     said("examine", "desk")))
+  {  v219 = 45;  print("You are sitting at a blackjack table in the casino. There is a sign on "        "the table titled \"House Rules.\"");  }if ((said("examine", "blond") ||     said("examine", "blond")))
+  {  print("She's a beautiful young lady, but you vow to keep your thoughts on the "        "game.");  }if ((said("ask", "blond") ||     said("ask", "blond")))
+  {  print("\"Please, no talking at the tables.\"");  }Label4:if (isset(f44))
+  {  --v219;  if (v219 == 1)
+    {    set(f245);    }  }if (isset(f245))
+  {  reset(f245);  print("\n        HOUSE RULES\n\nThis table has a $20.00 limit. Bets must be a "        "multiple of $2.00.\n\nDealer must hit 16, and must stand on "        "17.\n\nBlackjack pays 1-1/2 to 1 odds.\n\nAny six cards under 22 "        "wins.\n");  print("\nInsurance bets are offered whenever the dealer shows an ace. They "        "are half your bet, and pay 2 to 1 odds.\n\nYou may split a pair or "        "surrender whenever you have only two cards.\n\nYou may double down if "        "your cards total 10 or 11 points.\n");  print("\nPress F4 when ready to play.\n\nPress F6 for another card.\n\nPress "        "F8 to stand.\n\nTo change the amount of your bet, type \"change "        "bet.\"\n");  v219 = 45;  }if (isset(boolTimingDelayOut))
+  {  reset(boolTimingDelayOut);  ++varTitlePageStep;  v219 = 45;  if (varTitlePageStep == 1)
+    {    reset(f246);    reset(f247);    reset(f248);    reset(f249);    reset(f250);    reset(f251);    reset(f252);    reset(f254);    v222 = 0;    v223 = 0;    v224 = 0;    v225 = 0;    v226 = 0;    v233 = 0;    v226 = v255;    varInGameMoney -= v226;    v236 = 1;    set(f87);    v235 = 237;Label5:    random(0, 51, varRandomValue);    if (v235 != 237)
+      {      v234 = 237;Label6:      v232 = *v234;      if (v232 == varRandomValue)
+        {        goto(Label5);        }      ++v234;      if (v234 < v235)
+        {        goto(Label6);        }      }    if (v235 == 249)
+      {      v232 = varRandomValue;      v229 = 4;      call(Logic_Casino_inGame);      varQuestionnaireID = v231;      v221 = 243;      v232 = *v221;      v229 = 4;      call(Logic_Casino_inGame);      if (varQuestionnaireID == v231)
+        {        goto(Label5);        }      }    *v235 = varRandomValue;    ++v235;    if (v235 <= 254)
+      {      goto(Label5);      }    draw.pic(currentRoom);    show.pic();    v229 = 6;    call(Logic_Casino_inGame);    set.cel(o15, 0);    draw(o15);    varQuestionnaireTiming = 28;    sound(Sound5, f53);    }  if (varTitlePageStep == 2)
+    {    erase(o15);    varQuestionnaireTiming = 9;    }  if (varTitlePageStep == 3)
+    {    v235 = 243;    v229 = 1;    call(Logic_Casino_inGame);    v223 = v231;    varQuestionnaireTiming = 9;    }  if (varTitlePageStep == 4)
+    {    v235 = 237;    v229 = 1;    call(Logic_Casino_inGame);    varQuestionnaireTiming = 9;    v222 = v231;    }  if (varTitlePageStep == 5)
+    {    v235 = 243;    ++v235;    v229 = 1;    call(Logic_Casino_inGame);    v223  += v231;    varQuestionnaireTiming = 9;    }  if (varTitlePageStep == 6)
+    {    v235 = 237;    ++v235;    v229 = 3;    call(Logic_Casino_inGame);    v222  += v231;    v233 = 2;    v235 = 243;    v232 = *v235;    v229 = 4;    call(Logic_Casino_inGame);    if ((v231 == 1 ||         v231 == 10))
+      {      varRandomValue = v231;      ++v235;      v232 = *v235;      v229 = 4;      call(Logic_Casino_inGame);      if (varRandomValue == 1 &&           v231 == 10)
+        {        set(f246);        }      if (varRandomValue == 10 &&           v231 == 1)
+        {        set(f246);        }      }    v235 = 237;    v232 = *v235;    v229 = 4;    call(Logic_Casino_inGame);    if (v231 == 1)
+      {      cancel.line();      prevent.input();      if (monitorType == MONO)
+        {        clear.lines(24, 24, BLACK);        display(24, 0, "Do you want insurance? ");        }      else
+        {        clear.lines(23, 23, BLACK);        display(23, 0, "Do you want insurance? ");        }      lastChar = 0;      set.scan.start();      if (lastChar <= 0)
+        {        return();        }      if ((lastChar == 89 ||           lastChar == 121))
+        {        if (v227 > varInGameMoney)
+          {          print("You don't have enough money!");          }        else
+          {          set(f254);          varInGameMoney -= v227;          v229 = 6;          call(Logic_Casino_inGame);          }        }      else
+        {        if (lastChar != 78 &&             lastChar != 110)
+          {          print("Please answer \"y\" or \"n\".");          lastChar = 0;          return();          }        }      reset.scan.start();      lastChar = 0;      if (monitorType == MONO)
+        {        clear.lines(24, 24, BLACK);        }      else
+        {        clear.lines(23, 23, BLACK);        }      accept.input();      }    v235 = 237;    v232 = *v235;    v229 = 4;    call(Logic_Casino_inGame);    if ((v231 == 1 ||         v231 == 10))
+      {      varRandomValue = v231;      ++v235;      v232 = *v235;      v229 = 4;      call(Logic_Casino_inGame);      if (varRandomValue == 1 &&           v231 == 10)
+        {        set(f247);        }      if (varRandomValue == 10 &&           v231 == 1)
+        {        set(f247);        }      }    if (isset(f246))
+      {      print("You have blackjack.");      if (isset(f247))
+        {        v236 = 255;        v235 = 237;        ++v235;        v229 = 1;        call(Logic_Casino_inGame);        print("The dealer has blackjack!");        print("It's a push!");        v228 = v226;        v229 = 5;        call(Logic_Casino_inGame);        if (isset(f254))
+          {          print("Your insurance bet pays 2 to 1.");          v228 = v227;          v228  += v227;          v229 = 5;          call(Logic_Casino_inGame);          }        }      else
+        {        v228 = v226;        v228  += v226;        v228  += v227;        v229 = 5;        call(Logic_Casino_inGame);        varQuestionnaireTiming = 55;        draw(o13);        set(f53);        }      }    else
+      {      if (!isset(f247))
+        {        set(f253);        varTitlePageStep = 8;        }      else
+        {        v236 = 255;        v235 = 237;        ++v235;        v229 = 1;        call(Logic_Casino_inGame);        v229 = 6;        call(Logic_Casino_inGame);        print("The dealer has blackjack!");        if (isset(f254))
+          {          print("Your insurance bet pays 2 to 1.");          v228 = v227;          v228  += v227;          v229 = 5;          call(Logic_Casino_inGame);          }        }      }    }  if (varTitlePageStep == 7)
+    {    erase(o13);    v236 = 255;    }  if (varTitlePageStep == 11)
+    {    reset(f253);    v225 = v255;    varInGameMoney -= v225;    v229 = 6;    call(Logic_Casino_inGame);    v235 = 249;    varRandomValue = *v235;    varQuestionnaireID = 243;    ++varQuestionnaireID;    v221 = *varQuestionnaireID;    *v235 = v221;    *varQuestionnaireID = varRandomValue;    v235 = 243;    ++v235;    v229 = 2;    call(Logic_Casino_inGame);    varQuestionnaireTiming = 9;    }  if (varTitlePageStep == 12)
+    {    v235 = 249;    v229 = 1;    call(Logic_Casino_inGame);    v223 -= v231;    varQuestionnaireTiming = 9;    }  if (varTitlePageStep == 13)
+    {    set(f253);    v235 = 243;    ++v235;    v229 = 1;    call(Logic_Casino_inGame);    v223  += v231;    }  if (varTitlePageStep == 21)
+    {    reset(f253);    varInGameMoney -= v226;    v226  += v226;    v229 = 6;    call(Logic_Casino_inGame);    varQuestionnaireTiming = 9;    }  if (varTitlePageStep == 22)
+    {    set(f253);    set(f248);    ++v233;    v235 = 243;    v235  += v233;    --v235;    v229 = 1;    call(Logic_Casino_inGame);    v223  += v231;    varTitlePageStep = 101;    }  if (varTitlePageStep == 31)
+    {    print("Six cards make a winner.");    varTitlePageStep = 101;    set(f250);    }  if (varTitlePageStep == 101)
+    {    v236 = 2;    reset(f253);    if (isset(f252) &&         v223 < 12)
+      {      reset(f252);      v223  += 10;      }    if (v223 > 21)
+      {      if (v225 <= 0)
+        {        print("You are busted.");        }      else
+        {        print("%m34busted!");        }      }    if (v225 <= 0)
+      {      varTitlePageStep = 201;      }    else
+      {      set(f253);      reset(f252);      v233 = 2;      v235 = 249;      v232 = *v235;      v229 = 4;      call(Logic_Casino_inGame);      v224 = v231;      v235 = 249;      ++v235;      v229 = 1;      call(Logic_Casino_inGame);      v224  += v231;      }    }  if (varTitlePageStep == 121)
+    {    reset(f253);    varInGameMoney -= v225;    v225  += v225;    v229 = 6;    call(Logic_Casino_inGame);    varQuestionnaireTiming = 9;    }  if (varTitlePageStep == 122)
+    {    set(f253);    set(f249);    ++v233;    v235 = 249;    v235  += v233;    --v235;    v229 = 3;    call(Logic_Casino_inGame);    v224  += v231;    varTitlePageStep = 201;    }  if (varTitlePageStep == 131)
+    {    print("Six cards make a winner.");    varTitlePageStep = 201;    set(f251);    }  if (varTitlePageStep == 201)
+    {    reset(f253);    v236 = 3;    varQuestionnaireTiming = 9;    if (v225 > 0 &&         isset(f252) &&         v224 < 12)
+      {      reset(f252);      v224  += 10;      }    if (v224 > 21)
+      {      print("%m43busted!");      }    if (v223 < 22)
+      {      if (isset(f250))
+        {        varTitlePageStep = 230;        }      }    else
+      {      if (v225 <= 0)
+        {        varTitlePageStep = 220;        }      else
+        {        if (v224 > 21)
+          {          varTitlePageStep = 220;          }        else
+          {          if (isset(f251))
+            {            varTitlePageStep = 230;            }          }        }      }    }  if (varTitlePageStep == 202)
+    {    reset(f252);    varQuestionnaireTiming = 9;    v233 = 2;    v235 = 237;    ++v235;    v229 = 1;    call(Logic_Casino_inGame);    }  if (varTitlePageStep == 203)
+    {    varQuestionnaireTiming = 9;    if (isset(f252) &&         v222 > 6 &&         v222 < 12)
+      {      reset(f252);      v222  += 10;      }    if (v222 < 17)
+      {      ++v233;      v235 = 237;      v235  += v233;      --v235;      v229 = 1;      call(Logic_Casino_inGame);      v222  += v231;      if (v233 < 6)
+        {        varTitlePageStep -= 1;        }      }    }  if (varTitlePageStep == 204)
+    {    if (isset(f248))
+      {      v235 = 243;      ++v235;      ++v235;      v229 = 1;      call(Logic_Casino_inGame);      }    if (v222 > 21)
+      {      print("The dealer busted.");      if (v223 > 21)
+        {        ++varTitlePageStep;        }      else
+        {        v228 = v226;        v228  += v226;        v229 = 5;        call(Logic_Casino_inGame);        varQuestionnaireTiming = 22;        draw(o13);        set(f53);        }      }    else
+      {      if (v223 > 21)
+        {        ++varTitlePageStep;        }      else
+        {        if (v223 > v222)
+          {          if (v225 > 0)
+            {            print("%m34wins!");            }          v228 = v226;          v228  += v226;          v229 = 5;          call(Logic_Casino_inGame);          varQuestionnaireTiming = 33;          draw(o13);          set(f53);          }        if (v223 == v222)
+          {          if (v225 > 0)
+            {            print("%m34is a push!");            }          else
+            {            print("It's a push!");            }          v228 = v226;          v229 = 5;          call(Logic_Casino_inGame);          ++varTitlePageStep;          }        if (v223 < v222)
+          {          ++varTitlePageStep;          if (v225 > 0)
+            {            print("%m34loses!");            }          else
+            {            print("You lose!");            }          }        }      }    }  if (varTitlePageStep == 205)
+    {    if (v225 <= 0)
+      {      ++varTitlePageStep;      }    else
+      {      if (isset(f249))
+        {        v235 = 249;        ++v235;        ++v235;        v229 = 1;        call(Logic_Casino_inGame);        }      if (v222 > 21)
+        {        if (v223 > 21)
+          {          print("The dealer busted.");          }        if (v224 > 21)
+          {          ++varTitlePageStep;          }        else
+          {          v228 = v225;          v228  += v225;          v229 = 5;          call(Logic_Casino_inGame);          varQuestionnaireTiming = 22;          if (v223 > 21)
+            {            draw(o13);            }          set(f53);          }        }      else
+        {        if (v224 > 21)
+          {          ++varTitlePageStep;          }        else
+          {          if (v224 > v222)
+            {            print("%m43wins!");            v228 = v225;            v228  += v225;            v229 = 5;            call(Logic_Casino_inGame);            varQuestionnaireTiming = 33;            if (v223 > 21)
+              {              draw(o13);              }            set(f53);            }          if (v224 == v222)
+            {            print("%m43is a push!");            v228 = v225;            v229 = 5;            call(Logic_Casino_inGame);            ++varTitlePageStep;            }          if (v224 < v222)
+            {            print("%m43loses!");            ++varTitlePageStep;            }          }        }      }    }  if (varTitlePageStep == 206)
+    {    erase(o13);    v236 = 255;    }  if (varTitlePageStep == 221)
+    {    v235 = 237;    ++v235;    v229 = 1;    call(Logic_Casino_inGame);    v236 = 255;    }  if (varTitlePageStep == 231)
+    {    if (!isset(f250))
+      {      ++varTitlePageStep;      }    else
+      {      v228 = v226;      v228  += v226;      v229 = 5;      call(Logic_Casino_inGame);      varQuestionnaireTiming = 44;      draw(o13);      set(f53);      }    }  if (varTitlePageStep == 232)
+    {    if (!isset(f251))
+      {      ++varTitlePageStep;      }    else
+      {      v228 = v225;      v228  += v225;      v229 = 5;      call(Logic_Casino_inGame);      varQuestionnaireTiming = 44;      draw(o13);      set(f53);      }    }  if (varTitlePageStep == 233)
+    {    erase(o13);    v236 = 255;    }  }if (v236 == 255)
+  {  v236 = 0;  reset(f253);  reset(f87);  varTitlePageStep = 0;  varQuestionnaireTiming = 0;  v219 = 45;  if (varInGameMoney <= 0)
+    {    varTitlePageStep = 0;    v229 = 6;    call(Logic_Casino_inGame);    }  }if (v236 == 1)
+  {  if (v223 > 21)
+    {    set(boolTimingDelayOut);    varTitlePageStep = 100;    }  else
+    {    if (v233 > 5)
+      {      set(boolTimingDelayOut);      varTitlePageStep = 30;      }    }  }if (v236 == 2)
+  {  if (v224 > 21)
+    {    set(boolTimingDelayOut);    varTitlePageStep = 200;    }  else
+    {    if (v233 > 5)
+      {      set(boolTimingDelayOut);      varTitlePageStep = 130;      }    }  }if (isset(f53))
+  {  reset(f53);  if (varTitlePageStep == 1)
+    {    sound(Sound5, f53);    }  if ((varTitlePageStep == 6 ||       varTitlePageStep == 204 ||       varTitlePageStep == 205 ||       varTitlePageStep == 231 ||       varTitlePageStep == 232))
+    {    sound(Sound7, f53);    }  }if (isset(gameRestored))
+  {  v229 = 6;  call(Logic_Casino_inGame);  }if (isset(f255))
+  {  reset(f48);  reset(noScript);  reset(f87);  v76 = 31;  }if (isset(boolCallDebugger) &&     isset(boolDebugInGame))
+  {  if ((v223 != v217 ||       v224 != v218 ||       v222 != v216))
+    {    v229 = 7;    call(Logic_Casino_inGame);    }  }return();[ Messages#message 1 "You are sitting at a blackjack table in the casino. There is a sign on the table titled \"House Rules.\""#message 2 "Do you want insurance? "#message 3 "Amount in dollars: $"#message 4 "Please bet an even number of dollars (2, 4, 6, etc.). The house does not keep half-dollars."#message 5 "The dealer has blackjack!"#message 6 "Surrendering your cards, you are refunded half of your bet."#message 7 "You bet zero dollars, receive zero cards, and win zero dollars and zero cents."#message 8 "You can play all night like this!"#message 9 "Your insurance bet pays 2 to 1."#message 10 "Please answer \"y\" or \"n\"."#message 11 "You are busted."#message 12 "The dealer busted."#message 13 "She's a beautiful young lady, but you vow to keep your thoughts on the game."#message 14 "It's a push!"#message 15 "\"Thanks for playing,\" says the dealer, finally cracking a smile. \"Come back anytime.\""#message 16 "You lose!"#message 17 "You have blackjack."#message 18 "Six cards make a winner."#message 19 "You can only "#message 20 " when you have two cards."#message 21 "\"Please, no talking at the tables.\""#message 22 "That's not a pair."#message 23 "\"I'm sorry, Sir. We're not permitted to accept gratuities!\""#message 24 "%m19double when you have 10 or 11 points."#message 25 "%m19split%m20"#message 26 "%m19surrender%m20"#message 27 "You don't have enough money!"#message 28 "Don't be in such a hurry. Finish this hand first!"#message 29 "It's too late now. This hand is already being played."#message 30 "You can't bet more than you have."#message 31 "$20.00 is the maximum bet at this table."#message 32 ""#message 33 ""#message 34 "Your first hand "#message 35 "%m34is a push!"#message 36 "%m34wins!"#message 37 "%m34loses!"#message 38 "%m34busted!"#message 39 "%m43is a push!"#message 40 "%m43wins!"#message 41 "%m43loses!"#message 42 "%m43busted!"#message 43 "Your split hand "#message 44 "Please wait until it's your turn."#message 45 "\n        HOUSE RULES\n\nThis table has a $20.00 limit. Bets must be a multiple of $2.00.\n\nDealer must hit 16, and must stand on 17.\n\nBlackjack pays 1-1/2 to 1 odds.\n\nAny six cards under 22 wins.\n"#message 46 "\nInsurance bets are offered whenever the dealer shows an ace. They are half your bet, and pay 2 to 1 odds.\n\nYou may split a pair or surrender whenever you have only two cards.\n\nYou may double down if your cards total 10 or 11 points.\n"#message 47 "\nPress F4 when ready to play.\n\nPress F6 for another card.\n\nPress F8 to stand.\n\nTo change the amount of your bet, type \"change bet.\"\n"

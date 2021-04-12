@@ -1,52 +1,0 @@
-if (isset(newRoom))
-  {  if (varGameTimeHour > 4 &&       varGameTimeHour < 10)
-    {    new.room(Logic_BadEnding); [ ##LE001##    }  set.horizon(76);  load.logics(Logic57);  load.pic(currentRoom);  draw.pic(currentRoom);  discard.pic(currentRoom);  load.view(View90);  load.view(View91);  if (isset(f118))
-    {    add.to.pic(View90, 0, 1, 64, 59, 15, 4);    }  else
-    {    animate.obj(Obj_animatedPNJ1);    ignore.horizon(Obj_animatedPNJ1);    set.view(Obj_animatedPNJ1, View90);    set.loop(Obj_animatedPNJ1, 0);    position(Obj_animatedPNJ1, 64, 59);    set.priority(Obj_animatedPNJ1, 15);    draw(Obj_animatedPNJ1);    }  animate.obj(Obj_animatedPNJ2);  ignore.horizon(Obj_animatedPNJ2);  set.view(Obj_animatedPNJ2, View90);  set.loop(Obj_animatedPNJ2, 1);  set.cel(Obj_animatedPNJ2, 0);  position(Obj_animatedPNJ2, 39, 66);  cycle.time(Obj_animatedPNJ2, v85);  draw(Obj_animatedPNJ2);  animate.obj(Obj_animatedPNJ3);  ignore.horizon(Obj_animatedPNJ3);  set.view(Obj_animatedPNJ3, View90);  set.loop(Obj_animatedPNJ3, 1);  set.cel(Obj_animatedPNJ3, 1);  position(Obj_animatedPNJ3, 103, 66);  cycle.time(Obj_animatedPNJ3, v85);  draw(Obj_animatedPNJ3);  animate.obj(Obj_animatedPNJ4);  ignore.blocks(Obj_animatedPNJ4);  set.view(Obj_animatedPNJ4, View91);  set.cel(Obj_animatedPNJ4, 0);  if (previousRoom == 24)
-    {    ignore.blocks(ego);    set(f202);    position(Obj_animatedPNJ4, 73, 120);    v38 = 77;    v39 = 83;    }  else
-    {    position(Obj_animatedPNJ4, 76, 120);    observe.blocks(ego);    if (previousRoom != 22 &&         previousRoom != 9)
-      {      v38 = 77;      v39 = 146;      }    }  position.v(ego, v38, v39);  draw(ego);  draw(Obj_animatedPNJ4);  stop.update(Obj_animatedPNJ4);  call(Logic57);  show.pic();  return();  }reset(f200);if (posn(ego, 65, 120, 91, 127))
-  {  set(f200);  set(f69);  }if (!isset(haveInput))
-  {  goto(Label1);  }if ((said("examine") ||     said("examine", "building") ||     said("examine", "area") ||     said("examine", "disco")))
-  {  print("You are outside a flashy disco. The bouncer does not look happy.");  }if (said("examine", "burn"))
-  {  print("Gaudy, aren't they?");  }if (said("examine", "fire hydrant"))
-  {  print("Why does the dog use you, and not it?");  }if (said("examine", "building"))
-  {  print("Gazing up at the storefronts before you, a feeling comes over you. "        "Surely every one of those windows has a deep, wonderful story hidden "        "behind it. There are millions of stories here in Lost Wages, but "        "you'll never know any of them. Such is the fate of those who are "        "morally-weak, but financially-strong.");  print("(What the hell was that all about????)");  }if ((said("ask", "bouncer") ||     said("ask")))
-  {  if (!isset(f200))
-    {    set(f54);    }  else
-    {    if (isset(f202))
-      {      print("\"We hope you enjoyed your visit tonight, Sir!\"");      }    else
-      {      print("\"Either show your membership card, or get lost, Scum-Breath!\"");      print("It seems he's uninterested in idle chit-chat, Larry.");      }    }  }if ((said("examine", "bouncer") ||     said("examine")))
-  {  if (isset(f202))
-    {    print("He seems glad to see you leave.");    }  else
-    {    print("He's physically well-developed, but you bet he's not as wise in the "          "ways of women as you are.");    }  }if ((said("move", "bouncer") ||     said("move", "bouncer")))
-  {  if (!isset(f200))
-    {    set(f54);    }  else
-    {    print("He's far too strong for you, Larry.");    }  }if ((said("beat", "bouncer") ||     said("fight", "bouncer")))
-  {  print("Larry! How could you!");  print("You know he'd beat you to a pulp!");  }if ((said("add", "bouncer", "bucks") ||     said("add", "bucks", "bouncer") ||     said("bribe", "bouncer")))
-  {  if (!isset(f200))
-    {    set(f54);    }  else
-    {    print("\"How's about a little green sliding across your palm?\" you ask the "          "bouncer.");    print("\"How's about your rear end sliding across the pavement?\" he "          "replies.");    }  }if ((said("buy", "card", "from", "bouncer") ||     said("buy", "bouncer") ||     said("ask", "bouncer", "about", "card") ||     said("ask", "bouncer", "card")))
-  {  if (!isset(f200))
-    {    set(f54);    }  else
-    {    print("\"You can only get a card if you already have a card,\" he laughs, "          "\"but then, of course, you wouldn't NEED a card.\"");    print("\"So, beat it, Chump!\"");    }  }if ((said("examine", "card") ||     said("add", "card", "bouncer") ||     said("add", "bouncer", "card") ||     said("add", "card") ||     said("examine", "bouncer", "card") ||     said("examine", "card", "bouncer")))
-  {  if (!has("Disco Pass"))
-    {    print("You don't have a membership card!");    }  else
-    {    if (!isset(f200))
-      {      set(f54);      }    else
-      {      if (isset(f202))
-        {        print("\"Oh, there's no need to do that, Sir!\" says the bouncer.");        }      else
-        {        print("You whip out your \"borrowed\" membership card, and lay it on "              "him.");        print("\"Good evening, Sir. I'm so sorry I didn't recognize you sooner. "              "Please, come right in!!\"");        set(f202);        start.update(Obj_animatedPNJ4);        set.cel(Obj_animatedPNJ4, 0);        reposition.to(Obj_animatedPNJ4, 73, 120);        stop.update(Obj_animatedPNJ4);        force.update(Obj_animatedPNJ4);        ignore.blocks(ego);        if (!isset(f119))
-          {          set(f119);          currentScore  += 5;          }        }      }    }  }if ((said("increase", "door") ||     said("bang") ||     said("bang", "on", "door") ||     said("bang", "door")))
-  {  if (isset(f61))
-    {    reset(haveMatch);    }  else
-    {    print("All the stores are locked. But, that disco sure looks inviting.");    }  }Label1:if (!isset(f202))
-  {  if (isset(f200) &&       !isset(f204))
-    {    set(f204);    start.update(Obj_animatedPNJ4);    end.of.loop(Obj_animatedPNJ4, f203);    }  else
-    {    if (!isset(f200) &&         isset(f204))
-      {      reset(f204);      set.cel(Obj_animatedPNJ4, 0);      force.update(Obj_animatedPNJ4);      set(f203);      }    }  if (isset(f203))
-    {    reset(f203);    stop.update(Obj_animatedPNJ4);    if (!isset(f201))
-      {      set(f201);      print("\"HALT!!\n\nI'm sorry, Sir,\" says the bouncer, \"but this is a "            "private club.\"");      }    }  }call(Logic57);if (edgeEgoHit == LEFT_EDGE)
-  {  v76 = 22;  }if (edgeEgoHit == TOP_EDGE)
-  {  v76 = 24;  }if (edgeEgoHit == RIGHT_EDGE)
-  {  v76 = 9;  }return();[ Messages#message 1 "You are outside a flashy disco. The bouncer does not look happy."#message 2 "\"Either show your membership card, or get lost, Scum-Breath!\""#message 3 "\"Good evening, Sir. I'm so sorry I didn't recognize you sooner. Please, come right in!!\""#message 4 "You whip out your \"borrowed\" membership card, and lay it on him."#message 5 "It seems he's uninterested in idle chit-chat, Larry."#message 6 "You don't have a membership card!"#message 7 "\"We hope you enjoyed your visit tonight, Sir!\""#message 8 "\"Oh, there's no need to do that, Sir!\" says the bouncer."#message 9 "\"HALT!!\n\nI'm sorry, Sir,\" says the bouncer, \"but this is a private club.\""#message 10 "He seems glad to see you leave."#message 11 "He's physically well-developed, but you bet he's not as wise in the ways of women as you are."#message 12 "Larry! How could you!"#message 13 "You know he'd beat you to a pulp!"#message 14 "Gazing up at the storefronts before you, a feeling comes over you. Surely every one of those windows has a deep, wonderful story hidden behind it. There are millions of stories here in Lost Wages, but you'll never know any of them. Such is the fate of those who are morally-weak, but financially-strong."#message 15 "(What the hell was that all about????)"#message 16 "Gaudy, aren't they?"#message 17 "He's far too strong for you, Larry."#message 18 ""#message 19 "All the stores are locked. But, that disco sure looks inviting."#message 20 "\"You can only get a card if you already have a card,\" he laughs, \"but then, of course, you wouldn't NEED a card.\""#message 21 "\"So, beat it, Chump!\""#message 22 "\"How's about a little green sliding across your palm?\" you ask the bouncer."#message 23 "\"How's about your rear end sliding across the pavement?\" he replies."#message 24 "Why does the dog use you, and not it?"

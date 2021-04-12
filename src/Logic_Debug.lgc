@@ -8,7 +8,7 @@ if (isset(newRoom) &&     isset(f33) &&     monitorType != MONO)
   {  if (isset(f48))
     {    set.text.attribute(BROWN, BLACK);    display(24, 35, "H");    set.text.attribute(WHITE, BLACK);    }  else
     {    display(24, 35, " ");    }  }if ((controller(c35) ||     said("all", "number")))
-  {  lastChar = 0;  set.text.attribute(BROWN, LT_GRAY);  text.screen();  display(2, 6, "Number  Name of Object");  v45 = 1;  v32 = 10;  v33 = 4;  v58 = 16;Label1:  display.v(v33, v32, v58);  ++v45;  ++v33;  if (v45 <= 20)
+  {  lastChar = 0;  set.text.attribute(BROWN, LT_GRAY);  text.screen();  display(2, 6, "Number  Name of Object");  v45 = 1;  varColumn = 10;  varLine = 4;  varOutputCharacter = 16;Label1:  display.v(varLine, varColumn, varOutputCharacter);  ++v45;  ++varLine;  if (v45 <= 20)
     {    goto(Label1);    }Label2:  if (!have.key())
     {    goto(Label2);    }  set.text.attribute(WHITE, BLACK);  graphics();  }if (said("all", "area"))
   {  get.num("Object number:", v46);  get.room.v(v46, v45);  print("Object %v46 is in room %v45.");  }if (said("add", "priority"))

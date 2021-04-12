@@ -1,0 +1,185 @@
+if (isset(newRoom))
+  {  set.horizon(1);  load.view(View165);  load.view(View168);  load.view(View174);  load.view(Larry_Close_Door);  load.view(Larry_StandAndWalk);  if (!isset(f76))
+    {    load.view(View166);    load.view(View167);    varPanicPicture = 26;    load.pic(varPanicPicture);    }  load.pic(currentRoom);  draw.pic(currentRoom);  animate.obj(Obj_animatedPNJ7);  ignore.blocks(Obj_animatedPNJ7);  ignore.objs(Obj_animatedPNJ7);  set.priority(Obj_animatedPNJ7, 10);  set.view(Obj_animatedPNJ7, View168);  set.cel(Obj_animatedPNJ7, 0);  position(Obj_animatedPNJ7, 137, 120);  draw(Obj_animatedPNJ7);  stop.update(Obj_animatedPNJ7);  varRandomValue = 3;  cycle.time(Obj_animatedPNJ7, varRandomValue);  if (!isset(f76))
+    {    animate.obj(Obj_animatedPNJ2);    ignore.horizon(Obj_animatedPNJ2);    ignore.blocks(Obj_animatedPNJ2);    ignore.objs(Obj_animatedPNJ2);    set.view(Obj_animatedPNJ2, View166);    set.loop(Obj_animatedPNJ2, 0);    set.priority(Obj_animatedPNJ2, 13);    step.size(Obj_animatedPNJ2, v85);    position(Obj_animatedPNJ2, 128, 132);    draw(Obj_animatedPNJ2);    stop.update(Obj_animatedPNJ2);    }  animate.obj(Obj_animatedPNJ8);  ignore.blocks(Obj_animatedPNJ8);  ignore.objs(Obj_animatedPNJ8);  set.view(Obj_animatedPNJ8, View174);  set.priority(Obj_animatedPNJ8, 5);  position(Obj_animatedPNJ8, 73, 100);  set.cel(Obj_animatedPNJ8, 8);  stop.cycling(Obj_animatedPNJ8);  animate.obj(Obj_animatedPNJ3);  ignore.blocks(Obj_animatedPNJ3);  ignore.objs(Obj_animatedPNJ3);  set.view(Obj_animatedPNJ3, View165);  set.loop(Obj_animatedPNJ3, 2);  fix.loop(Obj_animatedPNJ3);  set.priority(Obj_animatedPNJ3, 4);  position(Obj_animatedPNJ3, 73, 120);  varRandomValue = 3;  cycle.time(Obj_animatedPNJ3, varRandomValue);  animate.obj(Obj_animatedPNJ4);  ignore.blocks(Obj_animatedPNJ4);  ignore.objs(Obj_animatedPNJ4);  set.view(Obj_animatedPNJ4, View165);  set.loop(Obj_animatedPNJ4, 1);  fix.loop(Obj_animatedPNJ4);  position(Obj_animatedPNJ4, 73, 129);  set.priority(Obj_animatedPNJ4, 5);  animate.obj(Obj_animatedPNJ1);  ignore.blocks(Obj_animatedPNJ1);  ignore.objs(Obj_animatedPNJ1);  set.view(Obj_animatedPNJ1, View165);  set.priority(Obj_animatedPNJ1, 12);  fix.loop(Obj_animatedPNJ1);  step.size(Obj_animatedPNJ1, v85);  if (previousRoom == 40)
+    {    set(f205);    set.loop(Obj_animatedPNJ1, 3);    last.cel(Obj_animatedPNJ1, varRandomValue);    set.cel.v(Obj_animatedPNJ1, varRandomValue);    stop.cycling(Obj_animatedPNJ1);    position(Obj_animatedPNJ1, 73, 167);    draw(Obj_animatedPNJ1);    move.obj(Obj_animatedPNJ1, 73, 129, 2, boolTimingDelayOut);    varTitlePageStep = 100;    draw(Obj_animatedPNJ3);    stop.update(Obj_animatedPNJ3);    draw(Obj_animatedPNJ8);    set.view(ego, Larry_StandAndWalk);    set.loop(ego, 2);    set.priority(ego, 11);    v38 = 76;    v39 = 127;    position.v(ego, v38, v39);    }  else
+    {    draw(Obj_animatedPNJ4);    stop.update(Obj_animatedPNJ4);    set.loop(Obj_animatedPNJ1, 0);    set.cel(Obj_animatedPNJ1, 0);    position(Obj_animatedPNJ1, 73, 129);    draw(Obj_animatedPNJ1);    stop.update(Obj_animatedPNJ1);    stop.motion(ego);    set(boolDisablePlayer);    set(f210);    set.loop(ego, 1);    ignore.blocks(ego);    v38 = 145;    v39 = 117;    position.v(ego, v38, v39);    draw(ego);    varTitlePageStep = 240;    set(boolTimingDelayOut);    }  ignore.objs(ego);  show.pic();  return();  }reset(f201);if (posn(ego, 0, 140, 20, 167))
+  {  set(f201);  }reset(boolQuestionnaireFailedOnce);if (posn(ego, 117, 133, 141, 156))
+  {  set(boolQuestionnaireFailedOnce);  }if (isset(boolQuestionnaireFailedOnce) &&     !isset(f76))
+  {  set(f69);  }reset(f204);if (posn(ego, 73, 121, 83, 127))
+  {  set(f204);  }if (isset(f204))
+  {  set.priority(ego, 11);  }else
+  {  release.priority(ego);  }reset(f208);if (posn(ego, 126, 112, 150, 127))
+  {  set(f208);  }reset(f209);if (posn(ego, 146, 111, 149, 120))
+  {  set(f209);  set(f210);  }if (isset(f202))
+  {  if (isset(f208))
+    {    ignore.blocks(ego);    }  else
+    {    observe.blocks(ego);    if (isset(f210))
+      {      reset(f210);      set(boolTimingDelayOut);      varTitlePageStep = 242;      }    }  if (isset(f209))
+    {    set(boolTimingDelayOut);    varTitlePageStep = 250;    }  }if (!isset(haveInput))
+  {  goto(Label1);  }if (isset(f208) &&     (said("move", "button") ||     said("use", "elevator") ||     said("board", "elevator") ||     said("increase", "elevator")))
+  {  print("The doors are securely closed. %m16 There is no button nearby.");  }if (isset(f76) &&     (said("examine", "back", "counter") ||     said("examine", "back", "desk") ||     said("examine", "counter") ||     said("examine", "desk") ||     said("examine", "button")))
+  {  if (!isset(boolQuestionnaireFailedOnce))
+    {    set(f54);    }  else
+    {    print("Since you're no longer staring at Faith's ample weapons, you notice "          "an unlabeled button on her desk.");    }  }if (said("examine", "elevator"))
+  {  if (isset(f204))
+    {    print("There are buttons labeled \"one\" through \"eight.\"");    }  else
+    {    print("The glass elevator only goes down from here. How about you?");    }  }if ((said("examine", "counter") ||     said("examine", "back", "counter") ||     said("examine", "back", "desk") ||     said("examine", "desk")))
+  {  if (!isset(boolQuestionnaireFailedOnce))
+    {    set(f54);    }  else
+    {    if (!isset(f76))
+      {      print("The beautiful security guard is sitting at the desk. A pair of "            "large pistols are in a holster around her slim waist. She looks "            "friendly, but quick on the trigger.");      }    else
+      {      print("Since you're no longer staring at Faith's ample weapons, you "            "notice an unlabeled button on her desk.");      }    }  }if (!isset(f204) &&     (said("move", "button") ||     said("increase", "elevator", "door") ||     said("increase", "elevator")))
+  {  if (!isset(boolQuestionnaireFailedOnce))
+    {    set(f54);    }  else
+    {    if (!isset(f76))
+      {      print("\"Touch that button, and you're dead meat, White-Suit!\"");      }    else
+      {      print("The penthouse elevator doors glide open.");      start.update(Obj_animatedPNJ7);      end.of.loop(Obj_animatedPNJ7, f203);      set(f202);      }    }  }if (!isset(f76))
+  {  if (isset(f206))
+    {    if (said("use", "breath spray", "rol"))
+      {      reset(haveMatch);      v207 = 1;      v200 = 3;      reset(f207);      }    if ((said("done", "examine", "blond") ||         said("examine", "away") ||         said("examine", "area") ||         said("examine", "away", "from", "blond") ||         said("board", "rol")))
+      {      set(f211);      set(f67);      }    }  if ((said("examine", "blond", "rol") ||       said("establish eye contact", "rol") ||       said("look in", "blond", "rol")))
+    {    if (varTitlePageStep > 0)
+      {      print("Not now, you're busy.");      }    else
+      {      if (!isset(boolQuestionnaireFailedOnce))
+        {        set(f54);        }      else
+        {        if (!isset(f206))
+          {          set(f212);          }        else
+          {          ++varPickedQuestion4;          if (varPickedQuestion4 == 1)
+            {            print("She is a knockout! But that pair of pistols slung around her "                  "hips brings a sense of foreboding to your gut.");            }          if (varPickedQuestion4 == 2)
+            {            print("Her sweater reveals she's built like a brick shipyard.");            }          if (varPickedQuestion4 > 2)
+            {            print("\"Stop staring there,\" she says softly.");            v207 = 1;            }          }        }      }    }  if ((said("ask", "blond", "rol") ||       said("ask", "blond", "rol") ||       said("ask", "anyword", "blond", "rol")))
+    {    if (!isset(boolQuestionnaireFailedOnce))
+      {      set(f54);      }    else
+      {      if (!isset(f206))
+        {        print("She might listen to you, if you can establish eye contact.");        }      else
+        {        ++varPickedQuestion5;        if (varPickedQuestion5 == 1)
+          {          print("\"Hi ya, Baby. I think I loves ya!!\"");          print("\"May I help you in some way, Sir?\" she responds in a "                "pleasant, but businesslike voice.");          v207 = 1;          }        if (varPickedQuestion5 == 2)
+          {          print("\"My name is Larry,\" you offer. \"Larry Laffer.\"");          print("\"Say, Larry,\" she says with a smile, \"Is that a roll of "                "dimes in your pocket, or are you just glad to see me?\"");          v207 = 1;          }        if (varPickedQuestion5 == 3)
+          {          print("\"Hey, sweetheart. What's your sign?\" you ask her.");          print("\"'EXIT,\" she replies. \"Try using it!\"");          v207 = 1;          }        if (varPickedQuestion5 == 4)
+          {          print("\"What's your name, beautiful?\" you ask.");          print("\"Faith,\" she replies.");          print("Hmmm. Unusual name.");          v207 = 0;          }        if (varPickedQuestion5 == 5)
+          {          print("\"I'm only in town for one night,\" you try again. \"How about "                "we get together when you get off duty?\"");          print("She smiles and says, \"Oh, I could never be unfaithful to my "                "boyfriend.\"");          print("(Larry, it seems this one's gonna require outside assistance.)");          v207 = 1;          }        if (varPickedQuestion5 > 5)
+          {          print("You're a man of the world, Larry. Perhaps some sort of medical "                "stimulant would help.");          }        }      }    }  if ((said("add", "blond", "aphrodisiac", "rol") ||       said("increase", "aphrodisiac", "rol") ||       said("add", "aphrodisiac", "blond", "rol")))
+    {    if (!has("Bottle of Pills"))
+      {      set(boolLarryDontHaveIt);      }    else
+      {      if (!isset(boolQuestionnaireFailedOnce))
+        {        set(f54);        }      else
+        {        if (!isset(f206))
+          {          print("She might listen to you, if you can establish eye contact.");          }        else
+          {          set(boolTimingDelayOut);          varTitlePageStep = 200;          }        }      }    }  if ((said("add", "blond", "bucks", "rol") ||       said("add", "bucks", "blond", "rol")))
+    {    if (!isset(boolQuestionnaireFailedOnce))
+      {      set(f54);      }    else
+      {      if (!isset(f206))
+        {        print("She might listen to you, if you can establish eye contact.");        }      else
+        {        print("\"Really? I'm not that kind of girl.\"");        v207 = 2;        }      }    }  if ((said("increase", "door", "i'm") ||       said("unbolt", "door", "i'm")))
+    {    if (!isset(boolQuestionnaireFailedOnce))
+      {      set(f54);      }    else
+      {      print("\"I'm sorry, but I can't.\"");      }    }  if ((said("examine", "gun", "rol") ||       said("examine", "blond", "boob") ||       said("examine", "boob", "rol") ||       said("examine", "body") ||       said("examine") ||       said("examine", "boob") ||       said("examine", "boob", "rol")))
+    {    if (!isset(boolQuestionnaireFailedOnce))
+      {      set(f54);      }    else
+      {      if (!isset(f206))
+        {        print("Try looking at the girl first.");        }      else
+        {        print("They are a beautiful pair, aren't they?");        }      }    }  if ((said("examine", "eyes", "rol") ||       said("examine", "lips", "rol")))
+    {    if (!isset(boolQuestionnaireFailedOnce))
+      {      set(f54);      }    else
+      {      if (!isset(f206))
+        {        print("Try looking at the girl first.");        }      else
+        {        print("Her eyes are as sensuous as her lips.");        }      }    }  if (isset(f206))
+    {    if ((said("lips") ||         said("lips", "blond") ||         said("carry", "fingers") ||         said("catch", "blond", "fingers") ||         said("aim", "blond") ||         said("aim", "blond") ||         said("ask", "dance")))
+      {      print("\"You know, I'm supposed to be working!\"");      v207 = 1;      }    if ((said("examine", "eyes") ||         said("look in", "eyes") ||         said("flirt", "use", "blond") ||         said("flirt", "blond") ||         said("add", "blond", "embrace") ||         said("embrace", "blond")))
+      {      v207 = 1;      }    if ((said("examine", "blond", "hair") ||         said("examine", "hair") ||         said("caress", "hair") ||         said("caress", "hair") ||         said("caress", "blond", "hair")))
+      {      print("Her hair is thick and beautiful, falling in cascades around her "            "delicate shoulders.");      }    if ((said("ask", "name") ||         said("ask", "blond", "name") ||         said("ask", "name", "blond")))
+      {      print("\"Faith,\" she replies.");      print("Hmmm. Unusual name.");      v207 = 1;      }    if ((said("i'm") ||         said("leisure suit", "i'm")))
+      {      print("\"So what?\"");      }    if ((said("examine", "lips") ||         said("examine", "blond", "lips")))
+      {      print("Her lips are moist and inviting, but then, you also felt that way "            "about old Mr. Weissenborn, your high school shop teacher!");      }    if ((said("blond", "married", "i'm") ||         said("married", "i'm") ||         said("married", "blond") ||         said("ask", "blond", "catch", "married") ||         said("ask", "blond", "married", "i'm") ||         said("ask", "about", "about") ||         said("add", "diamond ring", "on", "blond", "finger") ||         said("married", "blond")))
+      {      print("I'm sorry,\" Faith replies, \"but you don't know me that well!\"");      v207 = 2;      }    if ((said("ask", "blond", "love") ||         said("love", "you") ||         said("catch", "blond", "fingers")))
+      {      print("\"Well, now. Isn't THAT special!\"");      }    if ((said("aim", "blond", "rol") ||         said("naked", "blond") ||         said("ask", "blond", "about", "copulate") ||         said("about", "copulate", "use", "i'm") ||         said("copulate", "rol") ||         said("make", "blond") ||         said("anyword", "clit", "rol") ||         said("bite", "blond", "blond", "holler") ||         said("anyword", "boob", "rol") ||         said("play", "use", "blond", "boob") ||         said("catch", "boob") ||         said("caress", "boob") ||         said("catch", "blond") ||         said("caress", "blond") ||         said("bite", "blond") ||         said("aim", "blond", "below", "desk") ||         said("caress", "below", "desk") ||         said("catch", "ankle") ||         said("aim", "ankle") ||         said("catch", "blond", "ankle") ||         said("bite", "blond", "rol") ||         said("copulate", "blond", "rol") ||         said("embrace", "blond", "rol") ||         said("anyword", "gun", "rol") ||         said("caress", "blond", "rol") ||         said("aim", "boob", "rol")))
+      {      print("\"Try it, and I'll blow your head off.\"");      print("(She is, of course, referring to the use of her gun, Larry.)");      v207 = 2;      }    if (said("do", "you", "catch", "off"))
+      {      print("\"Usually when I'm with someone romantic!\" she replies.");      }    if ((said("time", "do", "you", "catch", "off") ||         said("time", "do", "you", "catch", "off", "duty") ||         said("time", "off", "duty") ||         said("time", "off") ||         said("done", "time")))
+      {      print("\"I'll be here all night.\"");      }    if (said("come", "use", "i'm"))
+      {      print("\"Perhaps,\" she says, \"but right now, I'm working.\"");      }    }  }if ((said("climb", "above", "desk") ||     said("jump", "above", "desk")))
+  {  print("There's no need to do that.");  }if ((said("examine") ||     said("examine", "area") ||     said("examine", "curb") ||     said("examine", "casino")))
+  {  if (isset(f201) &&       isset(f76))
+    {    print("Evidently, this exit is for employees only. You'd better use the "          "elevator.");    }  else
+    {    if (isset(f208))
+      {      if (!isset(f202))
+        {        print("The doors are securely closed. %m16 There is no button nearby.");        }      else
+        {        print("The doors are open. Go on in.");        }      }    else
+      {      if (!isset(boolQuestionnaireFailedOnce))
+        {        if (isset(f76))
+          {          print("%m14 That desk is where you lost your Faith, remember? (So "                "glad there was a chance to use THAT line!)");          }        else
+          {          print("%m14 A beautiful security guard sits behind a desk.");          }        }      else
+        {        if (!isset(f76))
+          {          print("The beautiful security guard is sitting at the desk. A pair of "                "large pistols are in a holster around her slim waist. She "                "looks friendly, but quick on the trigger.");          }        else
+          {          print("Since you're no longer staring at Faith's ample weapons, you "                "notice an unlabeled button on her desk.");          }        }      }    }  }if (!isset(f76) &&     said("aim", "blond"))
+  {  print("She waves back.");  }if ((said("examine", "door") ||     said("examine", "elevator")))
+  {  if (isset(f201) &&       isset(f76))
+    {    print("Evidently, this exit is for employees only. You'd better use the "          "elevator.");    }  else
+    {    if (isset(f204))
+      {      print("There are buttons labeled \"one\" through \"eight.\"");      }    else
+      {      if (!isset(f208))
+        {        print("It's a door just like all the others.");        }      else
+        {        if (!isset(f202))
+          {          print("The doors are securely closed. %m16 There is no button nearby.");          }        else
+          {          print("The doors are open. Go on in.");          }        }      }    }  }if ((said("examine", "down") ||     said("expectorate", "down") ||     said("expectorate", "above", "balcony") ||     said("examine", "above", "balcony") ||     said("expectorate")))
+  {  print("You contemplate expec- toration, but remember that discretion is the "        "better part of valium.");  print("...or helium,");  print("...or something.");  }if (said("jump", "rol"))
+  {  print("Suicide is illegal here.");  }if ((said("examine", "bush") ||     said("look in", "bush")))
+  {  print("They almost look real, don't they?");  }if ((said("bang") ||     said("bang", "on", "door") ||     said("bang", "door")))
+  {  print("You run to the nearest door, and rap your knuckles loudly. You run "        "right back to where you were.");  print("Evidently the rooms on this floor are all unoccupied.");  }if ((said("use", "stair") ||     said("board", "down") ||     said("board", "down", "stair")))
+  {  print("Evidently, this exit is for employees only. You'd better use the "        "elevator.");  }if ((said("unbolt", "door", "rol") ||     said("use", "key", "rol")))
+  {  print("You can't. There's no key in this game!");  }if (said("increase", "door"))
+  {  print("You seem surprised that the door is locked.");  }if ((said("increase", "door", "use", "rol") ||     said("break", "door", "rol")))
+  {  print("It's no good. The door resists all of your efforts.");  }if (isset(f205) &&     !isset(haveMatch))
+  {  if ((said("hear") ||       said("sing") ||       said("sing", "along")))
+    {    print("\"strangers in the night, da da da dee da...\"");    }  else
+    {    set(haveMatch);    print("Whee!");    }  }if (varTitlePageStep <= 0 &&     isset(f204))
+  {  if ((said("move", "one") ||       said("move", "button", "one") ||       said("one")))
+    {    v79 = 1;    set(boolTimingDelayOut);    }  if ((said("move", "two") ||       said("move", "button", "two") ||       said("two")))
+    {    v79 = 2;    set(boolTimingDelayOut);    }  if ((said("move", "three") ||       said("move", "button", "three") ||       said("three")))
+    {    v79 = 3;    set(boolTimingDelayOut);    }  if ((said("move", "four") ||       said("move", "button", "four") ||       said("four")))
+    {    v79 = 4;    set(boolTimingDelayOut);    }  if ((said("move", "five") ||       said("move", "button", "five") ||       said("five")))
+    {    v79 = 5;    set(boolTimingDelayOut);    }  if ((said("move", "six") ||       said("move", "button", "six") ||       said("six")))
+    {    v79 = 6;    set(boolTimingDelayOut);    }  if ((said("move", "seven") ||       said("move", "button", "seven") ||       said("seven")))
+    {    v79 = 7;    set(boolTimingDelayOut);    }  if ((said("move", "eight") ||       said("move", "button", "eight") ||       said("eight")))
+    {    v79 = 8;    set(boolTimingDelayOut);    }  if ((said("move", "rol") ||       said("move", "button", "rol")))
+    {    print("Type a word, like \"one\" or \"two.\"");    }  }Label1:if (isset(f212))
+  {  reset(f212);  set(f206);  set(f48);  unanimate.all();  draw.pic(varPanicPicture);  animate.obj(Obj_animatedPNJ5);  set.view(Obj_animatedPNJ5, View167);  set.loop(Obj_animatedPNJ5, 0);  set.cel(Obj_animatedPNJ5, 0);  set.priority(Obj_animatedPNJ5, 4);  position(Obj_animatedPNJ5, 49, 77);  stop.cycling(Obj_animatedPNJ5);  animate.obj(Obj_animatedPNJ6);  set.view(Obj_animatedPNJ6, View167);  set.loop(Obj_animatedPNJ6, 1);  set.cel(Obj_animatedPNJ6, 0);  set.priority(Obj_animatedPNJ6, 5);  position(Obj_animatedPNJ6, 48, 45);  cycle.time(Obj_animatedPNJ6, varEgoSize);  stop.cycling(Obj_animatedPNJ6);  if (!isset(f66))
+    {    set.cel(Obj_animatedPNJ5, 2);    varPickedQuestion1 = 6;    }  else
+    {    set.cel(Obj_animatedPNJ5, 0);    draw(Obj_animatedPNJ6);    random(6, 19, v200);    reset(f207);    }  draw(Obj_animatedPNJ5);  v207 = 255;  stop.update(Obj_animatedPNJ5);  show.pic();  }if (isset(f211))
+  {  reset(f211);  reset(f206);  reset(f48);  v200 = 0;  varPickedQuestion1 = 0;  unanimate.all();  draw.pic(currentRoom);  animate.obj(ego);  draw(ego);  animate.obj(Obj_animatedPNJ2);  ignore.horizon(Obj_animatedPNJ2);  ignore.blocks(Obj_animatedPNJ2);  ignore.objs(Obj_animatedPNJ2);  set.priority(Obj_animatedPNJ2, 13);  step.size(Obj_animatedPNJ2, v85);  draw(Obj_animatedPNJ2);  stop.update(Obj_animatedPNJ2);  animate.obj(Obj_animatedPNJ7);  ignore.blocks(Obj_animatedPNJ7);  ignore.objs(Obj_animatedPNJ7);  set.priority(Obj_animatedPNJ7, 10);  draw(Obj_animatedPNJ7);  varRandomValue = 3;  cycle.time(Obj_animatedPNJ7, varRandomValue);  stop.update(Obj_animatedPNJ7);  animate.obj(Obj_animatedPNJ8);  ignore.blocks(Obj_animatedPNJ8);  ignore.objs(Obj_animatedPNJ8);  set.priority(Obj_animatedPNJ8, 5);  stop.cycling(Obj_animatedPNJ8);  animate.obj(Obj_animatedPNJ1);  ignore.blocks(Obj_animatedPNJ1);  ignore.objs(Obj_animatedPNJ1);  set.priority(Obj_animatedPNJ1, 12);  fix.loop(Obj_animatedPNJ1);  step.size(Obj_animatedPNJ1, v85);  draw(Obj_animatedPNJ1);  stop.update(Obj_animatedPNJ1);  animate.obj(Obj_animatedPNJ3);  ignore.blocks(Obj_animatedPNJ3);  ignore.objs(Obj_animatedPNJ3);  fix.loop(Obj_animatedPNJ3);  set.priority(Obj_animatedPNJ3, 4);  varRandomValue = 3;  cycle.time(Obj_animatedPNJ3, varRandomValue);  animate.obj(Obj_animatedPNJ4);  ignore.blocks(Obj_animatedPNJ4);  ignore.objs(Obj_animatedPNJ4);  fix.loop(Obj_animatedPNJ4);  set.priority(Obj_animatedPNJ4, 5);  draw(Obj_animatedPNJ4);  stop.update(Obj_animatedPNJ4);  show.pic();  }if (isset(f206))
+  {  --v200;  if (v200 == 1)
+    {    toggle(f207);    if (isset(f207))
+      {      start.cycling(Obj_animatedPNJ6);      random(6, 18, v200);      }    else
+      {      stop.cycling(Obj_animatedPNJ6);      set.cel(Obj_animatedPNJ6, 0);      random(11, 33, v200);      }    }  if (isset(f44))
+    {    --varPickedQuestion1;    if (varPickedQuestion1 == 1)
+      {      print("\"Bad breath's one thing, Mister; but, you could knock a buzzard "            "off a manure truck!\"");      }    --v206;    if (v206 == 1)
+      {      v207 = 0;      }    if (v207 != 255)
+      {      if (v207 == 0)
+        {        v200 = 2;        }      if (v207 == 1)
+        {        v206 = 5;        set(f207);        v200 = 22;        start.cycling(Obj_animatedPNJ6);        }      if (v207 == 2)
+        {        v206 = 7;        reset(f207);        v200 = 0;        stop.cycling(Obj_animatedPNJ6);        set.cel(Obj_animatedPNJ6, 0);        }      set.cel.v(Obj_animatedPNJ5, v207);      force.update(Obj_animatedPNJ5);      v207 = 255;      }    }  }if (isset(boolTimingDelayOut))
+  {  reset(boolTimingDelayOut);  ++varTitlePageStep;  if (varTitlePageStep == 1)
+    {    set(f205);    v30 = 18;    stop.motion(ego);    set(boolDisablePlayer);    set.view(ego, Larry_Close_Door);    set.cel(ego, 0);    reposition.to(ego, 76, 127);    cycle.time(ego, varEgoSize);    set(f34);    end.of.loop(ego, boolTimingDelayOut);    }  if (varTitlePageStep == 2)
+    {    erase(ego);    set.view(ego, Larry_StandAndWalk);    set.loop(Obj_animatedPNJ1, 3);    set.cel(Obj_animatedPNJ1, 0);    cycle.time(Obj_animatedPNJ1, varEgoSize);    end.of.loop(Obj_animatedPNJ1, boolTimingDelayOut);    }  if (varTitlePageStep == 3)
+    {    erase(Obj_animatedPNJ4);    draw(Obj_animatedPNJ3);    draw(Obj_animatedPNJ8);    stop.cycling(Obj_animatedPNJ1);    if (v79 == 8)
+      {      print("The rumors were right. You are quick on the trigger, Larry!");      varTitlePageStep = 101;      }    else
+      {      move.obj(Obj_animatedPNJ1, 73, 167, 2, boolTimingDelayOut);      }    }  if (varTitlePageStep == 4)
+    {    v76 = 40;    }  if (varTitlePageStep == 101)
+    {    erase(Obj_animatedPNJ3);    erase(Obj_animatedPNJ8);    cycle.time(Obj_animatedPNJ1, v85);    start.cycling(Obj_animatedPNJ1);    reverse.loop(Obj_animatedPNJ1, boolTimingDelayOut);    }  if (varTitlePageStep == 102)
+    {    reset(f205);    v30 = 0;    v79 = 0;    varTitlePageStep = 0;    set.loop(Obj_animatedPNJ1, 0);    draw(Obj_animatedPNJ4);    set.view(ego, Larry_StandAndWalk);    set.loop(ego, 2);    set.cel(ego, 0);    position(ego, 76, 127);    draw(ego);    start.motion(ego);    reset(boolDisablePlayer);    reset(f34);    reset(f35);    cycle.time(ego, v84);    }  if (varTitlePageStep == 201)
+    {    set.cel(Obj_animatedPNJ5, 1);    force.update(Obj_animatedPNJ5);    v206 = 0;    start.cycling(Obj_animatedPNJ6);    v200 = 0;    drop("Bottle of Pills");    currentScore  += 5;    print("She takes one look at the bottle of Spanish Fly and says, \"Boy, "          "thanks! How did you know that I love this stuff?!\" She tosses down "          "a couple of pills, then a few more, and finally gulps the whole "          "bottle! Her breathing becomes faster and faster until she begins to "          "pant.");    varTimingDelay = 6;    }  if (varTitlePageStep == 202)
+    {    if (isset(f206))
+      {      set(f211);      --varTitlePageStep;      set(boolTimingDelayOut);      }    else
+      {      varTitlePageStep = 203;      }    }  if (varTitlePageStep == 203)
+    {    set(f76);    print("(Looks like tonight's your lucky night, Larry.)");    start.update(Obj_animatedPNJ2);    set.loop(Obj_animatedPNJ2, 1);    cycle.time(Obj_animatedPNJ2, v85);    end.of.loop(Obj_animatedPNJ2, boolTimingDelayOut);    }  if (varTitlePageStep == 204)
+    {    cycle.time(Obj_animatedPNJ2, v84);    start.cycling(Obj_animatedPNJ2);    reposition.to(Obj_animatedPNJ2, 139, 146);    set.loop(Obj_animatedPNJ2, 2);    fix.loop(Obj_animatedPNJ2);    move.obj(Obj_animatedPNJ2, 129, 156, 2, boolTimingDelayOut);    release.priority(Obj_animatedPNJ2);    ignore.objs(Obj_animatedPNJ2);    force.update(Obj_animatedPNJ2);    print("\"So long!\" Faith says. \"I've got to find my boy friend before "          "this stuff wears off!\"");    }  if (varTitlePageStep == 205)
+    {    move.obj(Obj_animatedPNJ2, 0, 156, 2, boolTimingDelayOut);    }  if (varTitlePageStep == 206)
+    {    print("It appears Faith IS true to her name. Twisting her key in the lock, "          "she disappears down the employee stairs.");    erase(Obj_animatedPNJ2);    varTitlePageStep = 0;    }  if (varTitlePageStep == 241)
+    {    start.update(Obj_animatedPNJ7);    end.of.loop(Obj_animatedPNJ7, boolTimingDelayOut);    }  if (varTitlePageStep == 242)
+    {    stop.update(Obj_animatedPNJ7);    set(f202);    start.motion(ego);    reset(boolDisablePlayer);    }  if (varTitlePageStep == 243)
+    {    reset(f202);    start.update(Obj_animatedPNJ7);    reverse.loop(Obj_animatedPNJ7, boolTimingDelayOut);    }  if (varTitlePageStep == 244)
+    {    varTitlePageStep = 0;    stop.update(Obj_animatedPNJ7);    }  if (varTitlePageStep == 251)
+    {    reset(f202);    stop.update(ego);    start.update(Obj_animatedPNJ7);    reverse.loop(Obj_animatedPNJ7, boolTimingDelayOut);    }  if (varTitlePageStep == 252)
+    {    if (!isset(f77))
+      {      set(f77);      print("Oh, oh. Where are we goin' now, Larry?");      currentScore  += 5;      }    v76 = 44;    }  }if (isset(f203))
+  {  reset(f203);  stop.update(Obj_animatedPNJ7);  }return();[ Messages#message 1 "%m14 A beautiful security guard sits behind a desk."#message 2 "She takes one look at the bottle of Spanish Fly and says, \"Boy, thanks! How did you know that I love this stuff?!\" She tosses down a couple of pills, then a few more, and finally gulps the whole bottle! Her breathing becomes faster and faster until she begins to pant."#message 3 "She is a knockout! But that pair of pistols slung around her hips brings a sense of foreboding to your gut."#message 4 "(Looks like tonight's your lucky night, Larry.)"#message 5 "Whee!"#message 6 "The rumors were right. You are quick on the trigger, Larry!"#message 7 "\"strangers in the night, da da da dee da...\""#message 8 "\"Try it, and I'll blow your head off.\""#message 9 "There are buttons labeled \"one\" through \"eight.\""#message 10 "Evidently, this exit is for employees only. You'd better use the elevator."#message 11 "The beautiful security guard is sitting at the desk. A pair of large pistols are in a holster around her slim waist. She looks friendly, but quick on the trigger."#message 12 "Since you're no longer staring at Faith's ample weapons, you notice an unlabeled button on her desk."#message 13 "Oh, oh. Where are we goin' now, Larry?"#message 14 "You are at the top floor of the hotel."#message 15 "%m14 That desk is where you lost your Faith, remember? (So glad there was a chance to use THAT line!)"#message 16 "A brass plate near the elevator says: \"Private.\""#message 17 "\"Hi, my name's Faith. Nice suit!\""#message 18 "\"Bad breath's one thing, Mister; but, you could knock a buzzard off a manure truck!\""#message 19 "\"Touch that button, and you're dead meat, White-Suit!\""#message 20 "\"So long!\" Faith says. \"I've got to find my boy friend before this stuff wears off!\""#message 21 "The penthouse elevator doors glide open."#message 22 "The doors are securely closed. %m16 There is no button nearby."#message 23 "Type a word, like \"one\" or \"two.\""#message 24 "It's a door just like all the others."#message 25 "They almost look real, don't they?"#message 26 "You contemplate expec- toration, but remember that discretion is the better part of valium."#message 27 "...or helium,"#message 28 "...or something."#message 29 "You run to the nearest door, and rap your knuckles loudly. You run right back to where you were."#message 30 "You seem surprised that the door is locked."#message 31 "(She is, of course, referring to the use of her gun, Larry.)"#message 32 "\"Larry,\" you reply, getting your hopes aroused (among other things)."#message 33 "It appears Faith IS true to her name. Twisting her key in the lock, she disappears down the employee stairs."#message 34 "The doors are open. Go on in."#message 35 "She might listen to you, if you can establish eye contact."#message 36 "\"Hi ya, Baby. I think I loves ya!!\""#message 37 "\"May I help you in some way, Sir?\" she responds in a pleasant, but businesslike voice."#message 38 "\"My name is Larry,\" you offer. \"Larry Laffer.\""#message 39 "\"Say, Larry,\" she says with a smile, \"Is that a roll of dimes in your pocket, or are you just glad to see me?\""#message 40 "\"Hey, sweetheart. What's your sign?\" you ask her."#message 41 "\"'EXIT,\" she replies. \"Try using it!\""#message 42 "\"What's your name, beautiful?\" you ask."#message 43 "\"Faith,\" she replies."#message 44 "Hmmm. Unusual name."#message 45 "\"I'm only in town for one night,\" you try again. \"How about we get together when you get off duty?\""#message 46 "She smiles and says, \"Oh, I could never be unfaithful to my boyfriend.\""#message 47 "(Larry, it seems this one's gonna require outside assistance.)"#message 48 "Try looking at the girl first."#message 49 "They are a beautiful pair, aren't they?"#message 50 "Not now, you're busy."#message 51 "Her sweater reveals she's built like a brick shipyard."#message 52 "\"Stop staring there,\" she says softly."#message 53 "\"Really? I'm not that kind of girl.\""#message 54 "Evidently the rooms on this floor are all unoccupied."#message 55 "Her eyes are as sensuous as her lips."#message 56 "You're a man of the world, Larry. Perhaps some sort of medical stimulant would help."#message 57 "She waves back."#message 58 "The glass elevator only goes down from here. How about you?"#message 59 "\"I'm sorry, but I can't.\""#message 60 "It's no good. The door resists all of your efforts."#message 61 "You can't. There's no key in this game!"#message 62 "Suicide is illegal here."#message 63 "There's no need to do that."#message 64 "\"Usually when I'm with someone romantic!\" she replies."#message 65 "\"You know, I'm supposed to be working!\""#message 66 "Her hair is thick and beautiful, falling in cascades around her delicate shoulders."#message 67 "\"So what?\""#message 68 "Her lips are moist and inviting, but then, you also felt that way about old Mr. Weissenborn, your high school shop teacher!"#message 69 "I'm sorry,\" Faith replies, \"but you don't know me that well!\""#message 70 "\"Well, now. Isn't THAT special!\""#message 71 "\"Perhaps,\" she says, \"but right now, I'm working.\""#message 72 "\"I'll be here all night.\""

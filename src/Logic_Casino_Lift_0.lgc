@@ -1,0 +1,79 @@
+if (isset(newRoom))
+  {  set.horizon(1);  load.pic(currentRoom);  draw.pic(currentRoom);  discard.pic(currentRoom);  load.view(View165);  load.view(View174);  load.view(Larry_Close_Door);  load.view(Larry_StandAndWalk);  load.view(View164);  animate.obj(Obj_animatedPNJ5);  ignore.blocks(Obj_animatedPNJ5);  set.view(Obj_animatedPNJ5, View164);  if (obj.in.room("Disco Pass", currentRoom))
+    {    set.cel(Obj_animatedPNJ5, 0);    }  else
+    {    set.cel(Obj_animatedPNJ5, 1);    }  position(Obj_animatedPNJ5, 77, 159);  stop.cycling(Obj_animatedPNJ5);  draw(Obj_animatedPNJ5);  stop.update(Obj_animatedPNJ5);  animate.obj(Obj_animatedPNJ4);  ignore.blocks(Obj_animatedPNJ4);  ignore.objs(Obj_animatedPNJ4);  set.view(Obj_animatedPNJ4, View174);  set.priority(Obj_animatedPNJ4, 5);  position(Obj_animatedPNJ4, 73, 91);  set.cel(Obj_animatedPNJ4, 1);  stop.cycling(Obj_animatedPNJ4);  animate.obj(Obj_animatedPNJ2);  ignore.blocks(Obj_animatedPNJ2);  ignore.objs(Obj_animatedPNJ2);  set.view(Obj_animatedPNJ2, View165);  set.loop(Obj_animatedPNJ2, 2);  fix.loop(Obj_animatedPNJ2);  set.priority(Obj_animatedPNJ2, 4);  position(Obj_animatedPNJ2, 73, 108);  varRandomValue = 3;  cycle.time(Obj_animatedPNJ2, varRandomValue);  animate.obj(Obj_animatedPNJ3);  ignore.blocks(Obj_animatedPNJ3);  ignore.objs(Obj_animatedPNJ3);  set.view(Obj_animatedPNJ3, View165);  set.loop(Obj_animatedPNJ3, 1);  fix.loop(Obj_animatedPNJ3);  position(Obj_animatedPNJ3, 73, 118);  set.priority(Obj_animatedPNJ3, 5);  animate.obj(Obj_animatedPNJ1);  ignore.blocks(Obj_animatedPNJ1);  ignore.objs(Obj_animatedPNJ1);  set.view(Obj_animatedPNJ1, View165);  set.priority(Obj_animatedPNJ1, 11);  fix.loop(Obj_animatedPNJ1);  step.size(Obj_animatedPNJ1, v85);  if (v30 == 18)
+    {    set(f204);    v30 = 18;    set.loop(Obj_animatedPNJ1, 3);    last.cel(Obj_animatedPNJ1, varRandomValue);    set.cel.v(Obj_animatedPNJ1, varRandomValue);    stop.cycling(Obj_animatedPNJ1);    position(Obj_animatedPNJ1, 73, 36);    draw(Obj_animatedPNJ1);    move.obj(Obj_animatedPNJ1, 73, 118, 2, boolTimingDelayOut);    varTitlePageStep = 100;    draw(Obj_animatedPNJ2);    stop.update(Obj_animatedPNJ2);    draw(Obj_animatedPNJ4);    set.view(ego, Larry_StandAndWalk);    set.loop(ego, 2);    set.priority(ego, 12);    v38 = 75;    v39 = 119;    }  else
+    {    draw(Obj_animatedPNJ3);    stop.update(Obj_animatedPNJ3);    set.loop(Obj_animatedPNJ1, 0);    set.cel(Obj_animatedPNJ1, 0);    position(Obj_animatedPNJ1, 73, 118);    draw(Obj_animatedPNJ1);    stop.update(Obj_animatedPNJ1);    if (previousRoom == 36)
+      {      v38 = 128;      v39 = 104;      set.loop(ego, 1);      position.v(ego, v38, v39);      draw(ego);      start.motion(ego);      }    else
+      {      if (previousRoom <= 0)
+        {        v38 = 75;        v39 = 115;        }      position.v(ego, v38, v39);      draw(ego);      }    }  ignore.objs(ego);  show.pic();  return();  }reset(boolQuestionnaireFailedOnce);if (posn(ego, 70, 110, 83, 120))
+  {  set(boolQuestionnaireFailedOnce);  }reset(f205);if (posn(ego, 96, 101, 111, 106))
+  {  set(f205);  }reset(f201);if (posn(ego, 62, 155, 87, 163))
+  {  set(f201);  }if (v39 > 119 &&     v39 < 133)
+  {  set.priority(ego, 12);  }else
+  {  release.priority(ego);  }if (!isset(haveInput))
+  {  goto(Label1);  }if (isset(f204) &&     !isset(haveMatch))
+  {  if ((said("hear") ||       said("sing") ||       said("sing", "along")))
+    {    print("\"strangers in the night, da da da dee da...\"");    }  else
+    {    set(haveMatch);    print("Whee!");    }  }if ((said("up") ||     said("down")))
+  {  print("Type a word, like \"one\" or \"two.\"");  }if ((said("examine") ||     said("examine", "area") ||     said("examine", "brick") ||     said("examine", "elevator")))
+  {  if (isset(boolQuestionnaireFailedOnce))
+    {    print("You are inside the glass elevator. Your favorite kind of music is "          "playing. You hum along, insipidly.");    print("There are buttons labeled \"one\" through \"eight.\"");    }  else
+    {    print("The entrance to the Cabaret Lounge is to the right, by the "          "telephone. A glass elevator awaits you. An ashtray is in front of "          "the planter.");    }  }if (said("look in", "bush"))
+  {  if (isset(boolQuestionnaireFailedOnce))
+    {    set(f54);    }  else
+    {    print("They're of your favorite species: polyvinyl chloride. There is an "          "ashtray in front of the planter.");    }  }if (said("examine", "bush"))
+  {  if (isset(boolQuestionnaireFailedOnce))
+    {    print("You know, the people on those plants look like ants from up here.");    print("Those ARE ants, you fool; we haven't left the ground yet!");    }  else
+    {    print("They're of your favorite species: polyvinyl chloride. There is an "          "ashtray in front of the planter.");    }  }if (said("close", "door"))
+  {  if (isset(boolQuestionnaireFailedOnce))
+    {    print("The doors close whenever you choose a floor.");    }  else
+    {    print("Go inside and push a button.");    }  }if ((said("examine", "ash tray") ||     said("look in", "ash tray")))
+  {  if (v39 < 150)
+    {    print("Where?");    }  else
+    {    if (obj.in.room("Disco Pass", currentRoom))
+      {      print("There's some kind of card in the ashtray.");      }    else
+      {      print("Yuck!");      }    }  }if (said("anyword", "ash tray"))
+  {  if (v39 < 150)
+    {    print("Where?");    }  else
+    {    if (obj.in.room("Disco Pass", currentRoom))
+      {      print("There's some kind of card in the ashtray.");      }    else
+      {      print("The ashtray is of no further interest since you have the card.");      }    }  }if ((said("catch", "card") ||     said("catch", "card")))
+  {  if (!isset(f201))
+    {    set(f54);    }  else
+    {    if (!obj.in.room("Disco Pass", currentRoom))
+      {      set(f55);      }    else
+      {      set.cel(Obj_animatedPNJ5, 1);      force.update(Obj_animatedPNJ5);      get("Disco Pass");      currentScore  += 1;      set(f67);      }    }  }if ((said("examine", "phone") ||     said("use", "phone") ||     said("make", "phone", "ask") ||     said("dial", "phone")))
+  {  if (!isset(f205))
+    {    set(f54);    }  else
+    {    print("Somebody filled the coin slot with chewing gum.");    }  }if ((said("catch", "food") ||     said("drain", "food")))
+  {  if (!isset(f205))
+    {    set(f54);    }  else
+    {    print("You can't. It's so firmly embedded, nothing will get it out. You'll "          "just have to find another telephone.");    }  }if ((said("examine", "phone", "book") ||     said("examine", "book")))
+  {  if (!isset(f205))
+    {    set(f54);    }  else
+    {    print("All the pages are torn out.");    }  }if ((said("answer", "phone") ||     said("catch", "phone") ||     said("answer")))
+  {  if (!isset(f205))
+    {    set(f54);    }  else
+    {    print("It's not ringing.");    }  }if (varTitlePageStep <= 0 &&     isset(boolQuestionnaireFailedOnce))
+  {  if ((said("move", "one") ||       said("move", "button", "one") ||       said("one")))
+    {    v79 = 1;    set(boolTimingDelayOut);    }  if ((said("move", "two") ||       said("move", "button", "two") ||       said("two")))
+    {    v79 = 2;    set(boolTimingDelayOut);    }  if ((said("move", "three") ||       said("move", "button", "three") ||       said("three")))
+    {    v79 = 3;    set(boolTimingDelayOut);    }  if ((said("move", "four") ||       said("move", "button", "four") ||       said("four")))
+    {    v79 = 4;    set(boolTimingDelayOut);    }  if ((said("move", "five") ||       said("move", "button", "five") ||       said("five")))
+    {    v79 = 5;    set(boolTimingDelayOut);    }  if ((said("move", "six") ||       said("move", "button", "six") ||       said("six")))
+    {    v79 = 6;    set(boolTimingDelayOut);    }  if ((said("move", "seven") ||       said("move", "button", "seven") ||       said("seven")))
+    {    v79 = 7;    set(boolTimingDelayOut);    }  if ((said("move", "eight") ||       said("move", "button", "eight") ||       said("eight")))
+    {    v79 = 8;    set(boolTimingDelayOut);    }  if ((said("move", "rol") ||       said("move", "button", "rol")))
+    {    print("Type a word, like \"one\" or \"two.\"");    }  }Label1:if (isset(boolTimingDelayOut))
+  {  reset(boolTimingDelayOut);  ++varTitlePageStep;  if (varTitlePageStep == 1)
+    {    set(f204);    v30 = 18;    stop.motion(ego);    set(boolDisablePlayer);    set.view(ego, Larry_Close_Door);    set.cel(ego, 0);    reposition.to(ego, 76, 117);    cycle.time(ego, varEgoSize);    set(f34);    end.of.loop(ego, boolTimingDelayOut);    }  if (varTitlePageStep == 2)
+    {    erase(ego);    set.view(ego, Larry_StandAndWalk);    set.loop(Obj_animatedPNJ1, 3);    set.cel(Obj_animatedPNJ1, 0);    cycle.time(Obj_animatedPNJ1, varEgoSize);    end.of.loop(Obj_animatedPNJ1, boolTimingDelayOut);    }  if (varTitlePageStep == 3)
+    {    erase(Obj_animatedPNJ3);    draw(Obj_animatedPNJ2);    draw(Obj_animatedPNJ4);    stop.cycling(Obj_animatedPNJ1);    if (v79 == 1)
+      {      print("Wasn't that a fast ride!");      varTitlePageStep = 101;      }    else
+      {      move.obj(Obj_animatedPNJ1, 73, 36, 2, boolTimingDelayOut);      }    }  if (varTitlePageStep == 4)
+    {    v76 = 40;    }  if (varTitlePageStep == 101)
+    {    erase(Obj_animatedPNJ2);    erase(Obj_animatedPNJ4);    cycle.time(Obj_animatedPNJ1, v85);    start.cycling(Obj_animatedPNJ1);    reverse.loop(Obj_animatedPNJ1, boolTimingDelayOut);    }  if (varTitlePageStep == 102)
+    {    reset(f204);    v30 = 0;    v79 = 0;    varTitlePageStep = 0;    set.loop(Obj_animatedPNJ1, 0);    draw(Obj_animatedPNJ3);    set.view(ego, Larry_StandAndWalk);    set.loop(ego, 2);    set.cel(ego, 0);    position(ego, 76, 116);    draw(ego);    start.motion(ego);    reset(boolDisablePlayer);    cycle.time(ego, v84);    reset(f34);    }  }if (edgeEgoHit == BOTTOM_EDGE)
+  {  v76 = 31;  }if (posn(ego, 131, 101, 132, 106))
+  {  v76 = 36;  }return();[ Messages#message 1 "The entrance to the Cabaret Lounge is to the right, by the telephone. A glass elevator awaits you. An ashtray is in front of the planter."#message 2 "You are inside the glass elevator. Your favorite kind of music is playing. You hum along, insipidly."#message 3 "There are buttons labeled \"one\" through \"eight.\""#message 4 "Type a word, like \"one\" or \"two.\""#message 5 "Whee!"#message 6 "You know, the people on those plants look like ants from up here."#message 7 "\"strangers in the night, da da da dee da...\""#message 8 "Those ARE ants, you fool; we haven't left the ground yet!"#message 9 "Wasn't that a fast ride!"#message 10 "They're of your favorite species: polyvinyl chloride. There is an ashtray in front of the planter."#message 11 "You carefully remove the card from the cancerous remains in the ashtray. It's a valid pass to the disco!"#message 12 "There's some kind of card in the ashtray."#message 13 "Yuck!"#message 14 "Where?"#message 15 "The doors close whenever you choose a floor."#message 16 "Go inside and push a button."#message 17 "It's of no interest."#message 18 "The ashtray is of no further interest since you have the card."#message 19 "It's not ringing."#message 20 "All the pages are torn out."#message 21 "Somebody filled the coin slot with chewing gum."#message 22 "You can't. It's so firmly embedded, nothing will get it out. You'll just have to find another telephone."

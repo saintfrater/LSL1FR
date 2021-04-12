@@ -1,159 +1,0 @@
-if (isset(newRoom))
-  {  load.pic(currentRoom);  draw.pic(currentRoom);  discard.pic(currentRoom);  load.view(View72);  load.view(View28);  load.view(View20);  load.view(View27);  load.view(View10);  load.view(View4);  load.view(View6);  load.sound(Sound1);  animate.obj(ObjFlyingDoll);  ignore.horizon(ObjFlyingDoll);  ignore.blocks(ObjFlyingDoll);  ignore.objs(ObjFlyingDoll);  set.view(ObjFlyingDoll, View72);  set.loop(ObjFlyingDoll, 0);  set.cel(ObjFlyingDoll, 0);  position(ObjFlyingDoll, 18, 73);  draw(ObjFlyingDoll);  v52 = 8;  cycle.time(ObjFlyingDoll, v52);  animate.obj(ObjTitleText);  ignore.horizon(ObjTitleText);  ignore.blocks(ObjTitleText);  ignore.objs(ObjTitleText);  set.view(ObjTitleText, View28);  set.cel(ObjTitleText, 0);  cycle.time(ObjTitleText, varEgoSize);  position(ObjTitleText, 51, 101);  draw(ObjTitleText);  stop.update(ObjTitleText);  if (!obj.in.room("Bottle of Pills", currentRoom) &&       isset(f65))
-    {    add.to.pic(View72, 3, 0, 112, 51, 4, 4);    }  else
-    {    animate.obj(o3);    ignore.horizon(o3);    ignore.blocks(o3);    ignore.objs(o3);    set.view(o3, View72);    set.loop(o3, 2);    if (isset(f65))
-      {      last.cel(o3, v52);      set.cel.v(o3, v52);      }    else
-      {      set.cel(o3, 0);      }    position(o3, 112, 51);    draw(o3);    stop.update(o3);    }  if (isset(f64))
-    {    add.to.pic(View72, 1, 0, 65, 51, 4, 4);    }  v30 = 0;  if (previousRoom == 11)
-    {    v38 = 0;    v39 = 148;    reset(f200);    start.motion(ego);    set.loop(ego, 0);    }  else
-    {    if (previousRoom == 15)
-      {      v38 = 58;      v39 = 148;      v30 = 14;      }    else
-      {      v38 = 70;      v39 = 64;      set.loop(ego, 2);      set(f200);      reset(f34);      start.motion(ego);      reset(f85);      release.priority(ego);      }    }  position.v(ego, v38, v39);  if (previousRoom != 15)
-    {    draw(ego);    }  show.pic();  if (v30 == 14)
-    {    prevent.input();    set(f85);    set(f54);    }  else
-    {    reset(f85);    accept.input();    }  return();  }reset(f200);if (posn(ego, 53, 60, 94, 64))
-  {  set(f200);  }reset(f202);if (obj.in.room("Bottle of Pills", currentRoom) &&     isset(f200) &&     posn(ego, 82, 60, 99, 64))
-  {  set(f202);  }if (v30 == 13 &&     obj.in.room("Bottle of Pills", currentRoom))
-  {  set(f202);  }reset(f201);if (isset(f200))
-  {  if (posn(ego, 61, 60, 79, 64))
-    {    set(f201);    }  }reset(f205);if (!isset(f200) &&     posn(ego, 42, 148, 58, 152))
-  {  set(f205);  }if (isset(f200) &&     v30 == 0 &&     isset(f208) &&     isset(f209))
-  {  stop.motion(ego);  }if (v30 == 0 &&     posn(ego, 53, 60, 54, 64))
-  {  reset(f200);  varTitlePageStep = 0;  set(boolTimingDelayOut);  }if (!isset(haveInput))
-  {  goto(Label1);  }if ((said("examine") ||     said("examine", "area") ||     said("examine", "alley")))
-  {  if (!obj.in.room("Bottle of Pills", currentRoom))
-    {    print("%m7 and a fence.");    }  else
-    {    print("%m7, a fence, and something sitting in the east window.");    }  }if ((said("examine", "ladder") ||     said("examine", "balcony")))
-  {  print("A rickety fire escape, complete with safety ladder, is loosely "        "attached to the building. A mild, reddish glow comes from the window "        "behind it.");  }if (v30 != 14)
-  {  if ((said("find", "bin") ||       said("examine", "bin") ||       said("look in", "bin")))
-    {    if (!isset(f205))
-      {      print("Move to the front of the trash bin.");      }    else
-      {      print("Unfortunately, you can't see much from out here.");      }    }  if ((said("brush", "off", "bra") ||       said("brush", "bra") ||       said("brush", "i'm", "off")))
-    {    set(f67);    }  if ((said("board", "bin") ||       said("jump", "bin") ||       said("jump", "about", "bin") ||       said("climb", "bin") ||       said("climb", "about", "bin")))
-    {    if (isset(f200))
-      {      print("You reconsider after noticing the trash bin is behind where you "            "would fall!");      }    else
-      {      if (!isset(f205))
-        {        print("Move to the front of the trash bin.");        }      else
-        {        varTitlePageStep = 100;        set(boolTimingDelayOut);        }      }    }  }else
-  {  if ((said("climb", "out", "bin") ||       said("jump", "out", "bin") ||       said("climb", "out") ||       said("catch", "out") ||       said("board", "out") ||       said("board") ||       said("board", "bin")))
-    {    varTitlePageStep = 200;    set(boolTimingDelayOut);    }  if ((said("find", "bin") ||       said("look in", "bin") ||       said("examine", "bin")))
-    {    if (obj.in.room("Hammer", currentRoom))
-      {      print("Amidst assorted, odoriferous refuse from Lefty's clientel, you "            "discover Lefty's old, left-handed hammer.");      }    else
-      {      print("There's nothing else here worth describing, let alone taking.");      }    }  if (said("catch", "hammer"))
-    {    if (!obj.in.room("Hammer", currentRoom))
-      {      set(f55);      }    else
-      {      set(f67);      get("Hammer");      currentScore  += 3;      }    }  }if (said("examine", "brick"))
-  {  print("There is an old neon sign hanging on the wall that says \"Hotel\"...");  print("...approximately.");  }if ((said("climb", "up") ||     said("climb", "balcony") ||     said("climb", "up", "balcony") ||     said("move", "down", "ladder", "balcony") ||     said("move", "ladder", "balcony") ||     said("move", "down", "ladder") ||     said("move", "ladder") ||     said("climb", "ladder") ||     said("get up", "on", "ladder") ||     said("catch", "ladder") ||     said("decrease", "ladder") ||     said("jump", "ladder") ||     said("jump", "up", "ladder") ||     said("jump", "on", "ladder") ||     said("jump") ||     said("jump", "up")))
-  {  if ((isset(f200) ||       v30 == 13 ||       isset(f201)))
-    {    print("Move closer to the ladder.");    }  else
-    {    if (isset(f205))
-      {      print("There's no way to reach the ladder from down here. It's only "            "accessible from above.");      }    else
-      {      print("Whee!");      }    }  }if ((said("close", "glass") ||     said("decrease", "glass")))
-  {  if ((!isset(f200) ||       !isset(f201)))
-    {    set(f54);    }  else
-    {    print("Nah. That room needs the fresh air!");    }  }if ((said("examine", "glass") ||     said("look in", "glass")))
-  {  if (!isset(f200))
-    {    print("There are two windows high above you. The west window by the fire "          "escape has a dim, reddish glow; the east window is dark. There may "          "be something on the sill of the east window, but you can't make it "          "out from down here.");    }  else
-    {    if (isset(f201))
-      {      print("Looking inside the west window, you see the room you just left.");      }    else
-      {      if (obj.in.room("Bottle of Pills", currentRoom))
-        {        print("Looking at the east window, you notice a bottle of pills sitting "              "on the window ledge.");        }      else
-        {        print("You broke it, didn't you?");        }      }    }  }if ((said("examine", "west", "glass") ||     said("look in", "west", "glass")))
-  {  if (!isset(f200))
-    {    print("There are two windows high above you. The west window by the fire "          "escape has a dim, reddish glow; the east window is dark. There may "          "be something on the sill of the east window, but you can't make it "          "out from down here.");    }  else
-    {    print("Looking inside the west window, you see the room you just left.");    }  }if ((said("examine", "east", "glass") ||     said("look in", "east", "glass")))
-  {  if (!isset(f200))
-    {    print("There are two windows high above you. The west window by the fire "          "escape has a dim, reddish glow; the east window is dark. There may "          "be something on the sill of the east window, but you can't make it "          "out from down here.");    }  else
-    {    if (obj.in.room("Bottle of Pills", currentRoom))
-      {      print("Looking at the east window, you notice a bottle of pills sitting "            "on the window ledge.");      }    else
-      {      print("You broke it, didn't you?");      }    }  }if (has("Rope") &&     v30 != 13)
-  {  if ((said("attach", "rope", "bureau") ||       said("attach", "rope", "i'm")))
-    {    if (!isset(f208))
-      {      set(f67);      set(f208);      }    else
-      {      print("It already is.");      }    }  if (said("attach", "rope", "balcony"))
-    {    if (!isset(f200))
-      {      print("It's not long enough to reach from here.");      }    else
-      {      if (!isset(f209))
-        {        set(f67);        set(f209);        }      else
-        {        print("It already is.");        }      }    }  }if ((said("catch", "aphrodisiac") ||     said("catch", "bottle") ||     said("catch", "bottle", "aphrodisiac") ||     said("carry", "above", "glass") ||     said("carry", "above", "balcony", "catch", "aphrodisiac") ||     said("carry", "about", "aphrodisiac") ||     said("carry", "above", "balcony", "about", "aphrodisiac") ||     said("carry", "above", "balcony") ||     said("carry", "glass") ||     said("jump", "glass") ||     said("get up", "balcony") ||     said("get up", "on", "balcony") ||     said("carry", "above", "balcony") ||     said("carry", "above") ||     said("carry", "out") ||     said("climb", "on", "balcony") ||     said("climb", "above") ||     said("climb", "above", "balcony", "catch", "aphrodisiac") ||     said("climb", "balcony", "catch", "aphrodisiac") ||     said("climb", "above", "balcony", "aphrodisiac") ||     said("climb", "balcony", "aphrodisiac") ||     said("climb", "above", "balcony") ||     said("climb", "balcony")))
-  {  if (has("Bottle of Pills"))
-    {    set(f55);    }  else
-    {    if (obj.in.room("Bottle of Pills", currentRoom) &&         !isset(f202))
-      {      print("Try moving to the east end of the fire escape.");      }    else
-      {      if ((!isset(f208) ||           !isset(f209)))
-        {        varTitlePageStep = 250;        set(boolTimingDelayOut);        v58 = 16;        }      else
-        {        if (v30 != 13)
-          {          v30 = 13;          set(f85);          stop.motion(ego);          set.view(ego, View6);          set.loop(ego, 1);          reposition.to(ego, 92, 61);          set(f34);          cycle.time(ego, varEgoSize);          print("With the rope securely holding you to the railing, you can "                "reach all the way over to the window. NOW, of all times, you "                "notice the window's locked!");          }        else
-          {          if (!obj.in.room("Bottle of Pills", currentRoom))
-            {            print("You already took them. Why do this again?");            }          else
-            {            if (!isset(f65))
-              {              print("You consider sticking your hand through a solid glass "                    "window, but realize that if you did, you wouldn't be able "                    "to play the violin.");              print("(Of course, you can't play the violin now, but you get the "                    "idea.)");              }            else
-              {              set.loop(ego, 1);              start.update(o3);              erase(o3);              add.to.pic(View72, 3, 0, 112, 51, 4, 4);              get("Bottle of Pills");              currentScore  += 8;              print("You got 'em! But what are they?");              }            }          }        }      }    }  }if ((said("break", "glass", "hammer") ||     said("use", "hammer", "break", "glass") ||     said("break", "glass") ||     said("break", "glass", "use", "hammer") ||     said("beat", "glass", "hammer") ||     said("use", "hammer", "beat", "glass") ||     said("beat", "glass") ||     said("beat", "glass", "use", "hammer") ||     said("use", "hammer")))
-  {  if (!has("Hammer"))
-    {    set(f68);    }  else
-    {    if ((!isset(f202) ||         !isset(f208) ||         !isset(f209)))
-      {      set(f54);      }    else
-      {      if (v30 != 13)
-        {        print("You might try reaching over to the window first.");        }      else
-        {        set.loop(ego, 0);        set.cel(ego, 0);        end.of.loop(ego, f203);        }      }    }  }if (v30 == 13)
-  {  if (said("unbolt", "glass"))
-    {    print("Unlock it? From the outside?");    }  if (said("increase", "glass"))
-    {    print("You can't. It's locked from the inside.");    }  if ((said("beat", "glass") ||       said("beat", "glass", "use", "fingers") ||       said("use", "fingers", "beat", "glass") ||       said("break", "glass")))
-    {    print("You consider sticking your hand through a solid glass window, but "          "realize that if you did, you wouldn't be able to play the violin.");    print("(Of course, you can't play the violin now, but you get the idea.)");    }  if ((said("board", "balcony") ||       said("board", "back", "on", "balcony") ||       said("board", "on", "balcony") ||       said("board", "back") ||       said("board", "back", "balcony") ||       said("catch", "on", "balcony") ||       said("catch", "back", "balcony") ||       said("catch", "back", "on", "balcony") ||       said("move", "on", "rope") ||       said("move", "rope") ||       said("catch", "balcony") ||       said("climb", "back") ||       said("climb", "back", "balcony") ||       said("climb", "back", "on", "balcony") ||       said("climb", "on", "balcony") ||       said("climb", "balcony") ||       said("add", "balcony") ||       said("add", "balcony") ||       said("done", "hanging", "rope")))
-    {    set(f67);    v30 = 0;    set.view(ego, Larry_StandAndWalk);    reposition.to(ego, 86, 64);    accept.input();    start.motion(ego);    reset(f85);    reset(f34);    cycle.time(ego, v84);    }  if (said("examine", "down"))
-    {    print("It's a long way to the ground!");    }  }if ((said("cut", "rope", "rol") ||     said("use", "knife", "rol")))
-  {  if (v30 == 13)
-    {    print("Using the dull pocket knife, you cut the rope free.");    varTitlePageStep = 250;    set(boolTimingDelayOut);    v58 = 23;    }  else
-    {    if (!isset(f208) &&         !isset(f209))
-      {      print("How can you do that?");      }    else
-      {      print("Using the dull pocket knife, you cut the rope free.");      reset(f208);      reset(f209);      start.motion(ego);      reset(f85);      if (has("Bottle of Pills"))
-        {        print("%g176");        }      else
-        {        get("Rope");        print("A rickety fire escape, complete with safety ladder, is loosely "              "attached to the building. A mild, reddish glow comes from the "              "window behind it.");        }      }    }  }if ((said("catch", "rope", "rol") ||     said("let go", "rope", "rol")))
-  {  if (v30 == 13)
-    {    varTitlePageStep = 250;    set(boolTimingDelayOut);    v58 = 23;    }  else
-    {    if (!isset(f208) &&         !isset(f209))
-      {      print("How can you do that?");      }    else
-      {      print("You untie the rope.");      reset(f209);      reset(f208);      start.motion(ego);      reset(f85);      }    }  }if (isset(f200))
-  {  if (said("examine", "balcony"))
-    {    print("You are on a fire escape. A rusty ladder is at one end. East of the "          "fire escape is another window, just out of your reach.");    }  if ((said("board", "glass") ||       said("climb", "glass") ||       said("board", "back") ||       said("board", "area") ||       said("board", "glass")))
-    {    if (!isset(f201))
-      {      print("Move closer to the window, if you want to go back in the hooker's "            "room.");      }    else
-      {      set(f67);      v76 = 17;      }    }  if ((said("climb", "down") ||       said("decrease", "ladder") ||       said("board", "ladder") ||       said("board", "down", "ladder") ||       said("climb", "down", "ladder") ||       said("climb", "ladder")))
-    {    print("Try moving to the west end of the fire escape.");    }  if (said("examine", "down"))
-    {    print("It's a long way to the ground!");    }  if ((said("jump") ||       said("jump", "off") ||       said("jump", "down") ||       said("jump", "bin") ||       said("get up", "on", "balcony") ||       said("jump", "off", "balcony") ||       said("climb", "down", "balcony")))
-    {    varTitlePageStep = 250;    set(boolTimingDelayOut);    v58 = 23;    }  }if (obj.in.room("Bottle of Pills", currentRoom) &&     said("examine", "aphrodisiac"))
-  {  if (isset(f202))
-    {    print("Looking at the east window, you notice a bottle of pills sitting on "          "the window ledge.");    }  else
-    {    print("There may be something in the east window, but from here, you're not "          "sure.");    }  }if ((said("catch", "ladder") ||     said("drain", "ladder")))
-  {  print("You can't. Even its rusty bolts are too tough for you!");  }if ((said("throw", "rope", "rol") ||     said("climb", "down", "rope", "rol") ||     said("climb", "rope", "rol")))
-  {  print("It's not long enough to reach anywhere, but you might want to use it "        "for safety purposes.");  }if ((said("attach", "rope") ||     said("use", "rope")))
-  {  print("Be more specific.");  }if ((said("examine", "above", "fence") ||     said("examine", "fence")))
-  {  print("You see alleys stretching off to infinity.");  }if ((said("climb", "fence") ||     said("jump", "fence") ||     said("jump", "above", "fence") ||     said("climb", "above", "fence")))
-  {  print("The fence is much too tall for you to climb over.");  }if ((said("close", "cap", "rol") ||     said("climb", "on", "bin", "rol") ||     said("climb", "bin", "rol") ||     said("climb", "on", "top", "bin", "rol") ||     said("decrease", "cap", "rol") ||     said("decrease", "bin", "rol") ||     said("get up", "on", "bin") ||     said("move", "cap", "rol") ||     said("close", "bin", "rol")))
-  {  print("Unfortunately the lid on the trash bin just will not close.");  }if ((said("examine", "back", "bin") ||     said("move", "bin", "rol")))
-  {  print("Try as you might, it is impossible to move the trash bin.");  }if (said("attach", "rope", "anyword"))
-  {  print("The solution is closer to you than that.");  }if ((said("cut", "glass", "use", "diamond ring") ||     said("use", "diamond ring", "cut", "glass") ||     said("carry", "rope", "rol") ||     said("carry", "ladder", "rol") ||     said("beat", "fence", "rol") ||     said("beat", "ladder", "rol") ||     said("beat", "brick", "rol")))
-  {  print("%g176");  }Label1:if (isset(f203))
-  {  reset(f203);  print("Subtly, you smash the window with your hammer. Your future as a "        "second-story man seems quite plausible!");  prevent.input();  start.update(o3);  end.of.loop(o3, f207);  }if (isset(f207))
-  {  reset(f207);  reset(f34);  stop.update(o3);  set(f65);  accept.input();  }if (isset(f44))
-  {  --v200;  if (v200 == 16)
-    {    print("Hey! Where are you?");    }  if (v200 == 11)
-    {    print("After a careful analysis of your surroundings, you conclude you are "          "at the bottom of a pile of garbage!");    accept.input();    }  if (v200 == 1 &&       v30 == 14)
-    {    print("\"YUCK!!\"");    }  }current.cel(ObjTitleText, v52);if (v52 == 4)
-  {  set(boolTimingDelayOut);  }if (isset(boolTimingDelayOut))
-  {  reset(boolTimingDelayOut);  ++varTitlePageStep;  if (varTitlePageStep == 1)
-    {    v30 = 5;    start.update(ObjTitleText);    set.cel(ObjTitleText, 1);    set(f85);    prevent.input();    erase(ego);    end.of.loop(ObjTitleText, boolTimingDelayOut);    sound(Sound1, f40);    }  if (varTitlePageStep == 2)
-    {    set.view(ego, View20);    set.priority(ego, 11);    position(ego, 53, 99);    draw(ego);    move.obj(ego, 53, 137, 3, boolTimingDelayOut);    }  if (varTitlePageStep == 3)
-    {    set.cel(ObjTitleText, 0);    stop.update(ObjTitleText);    force.update(ObjTitleText);    }  if (varTitlePageStep == 4)
-    {    stop.motion(ego);    set(f85);    set.view(ego, View27);    set.cel(ego, 1);    set.priority(ego, 15);    reposition.to(ego, 40, 126);    cycle.time(ego, varEgoSize);    set(f34);    end.of.loop(ego, boolTimingDelayOut);    }  if (varTitlePageStep == 5)
-    {    reset(f34);    stop.cycling(ego);    last.cel(ego, v52);    set.cel.v(ego, v52);    accept.input();    v30 = 14;    v200 = 5;    varTitlePageStep = 0;    }  if (varTitlePageStep == 101)
-    {    set(f67);    stop.motion(ego);    set(f85);    accept.input();    v30 = 14;    set.view(ego, View10);    last.cel(ego, v52);    set.cel.v(ego, v52);    set.priority(ego, 15);    reposition.to(ego, 45, 145);    cycle.time(ego, v85);    set(f34);    reverse.loop(ego, boolTimingDelayOut);    }  if (varTitlePageStep == 102)
-    {    reset(f34);    stop.cycling(ego);    set.view(ego, View27);    reposition.to(ego, 40, 126);    last.cel(ego, v52);    set.cel.v(ego, v52);    v200 = 5;    varTitlePageStep = 0;    }  if (varTitlePageStep == 201)
-    {    set(f85);    set(f67);    set.view(ego, View10);    set.cel(ego, 0);    set.priority(ego, 15);    position(ego, 49, 145);    cycle.time(ego, varEgoSize);    set(f34);    end.of.loop(ego, boolTimingDelayOut);    }  if (varTitlePageStep == 202)
-    {    reset(f34);    set.view(ego, Larry_StandAndWalk);    reposition.to(ego, 52, 148);    start.motion(ego);    reset(f85);    release.priority(ego);    step.size(ego, v84);    cycle.time(ego, v84);    v30 = 0;    varTitlePageStep = 0;    }  if (varTitlePageStep == 251)
-    {    set(f85);    prevent.input();    v30 = 5;    set.view(ego, View20);    set.cel(ego, 3);    set.priority(ego, 15);    reposition.to(ego, 95, 68);    force.update(ego);    print.v(v58);    v58 = 0;    cycle.time(ego, v84);    move.obj(ego, 95, 157, 4, boolTimingDelayOut);    sound(Sound1, f40);    }  if (varTitlePageStep == 252)
-    {    reset(f34);    stop.cycling(ego);    set.view(ego, View4);    set.cel(ego, 0);    reposition.to(ego, 83, 157);    varTimingDelay = 5;    }  if (varTitlePageStep == 253)
-    {    set(f34);    cycle.time(ego, varEgoSize);    end.of.loop(ego, boolTimingDelayOut);    }  if (varTitlePageStep == 254)
-    {    v76 = 8;    }  }if (posn(ego, 0, 135, 3, 136))
-  {  edgeEgoHit = LEFT_EDGE;  }if (edgeEgoHit == LEFT_EDGE)
-  {  v76 = 11;  }return();[ Messages#message 1 "Try moving to the east end of the fire escape."#message 2 "Try moving to the west end of the fire escape."#message 3 "%m7 and a fence."#message 4 "Nah. That room needs the fresh air!"#message 5 "You are on a fire escape. A rusty ladder is at one end. East of the fire escape is another window, just out of your reach."#message 6 "%m7, a fence, and something sitting in the east window."#message 7 "It's a nice little alley, with a trash bin, two windows, a fire escape"#message 8 "Move closer to the ladder."#message 9 "(Of course, you can't play the violin now, but you get the idea.)"#message 10 "Unlock it? From the outside?"#message 11 "You can't. It's locked from the inside."#message 12 "Looking inside the west window, you see the room you just left."#message 13 "Looking at the east window, you notice a bottle of pills sitting on the window ledge."#message 14 "There are two windows high above you. The west window by the fire escape has a dim, reddish glow; the east window is dark. There may be something on the sill of the east window, but you can't make it out from down here."#message 15 "You broke it, didn't you?"#message 16 "You lean far out over the railing before remembering that agility is yet another of your short suits."#message 17 "With the rope securely holding you to the railing, you can reach all the way over to the window. NOW, of all times, you notice the window's locked!"#message 18 "Subtly, you smash the window with your hammer. Your future as a second-story man seems quite plausible!"#message 19 "You got 'em! But what are they?"#message 20 "You might try reaching over to the window first."#message 21 "You consider sticking your hand through a solid glass window, but realize that if you did, you wouldn't be able to play the violin."#message 22 "It already is."#message 23 "What is this; a death wish?"#message 24 "You already took them. Why do this again?"#message 25 "Amidst assorted, odoriferous refuse from Lefty's clientel, you discover Lefty's old, left-handed hammer."#message 26 "There's nothing else here worth describing, let alone taking."#message 27 "\"YUCK!!\""#message 28 "Unfortunately, you can't see much from out here."#message 29 "Wow! Does your head hurt!!"#message 30 "Hey! Where are you?"#message 31 "After a careful analysis of your surroundings, you conclude you are at the bottom of a pile of garbage!"#message 32 "Move to the front of the trash bin."#message 33 "There's no way to reach the ladder from down here. It's only accessible from above."#message 34 "You see alleys stretching off to infinity."#message 35 "The fence is much too tall for you to climb over."#message 36 "It's not long enough to reach from here."#message 37 "It's not long enough to reach anywhere, but you might want to use it for safety purposes."#message 38 "Be more specific."#message 39 "You untie the rope."#message 40 "How can you do that?"#message 41 "Using the dull pocket knife, you cut the rope free."#message 42 "%g176"#message 43 "A rickety fire escape, complete with safety ladder, is loosely attached to the building. A mild, reddish glow comes from the window behind it."#message 44 "Unfortunately the lid on the trash bin just will not close."#message 45 "Try as you might, it is impossible to move the trash bin."#message 46 "The solution is closer to you than that."#message 47 "There is an old neon sign hanging on the wall that says \"Hotel\"..."#message 48 "...approximately."#message 49 "You can't. Even its rusty bolts are too tough for you!"#message 50 "Not now!"#message 51 "There may be something in the east window, but from here, you're not sure."#message 52 "It's a long way to the ground!"#message 53 "Whee!"#message 54 "Move closer to the window, if you want to go back in the hooker's room."#message 55 "You reconsider after noticing the trash bin is behind where you would fall!"

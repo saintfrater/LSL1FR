@@ -1,62 +1,85 @@
 [
 [ global defines file for LSL1
 [
-#define varTimeLastElapsedSeconds   v43
-#define varGameControlDebug         v51 [ This control if the game is in debugmode or not
-#define varTitlePageStep            v65 [ Memorize the Title "steps"
-#define varTimingDelay              v67
-#define varObjBreathSprayUsage      v70
-#define varEgoSize                  v86
-#define varInGameMoney              v90
-#define varPlayerAge               v209 [ Age donne par le joueur
-#define varGameTimeHour            v119 [ in Game Time (Hour)
-#define varGameTimeMinute          v116 [ in Game Time (Minute)
-#define varGameTimeSecond          v115 [ in Game Time (second)
-#define varQuestionnaireID         v220
-#define CtrlHelp                     c1
-#define CtrlSound                    c2 [ Turn Sound ON/OFF
-#define CtrlSave                     c5
-#define CtrlRestart                  c9
-#define CtrlLoad                     c7
-#define CtrlMenuSpeedChange         c10
-#define CtrlInventory               c11
-#define CtrlJoystick                c12
-#define CtrlMenuGraphicsMode        c13
-#define CtrlMenuViewObject          c17
-#define CtrlQuit                    c22
-#define CtrlMenuUnusedItem          c24
-#define CtrlMenuAbout               c25
-#define CtrlMenuCalc                c26
-#define CtrlMenuPuzzle              c27
-#define CtrlMenuBodyFunction        c28
-#define CtrlViewClock               c29
-#define CtrlPause                   c30
-#define CtrlMenuSpeedSlow           c31
-#define CtrlMenuSpeedNormal         c32
-#define CtrlMenuSpeedFast           c33
-#define CtrlMenuSpeedUltra          c34
-#define CtrlBossKey                 c41
-#define Obj_animatedPNJ1             o1
-#define Obj_animatedPNJ2             o2
-#define ObjPoliceMan                o12
-#define boolCallDebugger            f32
-#define boolMusicEnded              f52
-#define boolTimingDelayOut          f75
-#define CtrlVolumeDown              c38 [ TANDY Volume Down Command
-#define CtrlVolumeUp                c39 [ TANDY Volume Up Command
-#define boolShowClock               f42 [ is Clock should be displayed
-#define varRandomValue              v52 [ random variable to handle/choose panic page
-#define varPanicPicture             v81 [ picture ID of the random panic page
-#define boolClockRedraw             f43 [ Clock title must be re-printed
-#define Obj_animatedPNJ3             o3
-#define Obj_animatedPNJ4             o4
-#define Obj_animatedPNJ5             o5
-#define Obj_animatedPNJ6             o6
-#define Obj_animatedPNJ7             o7
-#define Obj_animatedPNJ8             o8
-#define Obj_animatedPNJ9             o9
-#define Obj_animatedPNJ10           o10
-#define Obj_animatedPNJ11           o11
-#define boolSexWithHooker           f63
-#define boolLarryWearCondom         f62 [ Set when Larry has put (and wear) a Condom
-#define boolLarryDontHaveIt         f68 [ Set when Larry is trying to use item he didn't have (yet ?)
+#define varTimeLastElapsedSeconds      v43
+#define varGameControlDebug            v51 [ This control if the game is in debugmode or not
+#define varTitlePageStep               v65 [ Memorize the Title "steps"
+#define varTimingDelay                 v67
+#define varObjBreathSprayUsage         v70
+#define varEgoSize                     v86
+#define varInGameMoney                 v90
+#define varPlayerAge                  v209 [ Age donne par le joueur
+#define varGameTimeHour               v119 [ in Game Time (Hour)
+#define varGameTimeMinute             v116 [ in Game Time (Minute)
+#define varGameTimeSecond             v115 [ in Game Time (second)
+#define varQuestionnaireID            v220
+#define CtrlHelp                        c1
+#define CtrlSound                       c2 [ Turn Sound ON/OFF
+#define CtrlSave                        c5
+#define CtrlRestart                     c9
+#define CtrlLoad                        c7
+#define CtrlMenuSpeedChange            c10
+#define CtrlInventory                  c11
+#define CtrlJoystick                   c12
+#define CtrlMenuGraphicsMode           c13
+#define CtrlMenuViewObject             c17
+#define CtrlQuit                       c22
+#define CtrlMenuUnusedItem             c24
+#define CtrlMenuAbout                  c25
+#define CtrlMenuCalc                   c26
+#define CtrlMenuPuzzle                 c27
+#define CtrlMenuBodyFunction           c28
+#define CtrlViewClock                  c29
+#define CtrlPause                      c30
+#define CtrlMenuSpeedSlow              c31
+#define CtrlMenuSpeedNormal            c32
+#define CtrlMenuSpeedFast              c33
+#define CtrlMenuSpeedUltra             c34
+#define CtrlBossKey                    c41
+#define Obj_animatedPNJ1                o1
+#define Obj_animatedPNJ2                o2
+#define ObjPoliceMan                   o12
+#define boolCallDebugger               f32
+#define boolMusicEnded                 f52
+#define boolTimingDelayOut             f75
+#define CtrlVolumeDown                 c38 [ TANDY Volume Down Command
+#define CtrlVolumeUp                   c39 [ TANDY Volume Up Command
+#define boolShowClock                  f42 [ is Clock should be displayed
+#define varRandomValue                 v52 [ random variable to handle/choose panic page
+#define varPanicPicture                v81 [ picture ID of the random panic page
+#define boolClockRedraw                f43 [ Clock title must be re-printed
+#define Obj_animatedPNJ3                o3
+#define Obj_animatedPNJ4                o4
+#define Obj_animatedPNJ5                o5
+#define Obj_animatedPNJ6                o6
+#define Obj_animatedPNJ7                o7
+#define Obj_animatedPNJ8                o8
+#define Obj_animatedPNJ9                o9
+#define Obj_animatedPNJ10              o10
+#define Obj_animatedPNJ11              o11
+#define boolSexWithHooker              f63
+#define boolLarryWearCondom            f62 [ Set when Larry has put (and wear) a Condom
+#define boolLarryDontHaveIt            f68 [ Set when Larry is trying to use item he didn't have (yet ?)
+#define CtrlBreak                      c14 [ set when CTRL-C is pressed
+#define CtrlEdit                        c3 [ set when CTRL+E is pressed
+#define CtrlSkipQuestion               c21 [ set when ALT+X is pressed (skip questionnaire)
+#define boolGameIsRunning             f109 [ Set when Game is started (not in title or questionnaire)
+#define CtrlVersion                    c40 [ set when ALT+V (Version) is pressed
+#define CtrlDebug                      c15 [ set when ALT+D (Debug) is pressed
+#define boolDisablePlayer              f85 [ when true, player cannot move Larrry
+#define boolDebugInGame                f30 [ set to debug question / cheat in game 
+#define varRandomPickQuestion          v96 [ Random Pick question
+#define varPickedQuestion1            v201
+#define varPickedQuestion2            v202
+#define varPickedQuestion3            v203
+#define varPickedQuestion4            v204
+#define varPickedQuestion5            v205
+#define varQuestionAnswered            v94 [ Number of Questions answers so far
+#define varQuestionRightAnswer         v93 [ right answer for question #
+#define varInputCharacter              v92
+#define varOutputCharacter             v58
+#define varLine                        v33
+#define varColumn                      v32
+#define varQuestionnaireStateMachine   v95 [ 1: ask question, 2: pick question, 3: questionnaire completed, 4: , 5: right answer
+#define varQuestionnaireTiming         v66
+#define boolQuestionnaireFailedOnce   f200 [ set when player fail once in the questionnaire

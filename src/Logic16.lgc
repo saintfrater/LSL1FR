@@ -1,101 +1,0 @@
-if (isset(newRoom))
-  {  set.horizon(39);  load.pic(currentRoom);  draw.pic(currentRoom);  discard.pic(currentRoom);  load.view(Leftys_PimpDoor_Inside);  load.view(Pnj_Pimp_attitude);  load.view(Pnj_Pimp_Standing);  load.view(View64);  animate.obj(Obj_animatedPNJ2);  ignore.blocks(Obj_animatedPNJ2);  ignore.objs(Obj_animatedPNJ2);  position(Obj_animatedPNJ2, 24, 132);  set.view(Obj_animatedPNJ2, Leftys_PimpDoor_Inside);  set.priority(Obj_animatedPNJ2, 10);  varRandomValue = 3;  cycle.time(Obj_animatedPNJ2, varRandomValue);  animate.obj(Obj_animatedPNJ3);  ignore.blocks(Obj_animatedPNJ3);  ignore.objs(Obj_animatedPNJ3);  position(Obj_animatedPNJ3, 70, 136);  set.view(Obj_animatedPNJ3, View64);  animate.obj(Obj_animatedPNJ1);  if (isset(f56))
-    {    set(f90);    set.view(Obj_animatedPNJ1, Pnj_Pimp_attitude);    set.loop(Obj_animatedPNJ1, 2);    position(Obj_animatedPNJ1, 70, 132);    draw(Obj_animatedPNJ3);    random(3, 9, v202);    }  else
-    {    if (previousRoom == 17)
-      {      set.view(Obj_animatedPNJ1, Pnj_Pimp_Standing);      position(Obj_animatedPNJ1, 100, 135);      set(f210);      }    else
-      {      set.view(Obj_animatedPNJ1, Pnj_Pimp_attitude);      set.loop(Obj_animatedPNJ1, 0);      position(Obj_animatedPNJ1, 42, 135);      move.obj(Obj_animatedPNJ1, 116, 135, 1, f201);      }    }  draw(Obj_animatedPNJ1);  set.loop(ego, 0);  if (previousRoom == 17)
-    {    set.cel(Obj_animatedPNJ2, 0);    draw(Obj_animatedPNJ2);    stop.update(Obj_animatedPNJ2);    v38 = 71;    v39 = 55;    }  else
-    {    last.cel(Obj_animatedPNJ2, varRandomValue);    set.cel.v(Obj_animatedPNJ2, varRandomValue);    draw(Obj_animatedPNJ2);    reverse.loop(Obj_animatedPNJ2, f204);    v38 = 26;    v39 = 136;    stop.motion(ego);    set(f85);    }  position.v(ego, v38, v39);  draw(ego);  show.pic();  return();  }reset(f209);distance(ego, Obj_animatedPNJ1, varRandomValue);if (varRandomValue < 13)
-  {  set(f209);  set(f69);  }reset(f205);if (posn(ego, 22, 123, 33, 137))
-  {  set(f205);  }reset(f202);if (posn(ego, 65, 137, 80, 143))
-  {  set(f202);  }reset(f212);if (posn(ego, 65, 132, 76, 143))
-  {  set(f212);  }reset(f207);if (posn(ego, 105, 131, 133, 139))
-  {  set(f207);  }if (!isset(haveInput))
-  {  goto(Label1);  }if ((said("examine") ||     said("examine", "area")))
-  {  print("The bar's storage room is almost empty. Its most significant feature "        "is a big, mean-looking dude.");  }if ((said("examine", "box") ||     said("increase", "box") ||     said("look in", "box")))
-  {  print("They're boxes, all right.");  }if ((said("catch", "box") ||     said("move", "box") ||     said("climb", "box") ||     said("climb", "on", "box") ||     said("use", "box")))
-  {  print("What does this look like, the ship's hold in \"King's Quest III?\"");  }if (said("examine", "door"))
-  {  print("It's the door from the bar. Its far side looks better than this side.");  }if ((said("examine", "stair", "rol") ||     said("examine", "up", "rol")))
-  {  print("You wonder what palace of earthly delights resides above you.");  }if (said("examine", "bouncer"))
-  {  print("He's no rocket scientist!");  }if ((said("aim", "control", "bouncer") ||     said("use", "control", "on", "bouncer")))
-  {  print("He's unaffected by the remote control.");  }if (said("examine", "television"))
-  {  if (!isset(f56))
-    {    print("Its screen is blank; much like the pimp's mind.");    }  else
-    {    if (!isset(f90))
-      {      print("%m56program.");      }    else
-      {      print("Get your mind back on the game, Larry!");      }    }  }if ((said("buy", "rol") ||     said("buy", "blond") ||     said("buy", "ass") ||     said("buy", "copulate") ||     said("buy", "clit") ||     said("add", "one", "bucks") ||     said("add", "one", "bucks", "bouncer") ||     said("add", "bouncer", "one", "bucks") ||     said("add", "bouncer", "bucks") ||     said("add", "bucks", "bouncer") ||     said("add", "bucks")))
-  {  if (isset(f90))
-    {    print("There is no need to pay; he's pleasantly distracted. Help yourself!");    }  else
-    {    if (!isset(f209))
-      {      set(f54);      }    else
-      {      if (varInGameMoney < 100)
-        {        print("You don't have enough money.");        }      else
-        {        set(f208);        reset(f206);        varInGameMoney -= 100;        print("\"Thanks,\" he growls. \"Remember, no refunds!\"");        set.view(Obj_animatedPNJ1, Pnj_Pimp_attitude);        move.obj(Obj_animatedPNJ1, 100, 135, 1, f211);        if (isset(boolSexWithHooker))
-          {          print("\"You like that stuff, eh, boy?\"");          }        }      }    }  }if ((said("bang", "anyword", "door") ||     said("bang", "door", "anyword") ||     said("bang", "door") ||     said("bang")))
-  {  if (!isset(f205))
-    {    set(f54);    }  else
-    {    print("Evidently no one in the bar wants to play \"Knock, knock\" with you.");    }  }if (said("increase", "door"))
-  {  if (!isset(f205))
-    {    set(f54);    }  else
-    {    set(f67);    stop.motion(ego);    set(f85);    start.update(Obj_animatedPNJ2);    end.of.loop(Obj_animatedPNJ2, f203);    }  }if ((said("move", "on", "television") ||     said("move", "television", "on") ||     said("television", "on")))
-  {  if (!isset(f202))
-    {    set(f54);    }  else
-    {    if (isset(f56))
-      {      print("It already is!");      }    else
-      {      print("The knob is broken off. There's no way to turn it.");      }    }  }if ((said("move", "off", "television") ||     said("move", "television", "off") ||     said("television", "off")))
-  {  if (!isset(f202))
-    {    set(f54);    }  else
-    {    if (!isset(f56))
-      {      print("It already is!");      }    else
-      {      print("The knob is broken off. There's no way to turn it.");      }    }  }if ((said("use", "control") ||     said("use", "control", "off") ||     said("use", "control", "on") ||     said("use", "control", "move", "television", "on") ||     said("use", "control", "move", "television", "off") ||     said("use", "control", "rol") ||     said("move", "button", "control", "rol") ||     said("move", "button", "on", "control", "rol") ||     said("move", "control", "rol") ||     said("move", "control", "on") ||     said("move", "control", "off") ||     said("move", "control", "television", "on") ||     said("move", "control", "television", "off") ||     said("move", "control", "move", "television", "on") ||     said("move", "control", "move", "television", "off") ||     said("move", "control", "move", "on", "television") ||     said("move", "control", "move", "off", "television") ||     said("move", "on", "television", "use", "control") ||     said("move", "off", "television", "use", "control") ||     said("move", "television", "on", "use", "control") ||     said("move", "television", "off", "use", "control")))
-  {  if (!has("Remote Control"))
-    {    set(boolLarryDontHaveIt);    }  else
-    {    if (v39 > 144)
-      {      print("The remote control seems ineffectual from this angle.");      }    else
-      {      if (isset(f56))
-        {        print("Evidently the remote control's off button is broken.");        }      else
-        {        currentScore  += 3;        draw(Obj_animatedPNJ3);        print("You click the power switch on the remote control.");        set(f56);        v202 = 5;        v82 = 14;        random(33, 77, v200);        }      }    }  }if ((said("attach", "bouncer", "use", "rope") ||     said("attach", "up", "bouncer")))
-  {  if (!has("Rope"))
-    {    set(boolLarryDontHaveIt);    }  else
-    {    print("He's too strong for you, Larry.");    }  }if ((said("ask", "bouncer") ||     said("bargain", "rol") ||     said("ask", "hello")))
-  {  if (isset(f90))
-    {    print("He ignores you. It looks like he's \"engrossed\" in something right "          "now.");    }  else
-    {    print("\"Ya wanna go upstairs?\" he says in a scholarly voice, \"ya gotta "          "pays da price!\"");    print("\"$100.00, cash up front, no refunds.\"");    print("He certainly has a pleasing manner about him.");    }  }if ((said("beat", "up", "bouncer", "rol") ||     said("beat", "bouncer", "rol") ||     said("use", "hammer", "rol") ||     said("attach", "bouncer") ||     said("attach", "up", "bouncer") ||     said("attach", "up", "bouncer", "use", "rope") ||     said("use", "rope", "attach", "up", "bouncer") ||     said("use", "rope", "attach", "bouncer") ||     said("attach", "up", "bouncer", "rope") ||     said("attach", "bouncer", "rope") ||     said("fight", "bouncer", "rol")))
-  {  print("He's far too big, and you're far too wimpy.");  }if ((said("move") ||     said("move", "out", "way") ||     said("move", "away") ||     said("catch", "away") ||     said("move", "bouncer")))
-  {  print("\"Ya wanna go upstairs?\" he says in a scholarly voice, \"ya gotta "        "pays da price!\"");  print("\"$100.00, cash up front, no refunds.\"");  print("He certainly has a pleasing manner about him.");  }if ((said("add", "bouncer", "control", "rol") ||     said("add", "control", "bouncer", "rol")))
-  {  print("Its operation is beyond his mental capacities.");  }if ((said("move", "channel") ||     said("use", "control", "move", "channel") ||     said("move", "television", "channel") ||     said("move", "channel", "television") ||     said("move", "television", "channel", "use", "control") ||     said("move", "channel", "television", "use", "control") ||     said("move", "channel", "use", "control") ||     said("move", "television", "channel", "control") ||     said("move", "channel", "control") ||     said("use", "control", "move", "television", "channel") ||     said("alter", "channel") ||     said("use", "control", "alter", "channel") ||     said("alter", "television", "channel") ||     said("alter", "channel", "television") ||     said("alter", "television", "channel", "use", "control") ||     said("alter", "channel", "television", "use", "control") ||     said("alter", "channel", "use", "control") ||     said("alter", "television", "channel", "control") ||     said("alter", "channel", "control") ||     said("use", "control", "alter", "television", "channel")))
-  {  if (!has("Remote Control"))
-    {    print("The knob is broken off. There's no way to turn it.");    }  else
-    {    if (!isset(f56))
-      {      print("The TV is off.");      }    else
-      {      if (v39 > 144)
-        {        print("The remote control seems ineffectual from this angle.");        }      else
-        {        if (v82 == 21)
-          {          print("Nah. He's having a good time!");          }        else
-          {          if (v200 > 0)
-            {            print("Slow down. You're gonna blow the punch line!");            }          else
-            {            print("You click the channel selector on the remote control.");            ++v82;            random(23, 39, v200);            }          }        }      }    }  }if (said("examine", "brick"))
-  {  print("The walls do a good job of separating the floor from the ceiling.");  }if (said("examine", "burn"))
-  {  print("It's just hanging around.");  }if (said("examine", "clit"))
-  {  print("Wait 'til you get upstairs.");  }Label1:if ((!isset(f212) ||     !isset(f90)))
-  {  v201 = 0;  }else
-  {  if (v201 <= 0)
-    {    v201 = 2;    }  --v201;  if (v201 == 1)
-    {    print("\"Hey! Outta da way!!\"");    v201 = 22;    }  }--v200;if (v200 == 20)
-  {  print.v(v82);  }if (v200 == 10)
-  {  if (v82 != 21)
-    {    varRandomValue = v82;    varRandomValue  += 20;    print.v(varRandomValue);    }  else
-    {    reset(f206);    set.view(Obj_animatedPNJ1, Pnj_Pimp_attitude);    move.obj(Obj_animatedPNJ1, 70, 135, 1, f200);    }  }if (v200 == 1)
-  {  if (v82 != 21)
-    {    print("The pimp seems vaguely interested, but not enough to leave his post "          "by the stairs.");    }  }if (isset(f211))
-  {  reset(f211);  set.view(Obj_animatedPNJ1, Pnj_Pimp_Standing);  print("\"Have a nice lay.\"");  }if (isset(f200))
-  {  reset(f200);  set(f90);  set.loop(Obj_animatedPNJ1, 2);  reposition.to(Obj_animatedPNJ1, 70, 132);  force.update(Obj_animatedPNJ1);  if (!isset(f98))
-    {    set(f98);    currentScore  += 8;    }  print("It appears you've finally reached the pimp's cultural level.");  }if (isset(f210))
-  {  if (v38 < 90 &&       v39 > 110)
-    {    reset(f210);    print("\"Pretty good stuff, eh, boy?\" laughs the pimp.");    set.view(Obj_animatedPNJ1, Pnj_Pimp_attitude);    set.loop(Obj_animatedPNJ1, 0);    move.obj(Obj_animatedPNJ1, 116, 135, 1, f201);    }  }if (isset(f201))
-  {  reset(f201);  set(f206);  set.view(Obj_animatedPNJ1, Pnj_Pimp_Standing);  }if (!isset(f208) &&     isset(f206) &&     isset(f207))
-  {  set(f208);  print("The pimp growls, \"You got no business goin' up these stairs, little "        "man!\"");  }--v202;if (isset(f56) &&     v202 == 1)
-  {  random(4, 16, v202);  random(1, 4, varRandomValue);  cycle.time(Obj_animatedPNJ3, varRandomValue);  }if (isset(f204))
-  {  reset(f204);  stop.update(Obj_animatedPNJ2);  start.motion(ego);  reset(f85);  }if (isset(f203))
-  {  reset(f85);  v76 = 15;  }if ((v39 < 42 ||     edgeEgoHit == TOP_EDGE))
-  {  v76 = 17;  }return();[ Messages#message 1 "The bar's storage room is almost empty. Its most significant feature is a big, mean-looking dude."#message 2 "\"Ya wanna go upstairs?\" he says in a scholarly voice, \"ya gotta pays da price!\""#message 3 "\"$100.00, cash up front, no refunds.\""#message 4 "He certainly has a pleasing manner about him."#message 5 "\"Thanks,\" he growls. \"Remember, no refunds!\""#message 6 "Evidently no one in the bar wants to play \"Knock, knock\" with you."#message 7 "It's the door from the bar. Its far side looks better than this side."#message 8 "You don't have enough money."#message 9 "\"You like that stuff, eh, boy?\""#message 10 "The pimp seems vaguely interested, but not enough to leave his post by the stairs."#message 11 "The pimp growls, \"You got no business goin' up these stairs, little man!\""#message 12 "It appears you've finally reached the pimp's cultural level."#message 13 "He ignores you. It looks like he's \"engrossed\" in something right now."#message 14 "\"Oh, John.\"  \"Oh, Marsha.\"\n\"OH, John.\"  \"OH, Marsha.\"\n\"Oh, JOHN!\"  \"Oh, MARSHA!\"\n\"OH, JOHN!!\" \"OH, MARSHA!!\""#message 15 "\"...I'm Al Fartles, and this is my partner, Fed Ames. We just want to tell you how much we appreciate your support...\""#message 16 "\"...and now, ALoHa Productions is proud to present 'The Revenge of the Software Developers' in full color and stereo sound...\""#message 17 "\"...while Jim is fighting for his life with the raging female rhinoceros in heat, I'll slip into my tent with the native girl and this pitcher of Mai Tais...\""#message 18 "\"...it's a beautiful day in the neighbor...\""#message 19 "\"...live from Malaga, California, it's the Cable Sports Network presentation of the Miniature Female Mud Wrestlers 500-kilometer Cross-Country Nude Bicycle Race...\""#message 20 "\"...And next, Master Piece Theatre presents a special 3-D broadcast of 'Naugahyde Goddesses of Oakhurst!'\""#message 21 "\"...oh, baby, yeah. Yeah, I love it when you do that! Ooooooooooh!! That hurts so good, pull it out a little deeper!!!\""#message 22 "The knob is broken off. There's no way to turn it."#message 23 "It already is!"#message 24 "You click the power switch on the remote control."#message 25 "You click the channel selector on the remote control."#message 26 "Nah. He's having a good time!"#message 27 "They're boxes, all right."#message 28 "The remote control seems ineffectual from this angle."#message 29 "The TV is off."#message 30 "\"Pretty good stuff, eh, boy?\" laughs the pimp."#message 34 "%m56soap opera."#message 35 "%m56commercial."#message 36 "%m56musical comedy."#message 37 "%m56documentary."#message 38 "No, no!! Anything but that!"#message 39 "%m56cable sports show."#message 40 "%m56educational show."#message 41 "Well, now. What's this??"#message 42 "Slow down. You're gonna blow the punch line!"#message 43 "\"Have a nice lay.\""#message 44 "He's no rocket scientist!"#message 45 "Its screen is blank; much like the pimp's mind."#message 46 "%m56program."#message 47 "Get your mind back on the game, Larry!"#message 48 "What does this look like, the ship's hold in \"King's Quest III?\""#message 49 "The walls do a good job of separating the floor from the ceiling."#message 50 "It's just hanging around."#message 51 "Wait 'til you get upstairs."#message 52 "He's far too big, and you're far too wimpy."#message 53 "\"Hey! Outta da way!!\""#message 54 "There is no need to pay; he's pleasantly distracted. Help yourself!"#message 55 "You wonder what palace of earthly delights resides above you."#message 56 "Another boring "#message 57 "Evidently the remote control's off button is broken."#message 58 "Its operation is beyond his mental capacities."#message 59 "He's unaffected by the remote control."#message 60 "He's too strong for you, Larry."
