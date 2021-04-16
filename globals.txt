@@ -67,7 +67,7 @@
 #define CtrlVersion                    c40 [ set when ALT+V (Version) is pressed
 #define CtrlDebug                      c15 [ set when ALT+D (Debug) is pressed
 #define boolDisablePlayer              f85 [ when true, player cannot move Larrry
-#define boolDebugInGame                f30 [ set to debug question / cheat in game 
+#define boolDebugInGame                f30 [ set to debug question / cheat in game
 #define varRandomPickQuestion          v96 [ Random Pick question
 #define varPickedQuestion1            v201
 #define varPickedQuestion2            v202
@@ -83,3 +83,8 @@
 #define varQuestionnaireStateMachine   v95 [ 1: ask question, 2: pick question, 3: questionnaire completed, 4: , 5: right answer
 #define varQuestionnaireTiming         v66
 #define boolQuestionnaireFailedOnce   f200 [ set when player fail once in the questionnaire
+#define varLarryAttitude               v30
+#define boolHasLookedBoncer            f60 [ Is Larry already looked at the bouncer once ?
+#define boolHasFreshBreath             f66 [ Is Larry has a fresh breath ?
+#define varTimer_FreshBreath_Minutes   v72
+#define varTimer_freshBreath_Seconds   v71

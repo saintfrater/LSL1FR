@@ -11,7 +11,7 @@
    Author = Sierra
    About = ""
    GameVersion = ""
-   LastEdit = "12-04-21 23:43:30"
+   LastEdit = "16-04-21 16:49:48"
    PlatformType = 2
    Platform = "C:\Program Files (x86)\ScummVM\scummvm.exe"
    DOSExec = ""
@@ -24,16 +24,16 @@
 [Logic0]
    ID = Logic_Start
    Size = 13777
-   CRC32 = &HF68D88C7
-   CompCRC32 = &HF68D88C7
+   CRC32 = &H78A1E866
+   CompCRC32 = &H78A1E866
    Description = ""
    IsRoom = False
 
 [Logic1]
    ID = Logic_Title
    Size = 553
-   CRC32 = &H1AB8BEC5
-   CompCRC32 = &H1AB8BEC5
+   CRC32 = &HFD40D6B3
+   CompCRC32 = &HFD40D6B3
    Description = ""
    IsRoom = True
 
@@ -64,96 +64,96 @@
 [Logic6]
    ID = Logic_Title_Exit
    Size = 3572
-   CRC32 = &H8D3BFE6C
-   CompCRC32 = &H8D3BFE6C
+   CRC32 = &H9C209EA2
+   CompCRC32 = &H9C209EA2
    Description = "This screen decide if the player can go to the game or should answer few questions..."
    IsRoom = True
 
 [Logic8]
    ID = Logic_Body_Recycling
    Size = 1272
-   CRC32 = &H22CE251
-   CompCRC32 = &H22CE251
+   CRC32 = &H6BADE3B3
+   CompCRC32 = &H6BADE3B3
    Description = "This Logic is used when Larry's die and his corps must be "recycled" by Sierra's adventure team"
    IsRoom = True
 
 [Logic9]
    ID = Logic_DarkAlley
    Size = 794
-   CRC32 = &HC4F3B262
-   CompCRC32 = &HC4F3B262
+   CRC32 = &HDB20999D
+   CompCRC32 = &HDB20999D
    Description = ""
    IsRoom = True
 
 [Logic10]
-   ID = Logic_Taxy
+   ID = Logic_Taxi
    Size = 3668
-   CRC32 = &H954A1797
-   CompCRC32 = &H954A1797
+   CRC32 = &HA93927CA
+   CompCRC32 = &HA93927CA
    Description = ""
    IsRoom = True
 
 [Logic11]
    ID = Logic_MainGame
    Size = 1958
-   CRC32 = &H11007F32
-   CompCRC32 = &H11007F32
+   CRC32 = &H3FDFE520
+   CompCRC32 = &H3FDFE520
    Description = ""
    IsRoom = True
 
 [Logic12]
    ID = Logic_Leftys_Alley
    Size = 6273
-   CRC32 = &HE90375F7
-   CompCRC32 = &HE90375F7
+   CRC32 = &H6DAD7F0D
+   CompCRC32 = &H6DAD7F0D
    Description = ""
    IsRoom = True
 
 [Logic13]
    ID = Logic_Leftys_Bathroom
    Size = 3685
-   CRC32 = &HD547BD7B
-   CompCRC32 = &HD547BD7B
+   CRC32 = &H756E69CC
+   CompCRC32 = &H756E69CC
    Description = ""
    IsRoom = True
 
 [Logic14]
    ID = Logic_Leftys_Doorhall
    Size = 2477
-   CRC32 = &H2FA0DBB
-   CompCRC32 = &H2FA0DBB
+   CRC32 = &H58CA1F60
+   CompCRC32 = &H58CA1F60
    Description = ""
    IsRoom = True
 
 [Logic15]
    ID = Logic_Leftys_Mainroom
    Size = 7606
-   CRC32 = &H166F3CFE
-   CompCRC32 = &H166F3CFE
+   CRC32 = &H5F13266E
+   CompCRC32 = &H5F13266E
    Description = ""
    IsRoom = True
 
 [Logic16]
    ID = Logic_Leftys_PimpsRoom
    Size = 5037
-   CRC32 = &H9B35464C
-   CompCRC32 = &H9B35464C
+   CRC32 = &H799CC56C
+   CompCRC32 = &H799CC56C
    Description = ""
    IsRoom = True
 
 [Logic17]
    ID = Logic_Hookers_Room
    Size = 5001
-   CRC32 = &H924A3EE3
-   CompCRC32 = &H924A3EE3
+   CRC32 = &HAF769E5B
+   CompCRC32 = &HAF769E5B
    Description = ""
    IsRoom = True
 
 [Logic19]
    ID = Logic_BadEnding
    Size = 456
-   CRC32 = &H269CCFA
-   CompCRC32 = &H269CCFA
+   CRC32 = &H93EF7DC3
+   CompCRC32 = &H93EF7DC3
    Description = ""
    IsRoom = True
 
@@ -168,40 +168,40 @@
 [Logic21]
    ID = Logic_Liquor_Inside
    Size = 5172
-   CRC32 = &H730A53BD
-   CompCRC32 = &H730A53BD
+   CRC32 = &H63A403BB
+   CompCRC32 = &H63A403BB
    Description = ""
    IsRoom = True
 
 [Logic22]
    ID = Logic_Liquor_Exterior
    Size = 6059
-   CRC32 = &H258CD5E2
-   CompCRC32 = &H258CD5E2
+   CRC32 = &H40F037CA
+   CompCRC32 = &H40F037CA
    Description = ""
    IsRoom = True
 
 [Logic23]
    ID = Logic_Disco_Exterior
    Size = 2336
-   CRC32 = &H6826CC5F
-   CompCRC32 = &H6826CC5F
+   CRC32 = &H6D68F236
+   CompCRC32 = &H6D68F236
    Description = ""
    IsRoom = True
 
 [Logic24]
    ID = Logic_Disco_Inside
    Size = 3836
-   CRC32 = &H135930F3
-   CompCRC32 = &H135930F3
+   CRC32 = &H5D9C3467
+   CompCRC32 = &H5D9C3467
    Description = ""
    IsRoom = False
 
 [Logic25]
    ID = Logic_Fawn
    Size = 5529
-   CRC32 = &H83EAF71
-   CompCRC32 = &H83EAF71
+   CRC32 = &H2B6260D1
+   CompCRC32 = &H2B6260D1
    Description = ""
    IsRoom = False
 
@@ -216,104 +216,104 @@
 [Logic32]
    ID = Logic_Casino_Outside
    Size = 2388
-   CRC32 = &HBDB93997
-   CompCRC32 = &HBDB93997
+   CRC32 = &H9E74A846
+   CompCRC32 = &H9E74A846
    Description = ""
    IsRoom = True
 
 [Logic33]
    ID = Logic_Chapel_Outside
    Size = 999
-   CRC32 = &HDF1B2849
-   CompCRC32 = &HDF1B2849
+   CRC32 = &H400F66A6
+   CompCRC32 = &H400F66A6
    Description = ""
    IsRoom = True
 
 [Logic34]
    ID = Logic_Chapel_Inside
    Size = 4026
-   CRC32 = &H9E65B317
-   CompCRC32 = &H9E65B317
+   CRC32 = &H1149151F
+   CompCRC32 = &H1149151F
    Description = ""
    IsRoom = False
 
 [Logic35]
    ID = Logic_Casino_Lift_0
    Size = 2450
-   CRC32 = &HA3CE97BB
-   CompCRC32 = &HA3CE97BB
+   CRC32 = &H27DC9691
+   CompCRC32 = &H27DC9691
    Description = ""
    IsRoom = False
 
 [Logic36]
    ID = Logic_Casino_Cabaret
    Size = 8789
-   CRC32 = &H3B773BC2
-   CompCRC32 = &H3B773BC2
+   CRC32 = &HB278E27
+   CompCRC32 = &HB278E27
    Description = ""
    IsRoom = False
 
 [Logic37]
    ID = Logic_Casino_Game_SlotMachine
    Size = 1683
-   CRC32 = &HEBB03C7A
-   CompCRC32 = &HEBB03C7A
+   CRC32 = &H2EFBDD84
+   CompCRC32 = &H2EFBDD84
    Description = ""
    IsRoom = False
 
 [Logic38]
    ID = Logic_Casino_Game_TableCard
    Size = 4942
-   CRC32 = &H70064D4B
-   CompCRC32 = &H70064D4B
+   CRC32 = &H80CAC40D
+   CompCRC32 = &H80CAC40D
    Description = ""
    IsRoom = False
 
 [Logic40]
    ID = Logic_Casino_Lift
    Size = 3881
-   CRC32 = &HF4413088
-   CompCRC32 = &HF4413088
+   CRC32 = &HE7136856
+   CompCRC32 = &HE7136856
    Description = ""
    IsRoom = False
 
 [Logic41]
    ID = Logic_Casino_HoneyMoon
    Size = 6021
-   CRC32 = &H5031CF70
-   CompCRC32 = &H5031CF70
+   CRC32 = &HCB8667ED
+   CompCRC32 = &HCB8667ED
    Description = ""
    IsRoom = False
 
 [Logic42]
    ID = Logic_Casino_Lift_Penthouse
    Size = 7679
-   CRC32 = &HBFBE8A32
-   CompCRC32 = &HBFBE8A32
+   CRC32 = &HD552032F
+   CompCRC32 = &HD552032F
    Description = ""
    IsRoom = False
 
 [Logic43]
    ID = Logic_Casino_Penthouse_Hottub
    Size = 6767
-   CRC32 = &HEF996FFC
-   CompCRC32 = &HEF996FFC
+   CRC32 = &HF6623F80
+   CompCRC32 = &HF6623F80
    Description = ""
    IsRoom = False
 
 [Logic44]
    ID = Logic_Casino_Penthouse
    Size = 3323
-   CRC32 = &H9432DA1C
-   CompCRC32 = &H9432DA1C
+   CRC32 = &HA871A4EB
+   CompCRC32 = &HA871A4EB
    Description = ""
    IsRoom = False
 
 [Logic45]
    ID = Logic_Casino_Penthouse_Bed
    Size = 10727
-   CRC32 = &HEA051B16
-   CompCRC32 = &HEA051B16
+   CRC32 = &HB63B4680
+   CompCRC32 = &HB63B4680
    Description = ""
    IsRoom = False
 
@@ -328,16 +328,16 @@
 [Logic51]
    ID = Logic_Setup
    Size = 390
-   CRC32 = &HEFBD77A
-   CompCRC32 = &HEFBD77A
+   CRC32 = &HAA6F7D2E
+   CompCRC32 = &HAA6F7D2E
    Description = ""
    IsRoom = False
 
 [Logic52]
    ID = Logic_Debug
    Size = 867
-   CRC32 = &H9D764D34
-   CompCRC32 = &H9D764D34
+   CRC32 = &H602EC737
+   CompCRC32 = &H602EC737
    Description = ""
    IsRoom = False
 
@@ -376,8 +376,8 @@
 [Logic57]
    ID = Logic_Street_Outside
    Size = 2441
-   CRC32 = &H43ADCEE
-   CompCRC32 = &H43ADCEE
+   CRC32 = &HD0EE5C5C
+   CompCRC32 = &HD0EE5C5C
    Description = ""
    IsRoom = False
 
@@ -477,7 +477,7 @@
    BkgdImg = ""
 
 [Picture16]
-   ID = Leftys_TVRoom
+   ID = Leftys_PimpRoom
    Size = 3236
    Description = ""
    BkgdImg = ""
@@ -1014,7 +1014,7 @@
    Visible3 = True
 
 [Sound26]
-   ID = Sound26
+   ID = Music_DarkAlley
    Size = 766
    Description = ""
    Key = 0
@@ -1104,7 +1104,7 @@
    Visible3 = True
 
 [Sound31]
-   ID = Sound31
+   ID = Music_Cancan
    Size = 2506
    Description = ""
    Key = 0
@@ -1140,7 +1140,7 @@
    Visible3 = True
 
 [Sound33]
-   ID = Sound33
+   ID = Music_DeathMarch
    Size = 331
    Description = ""
    Key = 0
@@ -1196,7 +1196,7 @@
    Description = ""
 
 [View7]
-   ID = View7
+   ID = Larry_Leave_Hottub
    Size = 1688
    Description = ""
 
@@ -1291,7 +1291,7 @@
    Description = ""
 
 [View30]
-   ID = View30
+   ID = Larry_Sit_And_Fart
    Size = 1469
    Description = ""
 
@@ -1346,17 +1346,17 @@
    Description = ""
 
 [View45]
-   ID = View45
+   ID = Pnj_Ken_Williams
    Size = 749
    Description = ""
 
 [View47]
-   ID = View47
+   ID = Pnj_Leftys_drunkman
    Size = 749
    Description = ""
 
 [View49]
-   ID = View49
+   ID = Pnj_Leftys_Bartender
    Size = 792
    Description = ""
 
@@ -1376,12 +1376,12 @@
    Description = ""
 
 [View53]
-   ID = Leftys_customer
+   ID = Pnj_Leftys_customer
    Size = 834
    Description = ""
 
 [View54]
-   ID = Leftys_Customer_Ken
+   ID = Pnj_Leftys_Customer_Ken
    Size = 537
    Description = ""
 
@@ -1411,7 +1411,7 @@
    Description = ""
 
 [View60]
-   ID = View60
+   ID = Leftys_Bathroom_Flood
    Size = 287
    Description = ""
 
@@ -1431,12 +1431,12 @@
    Description = ""
 
 [View64]
-   ID = View64
+   ID = Pimp_TV_screenON
    Size = 156
    Description = ""
 
 [View65]
-   ID = Details_Face_Hooker
+   ID = Face_Hooker_Details
    Size = 1864
    Description = ""
 
@@ -1461,7 +1461,7 @@
    Description = ""
 
 [View72]
-   ID = View72
+   ID = Leftys_Hotel_Sign
    Size = 4537
    Description = ""
 
@@ -1531,177 +1531,177 @@
    Description = ""
 
 [View89]
-   ID = Face_Fawn2
+   ID = Face_Fawn_details
    Size = 1967
    Description = ""
 
 [View90]
-   ID = View90
+   ID = Sign_Disco
    Size = 2337
    Description = ""
 
 [View91]
-   ID = View91
+   ID = Pnj_Disco_Doorman
    Size = 1002
    Description = ""
 
 [View93]
-   ID = View93
+   ID = Pnj_HomeLess_Guy
    Size = 2702
    Description = ""
 
 [View94]
-   ID = View94
+   ID = Disco_Table
    Size = 1414
    Description = ""
 
 [View98]
-   ID = View98
+   ID = Pnj_Fawn_Walk
    Size = 2308
    Description = ""
 
 [View99]
-   ID = View99
+   ID = Pnj_Fawn_Dance
    Size = 2321
    Description = ""
 
 [View100]
-   ID = View100
+   ID = Disco_Dance_Floor
    Size = 612
    Description = ""
 
 [View101]
-   ID = View101
+   ID = Item_wallet
    Size = 416
    Description = ""
 
 [View102]
-   ID = View102
+   ID = Item_BreathSpray
    Size = 308
    Description = ""
 
 [View103]
-   ID = View103
+   ID = Item_Fuzz
    Size = 320
    Description = ""
 
 [View104]
-   ID = View104
+   ID = Item_Watch
    Size = 461
    Description = ""
 
 [View105]
-   ID = View105
+   ID = Item_Apple
    Size = 372
    Description = ""
 
 [View106]
-   ID = View106
+   ID = Item_Ring
    Size = 428
    Description = ""
 
 [View107]
-   ID = View107
+   ID = Item_Glass_Whiskey
    Size = 320
    Description = ""
 
 [View108]
-   ID = View108
+   ID = Item_Telecommand
    Size = 517
    Description = ""
 
 [View109]
-   ID = View109
+   ID = Item_Rose
    Size = 306
    Description = ""
 
 [View110]
-   ID = View110
+   ID = Item_Condom
    Size = 444
    Description = ""
 
 [View111]
-   ID = View111
+   ID = Item_Used_Condom
    Size = 74
    Description = ""
 
 [View112]
-   ID = View112
+   ID = Item_Candybox
    Size = 293
    Description = ""
 
 [View113]
-   ID = View113
+   ID = Item_Doll
    Size = 354
    Description = ""
 
 [View114]
-   ID = View114
+   ID = Item_DiscoPass
    Size = 407
    Description = ""
 
 [View115]
-   ID = View115
+   ID = Item_Knife
    Size = 382
    Description = ""
 
 [View116]
-   ID = View116
+   ID = Item_Alcool
    Size = 372
    Description = ""
 
 [View117]
-   ID = View117
+   ID = Item_Magasines
    Size = 666
    Description = ""
 
 [View118]
-   ID = View118
+   ID = Item_Hammer
    Size = 451
    Description = ""
 
 [View119]
-   ID = View119
+   ID = Item_Pils
    Size = 373
    Description = ""
 
 [View120]
-   ID = View120
+   ID = Item_Ropes
    Size = 375
    Description = ""
 
 [View130]
-   ID = View130
+   ID = Sign_QuikiMart
    Size = 301
    Description = ""
 
 [View132]
-   ID = View132
+   ID = Pnj_QuikiMark_Clerk
    Size = 1316
    Description = ""
 
 [View133]
-   ID = View133
+   ID = Pnj_Quikimart_Perverts
    Size = 391
    Description = ""
 
 [View134]
-   ID = View134
+   ID = Quikimart_Shelfs
    Size = 1780
    Description = ""
 
 [View135]
-   ID = View135
+   ID = Quikimart_revues
    Size = 211
    Description = ""
 
 [View136]
-   ID = View136
+   ID = Sign_Casino
    Size = 2081
    Description = ""
 
 [View138]
-   ID = View138
+   ID = Pnj_Casino_Loser
    Size = 3413
    Description = ""
 
@@ -1716,97 +1716,97 @@
    Description = ""
 
 [View146]
-   ID = View146
+   ID = Game_Cards_Draw
    Size = 1693
    Description = ""
 
 [View147]
-   ID = View147
+   ID = Slot_cherry
    Size = 1733
    Description = ""
 
 [View150]
-   ID = View150
+   ID = YouWin
    Size = 548
    Description = ""
 
 [View151]
-   ID = View151
+   ID = Game_Card_Shuffle
    Size = 6158
    Description = ""
 
 [View152]
-   ID = View152
+   ID = Game_Card_Trefle
    Size = 3406
    Description = ""
 
 [View153]
-   ID = View153
+   ID = Game_Card_Piques
    Size = 3408
    Description = ""
 
 [View154]
-   ID = View154
+   ID = Game_Card_Coeur
    Size = 3526
    Description = ""
 
 [View155]
-   ID = View155
+   ID = Game_Card_Diamond
    Size = 3408
    Description = ""
 
 [View156]
-   ID = View156
+   ID = Game_Card_NoCard
    Size = 136
    Description = ""
 
 [View157]
-   ID = View157
+   ID = Game_Card_Back
    Size = 654
    Description = ""
 
 [View158]
-   ID = View158
+   ID = Pnj_Cabaret_Comic
    Size = 2221
    Description = ""
 
 [View159]
-   ID = View159
+   ID = Pnj_Cabaret_CancanDancers
    Size = 2559
    Description = ""
 
 [View162]
-   ID = View162
+   ID = Casino_Cabaret_Lights
    Size = 59
    Description = ""
 
 [View163]
-   ID = View163
+   ID = Pnj_Cabaret_Drummer
    Size = 2023
    Description = ""
 
 [View164]
-   ID = View164
+   ID = Obj_Bin
    Size = 232
    Description = ""
 
 [View165]
-   ID = View165
+   ID = Casino_Lifts
    Size = 1814
    Description = ""
 
 [View166]
-   ID = View166
+   ID = Pnj_Casino_Faith
    Size = 983
    Description = ""
 
 [View167]
-   ID = View167
+   ID = Face_Faith_details
    Size = 1595
    Description = ""
 
 [View168]
-   ID = View168
+   ID = Casino_Lift_door
    Size = 868
    Description = ""
 
@@ -1816,7 +1816,7 @@
    Description = ""
 
 [View170]
-   ID = View170
+   ID = Chapel_signs_and_door
    Size = 2637
    Description = ""
 
@@ -1826,62 +1826,62 @@
    Description = ""
 
 [View172]
-   ID = View172
+   ID = Chapel_officer
    Size = 1594
    Description = ""
 
 [View174]
-   ID = View174
+   ID = Game_Number
    Size = 222
    Description = ""
 
 [View175]
-   ID = View175
+   ID = Casino_Honeymoon_door
    Size = 733
    Description = ""
 
 [View176]
-   ID = View176
+   ID = Casino_Honeymoon_Items
    Size = 847
    Description = ""
 
 [View177]
-   ID = View177
+   ID = Casino_Hottub_Bubbles
    Size = 867
    Description = ""
 
 [View178]
-   ID = View178
+   ID = Casino_Fireworks
    Size = 3000
    Description = ""
 
 [View179]
-   ID = View179
+   ID = Casino_Lift_Door2
    Size = 726
    Description = ""
 
 [View180]
-   ID = View180
+   ID = Face_Eve_Details
    Size = 769
    Description = ""
 
 [View181]
-   ID = View181
+   ID = Pnj_Eve_LeaveHotTub
    Size = 888
    Description = ""
 
 [View182]
-   ID = View182
+   ID = Pnj_Eve
    Size = 1953
    Description = ""
 
 [View183]
-   ID = View183
+   ID = Casino_Hottub_empty
    Size = 616
    Description = ""
 
 [View184]
-   ID = View184
+   ID = Obj_unflated_doll
    Size = 347
    Description = ""
 
