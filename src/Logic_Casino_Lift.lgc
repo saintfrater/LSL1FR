@@ -6,8 +6,8 @@ if (isset(newRoom))
       {      move.obj(Obj_animatedPNJ1, 73, 36, 2, boolTimingDelayOut);      varTitlePageStep = 200;      }    else
       {      if (v79 < v200)
         {        move.obj(Obj_animatedPNJ1, 73, 167, 2, boolTimingDelayOut);        varTitlePageStep = 200;        }      else
-        {        move.obj(Obj_animatedPNJ1, 73, 128, 2, boolTimingDelayOut);        varTitlePageStep = 100;        }      }    draw(Obj_animatedPNJ1);    draw(Obj_animatedPNJ2);    stop.update(Obj_animatedPNJ2);    set.cel.v(Obj_animatedPNJ6, v200);    draw(Obj_animatedPNJ6);    set.view(ego, Larry_StandAndWalk);    set.loop(ego, 2);    set.priority(ego, 12);    v38 = 76;    v39 = 126;    position.v(ego, v38, v39);    }  else
-    {    draw(Obj_animatedPNJ3);    stop.update(Obj_animatedPNJ3);    set.loop(Obj_animatedPNJ1, 0);    set.cel(Obj_animatedPNJ1, 0);    position(Obj_animatedPNJ1, 73, 128);    draw(Obj_animatedPNJ1);    stop.update(Obj_animatedPNJ1);    v200 = 4;    draw(Obj_animatedPNJ4);    stop.update(Obj_animatedPNJ4);    set.loop(ego, 0);    v38 = 9;    v39 = 132;    position.v(ego, v38, v39);    draw(ego);    start.motion(ego);    }  show.pic();  if (previousRoom == 41)
+        {        move.obj(Obj_animatedPNJ1, 73, 128, 2, boolTimingDelayOut);        varTitlePageStep = 100;        }      }    draw(Obj_animatedPNJ1);    draw(Obj_animatedPNJ2);    stop.update(Obj_animatedPNJ2);    set.cel.v(Obj_animatedPNJ6, v200);    draw(Obj_animatedPNJ6);    set.view(ego, Larry_StandAndWalk);    set.loop(ego, 2);    set.priority(ego, 12);    varEgoPosX = 76;    varEgoPosY = 126;    position.v(ego, varEgoPosX, varEgoPosY);    }  else
+    {    draw(Obj_animatedPNJ3);    stop.update(Obj_animatedPNJ3);    set.loop(Obj_animatedPNJ1, 0);    set.cel(Obj_animatedPNJ1, 0);    position(Obj_animatedPNJ1, 73, 128);    draw(Obj_animatedPNJ1);    stop.update(Obj_animatedPNJ1);    v200 = 4;    draw(Obj_animatedPNJ4);    stop.update(Obj_animatedPNJ4);    set.loop(ego, 0);    varEgoPosX = 9;    varEgoPosY = 132;    position.v(ego, varEgoPosX, varEgoPosY);    draw(ego);    start.motion(ego);    }  show.pic();  if (previousRoom == 41)
     {    print("You close the door behind you, and jiggle the knob to confirm it is "          "locked.");    }  return();  }reset(f205);if (posn(ego, 73, 119, 83, 127))
   {  set(f205);  }if (isset(f205))
   {  set.priority(ego, 11);  }else
@@ -56,7 +56,7 @@ if (isset(newRoom))
     {    v79 = 7;    set(boolTimingDelayOut);    }  if ((said("move", "eight") ||       said("move", "button", "eight") ||       said("eight")))
     {    v79 = 8;    set(boolTimingDelayOut);    }  if ((said("move", "rol") ||       said("move", "button", "rol")))
     {    print("Type a word, like \"one\" or \"two.\"");    }  }Label1:if (isset(f202))
-  {  reset(boolDisablePlayer);  v76 = 41;  }if (isset(boolTimingDelayOut))
+  {  reset(boolDisablePlayer);  varJumpToRoom = 41;  }if (isset(boolTimingDelayOut))
   {  reset(boolTimingDelayOut);  ++varTitlePageStep;  if (varTitlePageStep == 1)
     {    set(f204);    varLarryAttitude = 18;    stop.motion(ego);    set(boolDisablePlayer);    set.view(ego, Larry_Close_Door);    set.cel(ego, 0);    reposition.to(ego, 76, 126);    cycle.time(ego, varEgoSize);    set(f34);    end.of.loop(ego, boolTimingDelayOut);    }  if (varTitlePageStep == 2)
     {    erase(ego);    set.view(ego, Larry_StandAndWalk);    set.loop(Obj_animatedPNJ1, 3);    set.cel(Obj_animatedPNJ1, 0);    cycle.time(Obj_animatedPNJ1, varEgoSize);    end.of.loop(Obj_animatedPNJ1, boolTimingDelayOut);    }  if (varTitlePageStep == 3)
@@ -69,9 +69,9 @@ if (isset(newRoom))
     {    reset(f204);    varLarryAttitude = 0;    v79 = 0;    varTitlePageStep = 0;    set.loop(Obj_animatedPNJ1, 0);    draw(Obj_animatedPNJ3);    set.view(ego, Larry_StandAndWalk);    set.loop(ego, 2);    set.cel(ego, 0);    position(ego, 76, 126);    draw(ego);    start.motion(ego);    cycle.time(ego, v84);    reset(f34);    reset(boolDisablePlayer);    }  if (varTitlePageStep == 201)
     {    if (isset(f206))
       {      --v200;      if (v200 == 1)
-        {        v76 = 35;        return();        }      }    else
+        {        varJumpToRoom = 35;        return();        }      }    else
       {      ++v200;      if (v200 == 8)
-        {        v76 = 42;        return();        }      }    if (isset(f206))
+        {        varJumpToRoom = 42;        return();        }      }    if (isset(f206))
       {      reposition.to(Obj_animatedPNJ1, 73, 36);      }    else
       {      reposition.to(Obj_animatedPNJ1, 73, 167);      }    if (v200 != 4)
       {      erase(Obj_animatedPNJ4);      }    else

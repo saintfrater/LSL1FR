@@ -88,3 +88,10 @@
 #define boolHasFreshBreath             f66 [ Is Larry has a fresh breath ?
 #define varTimer_FreshBreath_Minutes   v72
 #define varTimer_freshBreath_Seconds   v71
+#define boolSecondHasChange            f44 [ Second has changed ?
+#define varJumpToRoom                  v76 [ Change the current Room (jump)
+#define boolDisabledRoomJump           f48 [ Set to disable any room jump
+#define varJumpEdgeEgoHit              v78 [ Saved Edge Ego Hit variable
+#define varCurrentRoom                 v77
+#define varEgoPosX                     v38
+#define varEgoPosY                     v39

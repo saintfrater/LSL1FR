@@ -3,7 +3,7 @@ if (isset(newRoom))
     {    v235 = 166;    }  else
     {    v235 = 160;    }  if (previousRoom != 10)
     {    v64 = 0;    }  else
-    {    v234 = 60;    position.v(o13, v234, v235);    draw(o13);    v38 = v234;    v38  += 4;    v39 = v235;    v39 -= 4;    reposition.to.v(ego, v38, v39);    force.update(ego);    v233 = 2;    if (varLarryAttitude == 20)
+    {    v234 = 60;    position.v(o13, v234, v235);    draw(o13);    varEgoPosX = v234;    varEgoPosX  += 4;    varEgoPosY = v235;    varEgoPosY -= 4;    reposition.to.v(ego, varEgoPosX, varEgoPosY);    force.update(ego);    v233 = 2;    if (varLarryAttitude == 20)
       {      load.view(Larry_Fight);      prevent.input();      stop.motion(ego);      set(boolDisablePlayer);      v64 = 200;      }    else
       {      start.motion(ego);      v64 = 101;      }    }  return();  }reset(f61);if (v64 == 4)
   {  if (currentRoom == 11)
@@ -30,7 +30,7 @@ if (isset(newRoom))
   {  print("There is a sign on the pole.");  }if ((said("examine", "brick", "light pole") ||     said("examine", "brick", "on", "light pole") ||     said("examine", "brick")))
   {  print("\"TAXI\nSTAND\"");  }if (said("examine", "street"))
   {  print("Thousands of cars stream past, just below the edge of your screen.");  }if ((said("catch", "cab") ||     said("cab") ||     said("ask", "cab") ||     said("holler", "cab")))
-  {  if (v39 >= v235)
+  {  if (varEgoPosY >= v235)
     {    print("You'd better get out of the street first.");    }  else
     {    print("\"YO!!\n\nTAXI!!!\"");    if (v64 <= 0)
       {      stop.motion(ego);      set(boolDisablePlayer);      random(3, 7, v233);      }    }  }if (v64 == 4)
@@ -43,28 +43,28 @@ if (isset(newRoom))
         {        print("Vowing to hold your breath forever, you enter this miserable "              "excuse for public transportation.");        }      else
         {        set(f67);        }      erase(ego);      set(f231);      set(boolDisablePlayer);      prevent.input();      set(f232);      v64 = 101;      v233 = 0;      }    }  }if (said("examine", "alley"))
   {  print("It's dark. Real dark.");  }if (said("examine", "cab"))
-  {  print("Trust me, they're there!");  }Label1:if (v38 == v40 &&     v39 == v41 &&     v64 <= 0 &&     varTitlePageStep <= 0 &&     varLarryAttitude == 0)
+  {  print("Trust me, they're there!");  }Label1:if (varEgoPosX == v40 &&     varEgoPosY == v41 &&     v64 <= 0 &&     varTitlePageStep <= 0 &&     varLarryAttitude == 0)
   {  ++v230;  if (v230 == 200)
     {    draw(o14);    sound(Sound22, f40);    set(f236);    follow.ego(o14, 5, f230);    v231 = 1;    }  }else
   {  v230 = 0;  if (v231 == 1)
     {    reset(f230);    v232 = 2;    }  }if (isset(f230) &&     v231 == 1)
-  {  reset(f230);  set(f58);  v231 = 2;  v232 = 35;  stop.motion(ego);  set(boolDisablePlayer);  stop.motion(o14);  get.posn(o14, varRandomValue, varLine);  varColumn = v38;  if (v38 > 3)
+  {  reset(f230);  set(f58);  v231 = 2;  v232 = 35;  stop.motion(ego);  set(boolDisablePlayer);  stop.motion(o14);  get.posn(o14, varRandomValue, varLine);  varColumn = varEgoPosX;  if (varEgoPosX > 3)
     {    varColumn -= 4;    }  else
-    {    varColumn = 0;    }  reposition.to.v(o14, varColumn, varLine);  if (varLine > v39)
+    {    varColumn = 0;    }  reposition.to.v(o14, varColumn, varLine);  if (varLine > varEgoPosY)
     {    set.view(o14, Street_Dog2);    }  else
     {    set.view(o14, Street_Dog3);    }  }--v232;if (v232 == 1)
   {  v231 = 3;  start.motion(ego);  reset(boolDisablePlayer);  start.motion(o14);  set.view(o14, Street_Dog1);  wander(o14);  }if (edgeObjHit > NOT_HIT &&     objHitEdge == 14 &&     v231 == 3)
   {  erase(o14);  reset(f236);  v231 = 4;  }distance(ego, o13, varRandomValue);if (edgeEgoHit == BOTTOM_EDGE &&     varRandomValue == 255 &&     varLarryAttitude != 15)
-  {  stop.motion(ego);  set(boolDisablePlayer);  prevent.input();  varLarryAttitude = 15;  position(o15, 119, 167);  draw(o15);  sound(Sound11, f40);  v56 = 10;  if (v38 > 116)
-    {    v38 = 116;    }  move.obj.v(o15, v38, v39, v56, f234);  }if (varLarryAttitude == 15)
+  {  stop.motion(ego);  set(boolDisablePlayer);  prevent.input();  varLarryAttitude = 15;  position(o15, 119, 167);  draw(o15);  sound(Sound11, f40);  v56 = 10;  if (varEgoPosX > 116)
+    {    varEgoPosX = 116;    }  move.obj.v(o15, varEgoPosX, varEgoPosY, v56, f234);  }if (varLarryAttitude == 15)
   {  if (edgeEgoHit > NOT_HIT)
     {    edgeEgoHit = NOT_HIT;    }  if (isset(f234))
-    {    reset(f234);    set(f231);    erase(ego);    set.view(ego, Larry_DeathByCar);    if (v38 > 33)
-      {      v38 -= 33;      }    else
-      {      v38 = 0;      }    position.v(ego, v38, v39);    move.obj(o15, 0, 167, 10, f233);    }  if (isset(f231))
-    {    get.posn(o15, varColumn, varLine);    if ((varColumn < v38 ||         varColumn < 10))
+    {    reset(f234);    set(f231);    erase(ego);    set.view(ego, Larry_DeathByCar);    if (varEgoPosX > 33)
+      {      varEgoPosX -= 33;      }    else
+      {      varEgoPosX = 0;      }    position.v(ego, varEgoPosX, varEgoPosY);    move.obj(o15, 0, 167, 10, f233);    }  if (isset(f231))
+    {    get.posn(o15, varColumn, varLine);    if ((varColumn < varEgoPosX ||         varColumn < 10))
       {      reset(f231);      draw(ego);      }    }  if (isset(f233))
-    {    reset(f233);    erase(o15);    print("You know, the traffic here is really a killer! You should forget "          "about crossing these streets!");    set(f50);    }  }if (isset(f44))
+    {    reset(f233);    erase(o15);    print("You know, the traffic here is really a killer! You should forget "          "about crossing these streets!");    set(f50);    }  }if (isset(boolSecondHasChange))
   {  --v233;  if (v233 == 1)
     {    set(f232);    }  }if (v64 > 0)
   {  get.posn(o13, varColumn, varLine);  if ((varColumn == 103 ||       varColumn == 88 ||       varColumn == 36))
@@ -75,15 +75,15 @@ if (isset(newRoom))
     {    step.size(o13, v85);    set.cel(o13, 1);    sound(Sound10, f40);    }  if (v64 == 4)
     {    set.cel(o13, 0);    start.motion(ego);    reset(boolDisablePlayer);    v233 = 14;    }  if (v64 == 5)
     {    print("\"I can't wait all day, bub!\"");    v64 = 101;    }  if (v64 == 101)
-    {    get.posn(o13, v234, v235);    if (v38 < v234 &&         v39 >= v235)
+    {    get.posn(o13, v234, v235);    if (varEgoPosX < v234 &&         varEgoPosY >= v235)
       {      print("\"BEEP\nBEEP!\"");      v233 = 5;      --v64;      }    else
       {      v64 = 102;      }    }  if (v64 == 102)
     {    step.size(o13, v85);    v234 = 0;    v56 = 0;    move.obj.v(o13, v234, v235, v56, f232);    }  if (v64 == 103)
     {    step.size(o13, v87);    if (varLarryAttitude == 20)
-      {      ignore.objs(ego);      set.view(ego, Larry_DeathByCar);      get.posn(o13, v38, v39);      --v39;      position.v(ego, v38, v39);      draw(ego);      }    }  if (v64 == 104)
+      {      ignore.objs(ego);      set.view(ego, Larry_DeathByCar);      get.posn(o13, varEgoPosX, varEgoPosY);      --varEgoPosY;      position.v(ego, varEgoPosX, varEgoPosY);      draw(ego);      }    }  if (v64 == 104)
     {    v64 = 0;    erase(o13);    if (varLarryAttitude == 20)
       {      reset(f231);      set(f50);      }    if (isset(f231))
-      {      v76 = 10;      }    }  if (v64 == 201)
+      {      varJumpToRoom = 10;      }    }  if (v64 == 201)
     {    set.view(ego, Larry_Fight);    set(f34);    v233 = 5;    }  if (v64 == 202)
     {    erase(ego);    print("\"You'll not ride with me again!\"");    v64 = 101;    v233 = 3;    }  }if ((isset(f231) ||     varLarryAttitude == 15))
   {  stop.motion(ego);  set(boolDisablePlayer);  }return();[ Messages#message 1 "You know, the traffic here is really a killer! You should forget about crossing these streets!"#message 2 "\"YO!!\n\nTAXI!!!\""#message 3 "Vowing to hold your breath forever, you enter this miserable excuse for public transportation."#message 4 "It's not very clean."#message 5 "It's not very new."#message 6 "(And those are its good points!)"#message 7 "Look out! Here he comes again!"#message 8 "Obviously, he thinks you're a fire plug."#message 9 "Dogs like that make you want to keep moving."#message 10 "\"I can't wait all day, bub!\""#message 11 "\"You'll not ride with me again!\""#message 12 ""#message 13 ""#message 14 "Sick-o!"#message 15 "After all he's done for you?"#message 16 "He presently smells quite bad, although still better than you."#message 17 "\"TAXI\nSTAND\""#message 18 "It's dark. Real dark."#message 19 "You'd better get out of the street first."#message 20 "\"BEEP\nBEEP!\""#message 21 "Thousands of cars stream past, just below the edge of your screen."#message 22 "Trust me, they're there!"#message 23 "It smells like an old cab."#message 24 "Isn't it funny how there's so little traffic?"#message 25 "The glow of the city lights obliterate the stars."#message 26 "As you bend over to do so, his bare teeth convince you otherwise."#message 27 "You shinny up the pole, read the sign, and come right back down."#message 28 "Who'd want him?"#message 29 ""#message 30 "Where?"#message 31 "There is a sign on the pole."#message 32 ""
