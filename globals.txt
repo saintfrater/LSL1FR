@@ -1,20 +1,59 @@
 [
 [ global defines file for LSL1
 [
+#define varLarryAttitude               v30
+#define varColumn                      v32
+#define varLine                        v33
+#define varEgoPosX                     v38
+#define varEgoPosY                     v39
+#define varOldEgoX                     v40
+#define varOldEgoY                     v41
+#define varOldEgoDir                   v42
 #define varTimeLastElapsedSeconds      v43
 #define varGameControlDebug            v51 [ This control if the game is in debugmode or not
-#define varTitlePageStep               v65 [ Memorize the Title "steps"
+#define varRandomValue                 v52 [ random variable to handle/choose panic page
+#define varOutputCharacter             v58
+#define varPassInRoom                  v62
+#define varTimerSecondsInRoom          v63
+#define varScriptStep                  v65 [ Memorize the script "steps"
+#define varQuestionnaireTiming         v66
+#define varClearStatusSeconds          v68
+#define varMouthMessage                v69
 #define varTimingDelay                 v67
 #define varObjBreathSprayUsage         v70
+#define varTimerSpraySeconds           v71
+#define varTimerSprayMinutes           v72
+#define varTimerDeath                  v75 [ when reach 1 display death message
+#define varJumpToRoom                  v76 [ Change the current Room (jump)
+#define varCurrentEgoView              v77
+#define varJumpEdgeEgoHit              v78 [ Saved Edge Ego Hit variable
+#define varTimerBreathSpraySeconds     v80
+#define varPanicPicture                v81 [ picture ID of the random panic page
 #define varEgoSize                     v86
+#define varOldLastChar                 v89
 #define varInGameMoney                 v90
-#define varPlayerAge                  v209 [ Age donne par le joueur
-#define varGameTimeHour               v119 [ in Game Time (Hour)
-#define varGameTimeMinute             v116 [ in Game Time (Minute)
+#define varSecondsSinceKeystroke       v91
+#define varInputCharacter              v92
+#define varQuestionRightAnswer         v93 [ right answer for question #
+#define varQuestionAnswered            v94 [ Number of Questions answers so far
+#define varQuestionnaireStateMachine   v95 [ 1: ask question, 2: pick question, 3: questionnaire completed, 4: , 5: right answer
+#define varRandomPickQuestion          v96 [ Random Pick question
+#define varOldCurrentScore            v101
 #define varGameTimeSecond             v115 [ in Game Time (second)
+#define varGameTimeMinute             v116 [ in Game Time (Minute)
+#define varGameTimeHour               v117
+#define varGameTimeDays               v118
+#define varWatchHour                  v119
 #define varQuestionnaireID            v220
+#define varPickedQuestion1            v201
+#define varPickedQuestion2            v202
+#define varPickedQuestion3            v203
+#define varPickedQuestion4            v204
+#define varPickedQuestion5            v205
+#define varPlayerAge                  v209 [ Age donne par le joueur
 #define CtrlHelp                        c1
 #define CtrlSound                       c2 [ Turn Sound ON/OFF
+#define CtrlEdit                        c3 [ set when CTRL+E is pressed
 #define CtrlSave                        c5
 #define CtrlRestart                     c9
 #define CtrlLoad                        c7
@@ -22,7 +61,15 @@
 #define CtrlInventory                  c11
 #define CtrlJoystick                   c12
 #define CtrlMenuGraphicsMode           c13
+#define CtrlBreak                      c14 [ set when CTRL-C is pressed
+#define CtrlDebug                      c15 [ set when ALT+D (Debug) is pressed
+#define CtrlShowEgo                    c16 [ Ego Info
 #define CtrlMenuViewObject             c17
+#define CtrlShowMemory                 c18 [ Memory Usage
+#define CtrlObjInfo                    c19 [ Objects Infos
+#define CtrlShowPriority               c20 [ Priority Screen
+#define CtrlSkipQuestion               c21 [ set when ALT+X is pressed (skip questionnaire)
+#define CtrlEnterMenu                  c23
 #define CtrlQuit                       c22
 #define CtrlMenuUnusedItem             c24
 #define CtrlMenuAbout                  c25
@@ -35,19 +82,15 @@
 #define CtrlMenuSpeedNormal            c32
 #define CtrlMenuSpeedFast              c33
 #define CtrlMenuSpeedUltra             c34
+#define CtrlInvNumbers                 c35 [ Object Numbers
+#define CtrlXY                         c36 [ X/Y Display
+#define CtrlGimme                      c37 [ Give All Objects
+#define CtrlVolumeDown                 c38 [ TANDY Volume Down Command
+#define CtrlVolumeUp                   c39 [ TANDY Volume Up Command
+#define CtrlVersion                    c40 [ set when ALT+V (Version) is pressed
 #define CtrlBossKey                    c41
 #define Obj_animatedPNJ1                o1
 #define Obj_animatedPNJ2                o2
-#define ObjPoliceMan                   o12
-#define boolCallDebugger               f32
-#define boolMusicEnded                 f52
-#define boolTimingDelayOut             f75
-#define CtrlVolumeDown                 c38 [ TANDY Volume Down Command
-#define CtrlVolumeUp                   c39 [ TANDY Volume Up Command
-#define boolShowClock                  f42 [ is Clock should be displayed
-#define varRandomValue                 v52 [ random variable to handle/choose panic page
-#define varPanicPicture                v81 [ picture ID of the random panic page
-#define boolClockRedraw                f43 [ Clock title must be re-printed
 #define Obj_animatedPNJ3                o3
 #define Obj_animatedPNJ4                o4
 #define Obj_animatedPNJ5                o5
@@ -57,41 +100,83 @@
 #define Obj_animatedPNJ9                o9
 #define Obj_animatedPNJ10              o10
 #define Obj_animatedPNJ11              o11
-#define boolSexWithHooker              f63
-#define boolLarryWearCondom            f62 [ Set when Larry has put (and wear) a Condom
-#define boolLarryDontHaveIt            f68 [ Set when Larry is trying to use item he didn't have (yet ?)
-#define CtrlBreak                      c14 [ set when CTRL-C is pressed
-#define CtrlEdit                        c3 [ set when CTRL+E is pressed
-#define CtrlSkipQuestion               c21 [ set when ALT+X is pressed (skip questionnaire)
-#define boolGameIsRunning             f109 [ Set when Game is started (not in title or questionnaire)
-#define CtrlVersion                    c40 [ set when ALT+V (Version) is pressed
-#define CtrlDebug                      c15 [ set when ALT+D (Debug) is pressed
-#define boolDisablePlayer              f85 [ when true, player cannot move Larrry
+#define ObjPoliceMan                   o12
 #define boolDebugInGame                f30 [ set to debug question / cheat in game
-#define varRandomPickQuestion          v96 [ Random Pick question
-#define varPickedQuestion1            v201
-#define varPickedQuestion2            v202
-#define varPickedQuestion3            v203
-#define varPickedQuestion4            v204
-#define varPickedQuestion5            v205
-#define varQuestionAnswered            v94 [ Number of Questions answers so far
-#define varQuestionRightAnswer         v93 [ right answer for question #
-#define varInputCharacter              v92
-#define varOutputCharacter             v58
-#define varLine                        v33
-#define varColumn                      v32
-#define varQuestionnaireStateMachine   v95 [ 1: ask question, 2: pick question, 3: questionnaire completed, 4: , 5: right answer
-#define varQuestionnaireTiming         v66
-#define boolQuestionnaireFailedOnce   f200 [ set when player fail once in the questionnaire
-#define varLarryAttitude               v30
-#define boolHasLookedBoncer            f60 [ Is Larry already looked at the bouncer once ?
-#define boolHasFreshBreath             f66 [ Is Larry has a fresh breath ?
-#define varTimer_FreshBreath_Minutes   v72
-#define varTimer_freshBreath_Seconds   v71
+#define boolDebugging                  f32
+#define boolKeepCycling                f34
+#define boolnoCycling                  f35
+#define boolIgnoreSpecial              f36 [ Ignore Specials hit
+#define boolIgnoreWater                f37 [ Ignore Water Hit
+#define boolDemo                       f38
+#define boolShowClock                  f42 [ is Clock should be displayed
+#define boolClockRedraw                f43 [ Clock title must be re-printed
 #define boolSecondHasChange            f44 [ Second has changed ?
-#define varJumpToRoom                  v76 [ Change the current Room (jump)
+#define boolmyHaveMatch                f45 [ Speed stuff
 #define boolDisabledRoomJump           f48 [ Set to disable any room jump
-#define varJumpEdgeEgoHit              v78 [ Saved Edge Ego Hit variable
-#define varCurrentRoom                 v77
-#define varEgoPosX                     v38
-#define varEgoPosY                     v39
+#define boolPreventNewRoom             f49 [ Prevent newroom loading
+#define boolCertainDeath               f50
+#define boolMusicEnded                 f52
+#define boolNotCloseEnough             f54
+#define boolAlreadyGotIt               f55
+#define boolSmellLikeDogPiss           f58
+#define boolToiletPaperOnShoes         f59
+#define boolHasLookedBoncer            f60 [ Is Larry already looked at the bouncer once ?
+#define boolLarryWearCondom            f62 [ Set when Larry has put (and wear) a Condom
+#define boolSexWithHooker              f63
+#define boolMouthOK                    f66 [ Is Larry has a fresh breath ?
+#define boolOK                         f67
+#define boolLarryDontHaveIt            f68 [ Set when Larry is trying to use item he didn't have (yet ?)
+#define boolNearPerson                 f69 [ Ego Near someone ?
+#define boolTimingScriptDone           f75
+#define boolDisablePlayer              f85 [ when true, player cannot move Larrry
+#define boolPreventSaveGame            f87 [ Disable Save Game
+#define boolBetInProgress              f93
+#define boolAlreadyVisitLefty         f105 [ Is the player ever been in front of the Lefty's ?
+#define boolRequestASaveGame          f106
+#define boolMouthSmellBad             f107
+#define boolIsTyping                  f108
+#define boolPassedAgeTest             f109 [ Set when Age Test has been successfully completed.
+#define boolSlowProcessor             f118
+#define boolReadMagazines             f120
+#define boolInClear                   f200
+#define ATTITUDE_NORMAL                  0 [ Larry is normal
+#define ATTITUDE_DEAD                    1 [ Larry is dead
+#define ATTITUDE_SLEEP                   2 [ Larry is sleeping
+#define ATTITUDE_COLLAPSING              3
+#define ATTITUDE_STUNNED                 4
+#define ATTITUDE_FALLING                 5
+#define ATTITUDE_WALKING                 6
+#define ATTITUDE_ON_BAR_STOOL            7
+#define ATTITUDE_DRUNK                   8
+#define ATTITUDE_ON_TOILET               9
+#define ATTITUDE_DROWNING               10
+#define ATTITUDE_HUMPING_HOOKER         11
+#define ATTITUDE_LEAVING_WINDOW         12
+#define ATTITUDE_HANGING_BY_ROPE        13
+#define ATTITUDE_IN_DUMPSTER            14
+#define ATTITUDE_RUN_OVER               15
+#define ATTITUDE_DANCING                16
+#define ATTITUDE_SITTING                17
+#define ATTITUDE_IN_ELEVATOR            18
+#define ATTITUDE_TIED_TO_BED            19
+#define ATTITUDE_STIFFED_CABBIE         20
+#define ATTITUDE_PISSING                21
+#define ATTITUDE_CHASING_DOLL           22
+#define ATTITUDE_FOLLOWING_EVE          23
+#define ATTITUDE_DYING_OF_CLAP          25
+#define ATTITUDE_NAKED                  26
+#define ATTITUDE_RECYCLING              27
+#define AGE_CHECK_WAITING                1
+#define AGE_CHECK_ASKQUESTION            2
+#define AGE_CHECK_ALLDONE                3
+#define AGE_CHECK_WAITAWHILE             4
+#define AGE_CHECK_WAITAWHILECORRECT      5
+#define boolCopOnScreen               f207 [ When Cop is draw on screen
+#define boolDieofTheClap               f89
+#define boolMusicDone                  f40
+#define boolNearDoor                  f201
+#define boolCopAtEgo                  f205
+#define boolDoorOpen                  f202
+#define boolAlleyWindowbroken          f65 [ set when alley window is broken
+#define boolAlleyHookerWindowOpen      f64 [ set when hooker window is open
+#define varYunchTimer                 v200

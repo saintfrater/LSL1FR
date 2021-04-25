@@ -11,7 +11,7 @@
    Author = Sierra
    About = ""
    GameVersion = ""
-   LastEdit = "18-04-21 04:58:26"
+   LastEdit = "25-04-21 22:14:08"
    PlatformType = 2
    Platform = "C:\Program Files (x86)\ScummVM\scummvm.exe"
    DOSExec = ""
@@ -24,136 +24,136 @@
 [Logic0]
    ID = Logic_Start
    Size = 13777
-   CRC32 = &H285D7355
-   CompCRC32 = &H285D7355
+   CRC32 = &H564976F9
+   CompCRC32 = &H564976F9
    Description = ""
    IsRoom = False
 
 [Logic1]
    ID = Logic_Title
    Size = 553
-   CRC32 = &H4FFDF214
-   CompCRC32 = &H4FFDF214
+   CRC32 = &HAAA41DC7
+   CompCRC32 = &HAAA41DC7
    Description = ""
    IsRoom = True
 
 [Logic2]
    ID = Logic_Questionnaire_1
    Size = 7670
-   CRC32 = &H80A9FD2B
-   CompCRC32 = &H80A9FD2B
+   CRC32 = &HE8E1D296
+   CompCRC32 = &HE8E1D296
    Description = ""
    IsRoom = False
 
 [Logic3]
    ID = Logic_Questionnaire_2
    Size = 8252
-   CRC32 = &HD47565A8
-   CompCRC32 = &HD47565A8
+   CRC32 = &HB88AF5C7
+   CompCRC32 = &HB88AF5C7
    Description = ""
    IsRoom = False
 
 [Logic4]
    ID = Logic_Questionnaire_3
    Size = 7368
-   CRC32 = &H3B6CE6F6
-   CompCRC32 = &H3B6CE6F6
+   CRC32 = &H3D557513
+   CompCRC32 = &H3D557513
    Description = ""
    IsRoom = False
 
 [Logic6]
-   ID = Logic_Title_Exit
+   ID = Logic_Age_Check
    Size = 3572
-   CRC32 = &HB58840C4
-   CompCRC32 = &HB58840C4
+   CRC32 = &HA313CA6F
+   CompCRC32 = &HA313CA6F
    Description = "This screen decide if the player can go to the game or should answer few questions..."
    IsRoom = True
 
 [Logic8]
    ID = Logic_Body_Recycling
    Size = 1272
-   CRC32 = &H6BADE3B3
-   CompCRC32 = &H6BADE3B3
+   CRC32 = &H522C7F3A
+   CompCRC32 = &H522C7F3A
    Description = "This Logic is used when Larry's die and his corps must be "recycled" by Sierra's adventure team"
    IsRoom = True
 
 [Logic9]
    ID = Logic_DarkAlley
    Size = 794
-   CRC32 = &H60ED446C
-   CompCRC32 = &H60ED446C
+   CRC32 = &H2D9BCAB0
+   CompCRC32 = &H2D9BCAB0
    Description = ""
    IsRoom = True
 
 [Logic10]
    ID = Logic_Taxi
    Size = 3668
-   CRC32 = &H4943E3D9
-   CompCRC32 = &H4943E3D9
+   CRC32 = &HC7C2D36
+   CompCRC32 = &HC7C2D36
    Description = ""
    IsRoom = True
 
 [Logic11]
-   ID = Logic_MainGame
+   ID = Logic_Leftys_Outside
    Size = 1958
-   CRC32 = &H5DE6FBD6
-   CompCRC32 = &H5DE6FBD6
+   CRC32 = &H516EC0B2
+   CompCRC32 = &H516EC0B2
    Description = ""
    IsRoom = True
 
 [Logic12]
    ID = Logic_Leftys_Alley
    Size = 6273
-   CRC32 = &H177921EE
-   CompCRC32 = &H177921EE
+   CRC32 = &HCBF9A766
+   CompCRC32 = &HCBF9A766
    Description = ""
    IsRoom = True
 
 [Logic13]
    ID = Logic_Leftys_Bathroom
    Size = 3685
-   CRC32 = &H43A2AF14
-   CompCRC32 = &H43A2AF14
+   CRC32 = &H8D2A9889
+   CompCRC32 = &H8D2A9889
    Description = ""
    IsRoom = True
 
 [Logic14]
    ID = Logic_Leftys_Doorhall
    Size = 2477
-   CRC32 = &HA00C794C
-   CompCRC32 = &HA00C794C
+   CRC32 = &H5B76AE8D
+   CompCRC32 = &H5B76AE8D
    Description = ""
    IsRoom = True
 
 [Logic15]
    ID = Logic_Leftys_Mainroom
    Size = 7606
-   CRC32 = &HB546140A
-   CompCRC32 = &HB546140A
+   CRC32 = &H5ECABFF5
+   CompCRC32 = &H5ECABFF5
    Description = ""
    IsRoom = True
 
 [Logic16]
    ID = Logic_Leftys_PimpsRoom
    Size = 5037
-   CRC32 = &H8BBD1CB3
-   CompCRC32 = &H8BBD1CB3
+   CRC32 = &H91ECBD80
+   CompCRC32 = &H91ECBD80
    Description = ""
    IsRoom = True
 
 [Logic17]
    ID = Logic_Hookers_Room
    Size = 5001
-   CRC32 = &H9CF35AA
-   CompCRC32 = &H9CF35AA
+   CRC32 = &H4FF6F247
+   CompCRC32 = &H4FF6F247
    Description = ""
    IsRoom = True
 
 [Logic19]
    ID = Logic_BadEnding
    Size = 456
-   CRC32 = &H93EF7DC3
-   CompCRC32 = &H93EF7DC3
+   CRC32 = &HB0147F18
+   CompCRC32 = &HB0147F18
    Description = ""
    IsRoom = True
 
@@ -168,176 +168,176 @@
 [Logic21]
    ID = Logic_Liquor_Inside
    Size = 5172
-   CRC32 = &HC6C640E7
-   CompCRC32 = &HC6C640E7
+   CRC32 = &HB939D53D
+   CompCRC32 = &HB939D53D
    Description = ""
    IsRoom = True
 
 [Logic22]
    ID = Logic_Liquor_Exterior
    Size = 6059
-   CRC32 = &H4CF28DD1
-   CompCRC32 = &H4CF28DD1
+   CRC32 = &H6B519D3D
+   CompCRC32 = &H6B519D3D
    Description = ""
    IsRoom = True
 
 [Logic23]
    ID = Logic_Disco_Exterior
    Size = 2336
-   CRC32 = &H4A95E155
-   CompCRC32 = &H4A95E155
+   CRC32 = &H67B4AE59
+   CompCRC32 = &H67B4AE59
    Description = ""
    IsRoom = True
 
 [Logic24]
    ID = Logic_Disco_Inside
    Size = 3836
-   CRC32 = &HA1B69263
-   CompCRC32 = &HA1B69263
+   CRC32 = &HBEF06A67
+   CompCRC32 = &HBEF06A67
    Description = ""
    IsRoom = False
 
 [Logic25]
    ID = Logic_Fawn
    Size = 5529
-   CRC32 = &H9514D598
-   CompCRC32 = &H9514D598
+   CRC32 = &H25462E1A
+   CompCRC32 = &H25462E1A
    Description = ""
    IsRoom = False
 
 [Logic31]
    ID = Logic_Casino_Inside
    Size = 1405
-   CRC32 = &H4940E67D
-   CompCRC32 = &H4940E67D
+   CRC32 = &HE99CA679
+   CompCRC32 = &HE99CA679
    Description = ""
    IsRoom = False
 
 [Logic32]
    ID = Logic_Casino_Outside
    Size = 2388
-   CRC32 = &H3B953CAE
-   CompCRC32 = &H3B953CAE
+   CRC32 = &H560D577A
+   CompCRC32 = &H560D577A
    Description = ""
    IsRoom = True
 
 [Logic33]
    ID = Logic_Chapel_Outside
    Size = 999
-   CRC32 = &HC46E91EE
-   CompCRC32 = &HC46E91EE
+   CRC32 = &H5B3CA1E9
+   CompCRC32 = &H5B3CA1E9
    Description = ""
    IsRoom = True
 
 [Logic34]
    ID = Logic_Chapel_Inside
    Size = 4026
-   CRC32 = &HDD1CEC3C
-   CompCRC32 = &HDD1CEC3C
+   CRC32 = &H4C9B1F2F
+   CompCRC32 = &H4C9B1F2F
    Description = ""
    IsRoom = False
 
 [Logic35]
    ID = Logic_Casino_Lift_0
    Size = 2450
-   CRC32 = &H42979E26
-   CompCRC32 = &H42979E26
+   CRC32 = &HDC665D34
+   CompCRC32 = &HDC665D34
    Description = ""
    IsRoom = False
 
 [Logic36]
    ID = Logic_Casino_Cabaret
    Size = 8789
-   CRC32 = &HA3E6EE5E
-   CompCRC32 = &HA3E6EE5E
+   CRC32 = &H89F23060
+   CompCRC32 = &H89F23060
    Description = ""
    IsRoom = False
 
 [Logic37]
    ID = Logic_Casino_Game_SlotMachine
    Size = 1683
-   CRC32 = &H55026053
-   CompCRC32 = &H55026053
+   CRC32 = &H17ED685D
+   CompCRC32 = &H17ED685D
    Description = ""
    IsRoom = False
 
 [Logic38]
    ID = Logic_Casino_Game_TableCard
    Size = 4942
-   CRC32 = &H934138BE
-   CompCRC32 = &H934138BE
+   CRC32 = &H9E7573BB
+   CompCRC32 = &H9E7573BB
    Description = ""
    IsRoom = False
 
 [Logic40]
    ID = Logic_Casino_Lift
    Size = 3881
-   CRC32 = &HC10B48B5
-   CompCRC32 = &HC10B48B5
+   CRC32 = &H67F69AD4
+   CompCRC32 = &H67F69AD4
    Description = ""
    IsRoom = False
 
 [Logic41]
    ID = Logic_Casino_HoneyMoon
    Size = 6021
-   CRC32 = &H5E3BD2C9
-   CompCRC32 = &H5E3BD2C9
+   CRC32 = &H56A4B310
+   CompCRC32 = &H56A4B310
    Description = ""
    IsRoom = False
 
 [Logic42]
    ID = Logic_Casino_Lift_Penthouse
    Size = 7679
-   CRC32 = &H32C1DB25
-   CompCRC32 = &H32C1DB25
+   CRC32 = &HD103E2A7
+   CompCRC32 = &HD103E2A7
    Description = ""
    IsRoom = False
 
 [Logic43]
    ID = Logic_Casino_Penthouse_Hottub
    Size = 6767
-   CRC32 = &HD5C3DB8E
-   CompCRC32 = &HD5C3DB8E
+   CRC32 = &HF2B9B756
+   CompCRC32 = &HF2B9B756
    Description = ""
    IsRoom = False
 
 [Logic44]
    ID = Logic_Casino_Penthouse
    Size = 3323
-   CRC32 = &HF2022CF3
-   CompCRC32 = &HF2022CF3
+   CRC32 = &H44A99289
+   CompCRC32 = &H44A99289
    Description = ""
    IsRoom = False
 
 [Logic45]
    ID = Logic_Casino_Penthouse_Bed
    Size = 10727
-   CRC32 = &H77D4E7E8
-   CompCRC32 = &HC8A5B369
+   CRC32 = &H5DFBED28
+   CompCRC32 = &H5DFBED28
    Description = ""
    IsRoom = False
 
 [Logic50]
    ID = Logic_SetValues
    Size = 105
-   CRC32 = &HBC38BC5F
-   CompCRC32 = &HBC38BC5F
+   CRC32 = &HF0E51268
+   CompCRC32 = &HF0E51268
    Description = ""
    IsRoom = False
 
 [Logic51]
    ID = Logic_Setup
    Size = 390
-   CRC32 = &HD48404F2
-   CompCRC32 = &HD48404F2
+   CRC32 = &HB96B0A03
+   CompCRC32 = &HB96B0A03
    Description = ""
    IsRoom = False
 
 [Logic52]
    ID = Logic_Debug
    Size = 867
-   CRC32 = &HB7718066
-   CompCRC32 = &HB7718066
+   CRC32 = &H53D5EC0E
+   CompCRC32 = &H53D5EC0E
    Description = ""
    IsRoom = False
 
@@ -368,24 +368,24 @@
 [Logic56]
    ID = Logic_Casino_inGame
    Size = 759
-   CRC32 = &H49661C16
-   CompCRC32 = &H49661C16
+   CRC32 = &H5BC57950
+   CompCRC32 = &H5BC57950
    Description = ""
    IsRoom = False
 
 [Logic57]
    ID = Logic_Street_Outside
    Size = 2441
-   CRC32 = &H6C08A920
-   CompCRC32 = &H6C08A920
+   CRC32 = &HB01FE3D6
+   CompCRC32 = &HB01FE3D6
    Description = ""
    IsRoom = False
 
 [Logic58]
    ID = Logic_Casino_GameWon
    Size = 276
-   CRC32 = &H26936E63
-   CompCRC32 = &H26936E63
+   CRC32 = &HA5131CF4
+   CompCRC32 = &HA5131CF4
    Description = ""
    IsRoom = False
 [::END Logics::]
@@ -654,7 +654,7 @@
 [::BEGIN Sounds::]
 
 [Sound1]
-   ID = Sound1
+   ID = SFX_EgoFalling
    Size = 581
    Description = ""
    Key = 0
@@ -1068,7 +1068,7 @@
    Visible3 = True
 
 [Sound29]
-   ID = Sound29
+   ID = Music_Cop
    Size = 266
    Description = ""
    Key = 0

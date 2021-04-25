@@ -13,7 +13,7 @@ if ((v229 == 1 ||     v229 == 3 ||     v229 == 2))
     {    v53 = 156;    v55 = 0;    }  else
     {    if (v229 == 3)
       {      v53 = 157;      v55 = 0;      }    else
-      {      v53 = v230;      }    }  v54 = 0;  v57 = 4;  add.to.pic.v(v53, v54, v55, varColumn, varLine, v57, v57);  sound(Sound6, f40);  }if (v229 == 4)
+      {      v53 = v230;      }    }  v54 = 0;  v57 = 4;  add.to.pic.v(v53, v54, v55, varColumn, varLine, v57, v57);  sound(Sound6, boolMusicDone);  }if (v229 == 4)
   {Label2:  v55 = v232;  if (v232 < 13)
     {    v230 = 154;    }  else
     {    if (v232 < 26)
@@ -34,5 +34,5 @@ if ((v229 == 1 ||     v229 == 3 ||     v229 == 2))
     {    if (v236 == 2)
       {      varOutputCharacter = 2;      }    else
       {      varOutputCharacter = 3;      }    }  varColumn = 0;  display.v(varLine, varColumn, varOutputCharacter);  v229 = 7;  }if (v229 == 7)
-  {  if (isset(boolCallDebugger) &&       isset(boolDebugInGame))
+  {  if (isset(boolDebugging) &&       isset(boolDebugInGame))
     {    v217 = v223;    v218 = v224;    v216 = v222;    set.text.attribute(BROWN, BLACK);    display(24, 0, "Dealer=%v222   Player=%v223   Split=%v224   ");    set.text.attribute(WHITE, BLACK);    }  }v229 = 0;return();[ Messages#message 1 "Bet is $%v226.00         You have $%v90.00"#message 2 "Bet is $%v225.00         You have $%v90.00"#message 3 "Bet is $%v255.00         You have $%v90.00"#message 4 "Congratulations, you've broken the bank. This casino has a limit of $250.00 per person, and you've reached it. No more for you, Larry!"#message 5 "Dealer=%v222   Player=%v223   Split=%v224   "
